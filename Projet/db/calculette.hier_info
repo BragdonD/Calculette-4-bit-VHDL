@@ -1,0 +1,61 @@
+|add_4bit
+a[0] => add_1bit:f0.a
+a[1] => add_1bit:f1.a
+a[2] => add_1bit:f2.a
+a[3] => add_1bit:f3.a
+b[0] => add_1bit:f0.b
+b[1] => add_1bit:f1.b
+b[2] => add_1bit:f2.b
+b[3] => add_1bit:f3.b
+output[0] <= add_1bit:f0.res
+output[1] <= add_1bit:f1.res
+output[2] <= add_1bit:f2.res
+output[3] <= add_1bit:f3.res
+in_restraint => add_1bit:f0.old_restraint
+out_restraint <= add_1bit:f3.new_restraint
+
+
+|add_4bit|add_1bit:f0
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add_4bit|add_1bit:f1
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add_4bit|add_1bit:f2
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add_4bit|add_1bit:f3
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
