@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette
-Mon Sep 13 18:34:43 2021
+Mon Sep 13 21:45:34 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,16 +42,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 13 18:34:43 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 13 21:45:34 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette                                  ;
-; Top-level Entity Name              ; add_4bit                                    ;
+; Top-level Entity Name              ; seg7                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 8                                           ;
-;     Total combinational functions  ; 8                                           ;
+; Total logic elements               ; 7                                           ;
+;     Total combinational functions  ; 7                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 14                                          ;
+; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; add_4bit           ; calculette         ;
+; Top-level entity name                                            ; seg7               ; calculette         ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
@@ -167,59 +167,54 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; add_4bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_4bit.vhd ;         ;
-; add_1bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_1bit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; leds_7segs.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 8                           ;
-;                                             ;                             ;
-; Total combinational functions               ; 8                           ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 0                           ;
-;     -- 3 input functions                    ; 8                           ;
-;     -- <=2 input functions                  ; 0                           ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 8                           ;
-;     -- arithmetic mode                      ; 0                           ;
-;                                             ;                             ;
-; Total registers                             ; 0                           ;
-;     -- Dedicated logic registers            ; 0                           ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 14                          ;
-;                                             ;                             ;
-; Embedded Multiplier 9-bit elements          ; 0                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; add_1bit:f0|new_restraint~0 ;
-; Maximum fan-out                             ; 2                           ;
-; Total fan-out                               ; 43                          ;
-; Average fan-out                             ; 1.19                        ;
-+---------------------------------------------+-----------------------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 7               ;
+;                                             ;                 ;
+; Total combinational functions               ; 7               ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 7               ;
+;     -- 3 input functions                    ; 0               ;
+;     -- <=2 input functions                  ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 7               ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+;     -- Dedicated logic registers            ; 0               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 11              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; number[0]~input ;
+; Maximum fan-out                             ; 7               ;
+; Total fan-out                               ; 46              ;
+; Average fan-out                             ; 1.59            ;
++---------------------------------------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name   ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
-; |add_4bit                  ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 14   ; 0            ; 0          ; |add_4bit             ; add_4bit    ; work         ;
-;    |add_1bit:f0|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_4bit|add_1bit:f0 ; add_1bit    ; work         ;
-;    |add_1bit:f1|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_4bit|add_1bit:f1 ; add_1bit    ; work         ;
-;    |add_1bit:f2|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_4bit|add_1bit:f2 ; add_1bit    ; work         ;
-;    |add_1bit:f3|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_4bit|add_1bit:f3 ; add_1bit    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |seg7                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |seg7               ; seg7        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -243,13 +238,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
+; boundary_port         ; 11                          ;
 ; cycloneiii_lcell_comb ; 8                           ;
 ;     normal            ; 8                           ;
-;         3 data inputs ; 8                           ;
+;         1 data inputs ; 1                           ;
+;         4 data inputs ; 7                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.94                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -258,7 +254,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -268,29 +264,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 13 18:34:34 2021
+    Info: Processing started: Mon Sep 13 21:45:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette -c calculette
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file leds_7segs.vhd
+    Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd Line: 11
+    Info (12023): Found entity 1: seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file add_4bit.vhd
-    Info (12022): Found design unit 1: add_4bit-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_4bit.vhd Line: 13
-    Info (12023): Found entity 1: add_4bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_4bit.vhd Line: 5
+    Info (12022): Found design unit 1: add_4bit-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 13
+    Info (12023): Found entity 1: add_4bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file add_1bit.vhd
-    Info (12022): Found design unit 1: add_1bit-archi_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_1bit.vhd Line: 10
-    Info (12023): Found entity 1: add_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_1bit.vhd Line: 4
-Info (12127): Elaborating entity "add_4bit" for the top level hierarchy
-Info (12129): Elaborating entity "add_1bit" using architecture "A:archi_1bit" for hierarchy "add_1bit:f0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet/add_4bit.vhd Line: 16
+    Info (12022): Found design unit 1: add_1bit-archi_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 10
+    Info (12023): Found entity 1: add_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 4
+Info (12127): Elaborating entity "seg7" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 8 logic cells
+Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 7 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Mon Sep 13 18:34:43 2021
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Mon Sep 13 21:45:34 2021
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:15
 
 

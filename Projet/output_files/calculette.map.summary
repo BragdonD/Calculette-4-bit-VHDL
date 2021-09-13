@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Sep 13 18:34:43 2021
+Analysis & Synthesis Status : Successful - Mon Sep 13 21:45:34 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette
-Top-level Entity Name : add_4bit
+Top-level Entity Name : seg7
 Family : MAX 10
-Total logic elements : 8
-    Total combinational functions : 8
+Total logic elements : 7
+    Total combinational functions : 7
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 14
+Total pins : 11
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
