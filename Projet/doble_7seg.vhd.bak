@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity double_7seg is 
+	port( component : in std_logic_vector(3 downto 0);
+			dizaine, unite: out std_logic_vector(3 downto 0);
+			
+			);
+end double_7seg;
+
+architecture archi_double_7seg of double_7seg is 
+	signal dizaine_on : std_logic;
+begin
+	dizaine_on <= ((component(3) and component(1)) or (component(3) and component(1)));
+	if(dizaine_on = ‘1’) then
+		dizaine <= "0001";
+	else
+		dizaine <= "1111"; -- nothing
+	
+	
+	
