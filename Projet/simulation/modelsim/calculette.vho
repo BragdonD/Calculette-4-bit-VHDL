@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "09/13/2021 23:37:38"
+-- DATE "09/14/2021 20:37:43"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -85,30 +85,20 @@ LIBRARY IEEE;
 USE FIFTYFIVENM.FIFTYFIVENM_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	separateur_diz_unit IS
+ENTITY 	doble_7segs IS
     PORT (
-	input : IN std_logic_vector(3 DOWNTO 0);
-	dizaine : OUT std_logic_vector(3 DOWNTO 0);
-	unite : OUT std_logic_vector(3 DOWNTO 0)
+	input : IN std_logic_vector(3 DOWNTO 0)
 	);
-END separateur_diz_unit;
+END doble_7segs;
 
 -- Design Ports Information
--- dizaine[0]	=>  Location: PIN_K4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- dizaine[1]	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- dizaine[2]	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- dizaine[3]	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- unite[0]	=>  Location: PIN_A4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- unite[1]	=>  Location: PIN_H14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- unite[2]	=>  Location: PIN_AA15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- unite[3]	=>  Location: PIN_W6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input[0]	=>  Location: PIN_D10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input[1]	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input[2]	=>  Location: PIN_W15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- input[0]	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- input[1]	=>  Location: PIN_AB9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- input[2]	=>  Location: PIN_J14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- input[3]	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF separateur_diz_unit IS
+ARCHITECTURE structure OF doble_7segs IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -119,26 +109,16 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_input : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_dizaine : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_unite : std_logic_vector(3 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
-SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
-SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
-SIGNAL \~QUARTUS_CREATED_ADC2~~eoc\ : std_logic;
-SIGNAL \dizaine[0]~output_o\ : std_logic;
-SIGNAL \dizaine[1]~output_o\ : std_logic;
-SIGNAL \dizaine[2]~output_o\ : std_logic;
-SIGNAL \dizaine[3]~output_o\ : std_logic;
-SIGNAL \unite[0]~output_o\ : std_logic;
-SIGNAL \unite[1]~output_o\ : std_logic;
-SIGNAL \unite[2]~output_o\ : std_logic;
-SIGNAL \unite[3]~output_o\ : std_logic;
 SIGNAL \input[0]~input_o\ : std_logic;
 SIGNAL \input[1]~input_o\ : std_logic;
 SIGNAL \input[2]~input_o\ : std_logic;
 SIGNAL \input[3]~input_o\ : std_logic;
+SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
+SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
+SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
+SIGNAL \~QUARTUS_CREATED_ADC2~~eoc\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -150,8 +130,6 @@ END COMPONENT;
 BEGIN
 
 ww_input <= input;
-dizaine <= ww_dizaine;
-unite <= ww_unite;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -165,7 +143,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y41_N8
+-- Location: LCCOMB_X44_Y52_N16
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -178,103 +156,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X0_Y34_N2
-\dizaine[0]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \dizaine[0]~output_o\);
-
--- Location: IOOBUF_X46_Y54_N23
-\dizaine[1]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \dizaine[1]~output_o\);
-
--- Location: IOOBUF_X46_Y54_N30
-\dizaine[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \dizaine[2]~output_o\);
-
--- Location: IOOBUF_X54_Y54_N2
-\dizaine[3]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \dizaine[3]~output_o\);
-
--- Location: IOOBUF_X31_Y39_N23
-\unite[0]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \input[0]~input_o\,
-	devoe => ww_devoe,
-	o => \unite[0]~output_o\);
-
--- Location: IOOBUF_X60_Y54_N23
-\unite[1]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \input[1]~input_o\,
-	devoe => ww_devoe,
-	o => \unite[1]~output_o\);
-
--- Location: IOOBUF_X54_Y0_N30
-\unite[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \input[2]~input_o\,
-	devoe => ww_devoe,
-	o => \unite[2]~output_o\);
-
--- Location: IOOBUF_X16_Y0_N30
-\unite[3]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \input[3]~input_o\,
-	devoe => ww_devoe,
-	o => \unite[3]~output_o\);
-
--- Location: IOIBUF_X31_Y39_N29
+-- Location: IOIBUF_X78_Y25_N1
 \input[0]~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -286,7 +168,7 @@ PORT MAP (
 	i => ww_input(0),
 	o => \input[0]~input_o\);
 
--- Location: IOIBUF_X60_Y54_N8
+-- Location: IOIBUF_X34_Y0_N15
 \input[1]~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -298,7 +180,7 @@ PORT MAP (
 	i => ww_input(1),
 	o => \input[1]~input_o\);
 
--- Location: IOIBUF_X54_Y0_N8
+-- Location: IOIBUF_X78_Y44_N23
 \input[2]~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -390,22 +272,6 @@ PORT MAP (
 	tsen => \~QUARTUS_CREATED_GND~I_combout\,
 	chsel => \~QUARTUS_CREATED_ADC2~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC2~~eoc\);
-
-ww_dizaine(0) <= \dizaine[0]~output_o\;
-
-ww_dizaine(1) <= \dizaine[1]~output_o\;
-
-ww_dizaine(2) <= \dizaine[2]~output_o\;
-
-ww_dizaine(3) <= \dizaine[3]~output_o\;
-
-ww_unite(0) <= \unite[0]~output_o\;
-
-ww_unite(1) <= \unite[1]~output_o\;
-
-ww_unite(2) <= \unite[2]~output_o\;
-
-ww_unite(3) <= \unite[3]~output_o\;
 END structure;
 
 

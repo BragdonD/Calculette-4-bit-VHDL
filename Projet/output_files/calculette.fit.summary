@@ -1,7 +1,7 @@
-Fitter Status : Successful - Mon Sep 13 23:37:32 2021
+Fitter Status : Successful - Tue Sep 14 20:37:34 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette
-Top-level Entity Name : separateur_diz_unit
+Top-level Entity Name : doble_7segs
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
@@ -9,7 +9,7 @@ Total logic elements : 1 / 49,760 ( < 1 % )
     Total combinational functions : 1 / 49,760 ( < 1 % )
     Dedicated logic registers : 0 / 49,760 ( 0 % )
 Total registers : 0
-Total pins : 12 / 360 ( 3 % )
+Total pins : 4 / 360 ( 1 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
