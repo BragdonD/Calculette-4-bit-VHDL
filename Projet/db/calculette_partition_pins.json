@@ -2,7 +2,148 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "ledsA0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsRes0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsRes0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsRes0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsRes0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsA1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledsB1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "outputleds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opeA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opeA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opeA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opeB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opeB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opeB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opeB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opeA[0]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

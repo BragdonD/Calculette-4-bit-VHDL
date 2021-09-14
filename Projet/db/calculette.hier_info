@@ -1,52 +1,232 @@
-|doble_7segs
-input[0] => separateur_diz_unit:sep1.input[0]
-input[1] => separateur_diz_unit:sep1.input[1]
-input[2] => separateur_diz_unit:sep1.input[2]
-input[3] => separateur_diz_unit:sep1.input[3]
+|calculette
+opeA[0] => add_unsigned:add_u0.A[0]
+opeA[0] => separateur_diz_unit:sep1.input[0]
+opeA[1] => add_unsigned:add_u0.A[1]
+opeA[1] => separateur_diz_unit:sep1.input[1]
+opeA[2] => add_unsigned:add_u0.A[2]
+opeA[2] => separateur_diz_unit:sep1.input[2]
+opeA[3] => add_unsigned:add_u0.A[3]
+opeA[3] => separateur_diz_unit:sep1.input[3]
+opeB[0] => add_unsigned:add_u0.B[0]
+opeB[0] => separateur_diz_unit:sep2.input[0]
+opeB[1] => add_unsigned:add_u0.B[1]
+opeB[1] => separateur_diz_unit:sep2.input[1]
+opeB[2] => add_unsigned:add_u0.B[2]
+opeB[2] => separateur_diz_unit:sep2.input[2]
+opeB[3] => add_unsigned:add_u0.B[3]
+opeB[3] => separateur_diz_unit:sep2.input[3]
+ledsA0[0] <= seg7:seg0.leds[0]
+ledsA0[1] <= seg7:seg0.leds[1]
+ledsA0[2] <= seg7:seg0.leds[2]
+ledsA0[3] <= seg7:seg0.leds[3]
+ledsA0[4] <= seg7:seg0.leds[4]
+ledsA0[5] <= seg7:seg0.leds[5]
+ledsA0[6] <= seg7:seg0.leds[6]
+ledsB0[0] <= seg7:seg2.leds[0]
+ledsB0[1] <= seg7:seg2.leds[1]
+ledsB0[2] <= seg7:seg2.leds[2]
+ledsB0[3] <= seg7:seg2.leds[3]
+ledsB0[4] <= seg7:seg2.leds[4]
+ledsB0[5] <= seg7:seg2.leds[5]
+ledsB0[6] <= seg7:seg2.leds[6]
+ledsRes0[0] <= seg7:seg4.leds[0]
+ledsRes0[1] <= seg7:seg4.leds[1]
+ledsRes0[2] <= seg7:seg4.leds[2]
+ledsRes0[3] <= seg7:seg4.leds[3]
+ledsRes0[4] <= seg7:seg4.leds[4]
+ledsRes0[5] <= seg7:seg4.leds[5]
+ledsRes0[6] <= seg7:seg4.leds[6]
+ledsA1[0] <= seg7:seg1.leds[0]
+ledsA1[1] <= seg7:seg1.leds[1]
+ledsA1[2] <= seg7:seg1.leds[2]
+ledsA1[3] <= seg7:seg1.leds[3]
+ledsA1[4] <= seg7:seg1.leds[4]
+ledsA1[5] <= seg7:seg1.leds[5]
+ledsA1[6] <= seg7:seg1.leds[6]
+ledsB1[0] <= seg7:seg3.leds[0]
+ledsB1[1] <= seg7:seg3.leds[1]
+ledsB1[2] <= seg7:seg3.leds[2]
+ledsB1[3] <= seg7:seg3.leds[3]
+ledsB1[4] <= seg7:seg3.leds[4]
+ledsB1[5] <= seg7:seg3.leds[5]
+ledsB1[6] <= seg7:seg3.leds[6]
+ledsRes1[0] <= seg7:seg5.leds[0]
+ledsRes1[1] <= seg7:seg5.leds[1]
+ledsRes1[2] <= seg7:seg5.leds[2]
+ledsRes1[3] <= seg7:seg5.leds[3]
+ledsRes1[4] <= seg7:seg5.leds[4]
+ledsRes1[5] <= seg7:seg5.leds[5]
+ledsRes1[6] <= seg7:seg5.leds[6]
+outputleds[0] <= separateur_diz_unit:sep0.dizaine[0]
+outputleds[1] <= separateur_diz_unit:sep0.dizaine[1]
+outputleds[2] <= separateur_diz_unit:sep0.dizaine[2]
+outputleds[3] <= separateur_diz_unit:sep0.dizaine[3]
+outputleds[4] <= <GND>
 
 
-|doble_7segs|separateur_diz_unit:sep1
+|calculette|add_unsigned:add_u0
+A[0] => add_4bit:add11.a[0]
+A[1] => add_4bit:add11.a[1]
+A[2] => add_4bit:add11.a[2]
+A[3] => add_4bit:add11.a[3]
+B[0] => add_4bit:add11.b[0]
+B[1] => add_4bit:add11.b[1]
+B[2] => add_4bit:add11.b[2]
+B[3] => add_4bit:add11.b[3]
+output[0] <= <GND>
+output[1] <= <GND>
+output[2] <= <GND>
+output[3] <= <GND>
+output[4] <= add_4bit:add11.out_restraint
+
+
+|calculette|add_unsigned:add_u0|add_4bit:add11
+a[0] => add_1bit:f0.a
+a[1] => add_1bit:f1.a
+a[2] => add_1bit:f2.a
+a[3] => add_1bit:f3.a
+b[0] => add_1bit:f0.b
+b[1] => add_1bit:f1.b
+b[2] => add_1bit:f2.b
+b[3] => add_1bit:f3.b
+output[0] <= add_1bit:f0.res
+output[1] <= add_1bit:f1.res
+output[2] <= add_1bit:f2.res
+output[3] <= add_1bit:f3.res
+in_restraint => add_1bit:f0.old_restraint
+out_restraint <= add_1bit:f3.new_restraint
+
+
+|calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f0
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f1
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f2
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f3
+a => res.IN0
+a => new_restraint.IN0
+b => res.IN1
+b => new_restraint.IN1
+old_restraint => res.IN1
+old_restraint => new_restraint.IN1
+res <= res.DB_MAX_OUTPUT_PORT_TYPE
+new_restraint <= new_restraint.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|separateur_diz_unit:sep0
+input[0] => Div0.IN8
 input[0] => unite[0].DATAIN
+input[1] => Div0.IN7
 input[1] => unite[1].DATAIN
+input[2] => Div0.IN6
 input[2] => unite[2].DATAIN
+input[3] => Div0.IN5
 input[3] => unite[3].DATAIN
-dizaine[0] <= <GND>
-dizaine[1] <= <GND>
-dizaine[2] <= <GND>
-dizaine[3] <= <GND>
+input[4] => Div0.IN4
+dizaine[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 unite[0] <= input[0].DB_MAX_OUTPUT_PORT_TYPE
 unite[1] <= input[1].DB_MAX_OUTPUT_PORT_TYPE
 unite[2] <= input[2].DB_MAX_OUTPUT_PORT_TYPE
 unite[3] <= input[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|doble_7segs|seg7:seg_diz
+|calculette|separateur_diz_unit:sep1
+input[0] => Div0.IN8
+input[0] => unite[0].DATAIN
+input[1] => Div0.IN7
+input[1] => unite[1].DATAIN
+input[2] => Div0.IN6
+input[2] => unite[2].DATAIN
+input[3] => Div0.IN5
+input[3] => unite[3].DATAIN
+input[4] => Div0.IN4
+dizaine[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+unite[0] <= input[0].DB_MAX_OUTPUT_PORT_TYPE
+unite[1] <= input[1].DB_MAX_OUTPUT_PORT_TYPE
+unite[2] <= input[2].DB_MAX_OUTPUT_PORT_TYPE
+unite[3] <= input[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|separateur_diz_unit:sep2
+input[0] => Div0.IN8
+input[0] => unite[0].DATAIN
+input[1] => Div0.IN7
+input[1] => unite[1].DATAIN
+input[2] => Div0.IN6
+input[2] => unite[2].DATAIN
+input[3] => Div0.IN5
+input[3] => unite[3].DATAIN
+input[4] => Div0.IN4
+dizaine[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+dizaine[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+unite[0] <= input[0].DB_MAX_OUTPUT_PORT_TYPE
+unite[1] <= input[1].DB_MAX_OUTPUT_PORT_TYPE
+unite[2] <= input[2].DB_MAX_OUTPUT_PORT_TYPE
+unite[3] <= input[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|seg7:seg0
 number[0] => Mux0.IN19
 number[0] => Mux1.IN19
 number[0] => Mux2.IN19
 number[0] => Mux3.IN19
-number[0] => Mux4.IN19
 number[0] => Mux5.IN19
 number[0] => Mux6.IN19
 number[1] => Mux0.IN18
 number[1] => Mux1.IN18
 number[1] => Mux2.IN18
 number[1] => Mux3.IN18
-number[1] => Mux4.IN18
+number[1] => Mux4.IN10
 number[1] => Mux5.IN18
 number[1] => Mux6.IN18
 number[2] => Mux0.IN17
 number[2] => Mux1.IN17
 number[2] => Mux2.IN17
 number[2] => Mux3.IN17
-number[2] => Mux4.IN17
+number[2] => Mux4.IN9
 number[2] => Mux5.IN17
 number[2] => Mux6.IN17
 number[3] => Mux0.IN16
 number[3] => Mux1.IN16
 number[3] => Mux2.IN16
 number[3] => Mux3.IN16
-number[3] => Mux4.IN16
+number[3] => Mux4.IN8
 number[3] => Mux5.IN16
 number[3] => Mux6.IN16
 leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
@@ -58,33 +238,180 @@ leds[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 leds[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|doble_7segs|seg7:seg_unit
+|calculette|seg7:seg1
 number[0] => Mux0.IN19
 number[0] => Mux1.IN19
 number[0] => Mux2.IN19
 number[0] => Mux3.IN19
-number[0] => Mux4.IN19
 number[0] => Mux5.IN19
 number[0] => Mux6.IN19
 number[1] => Mux0.IN18
 number[1] => Mux1.IN18
 number[1] => Mux2.IN18
 number[1] => Mux3.IN18
-number[1] => Mux4.IN18
+number[1] => Mux4.IN10
 number[1] => Mux5.IN18
 number[1] => Mux6.IN18
 number[2] => Mux0.IN17
 number[2] => Mux1.IN17
 number[2] => Mux2.IN17
 number[2] => Mux3.IN17
-number[2] => Mux4.IN17
+number[2] => Mux4.IN9
 number[2] => Mux5.IN17
 number[2] => Mux6.IN17
 number[3] => Mux0.IN16
 number[3] => Mux1.IN16
 number[3] => Mux2.IN16
 number[3] => Mux3.IN16
-number[3] => Mux4.IN16
+number[3] => Mux4.IN8
+number[3] => Mux5.IN16
+number[3] => Mux6.IN16
+leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|seg7:seg2
+number[0] => Mux0.IN19
+number[0] => Mux1.IN19
+number[0] => Mux2.IN19
+number[0] => Mux3.IN19
+number[0] => Mux5.IN19
+number[0] => Mux6.IN19
+number[1] => Mux0.IN18
+number[1] => Mux1.IN18
+number[1] => Mux2.IN18
+number[1] => Mux3.IN18
+number[1] => Mux4.IN10
+number[1] => Mux5.IN18
+number[1] => Mux6.IN18
+number[2] => Mux0.IN17
+number[2] => Mux1.IN17
+number[2] => Mux2.IN17
+number[2] => Mux3.IN17
+number[2] => Mux4.IN9
+number[2] => Mux5.IN17
+number[2] => Mux6.IN17
+number[3] => Mux0.IN16
+number[3] => Mux1.IN16
+number[3] => Mux2.IN16
+number[3] => Mux3.IN16
+number[3] => Mux4.IN8
+number[3] => Mux5.IN16
+number[3] => Mux6.IN16
+leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|seg7:seg3
+number[0] => Mux0.IN19
+number[0] => Mux1.IN19
+number[0] => Mux2.IN19
+number[0] => Mux3.IN19
+number[0] => Mux5.IN19
+number[0] => Mux6.IN19
+number[1] => Mux0.IN18
+number[1] => Mux1.IN18
+number[1] => Mux2.IN18
+number[1] => Mux3.IN18
+number[1] => Mux4.IN10
+number[1] => Mux5.IN18
+number[1] => Mux6.IN18
+number[2] => Mux0.IN17
+number[2] => Mux1.IN17
+number[2] => Mux2.IN17
+number[2] => Mux3.IN17
+number[2] => Mux4.IN9
+number[2] => Mux5.IN17
+number[2] => Mux6.IN17
+number[3] => Mux0.IN16
+number[3] => Mux1.IN16
+number[3] => Mux2.IN16
+number[3] => Mux3.IN16
+number[3] => Mux4.IN8
+number[3] => Mux5.IN16
+number[3] => Mux6.IN16
+leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|seg7:seg4
+number[0] => Mux0.IN19
+number[0] => Mux1.IN19
+number[0] => Mux2.IN19
+number[0] => Mux3.IN19
+number[0] => Mux5.IN19
+number[0] => Mux6.IN19
+number[1] => Mux0.IN18
+number[1] => Mux1.IN18
+number[1] => Mux2.IN18
+number[1] => Mux3.IN18
+number[1] => Mux4.IN10
+number[1] => Mux5.IN18
+number[1] => Mux6.IN18
+number[2] => Mux0.IN17
+number[2] => Mux1.IN17
+number[2] => Mux2.IN17
+number[2] => Mux3.IN17
+number[2] => Mux4.IN9
+number[2] => Mux5.IN17
+number[2] => Mux6.IN17
+number[3] => Mux0.IN16
+number[3] => Mux1.IN16
+number[3] => Mux2.IN16
+number[3] => Mux3.IN16
+number[3] => Mux4.IN8
+number[3] => Mux5.IN16
+number[3] => Mux6.IN16
+leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculette|seg7:seg5
+number[0] => Mux0.IN19
+number[0] => Mux1.IN19
+number[0] => Mux2.IN19
+number[0] => Mux3.IN19
+number[0] => Mux5.IN19
+number[0] => Mux6.IN19
+number[1] => Mux0.IN18
+number[1] => Mux1.IN18
+number[1] => Mux2.IN18
+number[1] => Mux3.IN18
+number[1] => Mux4.IN10
+number[1] => Mux5.IN18
+number[1] => Mux6.IN18
+number[2] => Mux0.IN17
+number[2] => Mux1.IN17
+number[2] => Mux2.IN17
+number[2] => Mux3.IN17
+number[2] => Mux4.IN9
+number[2] => Mux5.IN17
+number[2] => Mux6.IN17
+number[3] => Mux0.IN16
+number[3] => Mux1.IN16
+number[3] => Mux2.IN16
+number[3] => Mux3.IN16
+number[3] => Mux4.IN8
 number[3] => Mux5.IN16
 number[3] => Mux6.IN16
 leds[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE

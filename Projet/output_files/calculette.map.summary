@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Sep 14 20:37:25 2021
+Analysis & Synthesis Status : Successful - Wed Sep 15 00:18:01 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette
-Top-level Entity Name : doble_7segs
+Top-level Entity Name : calculette
 Family : MAX 10
-Total logic elements : 0
-    Total combinational functions : 0
+Total logic elements : 27
+    Total combinational functions : 27
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 4
+Total pins : 55
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette
-Tue Sep 14 20:37:25 2021
+Wed Sep 15 00:18:01 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,11 +14,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "seg7:seg_unit"
- 10. Port Connectivity Checks: "seg7:seg_diz"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Parameter Settings for Inferred Entity Instance: separateur_diz_unit:sep1|lpm_divide:Div0
+ 10. Parameter Settings for Inferred Entity Instance: separateur_diz_unit:sep2|lpm_divide:Div0
+ 11. Port Connectivity Checks: "separateur_diz_unit:sep2"
+ 12. Port Connectivity Checks: "separateur_diz_unit:sep1"
+ 13. Port Connectivity Checks: "add_unsigned:add_u0|add_4bit:add11"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 14 20:37:25 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 15 00:18:01 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette                                  ;
-; Top-level Entity Name              ; doble_7segs                                 ;
+; Top-level Entity Name              ; calculette                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 27                                          ;
+;     Total combinational functions  ; 27                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 4                                           ;
+; Total pins                         ; 55                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -69,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; doble_7segs        ; calculette         ;
+; Top-level entity name                                            ; calculette         ; calculette         ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
@@ -169,57 +172,86 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; leds_7segs.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd         ;         ;
-; add_4bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd           ;         ;
-; add_1bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd           ;         ;
-; doble_7seg.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd         ;         ;
-; separator_diz_unit.vhd           ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; leds_7segs.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd             ;         ;
+; add_4bit.vhd                     ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd               ;         ;
+; add_1bit.vhd                     ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd               ;         ;
+; doble_7seg.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd             ;         ;
+; separator_diz_unit.vhd           ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd     ;         ;
+; test_add.vhd                     ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd               ;         ;
+; calculette.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; db/lpm_divide_6sl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/lpm_divide_6sl.tdf      ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/sign_div_unsign_8kh.tdf ;         ;
+; db/alt_u_div_qee.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/alt_u_div_qee.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/add_sub_u3c.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-;                                             ;          ;
-; Total combinational functions               ; 0        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 0        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 4        ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; input[0] ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 4        ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 27            ;
+;                                             ;               ;
+; Total combinational functions               ; 27            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 13            ;
+;     -- 3 input functions                    ; 4             ;
+;     -- <=2 input functions                  ; 10            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 19            ;
+;     -- arithmetic mode                      ; 8             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 55            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; opeA[3]~input ;
+; Maximum fan-out                             ; 9             ;
+; Total fan-out                               ; 160           ;
+; Average fan-out                             ; 1.17          ;
++---------------------------------------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |doble_7segs               ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |doble_7segs        ; doble_7segs ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                        ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                  ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |calculette                               ; 27 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |calculette                                                                                                                          ; calculette          ; work         ;
+;    |add_unsigned:add_u0|                  ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|add_unsigned:add_u0                                                                                                      ; add_unsigned        ; work         ;
+;       |add_4bit:add11|                    ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|add_unsigned:add_u0|add_4bit:add11                                                                                       ; add_4bit            ; work         ;
+;          |add_1bit:f1|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f1                                                                           ; add_1bit            ; work         ;
+;          |add_1bit:f2|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f2                                                                           ; add_1bit            ; work         ;
+;          |add_1bit:f3|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|add_unsigned:add_u0|add_4bit:add11|add_1bit:f3                                                                           ; add_1bit            ; work         ;
+;    |seg7:seg1|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|seg7:seg1                                                                                                                ; seg7                ; work         ;
+;    |seg7:seg3|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|seg7:seg3                                                                                                                ; seg7                ; work         ;
+;    |separateur_diz_unit:sep1|             ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep1                                                                                                 ; separateur_diz_unit ; work         ;
+;       |lpm_divide:Div0|                   ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep1|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_6sl:auto_generated|  ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep1|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep1|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;                |alt_u_div_qee:divider|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep1|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |separateur_diz_unit:sep2|             ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep2                                                                                                 ; separateur_diz_unit ; work         ;
+;       |lpm_divide:Div0|                   ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep2|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_6sl:auto_generated|  ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep2|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep2|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;                |alt_u_div_qee:divider|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calculette|separateur_diz_unit:sep2|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -238,34 +270,99 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "seg7:seg_unit"                                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; leds ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: separateur_diz_unit:sep1|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "seg7:seg_diz"                                                                       ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; leds ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: separateur_diz_unit:sep2|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "separateur_diz_unit:sep2" ;
++----------+-------+----------+------------------------+
+; Port     ; Type  ; Severity ; Details                ;
++----------+-------+----------+------------------------+
+; input[4] ; Input ; Info     ; Stuck at GND           ;
++----------+-------+----------+------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "separateur_diz_unit:sep1" ;
++----------+-------+----------+------------------------+
+; Port     ; Type  ; Severity ; Details                ;
++----------+-------+----------+------------------------+
+; input[4] ; Input ; Info     ; Stuck at GND           ;
++----------+-------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "add_unsigned:add_u0|add_4bit:add11"                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; output       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; in_restraint ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 4                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 55                          ;
+; cycloneiii_lcell_comb ; 33                          ;
+;     arith             ; 8                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 6                           ;
+;     normal            ; 25                          ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 4                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 13                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.92                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -283,7 +380,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Sep 14 20:37:16 2021
+    Info: Processing started: Wed Sep 15 00:17:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette -c calculette
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -297,28 +394,77 @@ Info (12021): Found 2 design units, including 1 entities, in source file add_1bi
     Info (12022): Found design unit 1: add_1bit-archi_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 10
     Info (12023): Found entity 1: add_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file doble_7seg.vhd
-    Info (12022): Found design unit 1: doble_7segs-archi_doble_7segs File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 11
+    Info (12022): Found design unit 1: doble_7segs-archi_doble_7segs File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 12
     Info (12023): Found entity 1: doble_7segs File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file separator_diz_unit.vhd
     Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 11
     Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 5
-Info (12127): Elaborating entity "doble_7segs" for the top level hierarchy
-Info (12129): Elaborating entity "separateur_diz_unit" using architecture "A:archi_sep_diz_unit" for hierarchy "separateur_diz_unit:sep1" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 14
-Info (12129): Elaborating entity "seg7" using architecture "A:archi_seg7" for hierarchy "seg7:seg_diz" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 17
+Warning (12019): Can't analyze file -- file test_affichage.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file test_add.vhd
+    Info (12022): Found design unit 1: add_unsigned-archi_affichage_test File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 11
+    Info (12023): Found entity 1: add_unsigned File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file calculette.vhd
+    Info (12022): Found design unit 1: calculette-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 12
+    Info (12023): Found entity 1: calculette File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 5
+Info (12127): Elaborating entity "calculette" for the top level hierarchy
+Info (12128): Elaborating entity "add_unsigned" for hierarchy "add_unsigned:add_u0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 18
+Warning (10873): Using initial value X (don't care) for net "output[3..0]" at test_add.vhd(7) File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 7
+Info (12129): Elaborating entity "add_4bit" using architecture "A:archi_4bits" for hierarchy "add_unsigned:add_u0|add_4bit:add11" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 13
+Info (12129): Elaborating entity "add_1bit" using architecture "A:archi_1bit" for hierarchy "add_unsigned:add_u0|add_4bit:add11|add_1bit:f0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 16
+Info (12128): Elaborating entity "separateur_diz_unit" for hierarchy "separateur_diz_unit:sep0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at separator_diz_unit.vhd(14): object "unit" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 14
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:seg0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 70
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "separateur_diz_unit:sep1|Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 17
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "separateur_diz_unit:sep2|Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 17
+Info (12130): Elaborated megafunction instantiation "separateur_diz_unit:sep1|lpm_divide:Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 17
+Info (12133): Instantiated megafunction "separateur_diz_unit:sep1|lpm_divide:Div0" with the following parameter: File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 17
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6sl.tdf
+    Info (12023): Found entity 1: lpm_divide_6sl File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/lpm_divide_6sl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/sign_div_unsign_8kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qee.tdf
+    Info (12023): Found entity 1: alt_u_div_qee File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/alt_u_div_qee.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/db/add_sub_u3c.tdf Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledsA0[1]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsA0[2]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsA0[6]" is stuck at VCC File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsB0[1]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsB0[2]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsB0[6]" is stuck at VCC File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes0[1]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes0[2]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes0[6]" is stuck at VCC File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[0]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[1]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[2]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[3]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[4]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[5]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "ledsRes1[6]" is stuck at VCC File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 7
+    Warning (13410): Pin "outputleds[1]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 8
+    Warning (13410): Pin "outputleds[2]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 8
+    Warning (13410): Pin "outputleds[3]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 8
+    Warning (13410): Pin "outputleds[4]" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 8
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "input[0]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 7
-    Warning (15610): No output dependent on input pin "input[1]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 7
-    Warning (15610): No output dependent on input pin "input[2]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 7
-    Warning (15610): No output dependent on input pin "input[3]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/doble_7seg.vhd Line: 7
-Info (21057): Implemented 4 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Tue Sep 14 20:37:25 2021
-    Info: Elapsed time: 00:00:09
+Info (21057): Implemented 82 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 27 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Wed Sep 15 00:18:01 2021
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:16
 
 
