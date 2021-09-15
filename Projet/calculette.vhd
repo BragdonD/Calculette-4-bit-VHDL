@@ -30,15 +30,9 @@ begin
 	--separateur dizaine/unit
 	
 	--separateur du resultat
-	sep0 : entity separateur_diz_unit
-		port map
-		(
-			--input 
-			input => output_add,
-			--output
-			dizaine => dizRes,
-			unite => unitRes
-		);
+	sep0 : entity work.separateur_diz_unit(archi_sep_diz_unit)
+		port map(output_add,dizres,unitRes);
+		
 		
 	--separateur de l'ope A
 	sep1 : entity separateur_diz_unit
@@ -126,6 +120,6 @@ begin
 			leds => ledsRes1
 		);
 		
-		outputleds <= "0" & dizRes;
+		outputleds <= "0" & unitRes;
 end behavioral;
 	
