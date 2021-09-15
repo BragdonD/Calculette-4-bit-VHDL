@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Sep 15 07:55:21 2021
+Analysis & Synthesis Status : Successful - Wed Sep 15 11:50:09 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette
-Top-level Entity Name : separateur_diz_unit
+Top-level Entity Name : calculette
 Family : MAX 10
-Total logic elements : 50
-    Total combinational functions : 50
+Total logic elements : 32
+    Total combinational functions : 32
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 14
+Total pins : 50
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

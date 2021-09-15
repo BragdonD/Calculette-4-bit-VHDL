@@ -4,8 +4,9 @@ use work.all;
 
 entity calculette is
 	port( opeA, opeB : in std_logic_vector(3 downto 0); ---add to_do later to choose the ope to do
-			ledsA0, ledsB0, ledsRes0, ledsA1, ledsB1, ledsRes1 : out std_logic_vector(6 downto 0);
-			outputleds : out std_logic_vector(4 downto 0)
+			ledsA0, ledsB0, ledsRes0, ledsA1, ledsB1, ledsRes1 : out std_logic_vector(6 downto 0)        
+			
+			--outputleds : out std_logic_vector(4 downto 0)
 		);
 end;
 
@@ -20,7 +21,7 @@ begin
 		(
 			--inputs
 			A => opeA,
-			B => opeB,
+			B => "0110",
 			--output
 			output => output_add
 		);
@@ -120,6 +121,6 @@ begin
 			leds => ledsRes1
 		);
 		
-		outputleds <= "0" & unitRes;
+		--outputleds <= "0" & unitRes;
 end behavioral;
 	
