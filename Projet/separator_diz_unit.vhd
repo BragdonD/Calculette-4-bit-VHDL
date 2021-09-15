@@ -11,7 +11,7 @@ end;
 architecture archi_sep_diz_unit of separateur_diz_unit is
 	signal transformed_input, diz,unit : integer;
 begin
-	transformed_input <= to_integer(unsigned(input));
+	transformed_input <= to_integer(signed(input));
 	diz <= transformed_input/10;
 	unit <= transformed_input - diz*10;
 	unite <= std_logic_vector(to_unsigned(transformed_input, 4));

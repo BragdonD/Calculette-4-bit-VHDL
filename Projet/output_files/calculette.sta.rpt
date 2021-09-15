@@ -1,5 +1,5 @@
 Timing Analyzer report for calculette
-Wed Sep 15 07:44:45 2021
+Wed Sep 15 07:55:31 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -257,11 +257,11 @@ No synchronizer chains to report.
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
 ; input[5]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; input[4]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; input[3]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; input[2]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; input[1]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; input[0]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; input[1]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; input[2]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; input[3]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; input[4]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -349,9 +349,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 6     ; 6    ;
-; Unconstrained Input Port Paths  ; 16    ; 16   ;
-; Unconstrained Output Ports      ; 7     ; 7    ;
-; Unconstrained Output Port Paths ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 28    ; 28   ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 28    ; 28   ;
 +---------------------------------+-------+------+
 
 
@@ -377,6 +377,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; dizaine[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dizaine[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dizaine[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dizaine[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -406,6 +407,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; dizaine[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dizaine[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dizaine[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dizaine[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; unite[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -419,7 +421,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 15 07:44:44 2021
+    Info: Processing started: Wed Sep 15 07:55:29 2021
 Info: Command: quartus_sta calculette -c calculette
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -468,9 +470,9 @@ Info (332140): No Minimum Pulse Width paths to report
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Wed Sep 15 07:44:45 2021
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4862 megabytes
+    Info: Processing ended: Wed Sep 15 07:55:31 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
