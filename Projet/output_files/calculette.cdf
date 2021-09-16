@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet/output_files/") File("calculette.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/output_files/") File("calculette.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
