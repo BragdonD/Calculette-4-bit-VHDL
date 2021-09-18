@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.all;
+
+entity calculateur is 
+	port( A, B : in std_logic_vector(3 downto 0);
+			CLA, mode, operation, reset : in std_logic
+			resultat : out std_logic_vector(3 downto 0);
+			error: out std_logic;
+); end;
+
+
+architecture archi_calcu of calculateur is
+	signal OPA_cla_temp, OPB_cla_temp, ope_in1_temp, ope_in2_temp : std_logic_vector(3 downto 0);
+	signal resAdd, resMultiplication : std_logic_vector(3 downto 0);
+begin
+	Cla_choice : entity work.use_cla(archi_use_cla)
+		port map
+		(
+			CLA => CLA,
+			OPerande1 => A,
+			OPerande2 => B,
+			CLA_input1 => OPA_cla_temp,
+			CLA_input2 => OPB_cla_temp,
+			Operation_input1 => ope_in1_temp,
+			Operation_input2 => ope_in2_temp
+		);
+
+	additionneur0 : entity work.add4_bits(archi_add4bits)
+		port map
+		(
+			operande1 => ope_in1_temp,
+			operande2 => ope_in2_temp,
+			mode => mode,
+			Res => resAdd,
+			error => error
+		);
+
+	process(resAdd, resMultiplication)
+	begin
+		if((operation = '0') and (cla ='0')) then 
+			resultat <= resAdd;
+		else if((operation = '1') and (cla = '1'))
+			resultat <= resMultiplication;
+		else	
+			resultat <= "0000";
+			error <= '1';
+		end if;
+	end process;
+end archi_calcu;
