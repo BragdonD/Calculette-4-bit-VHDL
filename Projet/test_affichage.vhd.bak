@@ -1,0 +1,15 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE work.ALL;
+
+entity affichage_test is
+	port( A : in std_logic_vector(4 downto 0)
+			);
+end affichage_test;
+
+architecture archi_affichage_test of affichage_test is
+begin
+	A <= "1111";
+	affichage1: entity work.doble_7segs(archi_doble_7segs)
+		port map(A);
+end archi_affichage_test;

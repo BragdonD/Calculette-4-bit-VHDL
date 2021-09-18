@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.all;
+
+entity affichage_test is
+	port(	A, B : in std_logic_vector(3 downto 0);
+			output : out std_logic_vector(4 downto 0);
+			);
+end affichage_test;
+
+architecture archi_affichage_test of affichage_test is
+begin
+	test1: entity work.add_4bit(archi_4bits)
+		port map
+		(
+			-- inputs add_4bits
+			a => A,
+			b => B,
+			in_restraint => '0',
+			-- output add_4bits
+			out_restraint => output(4)
+		);
+			
+			
+end archi_affichage_test;

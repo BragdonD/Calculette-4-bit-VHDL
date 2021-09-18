@@ -10,22 +10,50 @@ entity add_4bit is
 			);
 end add_4bit;
 
-architecture behavioral of add_4bit is
+architecture archi_4bits of add_4bit is
 	signal restraint1, restraint2, restraint3 : std_logic;
 begin
 	f0 : entity work.add_1bit(archi_1bit)
-		port map(a(0),b(0),in_restraint,output(0),restraint1);
+		port map
+		(
+			a => a(0),
+			b => b(0),
+			old_restraint => in_restraint,
+			res => output(0),
+			new_restraint => restraint1
+		);
 		
 	f1 : entity work.add_1bit(archi_1bit)
-		port map(a(1),b(1),restraint1,output(1),restraint2);
+		port map
+		(
+			a => a(1),
+			b => b(1),
+			old_restraint => restraint1,
+			res => output(1),
+			new_restraint => restraint2
+		);
 		
 	f2 : entity work.add_1bit(archi_1bit)
-		port map(a(2),b(2),restraint2,output(2),restraint3);
+		port map
+		(
+			a => a(2),
+			b => b(2),
+			old_restraint => restraint2,
+			res => output(2),
+			new_restraint => restraint3
+		);
 		
 	f3 : entity work.add_1bit(archi_1bit)
-		port map(a(3),b(3),restraint3,output(3),out_restraint);
+		port map
+		(
+			a => a(3),
+			b => b(3),
+			old_restraint => restraint3,
+			res => output(3),
+			new_restraint => out_restraint
+		);
 		
-end behavioral;
+end archi_4bits;
 	
 
 

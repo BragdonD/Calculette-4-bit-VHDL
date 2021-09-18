@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY seg7
+set_global_assignment -name TOP_LEVEL_ENTITY add_soustr_4bits
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:46:04  SEPTEMBER 13, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -60,7 +60,29 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE leds_7segs.vhd
 set_global_assignment -name VHDL_FILE add_4bit.vhd
 set_global_assignment -name VHDL_FILE add_1bit.vhd
+set_global_assignment -name VHDL_FILE doble_7seg.vhd
+set_global_assignment -name VHDL_FILE separator_diz_unit.vhd
+set_global_assignment -name VHDL_FILE test_affichage.vhd
+set_global_assignment -name VHDL_FILE test_add.vhd
+set_global_assignment -name VHDL_FILE calculette.vhd
+set_global_assignment -name VHDL_FILE cmplt_1.vhd
+set_global_assignment -name VHDL_FILE cmplt_2.vhd
+set_global_assignment -name VHDL_FILE add_soustr_4bits.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_W10 -to in_A[3]
+set_location_assignment PIN_W9 -to in_A[2]
+set_location_assignment PIN_W8 -to in_A[1]
+set_location_assignment PIN_W7 -to in_A[0]
+set_location_assignment PIN_V10 -to in_B[3]
+set_location_assignment PIN_V9 -to in_B[2]
+set_location_assignment PIN_V8 -to in_B[1]
+set_location_assignment PIN_V7 -to in_B[0]
+set_location_assignment PIN_AA2 -to operation
+set_location_assignment PIN_D13 -to out_signs
+set_location_assignment PIN_B10 -to output[3]
+set_location_assignment PIN_A10 -to output[2]
+set_location_assignment PIN_A9 -to output[1]
+set_location_assignment PIN_A8 -to output[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

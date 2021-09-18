@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette
-Mon Sep 13 21:45:34 2021
+Thu Sep 16 16:47:19 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,16 +42,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 13 21:45:34 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 16 16:47:19 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette                                  ;
-; Top-level Entity Name              ; seg7                                        ;
+; Top-level Entity Name              ; add_soustr_4bits                            ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 7                                           ;
-;     Total combinational functions  ; 7                                           ;
+; Total logic elements               ; 10                                          ;
+;     Total combinational functions  ; 10                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 11                                          ;
+; Total pins                         ; 14                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; seg7               ; calculette         ;
+; Top-level entity name                                            ; add_soustr_4bits   ; calculette         ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
@@ -167,13 +167,21 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; leds_7segs.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; leds_7segs.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd         ;         ;
+; add_4bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd           ;         ;
+; add_1bit.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd           ;         ;
+; separator_diz_unit.vhd           ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd ;         ;
+; test_add.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd           ;         ;
+; calculette.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd         ;         ;
+; cmplt_1.vhd                      ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_1.vhd            ;         ;
+; cmplt_2.vhd                      ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_2.vhd            ;         ;
+; add_soustr_4bits.vhd             ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_soustr_4bits.vhd   ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------+
@@ -181,40 +189,45 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 7               ;
+; Estimated Total logic elements              ; 10              ;
 ;                                             ;                 ;
-; Total combinational functions               ; 7               ;
+; Total combinational functions               ; 10              ;
 ; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 7               ;
-;     -- 3 input functions                    ; 0               ;
-;     -- <=2 input functions                  ; 0               ;
+;     -- 4 input functions                    ; 6               ;
+;     -- 3 input functions                    ; 2               ;
+;     -- <=2 input functions                  ; 2               ;
 ;                                             ;                 ;
 ; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 7               ;
+;     -- normal mode                          ; 10              ;
 ;     -- arithmetic mode                      ; 0               ;
 ;                                             ;                 ;
 ; Total registers                             ; 0               ;
 ;     -- Dedicated logic registers            ; 0               ;
 ;     -- I/O registers                        ; 0               ;
 ;                                             ;                 ;
-; I/O pins                                    ; 11              ;
+; I/O pins                                    ; 14              ;
 ;                                             ;                 ;
 ; Embedded Multiplier 9-bit elements          ; 0               ;
 ;                                             ;                 ;
-; Maximum fan-out node                        ; number[0]~input ;
+; Maximum fan-out node                        ; operation~input ;
 ; Maximum fan-out                             ; 7               ;
-; Total fan-out                               ; 46              ;
-; Average fan-out                             ; 1.59            ;
+; Total fan-out                               ; 53              ;
+; Average fan-out                             ; 1.39            ;
 +---------------------------------------------+-----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |seg7                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |seg7               ; seg7        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                         ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+------------------+--------------+
+; |add_soustr_4bits          ; 10 (1)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 14   ; 0            ; 0          ; |add_soustr_4bits                           ; add_soustr_4bits ; work         ;
+;    |add_4bit:add0|         ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_soustr_4bits|add_4bit:add0             ; add_4bit         ; work         ;
+;       |add_1bit:f0|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_soustr_4bits|add_4bit:add0|add_1bit:f0 ; add_1bit         ; work         ;
+;       |add_1bit:f1|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_soustr_4bits|add_4bit:add0|add_1bit:f1 ; add_1bit         ; work         ;
+;       |add_1bit:f2|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_soustr_4bits|add_4bit:add0|add_1bit:f2 ; add_1bit         ; work         ;
+;       |add_1bit:f3|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |add_soustr_4bits|add_4bit:add0|add_1bit:f3 ; add_1bit         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -238,14 +251,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 11                          ;
-; cycloneiii_lcell_comb ; 8                           ;
-;     normal            ; 8                           ;
+; boundary_port         ; 14                          ;
+; cycloneiii_lcell_comb ; 11                          ;
+;     normal            ; 11                          ;
 ;         1 data inputs ; 1                           ;
-;         4 data inputs ; 7                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.50                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -264,7 +279,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 13 21:45:27 2021
+    Info: Processing started: Thu Sep 16 16:47:11 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette -c calculette
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -272,23 +287,46 @@ Info (12021): Found 2 design units, including 1 entities, in source file leds_7s
     Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd Line: 11
     Info (12023): Found entity 1: seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/leds_7segs.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file add_4bit.vhd
-    Info (12022): Found design unit 1: add_4bit-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 13
+    Info (12022): Found design unit 1: add_4bit-archi_4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 13
     Info (12023): Found entity 1: add_4bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file add_1bit.vhd
     Info (12022): Found design unit 1: add_1bit-archi_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 10
     Info (12023): Found entity 1: add_1bit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_1bit.vhd Line: 4
-Info (12127): Elaborating entity "seg7" for the top level hierarchy
+Warning (12019): Can't analyze file -- file doble_7seg.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file separator_diz_unit.vhd
+    Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 11
+    Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/separator_diz_unit.vhd Line: 5
+Warning (12019): Can't analyze file -- file test_affichage.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file test_add.vhd
+    Info (12022): Found design unit 1: add_unsigned-archi_affichage_test File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 11
+    Info (12023): Found entity 1: add_unsigned File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/test_add.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file calculette.vhd
+    Info (12022): Found design unit 1: calculette-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 13
+    Info (12023): Found entity 1: calculette File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/calculette.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cmplt_1.vhd
+    Info (12022): Found design unit 1: complement_1-archi_complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_1.vhd Line: 11
+    Info (12023): Found entity 1: complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cmplt_2.vhd
+    Info (12022): Found design unit 1: complement_2-archi_complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_2.vhd Line: 11
+    Info (12023): Found entity 1: complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/cmplt_2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file add_soustr_4bits.vhd
+    Info (12022): Found design unit 1: add_soustr_4bits-archi_add_soustr_4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_soustr_4bits.vhd Line: 16
+    Info (12023): Found entity 1: add_soustr_4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_soustr_4bits.vhd Line: 5
+Info (12127): Elaborating entity "add_soustr_4bits" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at add_soustr_4bits.vhd(26): signal "operation" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_soustr_4bits.vhd Line: 26
+Info (12129): Elaborating entity "add_4bit" using architecture "A:archi_4bits" for hierarchy "add_4bit:add0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_soustr_4bits.vhd Line: 31
+Info (12129): Elaborating entity "add_1bit" using architecture "A:archi_1bit" for hierarchy "add_4bit:add0|add_1bit:f0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet/add_4bit.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4793 megabytes
-    Info: Processing ended: Mon Sep 13 21:45:34 2021
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:15
+Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 10 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Thu Sep 16 16:47:19 2021
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 

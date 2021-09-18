@@ -4,47 +4,59 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "leds[0]",
+					"name" : "output[0]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[1]",
+					"name" : "output[1]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[2]",
+					"name" : "output[2]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[3]",
+					"name" : "output[3]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[4]",
+					"name" : "out_signs",
 					"strict" : false
 				},
 				{
-					"name" : "leds[5]",
+					"name" : "in_A[0]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[6]",
+					"name" : "in_B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "number[0]",
+					"name" : "in_A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "number[1]",
+					"name" : "in_B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "number[2]",
+					"name" : "operation",
 					"strict" : false
 				},
 				{
-					"name" : "number[3]",
+					"name" : "in_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in_B[3]",
 					"strict" : false
 				}
 			]
