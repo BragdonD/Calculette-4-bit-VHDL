@@ -12,20 +12,32 @@ entity calculateur is
 
 
 architecture archi_calcu of calculateur is
-	signal resAdd, resMultiplication, resCLA : std_logic_vector(3 downto 0);
+	signal resAdd, resMulti, resCLA : std_logic_vector(3 downto 0);
+	signal errorAdd, errorMulti, errorCLA : std_logic;
 begin
 	--temporaire
 	resCLA <= "0000";
-	resMultiplication <= "0000";
+	errorCLA <= '0';
 	
-	additionneur0 : entity work.add4_bits(archi_add4bits)
+	additionneur0 : entity work.full_add_comp(archi_full_add_comp)
 		port map
 		(
-			operande1 => A,
-			operande2 => B,
+			A => A,
+			B => B,
 			mode => mode,
 			Res => resAdd,
-			error => error
+			error => errorAdd
+		);
+		
+	multiplicateur0 : entity work.full_multi_comp(archi_full_multi_comp)
+		port map
+		(
+			A => A,
+			B => B,
+			mode => mode,
+			Res => resMulti,
+			error => errorMulti
+		
 		);
 	
 	MuxAfficheur : entity work.choix_display(archi_choix_display)
@@ -33,7 +45,7 @@ begin
 		(
 			ResAdd => resAdd,
 			ResCLA => resCLA,
-			ResMulti => resMultiplication,
+			ResMulti => resMulti,
 			mode => mode,
 			CLA => CLA,
 			Reset => reset,
@@ -41,7 +53,18 @@ begin
 			Resultat => resultat,
 			ModesOut => modesOut
 		);
-	
+		
+	MuxError : entity work.Mux3vers1(archi_Mux3vers1)
+		port map
+		(
+			IN0 => errorAdd,
+			IN1 => errorMulti,
+			IN2 => errorCLA,
+			SEL0 => mode,
+			SEL1 => operation,
+			OUTPUT => error
+		);
+		
 end archi_calcu;
 
 

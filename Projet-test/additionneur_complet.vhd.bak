@@ -1,0 +1,48 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.all;
+
+entity full_add_comp is
+port( A, B : in std_logic_vector(3 downto 0);	--les deux opérandes
+		mode : in std_logic; 												--nous permettra de check le signe des deux opérandes
+		Res : out std_logic_vector(3 downto 0);
+		error : out std_logic
+); end;
+
+architecture archi_full_add_comp of full_add_comp is
+ signal ResAdd : std_logic_vector(3 downto 0);
+begin
+
+	additionneur0 : entity work.add4_bits(archi_add4bits)
+		port map
+		(
+			operande1 => A,
+			operande2 => B,
+			mode => mode,
+			Res => resAdd,
+			error => error
+		);
+
+	verif0 : entity work.verif_add(archi_verif_add)
+		port map
+		(
+			ResAdd 
+			mode
+			Cin => 
+			ResVerif => Res,
+			error => error
+			
+			
+			
+ResAdd : in std_logic_vector(3 downto 0);							--Resultat de l'operation sera mis a 0000 si erreur
+			mode : in std_logic;
+			Cin : in std_logic;
+			ResVerif : out std_logic_vector(3downto 0);
+			error : out std_logic
+			
+			
+			
+operande1, operande2 : in std_logic_vector(3 downto 0);	--les deux opérandes
+			mode : in std_logic; 												--nous permettra de check le signe des deux opérandes
+			Res : out std_logic_vector(3 downto 0);							--Resultat de l'operation sera mis a 0000 si erreur
+			Cout : out std_logic	
