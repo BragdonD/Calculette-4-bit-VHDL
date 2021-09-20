@@ -1,0 +1,22 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  max10
+Quartus root          :  d:/intel-fpga-complete/intel-fpga/quartus/bin64/
+Quartus sim root      :  d:/intel-fpga-complete/intel-fpga/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  calculette_v3.vho
+Sim SDF file          :  calculette_v3__vhdl.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script d:/intel-fpga-complete/intel-fpga/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Info: Spawning ModelSim-Altera Simulation software 
+Info: NativeLink simulation flow was successful

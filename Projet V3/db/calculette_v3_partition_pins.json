@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "erorTotale",
+					"strict" : false
+				},
+				{
+					"name" : "CoutAdd",
+					"strict" : false
+				},
+				{
+					"name" : "ASigned",
+					"strict" : false
+				},
+				{
+					"name" : "BSigned",
+					"strict" : false
+				},
+				{
+					"name" : "ResSigned",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
