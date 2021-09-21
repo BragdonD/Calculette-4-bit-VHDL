@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "09/20/2021 20:47:06"
+-- DATE "09/21/2021 21:19:04"
 
 -- 
 -- Device: Altera 10M08DAF484I7G Package FBGA484
@@ -85,25 +85,39 @@ LIBRARY IEEE;
 USE FIFTYFIVENM.FIFTYFIVENM_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	ErorControlAdd IS
+ENTITY 	preCLA IS
     PORT (
-	ASigned : IN std_logic;
-	BSigned : IN std_logic;
-	ResSigned : IN std_logic;
-	CoutAdd : IN std_logic;
-	erorTotale : OUT std_logic
+	OpeA : IN std_logic_vector(3 DOWNTO 0);
+	OpeB : IN std_logic_vector(3 DOWNTO 0);
+	operation : IN std_logic;
+	mode : IN std_logic;
+	CLAOpeAOut : OUT std_logic_vector(3 DOWNTO 0);
+	CLAOpeBOut : OUT std_logic_vector(3 DOWNTO 0)
 	);
-END ErorControlAdd;
+END preCLA;
 
 -- Design Ports Information
--- erorTotale	=>  Location: PIN_R4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CoutAdd	=>  Location: PIN_P4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ASigned	=>  Location: PIN_V4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- BSigned	=>  Location: PIN_T1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ResSigned	=>  Location: PIN_P1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeAOut[0]	=>  Location: PIN_D3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeAOut[1]	=>  Location: PIN_K8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeAOut[2]	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeAOut[3]	=>  Location: PIN_G3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeBOut[0]	=>  Location: PIN_H4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeBOut[1]	=>  Location: PIN_H3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeBOut[2]	=>  Location: PIN_K2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLAOpeBOut[3]	=>  Location: PIN_J4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- mode	=>  Location: PIN_P14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeA[0]	=>  Location: PIN_J3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- operation	=>  Location: PIN_L2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeA[1]	=>  Location: PIN_L9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeA[2]	=>  Location: PIN_K9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeA[3]	=>  Location: PIN_K6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeB[1]	=>  Location: PIN_K5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeB[0]	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeB[2]	=>  Location: PIN_K4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- OpeB[3]	=>  Location: PIN_F4,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF ErorControlAdd IS
+ARCHITECTURE structure OF preCLA IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -113,21 +127,50 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_ASigned : std_logic;
-SIGNAL ww_BSigned : std_logic;
-SIGNAL ww_ResSigned : std_logic;
-SIGNAL ww_CoutAdd : std_logic;
-SIGNAL ww_erorTotale : std_logic;
+SIGNAL ww_OpeA : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_OpeB : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_operation : std_logic;
+SIGNAL ww_mode : std_logic;
+SIGNAL ww_CLAOpeAOut : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_CLAOpeBOut : std_logic_vector(3 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \mode~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
-SIGNAL \erorTotale~output_o\ : std_logic;
-SIGNAL \CoutAdd~input_o\ : std_logic;
-SIGNAL \BSigned~input_o\ : std_logic;
-SIGNAL \ResSigned~input_o\ : std_logic;
-SIGNAL \ASigned~input_o\ : std_logic;
-SIGNAL \erorTotale~0_combout\ : std_logic;
+SIGNAL \CLAOpeAOut[0]~output_o\ : std_logic;
+SIGNAL \CLAOpeAOut[1]~output_o\ : std_logic;
+SIGNAL \CLAOpeAOut[2]~output_o\ : std_logic;
+SIGNAL \CLAOpeAOut[3]~output_o\ : std_logic;
+SIGNAL \CLAOpeBOut[0]~output_o\ : std_logic;
+SIGNAL \CLAOpeBOut[1]~output_o\ : std_logic;
+SIGNAL \CLAOpeBOut[2]~output_o\ : std_logic;
+SIGNAL \CLAOpeBOut[3]~output_o\ : std_logic;
+SIGNAL \operation~input_o\ : std_logic;
+SIGNAL \OpeA[0]~input_o\ : std_logic;
+SIGNAL \CLAOpeAOut~0_combout\ : std_logic;
+SIGNAL \OpeA[1]~input_o\ : std_logic;
+SIGNAL \CLAOpeAOut~1_combout\ : std_logic;
+SIGNAL \OpeA[2]~input_o\ : std_logic;
+SIGNAL \CLAOpeAOut~2_combout\ : std_logic;
+SIGNAL \OpeA[3]~input_o\ : std_logic;
+SIGNAL \OpeB[2]~input_o\ : std_logic;
+SIGNAL \OpeB[3]~input_o\ : std_logic;
+SIGNAL \erorOverflow~1_combout\ : std_logic;
+SIGNAL \OpeB[0]~input_o\ : std_logic;
+SIGNAL \OpeB[1]~input_o\ : std_logic;
+SIGNAL \erorOverflow~0_combout\ : std_logic;
+SIGNAL \Tempmulti2[3]~0_combout\ : std_logic;
+SIGNAL \add0|Res[3]~0_combout\ : std_logic;
+SIGNAL \add0|Res[3]~1\ : std_logic;
+SIGNAL \add0|Add0~0_combout\ : std_logic;
+SIGNAL \CLAOpeAOut~3_combout\ : std_logic;
+SIGNAL \CLAOpeAOut~4_combout\ : std_logic;
+SIGNAL \CLAOpeBOut~0_combout\ : std_logic;
+SIGNAL \CLAOpeBOut~1_combout\ : std_logic;
+SIGNAL \CLAOpeBOut~2_combout\ : std_logic;
+SIGNAL \CLAOpeBOut~3_combout\ : std_logic;
+SIGNAL Tempmulti1 : std_logic_vector(3 DOWNTO 0);
 
 COMPONENT hard_block
     PORT (
@@ -138,11 +181,12 @@ END COMPONENT;
 
 BEGIN
 
-ww_ASigned <= ASigned;
-ww_BSigned <= BSigned;
-ww_ResSigned <= ResSigned;
-ww_CoutAdd <= CoutAdd;
-erorTotale <= ww_erorTotale;
+ww_OpeA <= OpeA;
+ww_OpeB <= OpeB;
+ww_operation <= operation;
+ww_mode <= mode;
+CLAOpeAOut <= ww_CLAOpeAOut;
+CLAOpeBOut <= ww_CLAOpeBOut;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -154,7 +198,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X11_Y12_N16
+-- Location: LCCOMB_X11_Y19_N4
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -167,20 +211,104 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X0_Y4_N16
-\erorTotale~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X10_Y18_N2
+\CLAOpeAOut[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \erorTotale~0_combout\,
+	i => \CLAOpeAOut~0_combout\,
 	devoe => ww_devoe,
-	o => \erorTotale~output_o\);
+	o => \CLAOpeAOut[0]~output_o\);
 
--- Location: IOIBUF_X0_Y7_N1
-\CoutAdd~input\ : fiftyfivenm_io_ibuf
+-- Location: IOOBUF_X10_Y18_N16
+\CLAOpeAOut[1]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeAOut~1_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeAOut[1]~output_o\);
+
+-- Location: IOOBUF_X10_Y18_N9
+\CLAOpeAOut[2]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeAOut~2_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeAOut[2]~output_o\);
+
+-- Location: IOOBUF_X10_Y20_N9
+\CLAOpeAOut[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeAOut~4_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeAOut[3]~output_o\);
+
+-- Location: IOOBUF_X10_Y20_N2
+\CLAOpeBOut[0]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeBOut~0_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeBOut[0]~output_o\);
+
+-- Location: IOOBUF_X10_Y20_N23
+\CLAOpeBOut[1]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeBOut~1_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeBOut[1]~output_o\);
+
+-- Location: IOOBUF_X10_Y16_N2
+\CLAOpeBOut[2]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeBOut~2_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeBOut[2]~output_o\);
+
+-- Location: IOOBUF_X10_Y20_N16
+\CLAOpeBOut[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CLAOpeBOut~3_combout\,
+	devoe => ww_devoe,
+	o => \CLAOpeBOut[3]~output_o\);
+
+-- Location: IOIBUF_X10_Y16_N8
+\operation~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -188,11 +316,11 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_CoutAdd,
-	o => \CoutAdd~input_o\);
+	i => ww_operation,
+	o => \operation~input_o\);
 
--- Location: IOIBUF_X0_Y4_N1
-\BSigned~input\ : fiftyfivenm_io_ibuf
+-- Location: IOIBUF_X10_Y19_N8
+\OpeA[0]~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -200,49 +328,340 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_BSigned,
-	o => \BSigned~input_o\);
+	i => ww_OpeA(0),
+	o => \OpeA[0]~input_o\);
 
--- Location: IOIBUF_X0_Y3_N1
-\ResSigned~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_ResSigned,
-	o => \ResSigned~input_o\);
-
--- Location: IOIBUF_X3_Y0_N29
-\ASigned~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_ASigned,
-	o => \ASigned~input_o\);
-
--- Location: LCCOMB_X1_Y2_N24
-\erorTotale~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X11_Y19_N16
+\CLAOpeAOut~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \erorTotale~0_combout\ = (\CoutAdd~input_o\ & ((\BSigned~input_o\ & (!\ResSigned~input_o\ & \ASigned~input_o\)) # (!\BSigned~input_o\ & (\ResSigned~input_o\ & !\ASigned~input_o\))))
+-- \CLAOpeAOut~0_combout\ = (!\operation~input_o\ & \OpeA[0]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000100000100000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CoutAdd~input_o\,
-	datab => \BSigned~input_o\,
-	datac => \ResSigned~input_o\,
-	datad => \ASigned~input_o\,
-	combout => \erorTotale~0_combout\);
+	datac => \operation~input_o\,
+	datad => \OpeA[0]~input_o\,
+	combout => \CLAOpeAOut~0_combout\);
+
+-- Location: IOIBUF_X10_Y15_N22
+\OpeA[1]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeA(1),
+	o => \OpeA[1]~input_o\);
+
+-- Location: LCCOMB_X11_Y19_N18
+\CLAOpeAOut~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeAOut~1_combout\ = (!\operation~input_o\ & \OpeA[1]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000001010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \operation~input_o\,
+	datac => \OpeA[1]~input_o\,
+	combout => \CLAOpeAOut~1_combout\);
+
+-- Location: IOIBUF_X10_Y18_N22
+\OpeA[2]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeA(2),
+	o => \OpeA[2]~input_o\);
+
+-- Location: LCCOMB_X11_Y18_N16
+\CLAOpeAOut~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeAOut~2_combout\ = (!\operation~input_o\ & \OpeA[2]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \operation~input_o\,
+	datad => \OpeA[2]~input_o\,
+	combout => \CLAOpeAOut~2_combout\);
+
+-- Location: IOIBUF_X10_Y19_N22
+\OpeA[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeA(3),
+	o => \OpeA[3]~input_o\);
+
+-- Location: IOIBUF_X10_Y19_N1
+\OpeB[2]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeB(2),
+	o => \OpeB[2]~input_o\);
+
+-- Location: IOIBUF_X10_Y22_N22
+\OpeB[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeB(3),
+	o => \OpeB[3]~input_o\);
+
+-- Location: LCCOMB_X11_Y19_N24
+\erorOverflow~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \erorOverflow~1_combout\ = (\OpeA[2]~input_o\ & ((\OpeB[2]~input_o\) # ((\OpeA[1]~input_o\ & \OpeB[3]~input_o\)))) # (!\OpeA[2]~input_o\ & (((\OpeA[1]~input_o\ & \OpeB[3]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111100010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \OpeA[2]~input_o\,
+	datab => \OpeB[2]~input_o\,
+	datac => \OpeA[1]~input_o\,
+	datad => \OpeB[3]~input_o\,
+	combout => \erorOverflow~1_combout\);
+
+-- Location: IOIBUF_X10_Y17_N1
+\OpeB[0]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeB(0),
+	o => \OpeB[0]~input_o\);
+
+-- Location: IOIBUF_X10_Y19_N15
+\OpeB[1]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_OpeB(1),
+	o => \OpeB[1]~input_o\);
+
+-- Location: LCCOMB_X11_Y19_N6
+\erorOverflow~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \erorOverflow~0_combout\ = (\OpeA[3]~input_o\ & ((\OpeB[1]~input_o\) # ((\OpeB[3]~input_o\) # (\OpeB[2]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \OpeB[1]~input_o\,
+	datab => \OpeB[3]~input_o\,
+	datac => \OpeB[2]~input_o\,
+	datad => \OpeA[3]~input_o\,
+	combout => \erorOverflow~0_combout\);
+
+-- Location: LCCOMB_X11_Y19_N26
+\Tempmulti1[3]\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- Tempmulti1(3) = (\OpeA[3]~input_o\ & (\OpeB[0]~input_o\ & ((\erorOverflow~1_combout\) # (\erorOverflow~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \OpeA[3]~input_o\,
+	datab => \erorOverflow~1_combout\,
+	datac => \OpeB[0]~input_o\,
+	datad => \erorOverflow~0_combout\,
+	combout => Tempmulti1(3));
+
+-- Location: LCCOMB_X11_Y19_N28
+\Tempmulti2[3]~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \Tempmulti2[3]~0_combout\ = (\OpeB[1]~input_o\ & \OpeA[3]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \OpeB[1]~input_o\,
+	datad => \OpeA[3]~input_o\,
+	combout => \Tempmulti2[3]~0_combout\);
+
+-- Location: LCCOMB_X11_Y19_N20
+\add0|Res[3]~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \add0|Res[3]~0_combout\ = (Tempmulti1(3) & (\Tempmulti2[3]~0_combout\ $ (VCC))) # (!Tempmulti1(3) & (\Tempmulti2[3]~0_combout\ & VCC))
+-- \add0|Res[3]~1\ = CARRY((Tempmulti1(3) & \Tempmulti2[3]~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => Tempmulti1(3),
+	datab => \Tempmulti2[3]~0_combout\,
+	datad => VCC,
+	combout => \add0|Res[3]~0_combout\,
+	cout => \add0|Res[3]~1\);
+
+-- Location: LCCOMB_X11_Y19_N22
+\add0|Add0~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \add0|Add0~0_combout\ = \add0|Res[3]~1\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \add0|Res[3]~1\,
+	combout => \add0|Add0~0_combout\);
+
+-- Location: LCCOMB_X11_Y19_N12
+\CLAOpeAOut~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeAOut~3_combout\ = (\erorOverflow~1_combout\) # ((\add0|Add0~0_combout\) # (\erorOverflow~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \erorOverflow~1_combout\,
+	datac => \add0|Add0~0_combout\,
+	datad => \erorOverflow~0_combout\,
+	combout => \CLAOpeAOut~3_combout\);
+
+-- Location: LCCOMB_X11_Y19_N14
+\CLAOpeAOut~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeAOut~4_combout\ = (\operation~input_o\ & (((\add0|Res[3]~0_combout\ & !\CLAOpeAOut~3_combout\)))) # (!\operation~input_o\ & (\OpeA[3]~input_o\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101011001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \OpeA[3]~input_o\,
+	datab => \add0|Res[3]~0_combout\,
+	datac => \operation~input_o\,
+	datad => \CLAOpeAOut~3_combout\,
+	combout => \CLAOpeAOut~4_combout\);
+
+-- Location: LCCOMB_X11_Y19_N0
+\CLAOpeBOut~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeBOut~0_combout\ = (\OpeB[0]~input_o\ & !\operation~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \OpeB[0]~input_o\,
+	datac => \operation~input_o\,
+	combout => \CLAOpeBOut~0_combout\);
+
+-- Location: LCCOMB_X11_Y19_N2
+\CLAOpeBOut~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeBOut~1_combout\ = (!\operation~input_o\ & \OpeB[1]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \operation~input_o\,
+	datad => \OpeB[1]~input_o\,
+	combout => \CLAOpeBOut~1_combout\);
+
+-- Location: LCCOMB_X11_Y19_N8
+\CLAOpeBOut~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeBOut~2_combout\ = (\OpeB[2]~input_o\ & !\operation~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \OpeB[2]~input_o\,
+	datac => \operation~input_o\,
+	combout => \CLAOpeBOut~2_combout\);
+
+-- Location: LCCOMB_X11_Y19_N10
+\CLAOpeBOut~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \CLAOpeBOut~3_combout\ = (!\operation~input_o\ & \OpeB[3]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \operation~input_o\,
+	datad => \OpeB[3]~input_o\,
+	combout => \CLAOpeBOut~3_combout\);
+
+-- Location: IOIBUF_X31_Y5_N15
+\mode~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_mode,
+	o => \mode~input_o\);
 
 -- Location: UNVM_X0_Y11_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm
@@ -290,7 +709,21 @@ PORT MAP (
 	chsel => \~QUARTUS_CREATED_ADC1~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC1~~eoc\);
 
-ww_erorTotale <= \erorTotale~output_o\;
+ww_CLAOpeAOut(0) <= \CLAOpeAOut[0]~output_o\;
+
+ww_CLAOpeAOut(1) <= \CLAOpeAOut[1]~output_o\;
+
+ww_CLAOpeAOut(2) <= \CLAOpeAOut[2]~output_o\;
+
+ww_CLAOpeAOut(3) <= \CLAOpeAOut[3]~output_o\;
+
+ww_CLAOpeBOut(0) <= \CLAOpeBOut[0]~output_o\;
+
+ww_CLAOpeBOut(1) <= \CLAOpeBOut[1]~output_o\;
+
+ww_CLAOpeBOut(2) <= \CLAOpeBOut[2]~output_o\;
+
+ww_CLAOpeBOut(3) <= \CLAOpeBOut[3]~output_o\;
 END structure;
 
 

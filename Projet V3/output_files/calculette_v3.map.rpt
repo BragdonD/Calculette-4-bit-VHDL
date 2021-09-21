@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette_v3
-Mon Sep 20 20:46:58 2021
+Tue Sep 21 21:18:56 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,9 +14,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "add4bits:add1"
+ 11. Port Connectivity Checks: "add4bits:add0"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 20 20:46:58 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 21 21:18:56 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
-; Top-level Entity Name              ; ErorControlAdd                              ;
+; Top-level Entity Name              ; preCLA                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1                                           ;
-;     Total combinational functions  ; 1                                           ;
+; Total logic elements               ; 15                                          ;
+;     Total combinational functions  ; 15                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 5                                           ;
+; Total pins                         ; 18                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +70,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M08DAF484I7G     ;                    ;
-; Top-level entity name                                            ; ErorControlAdd     ; calculette_v3      ;
+; Top-level entity name                                            ; preCLA             ; calculette_v3      ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
@@ -167,54 +170,59 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; controlAdd.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; add_4bits.vhd                    ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/add_4bits.vhd    ;         ;
+; multi_4bits.vhd                  ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/multi_4bits.vhd  ;         ;
+; controlAdd.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd   ;         ;
+; controlMulti.vhd                 ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd ;         ;
+; preCLA.vhd                       ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd       ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 1            ;
-;                                             ;              ;
-; Total combinational functions               ; 1            ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 1            ;
-;     -- 3 input functions                    ; 0            ;
-;     -- <=2 input functions                  ; 0            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 1            ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 5            ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; erorTotale~0 ;
-; Maximum fan-out                             ; 1            ;
-; Total fan-out                               ; 10           ;
-; Average fan-out                             ; 0.91         ;
-+---------------------------------------------+--------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 15              ;
+;                                             ;                 ;
+; Total combinational functions               ; 15              ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 4               ;
+;     -- 3 input functions                    ; 2               ;
+;     -- <=2 input functions                  ; 9               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 14              ;
+;     -- arithmetic mode                      ; 1               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+;     -- Dedicated logic registers            ; 0               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 18              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; operation~input ;
+; Maximum fan-out                             ; 8               ;
+; Total fan-out                               ; 64              ;
+; Average fan-out                             ; 1.25            ;
++---------------------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
-; |ErorControlAdd            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 5    ; 0            ; 0          ; |ErorControlAdd     ; ErorControlAdd ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name   ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
+; |preCLA                    ; 15 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 18   ; 0            ; 0          ; |preCLA               ; preCLA      ; work         ;
+;    |add4bits:add0|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |preCLA|add4bits:add0 ; add4bits    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,18 +241,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |preCLA|CLAOpeAOut         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "add4bits:add1" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; a[1..0] ; Input ; Info     ; Stuck at GND ;
+; b[2..0] ; Input ; Info     ; Stuck at GND ;
+; mode    ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "add4bits:add0" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; b[2..0] ; Input ; Info     ; Stuck at GND ;
+; mode    ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 5                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         4 data inputs ; 1                           ;
+; boundary_port         ; 18                          ;
+; cycloneiii_lcell_comb ; 15                          ;
+;     arith             ; 1                           ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 14                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 5.10                        ;
+; Average LUT depth     ; 3.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -263,7 +306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 20 20:46:51 2021
+    Info: Processing started: Tue Sep 21 21:18:49 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette_v3 -c calculette_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -276,18 +319,31 @@ Info (12021): Found 2 design units, including 1 entities, in source file multi_4
 Info (12021): Found 2 design units, including 1 entities, in source file controladd.vhd
     Info (12022): Found design unit 1: ErorControlAdd-archi_errorAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd Line: 9
     Info (12023): Found entity 1: ErorControlAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd Line: 4
-Info (12127): Elaborating entity "ErorControlAdd" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file controlmulti.vhd
+    Info (12022): Found design unit 1: ErorControlMulti-archi_errorMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd Line: 11
+    Info (12023): Found entity 1: ErorControlMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file precla.vhd
+    Info (12022): Found design unit 1: preCLA-archi_preCLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 11
+    Info (12023): Found entity 1: preCLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 5
+Info (12127): Elaborating entity "preCLA" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at preCLA.vhd(14): object "multi1" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "Tempmulti3[1..0]" at preCLA.vhd(13) File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 13
+Warning (10873): Using initial value X (don't care) for net "Tempmulti4[2..0]" at preCLA.vhd(13) File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 13
+Info (12129): Elaborating entity "add4bits" using architecture "A:archi_add4bits" for hierarchy "add4bits:add0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 93
+Info (12129): Elaborating entity "ErorControlAdd" using architecture "A:archi_erroradd" for hierarchy "ErorControlAdd:erorControl0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 100
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 1 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "mode" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd Line: 7
+Info (21057): Implemented 33 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 15 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4794 megabytes
-    Info: Processing ended: Mon Sep 20 20:46:58 2021
+    Info: Processing ended: Tue Sep 21 21:18:56 2021
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:15
 
 

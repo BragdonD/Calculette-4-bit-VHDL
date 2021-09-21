@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/simulation/modelsim
 Eadd4bits
-Z1 w1632156885
+Z1 w1632251923
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VdFgJ>LPCHK?AJW4dVa3IC2
 !s100 EljFOKo5IZIJfhceDL[8o3
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1632157191
+Z8 !s110 1632252151
 !i10b 1
-Z9 !s108 1632157191.000000
+Z9 !s108 1632252151.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/add_4bits.vhd|
 Z11 !s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/add_4bits.vhd|
 !i113 1
@@ -37,8 +37,8 @@ R4
 DEx4 work 8 add4bits 0 22 dFgJ>LPCHK?AJW4dVa3IC2
 l16
 L12
-VUc:O_h;aSPg[S>DdoF3FS1
-!s100 5MWQo6nY1jU[PH6;S::;j1
+Vab`Q[Q1B9AS2U2E5zKCJa3
+!s100 Y@oYGged75Ge2zJeR74_b2
 R7
 31
 R8
@@ -46,6 +46,146 @@ R8
 R9
 R10
 R11
+!i113 1
+R12
+R13
+Eerorcontroladd
+Z14 w1632247177
+R3
+R4
+R0
+Z15 8C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd
+Z16 FC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd
+l0
+L4
+Vn?51?7N86kZMBlN2=OoSD3
+!s100 `B4LX4@i^dmJ=]QOJR]cc3
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd|
+Z18 !s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlAdd.vhd|
+!i113 1
+R12
+R13
+Aarchi_erroradd
+R3
+R4
+DEx4 work 14 erorcontroladd 0 22 n?51?7N86kZMBlN2=OoSD3
+l11
+L9
+V@YbnCh480QE=@[@R9^cDT1
+!s100 S0Oe>nLR[2iDzQMFTRORJ2
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eerorcontrolmulti
+Z19 w1632247187
+R3
+R4
+R0
+Z20 8C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd
+Z21 FC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd
+l0
+L4
+VK3Ze=NI^KD9?:F]kcJBEF3
+!s100 CS`DB9eM[9zI_3>K>[IcU3
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd|
+Z23 !s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/controlMulti.vhd|
+!i113 1
+R12
+R13
+Aarchi_errormulti
+R3
+R4
+DEx4 work 16 erorcontrolmulti 0 22 K3Ze=NI^KD9?:F]kcJBEF3
+l16
+L11
+VghzFd_@d4o=Z7;WDoj1VI0
+!s100 Xd3O;Ibc4cN>1>3i1bzdN2
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Emulti4bits
+Z24 w1632158435
+R2
+R3
+R4
+R0
+Z25 8C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/multi_4bits.vhd
+Z26 FC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/multi_4bits.vhd
+l0
+L5
+VT]Tj4HoE^:3jez>EN31_J0
+!s100 CkQ=c7T[I[4@L[aQR5:OO0
+R7
+31
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/multi_4bits.vhd|
+Z28 !s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/multi_4bits.vhd|
+!i113 1
+R12
+R13
+Aarchi_multi4bits
+R2
+R3
+R4
+DEx4 work 10 multi4bits 0 22 T]Tj4HoE^:3jez>EN31_J0
+l16
+L12
+VlEMYAKdPd=DUR<oBE>=mQ1
+!s100 6J4fizg9>4M[mIIQ4d18N1
+R7
+31
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Eprecla
+w1632251851
+R3
+R4
+R0
+8C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd
+FC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd
+l0
+L5
+V<`R55<23k=32?SLo:[@3;3
+!s100 n`GAbHY1=@BQ8OJi6@O::0
+R7
+31
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd|
+!s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/preCLA.vhd|
 !i113 1
 R12
 R13

@@ -1,4 +1,107 @@
-|ErorControlAdd
+|preCLA
+OpeA[0] => CLAOpeAOut.DATAB
+OpeA[0] => Tempmulti1.IN0
+OpeA[1] => multi4[1].IN0
+OpeA[1] => Tempmulti1.IN0
+OpeA[1] => CLAOpeAOut.DATAB
+OpeA[2] => multi3[2].IN0
+OpeA[2] => Tempmulti1.IN0
+OpeA[2] => Tempmulti3.IN0
+OpeA[2] => CLAOpeAOut.DATAB
+OpeA[3] => multi2[3].IN0
+OpeA[3] => multi3[3].IN0
+OpeA[3] => multi4[3].IN0
+OpeA[3] => Tempmulti1.IN0
+OpeA[3] => Tempmulti2.IN0
+OpeA[3] => Tempmulti3.IN0
+OpeA[3] => Tempmulti4.IN0
+OpeA[3] => CLAOpeAOut.DATAB
+OpeB[0] => Tempmulti1.IN1
+OpeB[0] => Tempmulti1.IN1
+OpeB[0] => Tempmulti1.IN1
+OpeB[0] => Tempmulti1.IN1
+OpeB[0] => CLAOpeBOut.DATAB
+OpeB[1] => multi2[3].IN1
+OpeB[1] => Tempmulti2.IN1
+OpeB[1] => CLAOpeBOut.DATAB
+OpeB[2] => multi3[2].IN1
+OpeB[2] => multi3[3].IN1
+OpeB[2] => Tempmulti3.IN1
+OpeB[2] => Tempmulti3.IN1
+OpeB[2] => CLAOpeBOut.DATAB
+OpeB[3] => multi4[1].IN1
+OpeB[3] => multi4[3].IN1
+OpeB[3] => Tempmulti4.IN1
+OpeB[3] => CLAOpeBOut.DATAB
+operation => CLAOpeAOut.OUTPUTSELECT
+operation => CLAOpeAOut.OUTPUTSELECT
+operation => CLAOpeAOut.OUTPUTSELECT
+operation => CLAOpeAOut.OUTPUTSELECT
+operation => CLAOpeBOut.OUTPUTSELECT
+operation => CLAOpeBOut.OUTPUTSELECT
+operation => CLAOpeBOut.OUTPUTSELECT
+operation => CLAOpeBOut.OUTPUTSELECT
+mode => totalErorMulti.OUTPUTSELECT
+CLAOpeAOut[0] <= CLAOpeAOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeAOut[1] <= CLAOpeAOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeAOut[2] <= CLAOpeAOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeAOut[3] <= CLAOpeAOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeBOut[0] <= CLAOpeBOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeBOut[1] <= CLAOpeBOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeBOut[2] <= CLAOpeBOut.DB_MAX_OUTPUT_PORT_TYPE
+CLAOpeBOut[3] <= CLAOpeBOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|preCLA|add4bits:add0
+A[0] => Add0.IN5
+A[1] => Add0.IN4
+A[2] => Add0.IN3
+A[3] => IntRes.IN0
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => IntRes.IN1
+B[3] => Add0.IN2
+mode => ResTemp.OUTPUTSELECT
+Res[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= ResTemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|preCLA|add4bits:add1
+A[0] => Add0.IN5
+A[1] => Add0.IN4
+A[2] => Add0.IN3
+A[3] => IntRes.IN0
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => IntRes.IN1
+B[3] => Add0.IN2
+mode => ResTemp.OUTPUTSELECT
+Res[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Res[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= ResTemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|preCLA|ErorControlAdd:erorControl0
+ASigned => ErorSigne.IN0
+ASigned => ErorSigne.IN0
+BSigned => ErorSigne.IN1
+BSigned => ErorSigne.IN1
+ResSigned => ErorSigne.IN1
+ResSigned => ErorSigne.IN1
+CoutAdd => erorTotale.IN1
+erorTotale <= erorTotale.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|preCLA|ErorControlAdd:erorControl1
 ASigned => ErorSigne.IN0
 ASigned => ErorSigne.IN0
 BSigned => ErorSigne.IN1
