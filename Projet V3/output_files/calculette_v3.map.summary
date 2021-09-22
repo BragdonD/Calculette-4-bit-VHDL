@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Sep 21 21:18:56 2021
+Analysis & Synthesis Status : Successful - Wed Sep 22 22:33:33 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
-Top-level Entity Name : preCLA
+Top-level Entity Name : result_img
 Family : MAX 10
-Total logic elements : 15
-    Total combinational functions : 15
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 18
+Total logic elements : 89
+    Total combinational functions : 59
+    Dedicated logic registers : 54
+Total registers : 54
+Total pins : 42
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
