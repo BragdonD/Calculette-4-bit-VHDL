@@ -1,7 +1,16 @@
 |hdmi_de10
+clk_50 => reset_e.CLK
+clk_50 => reset_d.CLK
+clk_50 => reset_c.CLK
+clk_50 => reset_b.CLK
+clk_50 => reset_a.CLK
 clk_50 => clk_25.CLK
 reset => clk_25.OUTPUTSELECT
-reset => result_img:res_img.reset
+reset => reset_b.OUTPUTSELECT
+reset => reset_c.OUTPUTSELECT
+reset => reset_d.OUTPUTSELECT
+reset => reset_e.OUTPUTSELECT
+reset => reset_a.DATAIN
 mode => result_img:res_img.mode
 Res[0] => result_img:res_img.Res[0]
 Res[1] => result_img:res_img.Res[1]

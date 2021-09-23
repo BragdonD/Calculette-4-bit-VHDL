@@ -19,14 +19,25 @@ end hdmi_de10;
 architecture archi_hdmi_de10 of hdmi_de10 is
 	signal clk_25 : std_logic;
 	signal r,g,b : std_logic_vector(7 downto 0);
+	signal reset_a, reset_b, reset_c, reset_d, reset_e : std_logic;
 begin	
 	process(clk_50, clk_25)
 	begin
 		if(rising_edge(clk_50))then
 			if(reset = '1') then
 				clk_25 <= '0';
+				reset_a <= '1';
+				reset_b <= '1';
+				reset_c <= '1';
+				reset_d <= '1';
+				reset_e <= '1';
 			else
 				clk_25 <= not(clk_25);
+				reset_a <= '0';
+				reset_b <= reset_a;
+				reset_c <= reset_b;
+				reset_d <= reset_c;
+				reset_e <= reset_d;
 			end if;
 		end if;
 	end process;
@@ -35,7 +46,7 @@ begin
 		port map
 		(
 			clk_25 => clk_25,
-			reset	=> reset,
+			reset	=> reset_e,
 			mode	=> mode,
 			Res	=> Res,
 			eror	=> eror,

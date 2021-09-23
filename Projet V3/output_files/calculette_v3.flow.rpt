@@ -1,5 +1,5 @@
 Flow report for calculette_v3
-Thu Sep 23 17:08:14 2021
+Thu Sep 23 18:41:17 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 23 17:08:14 2021       ;
+; Flow Status                        ; Successful - Thu Sep 23 18:41:17 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
 ; Top-level Entity Name              ; hdmi_de10                                   ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M40DCF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 713 / 40,368 ( 2 % )                        ;
-;     Total combinational functions  ; 696 / 40,368 ( 2 % )                        ;
-;     Dedicated logic registers      ; 45 / 40,368 ( < 1 % )                       ;
-; Total registers                    ; 45                                          ;
+; Total logic elements               ; 718 / 40,368 ( 2 % )                        ;
+;     Total combinational functions  ; 700 / 40,368 ( 2 % )                        ;
+;     Dedicated logic registers      ; 50 / 40,368 ( < 1 % )                       ;
+; Total registers                    ; 50                                          ;
 ; Total pins                         ; 22 / 360 ( 6 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,290,240 ( 0 % )                       ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/23/2021 17:07:53 ;
+; Start date & time ; 09/23/2021 18:40:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; calculette_v3       ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 1096660323301.163240967319540          ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 1096660323301.163241525548720          ; --            ; --          ; --                   ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Synplify Pro                           ; <None>        ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --          ; eda_design_synthesis ;
 ; EDA_LMF_FILE                        ; synplcty.lmf                           ; --            ; --          ; eda_design_synthesis ;
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4839 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:06     ; 1.2                     ; 5927 MB             ; 00:00:12                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4679 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.4                     ; 4862 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4647 MB             ; 00:00:01                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:33                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4835 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:06     ; 1.2                     ; 5930 MB             ; 00:00:12                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.4                     ; 4863 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4647 MB             ; 00:00:00                           ;
+; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
