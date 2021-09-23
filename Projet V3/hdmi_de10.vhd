@@ -9,6 +9,7 @@ port(	clk_50		: in std_logic;	--50Mhz clock
 		mode			: in std_logic;
 		Res			: in std_logic_vector(3 downto 0);
 		eror			: in std_logic;
+		res_out		: out std_logic_vector(3 downto 0);
 		vga_vs		: out std_logic;	--vertical output
 		vga_hs		: out std_logic;	--horizontal output
 		vga_r			: out std_logic_vector(3 downto 0);	--red component for a pixel
@@ -60,5 +61,6 @@ begin
 	vga_r <= r(7 downto 4);
 	vga_g <= g(7 downto 4);
 	vga_b <= b(7 downto 4);
+	res_out <= res;
 	
 end archi_hdmi_de10;

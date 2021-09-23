@@ -89,9 +89,13 @@ begin
 			de_2 <= de_1;
 			
 			------------------------------------------------------------------------------------------------ Calcul dizaine and unit
-
+			if(mode='0') then
+					int_Res := to_integer(unsigned(Res));
+			else
+					int_Res := to_integer(signed(Res));
+			end if;
 			d_res 	:= int_Res/10;
-			u_res 	:= int_Res - d_res;
+			u_res 	:= int_Res - d_res*10;
 			
 			-------------------------------------------------------------------------------------------------color of the font
 			if(de_1 = '0') then
@@ -99,158 +103,60 @@ begin
 			else 
 								--bords top and bottom
 				if( v_count <= 136 or v_count >= 436) then
-					rgb2 <= rgb_font;
-				elsif(h_count>5 and h_count<75) then
-				if(mode ='0') then
-					int_res := to_integer(unsigned(Res));
-					rgb2 <= rgb_font;
+					rgb2 <= rgb_letters;
 				else
-					int_res := to_integer(unsigned(Res));
-					if(int_res < 0) then
-						if(v_count>237 and v_count < 244) then
-							rgb2 <= rgb_letters;
+					if(h_count>=144 and h_count<149) then
+						rgb2 <= rgb_letters;
+					elsif(h_count>149 and h_count<299) then
+						if(v_count>271 and v_count<301) or (v_count>406 and v_count<436) then
+							rgb2 <= x"DD6755";
 						else
-							rgb2 <= rgb_font;
+							rgb2 <= rgb_letters;
 						end if;
-					else
-						rgb2 <= rgb_font;
-					end if;
-				end if;					
-			--dizaine
-			elsif(h_count>85 and h_count<155) then
-				temp := d_res;
-				--ligne haute
-				if(v_count>200 and v_count < 206) then
-					if(temp = 0 or temp = 2 or temp = 3 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9 or eror ='1') then
+						
+					elsif(h_count>=299 and h_count<309) then
 						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
-					end if;
-				--cote haut
-				elsif(v_count>206 and v_count < 237) then
-					--gauche
-					if(h_count>5 and h_count<11) then
-						if(temp = 0 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+					elsif(h_count>=309 and h_count<459) then
+						if(v_count>271 and v_count<301 and (mode='1' and int_res<0))then
+							rgb2 <= x"DD6755";
+						else
 							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
 						end if;
-					--droite
-					elsif(h_count>70 and h_count<76) then
-						if(temp = 0 or temp = 1 or temp = 2 or temp = 3 or temp = 4 or temp = 7 or temp = 8 or temp = 9) then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--milieu
-					else
-						rgb2 <= rgb_font;
-					end if;
-				--milieu
-				elsif(v_count>237 and v_count < 244) then
-					if(temp = 2 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+					elsif(h_count>=459 and h_count<469) then
 						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
-					end if;
-				--cote bas
-				elsif(v_count>243	and v_count < 280) then
-					--gauche
-					if(h_count>5 and h_count<11) then
-						if(temp = 0 or temp = 2 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+					elsif(h_count>=469 and h_count<619) then
+						if(v_count>136 and v_count<166 and (d_res = 0 or d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 or eror='1')) or 
+						(v_count>271 and v_count<301 and (d_res = 2 or d_res = 3 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1')) or 
+						(v_count>406 and v_count<436 and (d_res = 0 or d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1')) or
+						(h_count>=469 and h_count<499 and (d_res = 0 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1') and v_count>136 and v_count<301) or 
+						(h_count>=469 and h_count<499 and (d_res = 0 or d_res = 2 or d_res = 6 or d_res = 8 or eror='1') and v_count>276 and v_count<436) or
+						(h_count>=589 and h_count<619 and (d_res = 0 or d_res = 1 or d_res = 2 or d_res = 3 or d_res = 4 or d_res = 7 or d_res = 8 or d_res = 9) and eror ='0' and v_count>136 and v_count<301) or
+						(h_count>=589 and h_count<619 and (d_res = 0 or d_res = 1 or d_res = 3 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 ) and eror='0' and v_count>276 and v_count<436)
+						then
+							rgb2 <= x"DD6755";
+						else
 							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
 						end if;
-					--droite
-					elsif(h_count>70 and h_count<76) then
-						if(temp = 0 or temp = 1 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--milieu
-					else
-						rgb2 <= rgb_font;
-					end if;
-				--bas
-				elsif(v_count>237 and v_count < 244) then
-					if(temp = 0 or temp = 2 or temp = 3  or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9 or eror ='1') then
+					elsif(h_count>=624 and h_count<629) then
 						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
-					end if;
-				else
-					rgb2 <= rgb_font;
-				end if;			
-			elsif(h_count>165 and h_count<235) then
-				temp := u_res;
-				--ligne haute
-				if(v_count>200 and v_count < 206) then
-					if(temp = 0 or temp = 2 or temp = 3 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
+					elsif(h_count>=629 and h_count<779) then
+						if(v_count>136 and v_count<166 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 or eror='1')) or 
+						(v_count>271 and v_count<301 and (u_res = 2 or u_res = 3 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1')) or 
+						(v_count>406 and v_count<436 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1')) or
+						(h_count>=629 and h_count<659 and (u_res = 0 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1') and v_count>136 and v_count<301) or 
+						(h_count>=629 and h_count<659 and (u_res = 0 or u_res = 2 or u_res = 6 or u_res = 8 or eror='1') and v_count>276 and v_count<436) or
+						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 2 or u_res = 3 or u_res = 4 or u_res = 7 or u_res = 8 or u_res=9) and eror ='0' and v_count>136 and v_count<301) or
+						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 3 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 ) and eror='0' and v_count>276 and v_count<436)
+						then
+							rgb2 <= x"DD6755";
+						else
+							rgb2 <= rgb_letters;
+						end if;
+					elsif(h_count>=779 and h_count<784) then
 						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
 					end if;
-				--cote haut
-				elsif(v_count>206 and v_count < 237) then
-					--gauche
-					if(h_count>5 and h_count<11) then
-						if(temp = 0 or temp = 5 or temp = 6 or temp = 8 or temp = 9) then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--droite
-					elsif(h_count>70 and h_count<76) then
-						if(temp = 0 or temp = 1 or temp = 2 or temp = 3 or temp = 4 or temp = 7 or temp = 8 or temp = 9) then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--milieu
-					else
-						rgb2 <= rgb_font;
-					end if;
-				--milieu
-				elsif(v_count>237 and v_count < 244) then
-					if(temp = 2 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
-						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
-					end if;
-				--cote bas
-				elsif(v_count>243	and v_count < 280) then
-					--gauche
-					if(h_count>5 and h_count<11) then
-						if(temp = 0 or temp = 2 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--droite
-					elsif(h_count>70 and h_count<76) then
-						if(temp = 0 or temp = 1 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
-							rgb2 <= rgb_letters;
-						else 
-							rgb2 <= rgb_font;
-						end if;
-					--milieu
-					else
-						rgb2 <= rgb_font;
-					end if;
-				--bas
-				elsif(v_count>237 and v_count < 244) then
-					if(temp = 0 or temp = 2 or temp = 3  or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
-						rgb2 <= rgb_letters;
-					else 
-						rgb2 <= rgb_font;
-					end if;
-				else
-					rgb2 <= rgb_font;
 				end if;
 			end if;
-				end if;
 				
 
 			
