@@ -12,15 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "vga_r[0]",
-					"strict" : false
-				},
-				{
 					"name" : "vga_r[1]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_r[2]",
 					"strict" : false
 				},
 				{
@@ -29,10 +21,6 @@
 				},
 				{
 					"name" : "vga_g[0]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_g[1]",
 					"strict" : false
 				},
 				{

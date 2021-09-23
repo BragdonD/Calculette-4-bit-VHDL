@@ -21,9 +21,9 @@ architecture archi_hdmi_de10 of hdmi_de10 is
 	signal r,g,b : std_logic_vector(7 downto 0);
 	signal reset_a, reset_b, reset_c, reset_d, reset_e : std_logic;
 begin	
-	process(clk_50, clk_25)
+	process
 	begin
-		if(rising_edge(clk_50))then
+		wait until rising_edge(clk_50);
 			if(reset = '1') then
 				clk_25 <= '0';
 				reset_a <= '1';
@@ -39,7 +39,6 @@ begin
 				reset_d <= reset_c;
 				reset_e <= reset_d;
 			end if;
-		end if;
 	end process;
 	
 	res_img: entity work.result_img(behavioral)

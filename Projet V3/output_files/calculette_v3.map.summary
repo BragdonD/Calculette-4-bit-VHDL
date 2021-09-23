@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Sep 23 18:41:03 2021
+Analysis & Synthesis Status : Successful - Thu Sep 23 19:21:41 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
 Top-level Entity Name : hdmi_de10
 Family : MAX 10
-Total logic elements : 719
-    Total combinational functions : 698
-    Dedicated logic registers : 50
-Total registers : 50
+Total logic elements : 726
+    Total combinational functions : 707
+    Dedicated logic registers : 49
+Total registers : 49
 Total pins : 22
 Total virtual pins : 0
 Total memory bits : 0

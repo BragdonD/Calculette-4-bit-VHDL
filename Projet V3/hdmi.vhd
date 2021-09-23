@@ -19,8 +19,8 @@ end result_img;
 
 architecture behavioral of result_img is
 	--colors
-	constant rgb_font 	: std_logic_vector(23 downto 0) := x"000000";
-	constant rgb_letters	: std_logic_vector(23 downto 0) := x"FFFFFF";
+	constant rgb_font 	: std_logic_vector(23 downto 0) := x"20C040";
+	constant rgb_letters	: std_logic_vector(23 downto 0) := x"A0D0F0";
 	
 	--counters for the movement into the frame
 	signal h_count		: integer range 0 to 799 := 0;
@@ -33,9 +33,9 @@ architecture behavioral of result_img is
 	
 begin
 	--changer position dans la frame
-	process(clk_25, v_count, h_count)
+	process
 	begin
-		if(rising_edge(clk_25)) then
+		wait until rising_edge(clk_25);
 			if(reset = '1') then
 				h_count <= 0;
 				v_count <= 0;
@@ -55,15 +55,14 @@ begin
 					h_count <= h_count + 1;
 				end if;
 			end if; 	--reset
-		end if;		--rising edge
 	end process;
 	
 	
-	process(clk_25, v_count, h_count)
+	process
 		variable d_res, u_res : integer;
 		variable temp, int_res : integer;
 	begin
-		if(rising_edge(clk_25)) then
+		wait until rising_edge(clk_25);
 			------------------------------------------------------------------------------------------------ pipeline stage 1
 			--generating the sign signal for horizontal
 			if( h_count < 96) then 
@@ -95,15 +94,13 @@ begin
 			u_res 	:= int_Res - d_res;
 			
 			-------------------------------------------------------------------------------------------------color of the font
-			--bords top and bottom
-			if( v_count <= 236 or v_count >= 316) then
-				rgb2 <= rgb_font;
-			end if;
-			
-			--------------------------------------------------------------------------------------------------color of the characters
-			
-			--signe
-			if(h_count>5 and h_count<75) then
+			if(de_1 = '0') then
+				rgb2 <= x"000000";
+			else 
+								--bords top and bottom
+				if( v_count <= 136 or v_count >= 436) then
+					rgb2 <= rgb_font;
+				elsif(h_count>5 and h_count<75) then
 				if(mode ='0') then
 					int_res := to_integer(unsigned(Res));
 					rgb2 <= rgb_font;
@@ -118,8 +115,7 @@ begin
 					else
 						rgb2 <= rgb_font;
 					end if;
-				end if;				
-				
+				end if;					
 			--dizaine
 			elsif(h_count>85 and h_count<155) then
 				temp := d_res;
@@ -253,9 +249,10 @@ begin
 				else
 					rgb2 <= rgb_font;
 				end if;
-			else
-				rgb2 <= rgb_font;
 			end if;
+				end if;
+				
+
 			
 			--------------------------------------------------------------------------------------------------output
 			hs_out  <= hs_2;
@@ -266,7 +263,6 @@ begin
 			b_out   <= rgb2( 7 downto  0);
 			
 			
-		end if;	--rising edge
 	end process;
 	
 			
