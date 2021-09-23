@@ -4,8 +4,8 @@ use ieee.numeric_std.all;
 
 entity result_img is
 port(	clk_25		: in std_logic;	--25Mhz clock for 60Hz output frames
-		reset			: in std_logic;	
-		A, B			: in std_logic_vector(3 downto 0);
+		reset			: in std_logic;
+		mode			: in std_logic;
 		Res			: in std_logic_vector(3 downto 0);
 		eror			: in std_logic;
 		vs_out		: out std_logic;	--vertical output
@@ -28,9 +28,7 @@ architecture behavioral of result_img is
 	
 	signal vs_1, hs_1, de_1 : std_logic;
 	signal vs_2, hs_2, de_2 : std_logic;
-	
-	signal number 		: std_logic;
-	signal int_A, int_B, int_Res : integer;
+
 	signal rgb2 : std_logic_vector(23 downto 0);
 	
 begin
@@ -60,12 +58,10 @@ begin
 		end if;		--rising edge
 	end process;
 	
-	int_A <= to_integer(unsigned(A));
-	int_B <= to_integer(unsigned(B));
-	int_Res <= to_integer(unsigned(Res));
 	
-	process(clk_25, A, B, v_count, h_count)
-		variable d_ope_1, d_ope_2, d_res, u_ope_1, u_ope_2, u_res : integer;
+	process(clk_25, v_count, h_count)
+		variable d_res, u_res : integer;
+		variable temp, int_res : integer;
 	begin
 		if(rising_edge(clk_25)) then
 			------------------------------------------------------------------------------------------------ pipeline stage 1
@@ -94,55 +90,172 @@ begin
 			de_2 <= de_1;
 			
 			------------------------------------------------------------------------------------------------ Calcul dizaine and unit
-			d_ope_1 	:= int_A/10;
-			d_ope_2 	:= int_B/10;
+
 			d_res 	:= int_Res/10;
-			u_ope_1 	:=	int_A - d_ope_1;
-			u_ope_2  :=	int_B - d_ope_2;
 			u_res 	:= int_Res - d_res;
 			
 			-------------------------------------------------------------------------------------------------color of the font
 			--bords top and bottom
 			if( v_count <= 236 or v_count >= 316) then
 				rgb2 <= rgb_font;
-			--space bewteen characters
-			elsif(h_count >= 0 and h_count <= 5) and
-				  (h_count >= 76 and h_count <= 85) and
-				  (h_count >= 236 and h_count <= 245) and
-				  (h_count >= 316 and h_count <= 325) and
-				  (h_count >= 396 and h_count <= 405) and
-				  (h_count >= 476 and h_count <= 485) and
-				  (h_count >= 556 and h_count <= 565) and
-				  (h_count >= 636 and h_count <= 640) then
-				rgb2 <= rgb_font;
-			--space into the characters
-			elsif(((v_count >= 206 and v_count <= 237) or
-				  (v_count >= 244 and v_count <= 276))  and 
-			  not((h_count >= 0 and h_count <= 5) 		 and
-				  (h_count >= 76 and h_count <= 85) 	 and
-				  (h_count >= 236 and h_count <= 245) 	 and
-				  (h_count >= 316 and h_count <= 325) 	 and
-				  (h_count >= 396 and h_count <= 405)   and
-				  (h_count >= 476 and h_count <= 485)   and
-				  (h_count >= 556 and h_count <= 565)   and
-				  (h_count >= 636 and h_count <= 640)))then
-				rgb2 <= rgb_font; 
 			end if;
 			
 			--------------------------------------------------------------------------------------------------color of the characters
-			--------------------------------------------------------------------------------------------------first caractere
-			if(h_count >= 10 and h_count <= 75) then
-				--segment haut
-				if(v_count >= 205 and v_count <= 211) then
-					if(d_ope_1 = 0 or d_ope_1 = 2 or d_ope_1 = 5 or d_ope_1 = 6 or d_ope_1 = 7 or d_ope_1 = 8 or d_ope_1 = 9) then
-						rgb2 <= rgb_letters; 
-					else
-						rgb2 <= rgb_font; 
-					end if;
-				--elsif(v_count >= 232 and v_count <= 211) then
-				end if;
-			end if;
 			
+			--signe
+			if(h_count>5 and h_count<75) then
+				if(mode ='0') then
+					int_res := to_integer(unsigned(Res));
+					rgb2 <= rgb_font;
+				else
+					int_res := to_integer(unsigned(Res));
+					if(int_res < 0) then
+						if(v_count>237 and v_count < 244) then
+							rgb2 <= rgb_letters;
+						else
+							rgb2 <= rgb_font;
+						end if;
+					else
+						rgb2 <= rgb_font;
+					end if;
+				end if;				
+				
+			--dizaine
+			elsif(h_count>85 and h_count<155) then
+				temp := d_res;
+				--ligne haute
+				if(v_count>200 and v_count < 206) then
+					if(temp = 0 or temp = 2 or temp = 3 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9 or eror ='1') then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				--cote haut
+				elsif(v_count>206 and v_count < 237) then
+					--gauche
+					if(h_count>5 and h_count<11) then
+						if(temp = 0 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--droite
+					elsif(h_count>70 and h_count<76) then
+						if(temp = 0 or temp = 1 or temp = 2 or temp = 3 or temp = 4 or temp = 7 or temp = 8 or temp = 9) then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--milieu
+					else
+						rgb2 <= rgb_font;
+					end if;
+				--milieu
+				elsif(v_count>237 and v_count < 244) then
+					if(temp = 2 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				--cote bas
+				elsif(v_count>243	and v_count < 280) then
+					--gauche
+					if(h_count>5 and h_count<11) then
+						if(temp = 0 or temp = 2 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--droite
+					elsif(h_count>70 and h_count<76) then
+						if(temp = 0 or temp = 1 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--milieu
+					else
+						rgb2 <= rgb_font;
+					end if;
+				--bas
+				elsif(v_count>237 and v_count < 244) then
+					if(temp = 0 or temp = 2 or temp = 3  or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9 or eror ='1') then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				else
+					rgb2 <= rgb_font;
+				end if;			
+			elsif(h_count>165 and h_count<235) then
+				temp := u_res;
+				--ligne haute
+				if(v_count>200 and v_count < 206) then
+					if(temp = 0 or temp = 2 or temp = 3 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				--cote haut
+				elsif(v_count>206 and v_count < 237) then
+					--gauche
+					if(h_count>5 and h_count<11) then
+						if(temp = 0 or temp = 5 or temp = 6 or temp = 8 or temp = 9) then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--droite
+					elsif(h_count>70 and h_count<76) then
+						if(temp = 0 or temp = 1 or temp = 2 or temp = 3 or temp = 4 or temp = 7 or temp = 8 or temp = 9) then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--milieu
+					else
+						rgb2 <= rgb_font;
+					end if;
+				--milieu
+				elsif(v_count>237 and v_count < 244) then
+					if(temp = 2 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				--cote bas
+				elsif(v_count>243	and v_count < 280) then
+					--gauche
+					if(h_count>5 and h_count<11) then
+						if(temp = 0 or temp = 2 or temp = 6 or temp = 8 or temp = 9 or eror ='1') then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--droite
+					elsif(h_count>70 and h_count<76) then
+						if(temp = 0 or temp = 1 or temp = 3 or temp = 4 or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
+							rgb2 <= rgb_letters;
+						else 
+							rgb2 <= rgb_font;
+						end if;
+					--milieu
+					else
+						rgb2 <= rgb_font;
+					end if;
+				--bas
+				elsif(v_count>237 and v_count < 244) then
+					if(temp = 0 or temp = 2 or temp = 3  or temp = 5 or temp = 6 or temp = 7 or temp = 8 or temp = 9) then
+						rgb2 <= rgb_letters;
+					else 
+						rgb2 <= rgb_font;
+					end if;
+				else
+					rgb2 <= rgb_font;
+				end if;
+			else
+				rgb2 <= rgb_font;
+			end if;
 			
 			--------------------------------------------------------------------------------------------------output
 			hs_out  <= hs_2;
