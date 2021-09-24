@@ -1,5 +1,5 @@
 Flow report for calculette_v3
-Fri Sep 24 16:59:02 2021
+Fri Sep 24 20:20:22 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 24 16:59:02 2021       ;
+; Flow Status                        ; Successful - Fri Sep 24 20:20:22 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
-; Top-level Entity Name              ; hdmi_de10                                   ;
+; Top-level Entity Name              ; calculator4bits                             ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 244 / 49,760 ( < 1 % )                      ;
-;     Total combinational functions  ; 227 / 49,760 ( < 1 % )                      ;
+; Total logic elements               ; 342 / 49,760 ( < 1 % )                      ;
+;     Total combinational functions  ; 324 / 49,760 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 48 / 49,760 ( < 1 % )                       ;
 ; Total registers                    ; 48                                          ;
-; Total pins                         ; 26 / 360 ( 7 % )                            ;
+; Total pins                         ; 73 / 360 ( 20 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -66,34 +66,34 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/24/2021 16:58:33 ;
+; Start date & time ; 09/24/2021 20:19:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; calculette_v3       ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                  ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id           ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 141623900890406.163249551313044        ; --            ; --          ; --                   ;
-; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Synplify Pro                           ; <None>        ; --          ; --                   ;
-; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --          ; eda_design_synthesis ;
-; EDA_LMF_FILE                        ; synplcty.lmf                           ; --            ; --          ; eda_design_synthesis ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation       ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                   ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation       ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                   ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                   ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; hdmi_de10   ; Top                  ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; hdmi_de10   ; Top                  ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; hdmi_de10   ; Top                  ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                   ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                   ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                   ;
-; TOP_LEVEL_ENTITY                    ; hdmi_de10                              ; calculette_v3 ; --          ; --                   ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                      ;
++-------------------------------------+----------------------------------------+---------------+-----------------+----------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id           ;
++-------------------------------------+----------------------------------------+---------------+-----------------+----------------------+
+; COMPILER_SIGNATURE_ID               ; 141623900890406.163250758405652        ; --            ; --              ; --                   ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Synplify Pro                           ; <None>        ; --              ; --                   ;
+; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --              ; eda_design_synthesis ;
+; EDA_LMF_FILE                        ; synplcty.lmf                           ; --            ; --              ; eda_design_synthesis ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --              ; eda_simulation       ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --              ; --                   ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --              ; eda_simulation       ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --                   ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --                   ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; calculator4bits ; Top                  ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; calculator4bits ; Top                  ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; calculator4bits ; Top                  ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --              ; --                   ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --                   ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --              ; --                   ;
+; TOP_LEVEL_ENTITY                    ; calculator4bits                        ; calculette_v3 ; --              ; --                   ;
++-------------------------------------+----------------------------------------+---------------+-----------------+----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4797 MB             ; 00:00:23                           ;
-; Fitter               ; 00:00:08     ; 1.1                     ; 5636 MB             ; 00:00:13                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4679 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4819 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:43                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4802 MB             ; 00:00:23                           ;
+; Fitter               ; 00:00:15     ; 1.0                     ; 5642 MB             ; 00:00:19                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4680 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4820 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4647 MB             ; 00:00:01                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:00:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

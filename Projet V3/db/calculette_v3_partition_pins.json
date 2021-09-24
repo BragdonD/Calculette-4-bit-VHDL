@@ -4,19 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "res_out[0]",
+					"name" : "modesOut[0]",
 					"strict" : false
 				},
 				{
-					"name" : "res_out[1]",
+					"name" : "modesOut[1]",
 					"strict" : false
 				},
 				{
-					"name" : "res_out[2]",
+					"name" : "modesOut[2]",
 					"strict" : false
 				},
 				{
-					"name" : "res_out[3]",
+					"name" : "modesOut[3]",
 					"strict" : false
 				},
 				{
@@ -76,23 +76,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "Res[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Res[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Res[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Res[3]",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "CLA",
+					"strict" : false
+				},
+				{
+					"name" : "operation",
+					"strict" : false
+				},
+				{
+					"name" : "mode",
 					"strict" : false
 				},
 				{
@@ -100,11 +96,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "eror",
+					"name" : "B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "mode",
+					"name" : "A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
 					"strict" : false
 				}
 			]

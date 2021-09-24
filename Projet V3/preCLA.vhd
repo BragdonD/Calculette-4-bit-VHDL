@@ -98,10 +98,10 @@ begin
 	
 	--control des resultats
 	erorControl0 : entity work.ErorControlAdd(archi_errorAdd) 
-		port map(ASigned => Tempmulti1(3), BSigned => Tempmulti2(3), ResSigned => MultiTempA(3), CoutAdd => CoutA ,erorTotale => erorMultiA);
+		port map(ASigne => Tempmulti1(3), BSigne => Tempmulti2(3), ResSigne => MultiTempA(3), CoutAdd => CoutA ,erorTotale => erorMultiA);
 
 	erorControl1 : entity work.ErorControlAdd(archi_errorAdd) 
-		port map(ASigned => Tempmulti3(3), BSigned => Tempmulti4(3), ResSigned => MultiTempB(3), CoutAdd => CoutB ,erorTotale => erorMultiB);
+		port map(ASigne => Tempmulti3(3), BSigne => Tempmulti4(3), ResSigne => MultiTempB(3), CoutAdd => CoutB ,erorTotale => erorMultiB);
 	
 	--calcul total de l'erreur de multiplication
 	process(mode, erorMultiA, erorMultiB, CoutA, CoutB, erorOverflow)
