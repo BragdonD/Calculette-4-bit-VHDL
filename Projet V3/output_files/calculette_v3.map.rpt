@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette_v3
-Thu Sep 23 23:20:22 2021
+Fri Sep 24 16:58:44 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -46,13 +46,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 23 23:20:22 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 24 16:58:44 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
 ; Top-level Entity Name              ; hdmi_de10                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 227                                         ;
-;     Total combinational functions  ; 210                                         ;
+; Total logic elements               ; 243                                         ;
+;     Total combinational functions  ; 226                                         ;
 ;     Dedicated logic registers      ; 48                                          ;
 ; Total registers                    ; 48                                          ;
 ; Total pins                         ; 26                                          ;
@@ -202,17 +202,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 227    ;
+; Estimated Total logic elements              ; 243    ;
 ;                                             ;        ;
-; Total combinational functions               ; 210    ;
+; Total combinational functions               ; 226    ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 117    ;
-;     -- 3 input functions                    ; 41     ;
-;     -- <=2 input functions                  ; 52     ;
+;     -- 4 input functions                    ; 115    ;
+;     -- 3 input functions                    ; 57     ;
+;     -- <=2 input functions                  ; 54     ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 173    ;
-;     -- arithmetic mode                      ; 37     ;
+;     -- normal mode                          ; 179    ;
+;     -- arithmetic mode                      ; 47     ;
 ;                                             ;        ;
 ; Total registers                             ; 48     ;
 ;     -- Dedicated logic registers            ; 48     ;
@@ -224,7 +224,7 @@ refer to the applicable agreement for further details.
 ;                                             ;        ;
 ; Maximum fan-out node                        ; clk_25 ;
 ; Maximum fan-out                             ; 43     ;
-; Total fan-out                               ; 857    ;
+; Total fan-out                               ; 901    ;
 ; Average fan-out                             ; 2.76   ;
 +---------------------------------------------+--------+
 
@@ -234,8 +234,8 @@ refer to the applicable agreement for further details.
 +------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                        ; Entity Name     ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |hdmi_de10                               ; 210 (5)             ; 48 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 26   ; 0            ; 0          ; |hdmi_de10                                                                                                                 ; hdmi_de10       ; work         ;
-;    |result_img:res_img|                  ; 205 (188)           ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |hdmi_de10|result_img:res_img                                                                                              ; result_img      ; work         ;
+; |hdmi_de10                               ; 226 (5)             ; 48 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 26   ; 0            ; 0          ; |hdmi_de10                                                                                                                 ; hdmi_de10       ; work         ;
+;    |result_img:res_img|                  ; 221 (204)           ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |hdmi_de10|result_img:res_img                                                                                              ; result_img      ; work         ;
 ;       |lpm_divide:Div0|                  ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |hdmi_de10|result_img:res_img|lpm_divide:Div0                                                                              ; lpm_divide      ; work         ;
 ;          |lpm_divide_v9o:auto_generated| ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |hdmi_de10|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o  ; work         ;
 ;             |abs_divider_4ag:divider|    ; 17 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |hdmi_de10|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag ; work         ;
@@ -279,7 +279,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |hdmi_de10|result_img:res_img|h_count[9] ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |hdmi_de10|result_img:res_img|v_count[9] ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |hdmi_de10|result_img:res_img|rgb2[13]   ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |hdmi_de10|result_img:res_img|rgb2[12]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
@@ -329,20 +329,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 11                          ;
 ;     plain             ; 25                          ;
-; cycloneiii_lcell_comb ; 210                         ;
-;     arith             ; 37                          ;
+; cycloneiii_lcell_comb ; 226                         ;
+;     arith             ; 47                          ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 23                          ;
-;         3 data inputs ; 11                          ;
-;     normal            ; 173                         ;
+;         3 data inputs ; 21                          ;
+;     normal            ; 179                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 117                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 115                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.90                       ;
-; Average LUT depth     ; 8.62                        ;
+; Max LUT depth         ; 18.20                       ;
+; Average LUT depth     ; 9.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -361,7 +361,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Sep 23 23:20:10 2021
+    Info: Processing started: Fri Sep 24 16:58:32 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette_v3 -c calculette_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -414,13 +414,13 @@ Info (13014): Ignored 4 buffer(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 253 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 269 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 227 logic cells
+    Info (21061): Implemented 243 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Thu Sep 23 23:20:22 2021
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Fri Sep 24 16:58:44 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:23
 

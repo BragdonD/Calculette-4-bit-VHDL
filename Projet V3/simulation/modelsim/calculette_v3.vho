@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "09/23/2021 23:20:40"
+-- DATE "09/24/2021 16:59:02"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -126,10 +126,10 @@ END hdmi_de10;
 -- Res[1]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Res[2]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Res[3]	=>  Location: PIN_C12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- reset	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- clk_50	=>  Location: PIN_N14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- eror	=>  Location: PIN_W10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- mode	=>  Location: PIN_W9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- eror	=>  Location: PIN_B12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- mode	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF hdmi_de10 IS
@@ -191,30 +191,9 @@ SIGNAL \clk_25~feeder_combout\ : std_logic;
 SIGNAL \clk_25~q\ : std_logic;
 SIGNAL \clk_25~clkctrl_outclk\ : std_logic;
 SIGNAL \res_img|v_count[0]~11_combout\ : std_logic;
-SIGNAL \res_img|v_count[1]~14\ : std_logic;
-SIGNAL \res_img|v_count[2]~15_combout\ : std_logic;
-SIGNAL \res_img|h_count[0]~10_combout\ : std_logic;
-SIGNAL \res_img|h_count[0]~11\ : std_logic;
-SIGNAL \res_img|h_count[1]~12_combout\ : std_logic;
-SIGNAL \res_img|h_count[1]~13\ : std_logic;
-SIGNAL \res_img|h_count[2]~14_combout\ : std_logic;
-SIGNAL \res_img|h_count[2]~15\ : std_logic;
-SIGNAL \res_img|h_count[3]~16_combout\ : std_logic;
-SIGNAL \res_img|h_count[3]~17\ : std_logic;
-SIGNAL \res_img|h_count[4]~18_combout\ : std_logic;
-SIGNAL \res_img|Equal0~2_combout\ : std_logic;
-SIGNAL \res_img|h_count[4]~19\ : std_logic;
-SIGNAL \res_img|h_count[5]~20_combout\ : std_logic;
-SIGNAL \res_img|h_count[5]~21\ : std_logic;
-SIGNAL \res_img|h_count[6]~22_combout\ : std_logic;
-SIGNAL \res_img|h_count[6]~23\ : std_logic;
-SIGNAL \res_img|h_count[7]~24_combout\ : std_logic;
-SIGNAL \res_img|h_count[7]~25\ : std_logic;
-SIGNAL \res_img|h_count[8]~26_combout\ : std_logic;
-SIGNAL \res_img|h_count[8]~27\ : std_logic;
-SIGNAL \res_img|h_count[9]~28_combout\ : std_logic;
-SIGNAL \res_img|Equal0~0_combout\ : std_logic;
-SIGNAL \res_img|Equal0~1_combout\ : std_logic;
+SIGNAL \res_img|Equal1~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan2~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan28~8_combout\ : std_logic;
 SIGNAL \reset_a~q\ : std_logic;
 SIGNAL \reset_b~0_combout\ : std_logic;
 SIGNAL \reset_b~q\ : std_logic;
@@ -224,7 +203,34 @@ SIGNAL \reset_d~0_combout\ : std_logic;
 SIGNAL \reset_d~q\ : std_logic;
 SIGNAL \reset_e~0_combout\ : std_logic;
 SIGNAL \reset_e~q\ : std_logic;
+SIGNAL \res_img|v_count[9]~29_combout\ : std_logic;
+SIGNAL \res_img|h_count[0]~10_combout\ : std_logic;
+SIGNAL \res_img|h_count[0]~11\ : std_logic;
+SIGNAL \res_img|h_count[1]~12_combout\ : std_logic;
+SIGNAL \res_img|h_count[1]~13\ : std_logic;
+SIGNAL \res_img|h_count[2]~14_combout\ : std_logic;
+SIGNAL \res_img|h_count[2]~15\ : std_logic;
+SIGNAL \res_img|h_count[3]~16_combout\ : std_logic;
+SIGNAL \res_img|h_count[3]~17\ : std_logic;
+SIGNAL \res_img|h_count[4]~18_combout\ : std_logic;
+SIGNAL \res_img|h_count[4]~19\ : std_logic;
+SIGNAL \res_img|h_count[5]~20_combout\ : std_logic;
+SIGNAL \res_img|h_count[5]~21\ : std_logic;
+SIGNAL \res_img|h_count[6]~22_combout\ : std_logic;
+SIGNAL \res_img|h_count[6]~23\ : std_logic;
+SIGNAL \res_img|h_count[7]~24_combout\ : std_logic;
+SIGNAL \res_img|Equal0~1_combout\ : std_logic;
+SIGNAL \res_img|h_count[7]~25\ : std_logic;
+SIGNAL \res_img|h_count[8]~26_combout\ : std_logic;
+SIGNAL \res_img|h_count[8]~27\ : std_logic;
+SIGNAL \res_img|h_count[9]~28_combout\ : std_logic;
+SIGNAL \res_img|Equal0~0_combout\ : std_logic;
+SIGNAL \res_img|Equal0~2_combout\ : std_logic;
 SIGNAL \res_img|v_count[9]~10_combout\ : std_logic;
+SIGNAL \res_img|v_count[0]~12\ : std_logic;
+SIGNAL \res_img|v_count[1]~13_combout\ : std_logic;
+SIGNAL \res_img|v_count[1]~14\ : std_logic;
+SIGNAL \res_img|v_count[2]~15_combout\ : std_logic;
 SIGNAL \res_img|v_count[2]~16\ : std_logic;
 SIGNAL \res_img|v_count[3]~17_combout\ : std_logic;
 SIGNAL \res_img|v_count[3]~18\ : std_logic;
@@ -236,19 +242,14 @@ SIGNAL \res_img|v_count[6]~23_combout\ : std_logic;
 SIGNAL \res_img|v_count[6]~24\ : std_logic;
 SIGNAL \res_img|v_count[7]~25_combout\ : std_logic;
 SIGNAL \res_img|v_count[7]~26\ : std_logic;
-SIGNAL \res_img|v_count[8]~28_combout\ : std_logic;
-SIGNAL \res_img|v_count[8]~29\ : std_logic;
+SIGNAL \res_img|v_count[8]~27_combout\ : std_logic;
+SIGNAL \res_img|v_count[8]~28\ : std_logic;
 SIGNAL \res_img|v_count[9]~30_combout\ : std_logic;
-SIGNAL \res_img|Equal1~1_combout\ : std_logic;
-SIGNAL \res_img|LessThan25~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan28~3_combout\ : std_logic;
-SIGNAL \res_img|v_count[9]~27_combout\ : std_logic;
-SIGNAL \res_img|v_count[0]~12\ : std_logic;
-SIGNAL \res_img|v_count[1]~13_combout\ : std_logic;
-SIGNAL \res_img|LessThan28~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~11_combout\ : std_logic;
+SIGNAL \res_img|LessThan28~4_combout\ : std_logic;
+SIGNAL \res_img|LessThan28~7_combout\ : std_logic;
 SIGNAL \res_img|LessThan1~0_combout\ : std_logic;
 SIGNAL \res_img|vs_1~q\ : std_logic;
-SIGNAL \res_img|vs_2~feeder_combout\ : std_logic;
 SIGNAL \res_img|vs_2~q\ : std_logic;
 SIGNAL \res_img|vs_out~feeder_combout\ : std_logic;
 SIGNAL \res_img|vs_out~q\ : std_logic;
@@ -258,67 +259,49 @@ SIGNAL \res_img|hs_2~feeder_combout\ : std_logic;
 SIGNAL \res_img|hs_2~q\ : std_logic;
 SIGNAL \res_img|hs_out~feeder_combout\ : std_logic;
 SIGNAL \res_img|hs_out~q\ : std_logic;
-SIGNAL \res_img|LessThan2~1_combout\ : std_logic;
-SIGNAL \res_img|LessThan2~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan3~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~84_combout\ : std_logic;
-SIGNAL \res_img|LessThan6~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~85_combout\ : std_logic;
-SIGNAL \res_img|process_1~86_combout\ : std_logic;
-SIGNAL \res_img|de_1~q\ : std_logic;
-SIGNAL \res_img|LessThan28~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan28~1_combout\ : std_logic;
-SIGNAL \res_img|Equal1~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~29_combout\ : std_logic;
-SIGNAL \res_img|LessThan23~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~82_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~15_combout\ : std_logic;
 SIGNAL \res_img|LessThan29~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan17~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~83_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~35_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~36_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~37_combout\ : std_logic;
-SIGNAL \res_img|LessThan34~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan34~1_combout\ : std_logic;
-SIGNAL \res_img|rgb2~38_combout\ : std_logic;
-SIGNAL \res_img|LessThan20~0_combout\ : std_logic;
 SIGNAL \res_img|LessThan29~2_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~25_combout\ : std_logic;
-SIGNAL \res_img|LessThan10~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan8~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan6~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan8~1_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~26_combout\ : std_logic;
-SIGNAL \res_img|process_1~76_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~27_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~28_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~39_combout\ : std_logic;
-SIGNAL \res_img|LessThan26~2_combout\ : std_logic;
-SIGNAL \res_img|process_1~77_combout\ : std_logic;
-SIGNAL \mode~input_o\ : std_logic;
-SIGNAL \res_img|int_res~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~24_combout\ : std_logic;
-SIGNAL \res_img|process_1~78_combout\ : std_logic;
-SIGNAL \res_img|process_1~25_combout\ : std_logic;
-SIGNAL \res_img|process_1~26_combout\ : std_logic;
-SIGNAL \res_img|process_1~79_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~30_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~29_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~31_combout\ : std_logic;
-SIGNAL \res_img|LessThan0~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~80_combout\ : std_logic;
-SIGNAL \res_img|process_1~62_combout\ : std_logic;
+SIGNAL \res_img|LessThan34~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan20~0_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~74_combout\ : std_logic;
+SIGNAL \res_img|LessThan9~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan7~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan9~1_combout\ : std_logic;
+SIGNAL \res_img|LessThan11~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan34~1_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~3_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~4_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~5_combout\ : std_logic;
+SIGNAL \res_img|LessThan17~0_combout\ : std_logic;
+SIGNAL \res_img|rgb2~16_combout\ : std_logic;
+SIGNAL \res_img|LessThan2~1_combout\ : std_logic;
+SIGNAL \res_img|LessThan2~2_combout\ : std_logic;
 SIGNAL \res_img|process_1~81_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~32_combout\ : std_logic;
-SIGNAL \res_img|rgb2~33_combout\ : std_logic;
-SIGNAL \res_img|process_1~21_combout\ : std_logic;
-SIGNAL \res_img|process_1~23_combout\ : std_logic;
-SIGNAL \res_img|LessThan29~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~20_combout\ : std_logic;
-SIGNAL \res_img|process_1~22_combout\ : std_logic;
-SIGNAL \res_img|rgb2~17_combout\ : std_logic;
+SIGNAL \res_img|LessThan7~1_combout\ : std_logic;
+SIGNAL \res_img|process_1~82_combout\ : std_logic;
+SIGNAL \res_img|process_1~83_combout\ : std_logic;
+SIGNAL \res_img|de_1~q\ : std_logic;
+SIGNAL \res_img|LessThan23~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan23~1_combout\ : std_logic;
+SIGNAL \res_img|LessThan28~5_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~12_combout\ : std_logic;
+SIGNAL \res_img|process_1~79_combout\ : std_logic;
+SIGNAL \res_img|process_1~80_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~13_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~14_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~17_combout\ : std_logic;
+SIGNAL \res_img|LessThan32~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan32~1_combout\ : std_logic;
+SIGNAL \eror~input_o\ : std_logic;
+SIGNAL \res_img|LessThan0~0_combout\ : std_logic;
+SIGNAL \res_img|process_1~59_combout\ : std_logic;
+SIGNAL \res_img|process_1~60_combout\ : std_logic;
+SIGNAL \mode~input_o\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\ : std_logic;
+SIGNAL \res_img|int_res~0_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\ : std_logic;
@@ -328,131 +311,173 @@ SIGNAL \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_co
 SIGNAL \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|op_1~1\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|op_1~3\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|op_1~4_combout\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|_~5_combout\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|op_1~0_combout\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|op_1~2_combout\ : std_logic;
+SIGNAL \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ : std_logic;
+SIGNAL \res_img|process_1~69_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|op_1~5\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|op_1~6_combout\ : std_logic;
 SIGNAL \res_img|Div0|auto_generated|divider|_~4_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|op_1~4_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|_~5_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|op_1~2_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|op_1~0_combout\ : std_logic;
-SIGNAL \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ : std_logic;
-SIGNAL \res_img|Add2~1\ : std_logic;
-SIGNAL \res_img|Add2~3\ : std_logic;
-SIGNAL \res_img|Add2~5\ : std_logic;
-SIGNAL \res_img|Add2~7\ : std_logic;
-SIGNAL \res_img|Add2~8_combout\ : std_logic;
-SIGNAL \res_img|Add2~6_combout\ : std_logic;
-SIGNAL \res_img|Add2~4_combout\ : std_logic;
-SIGNAL \res_img|Add2~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~70_combout\ : std_logic;
+SIGNAL \res_img|Equal9~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan26~0_combout\ : std_logic;
+SIGNAL \res_img|process_1~32_combout\ : std_logic;
+SIGNAL \res_img|process_1~25_combout\ : std_logic;
+SIGNAL \res_img|process_1~26_combout\ : std_logic;
+SIGNAL \res_img|process_1~27_combout\ : std_logic;
+SIGNAL \res_img|process_1~71_combout\ : std_logic;
+SIGNAL \res_img|LessThan28~6_combout\ : std_logic;
+SIGNAL \res_img|LessThan31~1_combout\ : std_logic;
+SIGNAL \res_img|LessThan31~0_combout\ : std_logic;
+SIGNAL \res_img|LessThan31~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~67_combout\ : std_logic;
+SIGNAL \res_img|process_1~68_combout\ : std_logic;
+SIGNAL \res_img|process_1~72_combout\ : std_logic;
+SIGNAL \res_img|process_1~57_combout\ : std_logic;
+SIGNAL \res_img|process_1~9_combout\ : std_logic;
+SIGNAL \res_img|process_1~10_combout\ : std_logic;
+SIGNAL \res_img|process_1~84_combout\ : std_logic;
+SIGNAL \res_img|process_1~48_combout\ : std_logic;
+SIGNAL \res_img|process_1~4_combout\ : std_logic;
+SIGNAL \res_img|process_1~53_combout\ : std_logic;
+SIGNAL \res_img|process_1~54_combout\ : std_logic;
+SIGNAL \res_img|process_1~55_combout\ : std_logic;
+SIGNAL \res_img|process_1~56_combout\ : std_logic;
+SIGNAL \res_img|process_1~58_combout\ : std_logic;
+SIGNAL \res_img|process_1~65_combout\ : std_logic;
+SIGNAL \res_img|LessThan26~1_combout\ : std_logic;
+SIGNAL \res_img|process_1~34_combout\ : std_logic;
+SIGNAL \res_img|process_1~12_combout\ : std_logic;
+SIGNAL \res_img|process_1~61_combout\ : std_logic;
+SIGNAL \res_img|process_1~62_combout\ : std_logic;
+SIGNAL \res_img|process_1~63_combout\ : std_logic;
+SIGNAL \res_img|process_1~64_combout\ : std_logic;
+SIGNAL \res_img|process_1~66_combout\ : std_logic;
+SIGNAL \res_img|process_1~73_combout\ : std_logic;
+SIGNAL \res_img|process_1~76_combout\ : std_logic;
+SIGNAL \res_img|process_1~75_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~7_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~6_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~8_combout\ : std_logic;
+SIGNAL \res_img|process_1~77_combout\ : std_logic;
+SIGNAL \res_img|process_1~78_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~9_combout\ : std_logic;
+SIGNAL \res_img|rgb2~10_combout\ : std_logic;
+SIGNAL \res_img|Add3~0_combout\ : std_logic;
+SIGNAL \res_img|Add4~1\ : std_logic;
+SIGNAL \res_img|Add4~3\ : std_logic;
+SIGNAL \res_img|Add4~4_combout\ : std_logic;
+SIGNAL \res_img|Add4~2_combout\ : std_logic;
+SIGNAL \res_img|Add4~0_combout\ : std_logic;
 SIGNAL \res_img|Add2~0_combout\ : std_logic;
+SIGNAL \res_img|Add2~2\ : std_logic;
+SIGNAL \res_img|Add2~4\ : std_logic;
+SIGNAL \res_img|Add2~6\ : std_logic;
+SIGNAL \res_img|Add2~7_combout\ : std_logic;
 SIGNAL \res_img|Add3~1\ : std_logic;
+SIGNAL \res_img|Add3~2_combout\ : std_logic;
+SIGNAL \res_img|Add4~5\ : std_logic;
+SIGNAL \res_img|Add4~6_combout\ : std_logic;
+SIGNAL \res_img|Add2~8\ : std_logic;
+SIGNAL \res_img|Add2~9_combout\ : std_logic;
 SIGNAL \res_img|Add3~3\ : std_logic;
 SIGNAL \res_img|Add3~5\ : std_logic;
 SIGNAL \res_img|Add3~7\ : std_logic;
-SIGNAL \res_img|Add3~9\ : std_logic;
-SIGNAL \res_img|Add3~11\ : std_logic;
-SIGNAL \res_img|Add3~13\ : std_logic;
-SIGNAL \res_img|Add3~14_combout\ : std_logic;
-SIGNAL \res_img|Add3~2_combout\ : std_logic;
-SIGNAL \res_img|Add3~4_combout\ : std_logic;
-SIGNAL \res_img|process_1~35_combout\ : std_logic;
 SIGNAL \res_img|Add3~8_combout\ : std_logic;
-SIGNAL \res_img|Add3~12_combout\ : std_logic;
-SIGNAL \res_img|Add3~10_combout\ : std_logic;
 SIGNAL \res_img|Add3~6_combout\ : std_logic;
-SIGNAL \res_img|Equal12~0_combout\ : std_logic;
-SIGNAL \res_img|Add3~0_combout\ : std_logic;
-SIGNAL \res_img|Add3~15\ : std_logic;
-SIGNAL \res_img|Add3~16_combout\ : std_logic;
-SIGNAL \res_img|process_1~36_combout\ : std_logic;
-SIGNAL \res_img|Equal12~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~49_combout\ : std_logic;
-SIGNAL \eror~input_o\ : std_logic;
-SIGNAL \res_img|LessThan32~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~44_combout\ : std_logic;
-SIGNAL \res_img|process_1~45_combout\ : std_logic;
-SIGNAL \res_img|process_1~46_combout\ : std_logic;
-SIGNAL \res_img|LessThan26~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan26~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~33_combout\ : std_logic;
-SIGNAL \res_img|process_1~50_combout\ : std_logic;
+SIGNAL \res_img|Add3~4_combout\ : std_logic;
+SIGNAL \res_img|Add4~7\ : std_logic;
+SIGNAL \res_img|Add4~9\ : std_logic;
+SIGNAL \res_img|Add4~11\ : std_logic;
+SIGNAL \res_img|Add4~12_combout\ : std_logic;
+SIGNAL \res_img|Add4~10_combout\ : std_logic;
+SIGNAL \res_img|Add4~8_combout\ : std_logic;
+SIGNAL \res_img|Add2~10\ : std_logic;
+SIGNAL \res_img|Add2~12\ : std_logic;
+SIGNAL \res_img|Add2~14\ : std_logic;
+SIGNAL \res_img|Add2~15_combout\ : std_logic;
+SIGNAL \res_img|Add2~11_combout\ : std_logic;
+SIGNAL \res_img|Add2~13_combout\ : std_logic;
+SIGNAL \res_img|Equal11~0_combout\ : std_logic;
+SIGNAL \res_img|Add4~13\ : std_logic;
+SIGNAL \res_img|Add4~15\ : std_logic;
+SIGNAL \res_img|Add4~16_combout\ : std_logic;
+SIGNAL \res_img|Add4~14_combout\ : std_logic;
+SIGNAL \res_img|Add2~16\ : std_logic;
+SIGNAL \res_img|Add2~18\ : std_logic;
+SIGNAL \res_img|Add2~19_combout\ : std_logic;
+SIGNAL \res_img|Add2~20\ : std_logic;
+SIGNAL \res_img|Add2~21_combout\ : std_logic;
+SIGNAL \res_img|process_1~20_combout\ : std_logic;
+SIGNAL \res_img|Add2~5_combout\ : std_logic;
+SIGNAL \res_img|Add2~17_combout\ : std_logic;
+SIGNAL \res_img|Add2~1_combout\ : std_logic;
+SIGNAL \res_img|process_1~21_combout\ : std_logic;
+SIGNAL \res_img|Add2~3_combout\ : std_logic;
+SIGNAL \res_img|process_1~22_combout\ : std_logic;
+SIGNAL \res_img|process_1~23_combout\ : std_logic;
+SIGNAL \res_img|Equal17~0_combout\ : std_logic;
+SIGNAL \res_img|Equal17~1_combout\ : std_logic;
+SIGNAL \res_img|process_1~13_combout\ : std_logic;
+SIGNAL \res_img|process_1~14_combout\ : std_logic;
+SIGNAL \res_img|process_1~15_combout\ : std_logic;
+SIGNAL \res_img|process_1~16_combout\ : std_logic;
+SIGNAL \res_img|process_1~17_combout\ : std_logic;
+SIGNAL \res_img|process_1~18_combout\ : std_logic;
+SIGNAL \res_img|process_1~19_combout\ : std_logic;
+SIGNAL \res_img|process_1~24_combout\ : std_logic;
+SIGNAL \res_img|process_1~28_combout\ : std_logic;
+SIGNAL \res_img|process_1~29_combout\ : std_logic;
+SIGNAL \res_img|process_1~30_combout\ : std_logic;
+SIGNAL \res_img|LessThan29~1_combout\ : std_logic;
+SIGNAL \res_img|process_1~5_combout\ : std_logic;
+SIGNAL \res_img|process_1~6_combout\ : std_logic;
+SIGNAL \res_img|process_1~7_combout\ : std_logic;
+SIGNAL \res_img|process_1~8_combout\ : std_logic;
+SIGNAL \res_img|rgb2~0_combout\ : std_logic;
+SIGNAL \res_img|Equal11~1_combout\ : std_logic;
+SIGNAL \res_img|Equal11~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~31_combout\ : std_logic;
 SIGNAL \res_img|process_1~37_combout\ : std_logic;
 SIGNAL \res_img|process_1~38_combout\ : std_logic;
 SIGNAL \res_img|process_1~39_combout\ : std_logic;
-SIGNAL \res_img|process_1~47_combout\ : std_logic;
-SIGNAL \res_img|LessThan31~0_combout\ : std_logic;
-SIGNAL \res_img|LessThan31~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~43_combout\ : std_logic;
-SIGNAL \res_img|process_1~48_combout\ : std_logic;
-SIGNAL \res_img|process_1~9_combout\ : std_logic;
-SIGNAL \res_img|process_1~6_combout\ : std_logic;
-SIGNAL \res_img|process_1~3_combout\ : std_logic;
-SIGNAL \res_img|process_1~87_combout\ : std_logic;
-SIGNAL \res_img|Equal12~2_combout\ : std_logic;
+SIGNAL \res_img|process_1~36_combout\ : std_logic;
+SIGNAL \res_img|process_1~35_combout\ : std_logic;
 SIGNAL \res_img|process_1~40_combout\ : std_logic;
 SIGNAL \res_img|process_1~41_combout\ : std_logic;
-SIGNAL \res_img|process_1~51_combout\ : std_logic;
-SIGNAL \res_img|rgb2~23_combout\ : std_logic;
-SIGNAL \res_img|rgb2~8_combout\ : std_logic;
-SIGNAL \res_img|rgb2~6_combout\ : std_logic;
-SIGNAL \res_img|rgb2~3_combout\ : std_logic;
-SIGNAL \res_img|rgb2~52_combout\ : std_logic;
-SIGNAL \res_img|process_1~30_combout\ : std_logic;
-SIGNAL \res_img|process_1~28_combout\ : std_logic;
-SIGNAL \res_img|process_1~31_combout\ : std_logic;
-SIGNAL \res_img|process_1~27_combout\ : std_logic;
-SIGNAL \res_img|rgb2~18_combout\ : std_logic;
-SIGNAL \res_img|rgb2~19_combout\ : std_logic;
-SIGNAL \res_img|rgb2~20_combout\ : std_logic;
-SIGNAL \res_img|rgb2~21_combout\ : std_logic;
-SIGNAL \res_img|Equal20~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~32_combout\ : std_logic;
-SIGNAL \res_img|process_1~34_combout\ : std_logic;
 SIGNAL \res_img|process_1~42_combout\ : std_logic;
-SIGNAL \res_img|rgb2~22_combout\ : std_logic;
-SIGNAL \res_img|rgb2~24_combout\ : std_logic;
-SIGNAL \res_img|process_1~69_combout\ : std_logic;
-SIGNAL \res_img|Equal2~0_combout\ : std_logic;
-SIGNAL \res_img|process_1~68_combout\ : std_logic;
-SIGNAL \res_img|process_1~66_combout\ : std_logic;
-SIGNAL \res_img|process_1~54_combout\ : std_logic;
-SIGNAL \res_img|process_1~67_combout\ : std_logic;
-SIGNAL \res_img|process_1~70_combout\ : std_logic;
-SIGNAL \res_img|process_1~73_combout\ : std_logic;
-SIGNAL \res_img|LessThan32~1_combout\ : std_logic;
-SIGNAL \res_img|process_1~57_combout\ : std_logic;
-SIGNAL \res_img|process_1~58_combout\ : std_logic;
-SIGNAL \res_img|process_1~71_combout\ : std_logic;
-SIGNAL \res_img|process_1~72_combout\ : std_logic;
-SIGNAL \res_img|process_1~53_combout\ : std_logic;
-SIGNAL \res_img|process_1~61_combout\ : std_logic;
-SIGNAL \res_img|process_1~63_combout\ : std_logic;
-SIGNAL \res_img|process_1~74_combout\ : std_logic;
+SIGNAL \res_img|process_1~33_combout\ : std_logic;
+SIGNAL \res_img|process_1~43_combout\ : std_logic;
+SIGNAL \res_img|Equal11~3_combout\ : std_logic;
+SIGNAL \res_img|process_1~50_combout\ : std_logic;
+SIGNAL \res_img|process_1~51_combout\ : std_logic;
+SIGNAL \res_img|process_1~44_combout\ : std_logic;
+SIGNAL \res_img|process_1~45_combout\ : std_logic;
+SIGNAL \res_img|process_1~46_combout\ : std_logic;
+SIGNAL \res_img|process_1~47_combout\ : std_logic;
+SIGNAL \res_img|process_1~85_combout\ : std_logic;
+SIGNAL \res_img|process_1~49_combout\ : std_logic;
 SIGNAL \res_img|process_1~52_combout\ : std_logic;
-SIGNAL \res_img|process_1~55_combout\ : std_logic;
-SIGNAL \res_img|process_1~56_combout\ : std_logic;
-SIGNAL \res_img|process_1~60_combout\ : std_logic;
-SIGNAL \res_img|process_1~59_combout\ : std_logic;
-SIGNAL \res_img|process_1~64_combout\ : std_logic;
-SIGNAL \res_img|process_1~65_combout\ : std_logic;
-SIGNAL \res_img|process_1~75_combout\ : std_logic;
-SIGNAL \res_img|rgb2~34_combout\ : std_logic;
-SIGNAL \res_img|rgb2~40_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~42_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~41_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~43_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~44_combout\ : std_logic;
-SIGNAL \res_img|rgb2[13]~45_combout\ : std_logic;
+SIGNAL \res_img|rgb2~1_combout\ : std_logic;
+SIGNAL \res_img|rgb2~11_combout\ : std_logic;
+SIGNAL \res_img|rgb2~18_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~20_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~19_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~21_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~22_combout\ : std_logic;
+SIGNAL \res_img|rgb2[12]~23_combout\ : std_logic;
 SIGNAL \res_img|r_out[4]~feeder_combout\ : std_logic;
-SIGNAL \res_img|rgb2~46_combout\ : std_logic;
-SIGNAL \res_img|rgb2~47_combout\ : std_logic;
-SIGNAL \res_img|rgb2~48_combout\ : std_logic;
+SIGNAL \res_img|rgb2~24_combout\ : std_logic;
+SIGNAL \res_img|rgb2~25_combout\ : std_logic;
+SIGNAL \res_img|rgb2~26_combout\ : std_logic;
 SIGNAL \res_img|r_out[5]~feeder_combout\ : std_logic;
 SIGNAL \res_img|r_out[6]~feeder_combout\ : std_logic;
-SIGNAL \res_img|rgb2~50_combout\ : std_logic;
-SIGNAL \res_img|rgb2~49_combout\ : std_logic;
-SIGNAL \res_img|rgb2~51_combout\ : std_logic;
+SIGNAL \res_img|rgb2~28_combout\ : std_logic;
+SIGNAL \res_img|rgb2~27_combout\ : std_logic;
+SIGNAL \res_img|rgb2~29_combout\ : std_logic;
 SIGNAL \res_img|r_out[7]~feeder_combout\ : std_logic;
 SIGNAL \res_img|g_out[4]~feeder_combout\ : std_logic;
 SIGNAL \res_img|g_out[5]~feeder_combout\ : std_logic;
@@ -808,7 +833,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \clk_50~inputclkctrl_outclk\);
 
--- Location: IOIBUF_X18_Y0_N22
+-- Location: IOIBUF_X54_Y54_N22
 \reset~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -820,22 +845,22 @@ PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
 
--- Location: LCCOMB_X43_Y4_N26
+-- Location: LCCOMB_X42_Y36_N30
 \clk_25~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \clk_25~0_combout\ = (!\clk_25~q\ & !\reset~input_o\)
+-- \clk_25~0_combout\ = (!\reset~input_o\ & !\clk_25~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000001100000011",
+	lut_mask => "0000010100000101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \clk_25~q\,
-	datac => \reset~input_o\,
+	dataa => \reset~input_o\,
+	datac => \clk_25~q\,
 	combout => \clk_25~0_combout\);
 
--- Location: LCCOMB_X43_Y4_N12
+-- Location: LCCOMB_X42_Y36_N20
 \clk_25~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \clk_25~feeder_combout\ = \clk_25~0_combout\
@@ -849,7 +874,7 @@ PORT MAP (
 	datab => \clk_25~0_combout\,
 	combout => \clk_25~feeder_combout\);
 
--- Location: FF_X43_Y4_N13
+-- Location: FF_X42_Y36_N21
 clk_25 : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -863,7 +888,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \clk_25~q\);
 
--- Location: CLKCTRL_G15
+-- Location: CLKCTRL_G10
 \clk_25~clkctrl\ : fiftyfivenm_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -876,7 +901,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \clk_25~clkctrl_outclk\);
 
--- Location: LCCOMB_X25_Y17_N6
+-- Location: LCCOMB_X40_Y36_N4
 \res_img|v_count[0]~11\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[0]~11_combout\ = \res_img|v_count\(0) $ (VCC)
@@ -884,52 +909,213 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010110101010",
+	lut_mask => "0011001111001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(0),
+	datab => \res_img|v_count\(0),
 	datad => VCC,
 	combout => \res_img|v_count[0]~11_combout\,
 	cout => \res_img|v_count[0]~12\);
 
--- Location: LCCOMB_X25_Y17_N8
-\res_img|v_count[1]~13\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X41_Y36_N0
+\res_img|Equal1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|v_count[1]~13_combout\ = (\res_img|v_count\(1) & (!\res_img|v_count[0]~12\)) # (!\res_img|v_count\(1) & ((\res_img|v_count[0]~12\) # (GND)))
--- \res_img|v_count[1]~14\ = CARRY((!\res_img|v_count[0]~12\) # (!\res_img|v_count\(1)))
+-- \res_img|Equal1~0_combout\ = ((\res_img|v_count\(1)) # ((\res_img|v_count\(0)) # (!\res_img|v_count\(3)))) # (!\res_img|v_count\(2))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(1),
-	datad => VCC,
-	cin => \res_img|v_count[0]~12\,
-	combout => \res_img|v_count[1]~13_combout\,
-	cout => \res_img|v_count[1]~14\);
-
--- Location: LCCOMB_X25_Y17_N10
-\res_img|v_count[2]~15\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|v_count[2]~15_combout\ = (\res_img|v_count\(2) & (\res_img|v_count[1]~14\ $ (GND))) # (!\res_img|v_count\(2) & (!\res_img|v_count[1]~14\ & VCC))
--- \res_img|v_count[2]~16\ = CARRY((\res_img|v_count\(2) & !\res_img|v_count[1]~14\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
+	lut_mask => "1111110111111111",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|v_count\(2),
-	datad => VCC,
-	cin => \res_img|v_count[1]~14\,
-	combout => \res_img|v_count[2]~15_combout\,
-	cout => \res_img|v_count[2]~16\);
+	datab => \res_img|v_count\(1),
+	datac => \res_img|v_count\(0),
+	datad => \res_img|v_count\(3),
+	combout => \res_img|Equal1~0_combout\);
 
--- Location: LCCOMB_X24_Y18_N0
+-- Location: LCCOMB_X41_Y36_N28
+\res_img|LessThan2~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan2~0_combout\ = (!\res_img|v_count\(6) & !\res_img|v_count\(7))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \res_img|v_count\(6),
+	datad => \res_img|v_count\(7),
+	combout => \res_img|LessThan2~0_combout\);
+
+-- Location: LCCOMB_X42_Y36_N6
+\res_img|LessThan28~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan28~8_combout\ = (!\res_img|v_count\(8) & (!\res_img|v_count\(4) & (!\res_img|v_count\(5) & \res_img|LessThan2~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|v_count\(5),
+	datad => \res_img|LessThan2~0_combout\,
+	combout => \res_img|LessThan28~8_combout\);
+
+-- Location: FF_X42_Y36_N11
+reset_a : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_50~inputclkctrl_outclk\,
+	asdata => \reset~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reset_a~q\);
+
+-- Location: LCCOMB_X42_Y36_N2
+\reset_b~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \reset_b~0_combout\ = (\reset~input_o\) # (\reset_a~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \reset~input_o\,
+	datad => \reset_a~q\,
+	combout => \reset_b~0_combout\);
+
+-- Location: FF_X42_Y36_N3
+reset_b : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_50~inputclkctrl_outclk\,
+	d => \reset_b~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reset_b~q\);
+
+-- Location: LCCOMB_X41_Y36_N22
+\reset_c~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \reset_c~0_combout\ = (\reset~input_o\) # (\reset_b~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \reset~input_o\,
+	datad => \reset_b~q\,
+	combout => \reset_c~0_combout\);
+
+-- Location: FF_X41_Y36_N23
+reset_c : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_50~inputclkctrl_outclk\,
+	d => \reset_c~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reset_c~q\);
+
+-- Location: LCCOMB_X40_Y36_N2
+\reset_d~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \reset_d~0_combout\ = (\reset~input_o\) # (\reset_c~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \reset~input_o\,
+	datad => \reset_c~q\,
+	combout => \reset_d~0_combout\);
+
+-- Location: FF_X40_Y36_N3
+reset_d : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_50~inputclkctrl_outclk\,
+	d => \reset_d~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reset_d~q\);
+
+-- Location: LCCOMB_X39_Y36_N22
+\reset_e~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \reset_e~0_combout\ = (\reset~input_o\) # (\reset_d~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \reset~input_o\,
+	datad => \reset_d~q\,
+	combout => \reset_e~0_combout\);
+
+-- Location: FF_X39_Y36_N23
+reset_e : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_50~inputclkctrl_outclk\,
+	d => \reset_e~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \reset_e~q\);
+
+-- Location: LCCOMB_X39_Y36_N26
+\res_img|v_count[9]~29\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|v_count[9]~29_combout\ = (\reset_e~q\) # ((!\res_img|Equal1~0_combout\ & (\res_img|v_count\(9) & \res_img|LessThan28~8_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111101000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Equal1~0_combout\,
+	datab => \res_img|v_count\(9),
+	datac => \res_img|LessThan28~8_combout\,
+	datad => \reset_e~q\,
+	combout => \res_img|v_count[9]~29_combout\);
+
+-- Location: LCCOMB_X39_Y36_N0
 \res_img|h_count[0]~10\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[0]~10_combout\ = \res_img|h_count\(0) $ (VCC)
@@ -946,7 +1132,7 @@ PORT MAP (
 	combout => \res_img|h_count[0]~10_combout\,
 	cout => \res_img|h_count[0]~11\);
 
--- Location: FF_X24_Y18_N1
+-- Location: FF_X39_Y36_N1
 \res_img|h_count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -961,7 +1147,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(0));
 
--- Location: LCCOMB_X24_Y18_N2
+-- Location: LCCOMB_X39_Y36_N2
 \res_img|h_count[1]~12\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[1]~12_combout\ = (\res_img|h_count\(1) & (!\res_img|h_count[0]~11\)) # (!\res_img|h_count\(1) & ((\res_img|h_count[0]~11\) # (GND)))
@@ -969,17 +1155,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(1),
+	datab => \res_img|h_count\(1),
 	datad => VCC,
 	cin => \res_img|h_count[0]~11\,
 	combout => \res_img|h_count[1]~12_combout\,
 	cout => \res_img|h_count[1]~13\);
 
--- Location: FF_X24_Y18_N3
+-- Location: FF_X39_Y36_N3
 \res_img|h_count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -994,7 +1180,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(1));
 
--- Location: LCCOMB_X24_Y18_N4
+-- Location: LCCOMB_X39_Y36_N4
 \res_img|h_count[2]~14\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[2]~14_combout\ = (\res_img|h_count\(2) & (\res_img|h_count[1]~13\ $ (GND))) # (!\res_img|h_count\(2) & (!\res_img|h_count[1]~13\ & VCC))
@@ -1002,17 +1188,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|h_count\(2),
+	dataa => \res_img|h_count\(2),
 	datad => VCC,
 	cin => \res_img|h_count[1]~13\,
 	combout => \res_img|h_count[2]~14_combout\,
 	cout => \res_img|h_count[2]~15\);
 
--- Location: FF_X24_Y18_N5
+-- Location: FF_X39_Y36_N5
 \res_img|h_count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1027,7 +1213,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(2));
 
--- Location: LCCOMB_X24_Y18_N6
+-- Location: LCCOMB_X39_Y36_N6
 \res_img|h_count[3]~16\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[3]~16_combout\ = (\res_img|h_count\(3) & (!\res_img|h_count[2]~15\)) # (!\res_img|h_count\(3) & ((\res_img|h_count[2]~15\) # (GND)))
@@ -1035,17 +1221,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|h_count\(3),
+	dataa => \res_img|h_count\(3),
 	datad => VCC,
 	cin => \res_img|h_count[2]~15\,
 	combout => \res_img|h_count[3]~16_combout\,
 	cout => \res_img|h_count[3]~17\);
 
--- Location: FF_X24_Y18_N7
+-- Location: FF_X39_Y36_N7
 \res_img|h_count[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1060,7 +1246,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(3));
 
--- Location: LCCOMB_X24_Y18_N8
+-- Location: LCCOMB_X39_Y36_N8
 \res_img|h_count[4]~18\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[4]~18_combout\ = (\res_img|h_count\(4) & (\res_img|h_count[3]~17\ $ (GND))) # (!\res_img|h_count\(4) & (!\res_img|h_count[3]~17\ & VCC))
@@ -1068,17 +1254,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|h_count\(4),
+	dataa => \res_img|h_count\(4),
 	datad => VCC,
 	cin => \res_img|h_count[3]~17\,
 	combout => \res_img|h_count[4]~18_combout\,
 	cout => \res_img|h_count[4]~19\);
 
--- Location: FF_X24_Y18_N9
+-- Location: FF_X39_Y36_N9
 \res_img|h_count[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1093,22 +1279,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(4));
 
--- Location: LCCOMB_X26_Y18_N4
-\res_img|Equal0~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Equal0~2_combout\ = (!\res_img|h_count\(3)) # (!\res_img|h_count\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|h_count\(4),
-	datad => \res_img|h_count\(3),
-	combout => \res_img|Equal0~2_combout\);
-
--- Location: LCCOMB_X24_Y18_N10
+-- Location: LCCOMB_X39_Y36_N10
 \res_img|h_count[5]~20\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[5]~20_combout\ = (\res_img|h_count\(5) & (!\res_img|h_count[4]~19\)) # (!\res_img|h_count\(5) & ((\res_img|h_count[4]~19\) # (GND)))
@@ -1116,17 +1287,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(5),
+	datab => \res_img|h_count\(5),
 	datad => VCC,
 	cin => \res_img|h_count[4]~19\,
 	combout => \res_img|h_count[5]~20_combout\,
 	cout => \res_img|h_count[5]~21\);
 
--- Location: FF_X24_Y18_N11
+-- Location: FF_X39_Y36_N11
 \res_img|h_count[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1141,7 +1312,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(5));
 
--- Location: LCCOMB_X24_Y18_N12
+-- Location: LCCOMB_X39_Y36_N12
 \res_img|h_count[6]~22\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[6]~22_combout\ = (\res_img|h_count\(6) & (\res_img|h_count[5]~21\ $ (GND))) # (!\res_img|h_count\(6) & (!\res_img|h_count[5]~21\ & VCC))
@@ -1149,17 +1320,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(6),
+	datab => \res_img|h_count\(6),
 	datad => VCC,
 	cin => \res_img|h_count[5]~21\,
 	combout => \res_img|h_count[6]~22_combout\,
 	cout => \res_img|h_count[6]~23\);
 
--- Location: FF_X24_Y18_N13
+-- Location: FF_X39_Y36_N13
 \res_img|h_count[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1174,7 +1345,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(6));
 
--- Location: LCCOMB_X24_Y18_N14
+-- Location: LCCOMB_X39_Y36_N14
 \res_img|h_count[7]~24\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[7]~24_combout\ = (\res_img|h_count\(7) & (!\res_img|h_count[6]~23\)) # (!\res_img|h_count\(7) & ((\res_img|h_count[6]~23\) # (GND)))
@@ -1192,7 +1363,7 @@ PORT MAP (
 	combout => \res_img|h_count[7]~24_combout\,
 	cout => \res_img|h_count[7]~25\);
 
--- Location: FF_X24_Y18_N15
+-- Location: FF_X39_Y36_N15
 \res_img|h_count[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1207,7 +1378,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(7));
 
--- Location: LCCOMB_X24_Y18_N16
+-- Location: LCCOMB_X38_Y37_N6
+\res_img|Equal0~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal0~1_combout\ = ((\res_img|h_count\(5)) # ((\res_img|h_count\(7)) # (\res_img|h_count\(6)))) # (!\res_img|h_count\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(2),
+	datab => \res_img|h_count\(5),
+	datac => \res_img|h_count\(7),
+	datad => \res_img|h_count\(6),
+	combout => \res_img|Equal0~1_combout\);
+
+-- Location: LCCOMB_X39_Y36_N16
 \res_img|h_count[8]~26\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|h_count[8]~26_combout\ = (\res_img|h_count\(8) & (\res_img|h_count[7]~25\ $ (GND))) # (!\res_img|h_count\(8) & (!\res_img|h_count[7]~25\ & VCC))
@@ -1225,7 +1413,7 @@ PORT MAP (
 	combout => \res_img|h_count[8]~26_combout\,
 	cout => \res_img|h_count[8]~27\);
 
--- Location: FF_X24_Y18_N17
+-- Location: FF_X39_Y36_N17
 \res_img|h_count[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1240,22 +1428,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(8));
 
--- Location: LCCOMB_X24_Y18_N18
+-- Location: LCCOMB_X39_Y36_N18
 \res_img|h_count[9]~28\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|h_count[9]~28_combout\ = \res_img|h_count[8]~27\ $ (\res_img|h_count\(9))
+-- \res_img|h_count[9]~28_combout\ = \res_img|h_count\(9) $ (\res_img|h_count[8]~27\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111111110000",
+	lut_mask => "0101101001011010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|h_count\(9),
+	dataa => \res_img|h_count\(9),
 	cin => \res_img|h_count[8]~27\,
 	combout => \res_img|h_count[9]~28_combout\);
 
--- Location: FF_X24_Y18_N19
+-- Location: FF_X39_Y36_N19
 \res_img|h_count[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1270,10 +1458,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|h_count\(9));
 
--- Location: LCCOMB_X23_Y18_N30
+-- Location: LCCOMB_X38_Y37_N16
 \res_img|Equal0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Equal0~0_combout\ = (((!\res_img|h_count\(9)) # (!\res_img|h_count\(8))) # (!\res_img|h_count\(0))) # (!\res_img|h_count\(1))
+-- \res_img|Equal0~0_combout\ = (((!\res_img|h_count\(9)) # (!\res_img|h_count\(1))) # (!\res_img|h_count\(8))) # (!\res_img|h_count\(0))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1281,178 +1469,113 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(1),
-	datab => \res_img|h_count\(0),
-	datac => \res_img|h_count\(8),
+	dataa => \res_img|h_count\(0),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|h_count\(1),
 	datad => \res_img|h_count\(9),
 	combout => \res_img|Equal0~0_combout\);
 
--- Location: LCCOMB_X23_Y18_N4
-\res_img|Equal0~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y37_N20
+\res_img|Equal0~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Equal0~1_combout\ = (\res_img|h_count\(7)) # ((\res_img|h_count\(6)) # ((\res_img|h_count\(5)) # (!\res_img|h_count\(2))))
+-- \res_img|Equal0~2_combout\ = (!\res_img|h_count\(3)) # (!\res_img|h_count\(4))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111011111111",
+	lut_mask => "0000111111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(7),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|h_count\(5),
-	datad => \res_img|h_count\(2),
-	combout => \res_img|Equal0~1_combout\);
+	datac => \res_img|h_count\(4),
+	datad => \res_img|h_count\(3),
+	combout => \res_img|Equal0~2_combout\);
 
--- Location: FF_X25_Y15_N7
-reset_a : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_50~inputclkctrl_outclk\,
-	asdata => \reset~input_o\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reset_a~q\);
-
--- Location: LCCOMB_X25_Y15_N12
-\reset_b~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \reset_b~0_combout\ = (\reset~input_o\) # (\reset_a~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \reset~input_o\,
-	datad => \reset_a~q\,
-	combout => \reset_b~0_combout\);
-
--- Location: FF_X25_Y15_N13
-reset_b : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_50~inputclkctrl_outclk\,
-	d => \reset_b~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reset_b~q\);
-
--- Location: LCCOMB_X25_Y15_N18
-\reset_c~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \reset_c~0_combout\ = (\reset~input_o\) # (\reset_b~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \reset~input_o\,
-	datad => \reset_b~q\,
-	combout => \reset_c~0_combout\);
-
--- Location: FF_X25_Y15_N19
-reset_c : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_50~inputclkctrl_outclk\,
-	d => \reset_c~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reset_c~q\);
-
--- Location: LCCOMB_X25_Y15_N24
-\reset_d~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \reset_d~0_combout\ = (\reset~input_o\) # (\reset_c~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \reset~input_o\,
-	datad => \reset_c~q\,
-	combout => \reset_d~0_combout\);
-
--- Location: FF_X25_Y15_N25
-reset_d : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_50~inputclkctrl_outclk\,
-	d => \reset_d~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reset_d~q\);
-
--- Location: LCCOMB_X25_Y15_N28
-\reset_e~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \reset_e~0_combout\ = (\reset~input_o\) # (\reset_d~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \reset~input_o\,
-	datad => \reset_d~q\,
-	combout => \reset_e~0_combout\);
-
--- Location: FF_X25_Y15_N29
-reset_e : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_50~inputclkctrl_outclk\,
-	d => \reset_e~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \reset_e~q\);
-
--- Location: LCCOMB_X25_Y15_N10
+-- Location: LCCOMB_X39_Y36_N20
 \res_img|v_count[9]~10\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|v_count[9]~10_combout\ = (\reset_e~q\) # ((!\res_img|Equal0~2_combout\ & (!\res_img|Equal0~0_combout\ & !\res_img|Equal0~1_combout\)))
+-- \res_img|v_count[9]~10_combout\ = (\reset_e~q\) # ((!\res_img|Equal0~1_combout\ & (!\res_img|Equal0~0_combout\ & !\res_img|Equal0~2_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000001",
+	lut_mask => "1111000011110001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|Equal0~2_combout\,
+	dataa => \res_img|Equal0~1_combout\,
 	datab => \res_img|Equal0~0_combout\,
-	datac => \res_img|Equal0~1_combout\,
-	datad => \reset_e~q\,
+	datac => \reset_e~q\,
+	datad => \res_img|Equal0~2_combout\,
 	combout => \res_img|v_count[9]~10_combout\);
 
--- Location: FF_X25_Y17_N11
+-- Location: FF_X40_Y36_N5
+\res_img|v_count[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_25~clkctrl_outclk\,
+	d => \res_img|v_count[0]~11_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
+	ena => \res_img|v_count[9]~10_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \res_img|v_count\(0));
+
+-- Location: LCCOMB_X40_Y36_N6
+\res_img|v_count[1]~13\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|v_count[1]~13_combout\ = (\res_img|v_count\(1) & (!\res_img|v_count[0]~12\)) # (!\res_img|v_count\(1) & ((\res_img|v_count[0]~12\) # (GND)))
+-- \res_img|v_count[1]~14\ = CARRY((!\res_img|v_count[0]~12\) # (!\res_img|v_count\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|v_count\(1),
+	datad => VCC,
+	cin => \res_img|v_count[0]~12\,
+	combout => \res_img|v_count[1]~13_combout\,
+	cout => \res_img|v_count[1]~14\);
+
+-- Location: FF_X40_Y36_N7
+\res_img|v_count[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_25~clkctrl_outclk\,
+	d => \res_img|v_count[1]~13_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
+	ena => \res_img|v_count[9]~10_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \res_img|v_count\(1));
+
+-- Location: LCCOMB_X40_Y36_N8
+\res_img|v_count[2]~15\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|v_count[2]~15_combout\ = (\res_img|v_count\(2) & (\res_img|v_count[1]~14\ $ (GND))) # (!\res_img|v_count\(2) & (!\res_img|v_count[1]~14\ & VCC))
+-- \res_img|v_count[2]~16\ = CARRY((\res_img|v_count\(2) & !\res_img|v_count[1]~14\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(2),
+	datad => VCC,
+	cin => \res_img|v_count[1]~14\,
+	combout => \res_img|v_count[2]~15_combout\,
+	cout => \res_img|v_count[2]~16\);
+
+-- Location: FF_X40_Y36_N9
 \res_img|v_count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1462,13 +1585,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[2]~15_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(2));
 
--- Location: LCCOMB_X25_Y17_N12
+-- Location: LCCOMB_X40_Y36_N10
 \res_img|v_count[3]~17\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[3]~17_combout\ = (\res_img|v_count\(3) & (!\res_img|v_count[2]~16\)) # (!\res_img|v_count\(3) & ((\res_img|v_count[2]~16\) # (GND)))
@@ -1476,17 +1599,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(3),
+	datab => \res_img|v_count\(3),
 	datad => VCC,
 	cin => \res_img|v_count[2]~16\,
 	combout => \res_img|v_count[3]~17_combout\,
 	cout => \res_img|v_count[3]~18\);
 
--- Location: FF_X25_Y17_N13
+-- Location: FF_X40_Y36_N11
 \res_img|v_count[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1496,13 +1619,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[3]~17_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(3));
 
--- Location: LCCOMB_X25_Y17_N14
+-- Location: LCCOMB_X40_Y36_N12
 \res_img|v_count[4]~19\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[4]~19_combout\ = (\res_img|v_count\(4) & (\res_img|v_count[3]~18\ $ (GND))) # (!\res_img|v_count\(4) & (!\res_img|v_count[3]~18\ & VCC))
@@ -1520,7 +1643,7 @@ PORT MAP (
 	combout => \res_img|v_count[4]~19_combout\,
 	cout => \res_img|v_count[4]~20\);
 
--- Location: FF_X25_Y17_N15
+-- Location: FF_X40_Y36_N13
 \res_img|v_count[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1530,13 +1653,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[4]~19_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(4));
 
--- Location: LCCOMB_X25_Y17_N16
+-- Location: LCCOMB_X40_Y36_N14
 \res_img|v_count[5]~21\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[5]~21_combout\ = (\res_img|v_count\(5) & (!\res_img|v_count[4]~20\)) # (!\res_img|v_count\(5) & ((\res_img|v_count[4]~20\) # (GND)))
@@ -1554,7 +1677,7 @@ PORT MAP (
 	combout => \res_img|v_count[5]~21_combout\,
 	cout => \res_img|v_count[5]~22\);
 
--- Location: FF_X25_Y17_N17
+-- Location: FF_X40_Y36_N15
 \res_img|v_count[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1564,13 +1687,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[5]~21_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(5));
 
--- Location: LCCOMB_X25_Y17_N18
+-- Location: LCCOMB_X40_Y36_N16
 \res_img|v_count[6]~23\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[6]~23_combout\ = (\res_img|v_count\(6) & (\res_img|v_count[5]~22\ $ (GND))) # (!\res_img|v_count\(6) & (!\res_img|v_count[5]~22\ & VCC))
@@ -1578,17 +1701,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(6),
+	datab => \res_img|v_count\(6),
 	datad => VCC,
 	cin => \res_img|v_count[5]~22\,
 	combout => \res_img|v_count[6]~23_combout\,
 	cout => \res_img|v_count[6]~24\);
 
--- Location: FF_X25_Y17_N19
+-- Location: FF_X40_Y36_N17
 \res_img|v_count[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1598,13 +1721,13 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[6]~23_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(6));
 
--- Location: LCCOMB_X25_Y17_N20
+-- Location: LCCOMB_X40_Y36_N18
 \res_img|v_count[7]~25\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|v_count[7]~25_combout\ = (\res_img|v_count\(7) & (!\res_img|v_count[6]~24\)) # (!\res_img|v_count\(7) & ((\res_img|v_count[6]~24\) # (GND)))
@@ -1622,7 +1745,7 @@ PORT MAP (
 	combout => \res_img|v_count[7]~25_combout\,
 	cout => \res_img|v_count[7]~26\);
 
--- Location: FF_X25_Y17_N21
+-- Location: FF_X40_Y36_N19
 \res_img|v_count[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1632,31 +1755,31 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[7]~25_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(7));
 
--- Location: LCCOMB_X25_Y17_N22
-\res_img|v_count[8]~28\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X40_Y36_N20
+\res_img|v_count[8]~27\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|v_count[8]~28_combout\ = (\res_img|v_count\(8) & (\res_img|v_count[7]~26\ $ (GND))) # (!\res_img|v_count\(8) & (!\res_img|v_count[7]~26\ & VCC))
--- \res_img|v_count[8]~29\ = CARRY((\res_img|v_count\(8) & !\res_img|v_count[7]~26\))
+-- \res_img|v_count[8]~27_combout\ = (\res_img|v_count\(8) & (\res_img|v_count[7]~26\ $ (GND))) # (!\res_img|v_count\(8) & (!\res_img|v_count[7]~26\ & VCC))
+-- \res_img|v_count[8]~28\ = CARRY((\res_img|v_count\(8) & !\res_img|v_count[7]~26\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(8),
 	datad => VCC,
 	cin => \res_img|v_count[7]~26\,
-	combout => \res_img|v_count[8]~28_combout\,
-	cout => \res_img|v_count[8]~29\);
+	combout => \res_img|v_count[8]~27_combout\,
+	cout => \res_img|v_count[8]~28\);
 
--- Location: FF_X25_Y17_N23
+-- Location: FF_X40_Y36_N21
 \res_img|v_count[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1665,29 +1788,29 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|v_count[8]~28_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	d => \res_img|v_count[8]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(8));
 
--- Location: LCCOMB_X25_Y17_N24
+-- Location: LCCOMB_X40_Y36_N22
 \res_img|v_count[9]~30\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|v_count[9]~30_combout\ = \res_img|v_count[8]~29\ $ (\res_img|v_count\(9))
+-- \res_img|v_count[9]~30_combout\ = \res_img|v_count\(9) $ (\res_img|v_count[8]~28\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111111110000",
+	lut_mask => "0101101001011010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|v_count\(9),
-	cin => \res_img|v_count[8]~29\,
+	dataa => \res_img|v_count\(9),
+	cin => \res_img|v_count[8]~28\,
 	combout => \res_img|v_count[9]~30_combout\);
 
--- Location: FF_X25_Y17_N25
+-- Location: FF_X40_Y36_N23
 \res_img|v_count[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1697,114 +1820,16 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
 	d => \res_img|v_count[9]~30_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
+	sclr => \res_img|v_count[9]~29_combout\,
 	ena => \res_img|v_count[9]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|v_count\(9));
 
--- Location: LCCOMB_X26_Y17_N26
-\res_img|Equal1~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X41_Y36_N14
+\res_img|process_1~11\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Equal1~1_combout\ = (\res_img|v_count\(1)) # ((\res_img|v_count\(0)) # ((!\res_img|v_count\(3)) # (!\res_img|v_count\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(1),
-	datab => \res_img|v_count\(0),
-	datac => \res_img|v_count\(2),
-	datad => \res_img|v_count\(3),
-	combout => \res_img|Equal1~1_combout\);
-
--- Location: LCCOMB_X25_Y17_N0
-\res_img|LessThan25~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan25~0_combout\ = (!\res_img|v_count\(4) & !\res_img|v_count\(5))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|v_count\(4),
-	datad => \res_img|v_count\(5),
-	combout => \res_img|LessThan25~0_combout\);
-
--- Location: LCCOMB_X24_Y17_N6
-\res_img|LessThan28~3\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan28~3_combout\ = (!\res_img|v_count\(7) & (!\res_img|v_count\(6) & (\res_img|LessThan25~0_combout\ & !\res_img|v_count\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|v_count\(6),
-	datac => \res_img|LessThan25~0_combout\,
-	datad => \res_img|v_count\(8),
-	combout => \res_img|LessThan28~3_combout\);
-
--- Location: LCCOMB_X25_Y17_N26
-\res_img|v_count[9]~27\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|v_count[9]~27_combout\ = (\reset_e~q\) # ((\res_img|v_count\(9) & (!\res_img|Equal1~1_combout\ & \res_img|LessThan28~3_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(9),
-	datab => \res_img|Equal1~1_combout\,
-	datac => \res_img|LessThan28~3_combout\,
-	datad => \reset_e~q\,
-	combout => \res_img|v_count[9]~27_combout\);
-
--- Location: FF_X25_Y17_N7
-\res_img|v_count[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|v_count[0]~11_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
-	ena => \res_img|v_count[9]~10_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \res_img|v_count\(0));
-
--- Location: FF_X25_Y17_N9
-\res_img|v_count[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|v_count[1]~13_combout\,
-	sclr => \res_img|v_count[9]~27_combout\,
-	ena => \res_img|v_count[9]~10_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \res_img|v_count\(1));
-
--- Location: LCCOMB_X26_Y17_N16
-\res_img|LessThan28~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan28~2_combout\ = (!\res_img|v_count\(2) & !\res_img|v_count\(3))
+-- \res_img|process_1~11_combout\ = (!\res_img|v_count\(5) & !\res_img|v_count\(4))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1812,28 +1837,59 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(2),
-	datad => \res_img|v_count\(3),
-	combout => \res_img|LessThan28~2_combout\);
+	dataa => \res_img|v_count\(5),
+	datad => \res_img|v_count\(4),
+	combout => \res_img|process_1~11_combout\);
 
--- Location: LCCOMB_X26_Y17_N12
-\res_img|LessThan1~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X40_Y36_N30
+\res_img|LessThan28~4\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan1~0_combout\ = (!\res_img|v_count\(1) & (!\res_img|v_count\(9) & (\res_img|LessThan28~3_combout\ & \res_img|LessThan28~2_combout\)))
+-- \res_img|LessThan28~4_combout\ = (!\res_img|v_count\(3) & !\res_img|v_count\(2))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000000000000",
+	lut_mask => "0000000000001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(1),
+	datac => \res_img|v_count\(3),
+	datad => \res_img|v_count\(2),
+	combout => \res_img|LessThan28~4_combout\);
+
+-- Location: LCCOMB_X42_Y36_N24
+\res_img|LessThan28~7\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan28~7_combout\ = (\res_img|process_1~11_combout\ & (\res_img|LessThan2~0_combout\ & (!\res_img|v_count\(8) & \res_img|LessThan28~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~11_combout\,
+	datab => \res_img|LessThan2~0_combout\,
+	datac => \res_img|v_count\(8),
+	datad => \res_img|LessThan28~4_combout\,
+	combout => \res_img|LessThan28~7_combout\);
+
+-- Location: LCCOMB_X41_Y36_N26
+\res_img|LessThan1~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan1~0_combout\ = (!\res_img|v_count\(9) & (\res_img|LessThan28~7_combout\ & !\res_img|v_count\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
 	datab => \res_img|v_count\(9),
-	datac => \res_img|LessThan28~3_combout\,
-	datad => \res_img|LessThan28~2_combout\,
+	datac => \res_img|LessThan28~7_combout\,
+	datad => \res_img|v_count\(1),
 	combout => \res_img|LessThan1~0_combout\);
 
--- Location: FF_X26_Y17_N13
+-- Location: FF_X41_Y36_N27
 \res_img|vs_1\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1847,21 +1903,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|vs_1~q\);
 
--- Location: LCCOMB_X26_Y17_N10
-\res_img|vs_2~feeder\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|vs_2~feeder_combout\ = \res_img|vs_1~q\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \res_img|vs_1~q\,
-	combout => \res_img|vs_2~feeder_combout\);
-
--- Location: FF_X26_Y17_N11
+-- Location: FF_X41_Y36_N15
 \res_img|vs_2\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1870,12 +1912,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|vs_2~feeder_combout\,
+	asdata => \res_img|vs_1~q\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|vs_2~q\);
 
--- Location: LCCOMB_X26_Y17_N28
+-- Location: LCCOMB_X14_Y15_N16
 \res_img|vs_out~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|vs_out~feeder_combout\ = \res_img|vs_2~q\
@@ -1889,7 +1932,7 @@ PORT MAP (
 	datad => \res_img|vs_2~q\,
 	combout => \res_img|vs_out~feeder_combout\);
 
--- Location: FF_X26_Y17_N29
+-- Location: FF_X14_Y15_N17
 \res_img|vs_out\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1903,24 +1946,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|vs_out~q\);
 
--- Location: LCCOMB_X23_Y18_N20
+-- Location: LCCOMB_X39_Y35_N14
 \res_img|LessThan0~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan0~1_combout\ = (!\res_img|h_count\(8) & (!\res_img|h_count\(7) & ((!\res_img|h_count\(5)) # (!\res_img|h_count\(6)))))
+-- \res_img|LessThan0~1_combout\ = (!\res_img|h_count\(7) & (!\res_img|h_count\(8) & ((!\res_img|h_count\(6)) # (!\res_img|h_count\(5)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000010101",
+	lut_mask => "0000000100010001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(6),
+	dataa => \res_img|h_count\(7),
+	datab => \res_img|h_count\(8),
 	datac => \res_img|h_count\(5),
-	datad => \res_img|h_count\(7),
+	datad => \res_img|h_count\(6),
 	combout => \res_img|LessThan0~1_combout\);
 
--- Location: FF_X23_Y18_N21
+-- Location: FF_X38_Y35_N9
 \res_img|hs_1\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1929,13 +1972,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|LessThan0~1_combout\,
+	asdata => \res_img|LessThan0~1_combout\,
 	sclr => \res_img|h_count\(9),
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|hs_1~q\);
 
--- Location: LCCOMB_X12_Y18_N18
+-- Location: LCCOMB_X37_Y35_N12
 \res_img|hs_2~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|hs_2~feeder_combout\ = \res_img|hs_1~q\
@@ -1949,7 +1993,7 @@ PORT MAP (
 	datad => \res_img|hs_1~q\,
 	combout => \res_img|hs_2~feeder_combout\);
 
--- Location: FF_X12_Y18_N19
+-- Location: FF_X37_Y35_N13
 \res_img|hs_2\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1963,21 +2007,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|hs_2~q\);
 
--- Location: LCCOMB_X12_Y18_N16
+-- Location: LCCOMB_X29_Y35_N8
 \res_img|hs_out~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|hs_out~feeder_combout\ = \res_img|hs_2~q\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|hs_2~q\,
+	datac => \res_img|hs_2~q\,
 	combout => \res_img|hs_out~feeder_combout\);
 
--- Location: FF_X12_Y18_N17
+-- Location: FF_X29_Y35_N9
 \res_img|hs_out\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1991,240 +2035,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|hs_out~q\);
 
--- Location: LCCOMB_X24_Y17_N26
-\res_img|LessThan2~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N10
+\res_img|rgb2[12]~15\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan2~1_combout\ = (!\res_img|v_count\(7) & (!\res_img|v_count\(8) & (!\res_img|v_count\(9) & !\res_img|v_count\(6))))
+-- \res_img|rgb2[12]~15_combout\ = (!\res_img|h_count\(9) & \res_img|h_count\(8))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000001",
+	lut_mask => "0011000000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|v_count\(9),
-	datad => \res_img|v_count\(6),
-	combout => \res_img|LessThan2~1_combout\);
+	datab => \res_img|h_count\(9),
+	datac => \res_img|h_count\(8),
+	combout => \res_img|rgb2[12]~15_combout\);
 
--- Location: LCCOMB_X26_Y17_N24
-\res_img|LessThan2~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan2~0_combout\ = ((!\res_img|v_count\(2) & (!\res_img|v_count\(4) & !\res_img|v_count\(3)))) # (!\res_img|v_count\(5))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(2),
-	datab => \res_img|v_count\(4),
-	datac => \res_img|v_count\(5),
-	datad => \res_img|v_count\(3),
-	combout => \res_img|LessThan2~0_combout\);
-
--- Location: LCCOMB_X24_Y17_N8
-\res_img|LessThan3~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan3~0_combout\ = ((!\res_img|v_count\(3) & (!\res_img|v_count\(2) & \res_img|LessThan28~3_combout\))) # (!\res_img|v_count\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101011101010101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(9),
-	datab => \res_img|v_count\(3),
-	datac => \res_img|v_count\(2),
-	datad => \res_img|LessThan28~3_combout\,
-	combout => \res_img|LessThan3~0_combout\);
-
--- Location: LCCOMB_X23_Y18_N18
-\res_img|process_1~84\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~84_combout\ = (!\res_img|h_count\(4) & (!\res_img|h_count\(5) & (!\res_img|h_count\(6) & !\res_img|h_count\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(4),
-	datab => \res_img|h_count\(5),
-	datac => \res_img|h_count\(6),
-	datad => \res_img|h_count\(7),
-	combout => \res_img|process_1~84_combout\);
-
--- Location: LCCOMB_X23_Y18_N26
-\res_img|LessThan6~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan6~1_combout\ = ((!\res_img|h_count\(4) & (!\res_img|h_count\(6) & !\res_img|h_count\(5)))) # (!\res_img|h_count\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(4),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|h_count\(7),
-	datad => \res_img|h_count\(5),
-	combout => \res_img|LessThan6~1_combout\);
-
--- Location: LCCOMB_X26_Y18_N30
-\res_img|process_1~85\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~85_combout\ = (\res_img|h_count\(8) & ((\res_img|process_1~84_combout\) # ((!\res_img|h_count\(9))))) # (!\res_img|h_count\(8) & (((\res_img|h_count\(9)) # (!\res_img|LessThan6~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101110110101111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|process_1~84_combout\,
-	datac => \res_img|LessThan6~1_combout\,
-	datad => \res_img|h_count\(9),
-	combout => \res_img|process_1~85_combout\);
-
--- Location: LCCOMB_X24_Y17_N24
-\res_img|process_1~86\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~86_combout\ = (\res_img|LessThan3~0_combout\ & (\res_img|process_1~85_combout\ & ((!\res_img|LessThan2~0_combout\) # (!\res_img|LessThan2~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|LessThan2~1_combout\,
-	datab => \res_img|LessThan2~0_combout\,
-	datac => \res_img|LessThan3~0_combout\,
-	datad => \res_img|process_1~85_combout\,
-	combout => \res_img|process_1~86_combout\);
-
--- Location: FF_X24_Y17_N25
-\res_img|de_1\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|process_1~86_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \res_img|de_1~q\);
-
--- Location: LCCOMB_X24_Y17_N4
-\res_img|LessThan28~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan28~0_combout\ = (((!\res_img|v_count\(2) & !\res_img|v_count\(3))) # (!\res_img|v_count\(5))) # (!\res_img|v_count\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(2),
-	datab => \res_img|v_count\(3),
-	datac => \res_img|v_count\(4),
-	datad => \res_img|v_count\(5),
-	combout => \res_img|LessThan28~0_combout\);
-
--- Location: LCCOMB_X24_Y17_N20
-\res_img|LessThan28~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan28~1_combout\ = (((\res_img|LessThan28~0_combout\ & !\res_img|v_count\(6))) # (!\res_img|v_count\(8))) # (!\res_img|v_count\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111011111110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|LessThan28~0_combout\,
-	datad => \res_img|v_count\(6),
-	combout => \res_img|LessThan28~1_combout\);
-
--- Location: LCCOMB_X25_Y17_N30
-\res_img|Equal1~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Equal1~0_combout\ = (!\res_img|v_count\(1) & !\res_img|v_count\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|v_count\(1),
-	datad => \res_img|v_count\(0),
-	combout => \res_img|Equal1~0_combout\);
-
--- Location: LCCOMB_X25_Y17_N4
-\res_img|process_1~29\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~29_combout\ = (\res_img|LessThan25~0_combout\ & (((!\res_img|v_count\(2) & \res_img|Equal1~0_combout\)) # (!\res_img|v_count\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(3),
-	datab => \res_img|v_count\(2),
-	datac => \res_img|Equal1~0_combout\,
-	datad => \res_img|LessThan25~0_combout\,
-	combout => \res_img|process_1~29_combout\);
-
--- Location: LCCOMB_X25_Y20_N8
-\res_img|LessThan23~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan23~0_combout\ = (!\res_img|v_count\(8) & (((!\res_img|v_count\(6) & \res_img|process_1~29_combout\)) # (!\res_img|v_count\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001001100000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(6),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|v_count\(7),
-	datad => \res_img|process_1~29_combout\,
-	combout => \res_img|LessThan23~0_combout\);
-
--- Location: LCCOMB_X23_Y20_N28
-\res_img|process_1~82\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~82_combout\ = (\res_img|h_count\(8)) # ((\res_img|h_count\(6)) # ((\res_img|h_count\(9)) # (!\res_img|h_count\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111101111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|h_count\(4),
-	datad => \res_img|h_count\(9),
-	combout => \res_img|process_1~82_combout\);
-
--- Location: LCCOMB_X24_Y18_N28
+-- Location: LCCOMB_X39_Y36_N24
 \res_img|LessThan29~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|LessThan29~0_combout\ = (!\res_img|h_count\(3) & (((!\res_img|h_count\(0) & !\res_img|h_count\(1))) # (!\res_img|h_count\(2))))
@@ -2241,122 +2067,243 @@ PORT MAP (
 	datad => \res_img|h_count\(1),
 	combout => \res_img|LessThan29~0_combout\);
 
--- Location: LCCOMB_X23_Y18_N28
-\res_img|LessThan17~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y35_N10
+\res_img|LessThan29~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan17~0_combout\ = (!\res_img|h_count\(5) & ((\res_img|LessThan29~0_combout\) # (!\res_img|h_count\(4))))
+-- \res_img|LessThan29~2_combout\ = (\res_img|h_count\(4) & (\res_img|h_count\(5) & !\res_img|LessThan29~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001100000011",
+	lut_mask => "0000000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|h_count\(5),
-	datac => \res_img|h_count\(4),
+	dataa => \res_img|h_count\(4),
+	datac => \res_img|h_count\(5),
 	datad => \res_img|LessThan29~0_combout\,
-	combout => \res_img|LessThan17~0_combout\);
+	combout => \res_img|LessThan29~2_combout\);
 
--- Location: LCCOMB_X23_Y20_N22
-\res_img|process_1~83\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~83_combout\ = ((\res_img|process_1~82_combout\) # (!\res_img|LessThan17~0_combout\)) # (!\res_img|h_count\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101110111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(7),
-	datab => \res_img|process_1~82_combout\,
-	datad => \res_img|LessThan17~0_combout\,
-	combout => \res_img|process_1~83_combout\);
-
--- Location: LCCOMB_X23_Y20_N20
-\res_img|rgb2[13]~35\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~35_combout\ = (\res_img|LessThan28~1_combout\ & (!\res_img|v_count\(9) & (!\res_img|LessThan23~0_combout\ & \res_img|process_1~83_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|LessThan28~1_combout\,
-	datab => \res_img|v_count\(9),
-	datac => \res_img|LessThan23~0_combout\,
-	datad => \res_img|process_1~83_combout\,
-	combout => \res_img|rgb2[13]~35_combout\);
-
--- Location: LCCOMB_X23_Y20_N10
-\res_img|rgb2[13]~36\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~36_combout\ = (\res_img|de_1~q\ & \res_img|rgb2[13]~35_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|de_1~q\,
-	datad => \res_img|rgb2[13]~35_combout\,
-	combout => \res_img|rgb2[13]~36_combout\);
-
--- Location: LCCOMB_X23_Y20_N4
-\res_img|rgb2[13]~37\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~37_combout\ = (\res_img|h_count\(8) & !\res_img|h_count\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datad => \res_img|h_count\(9),
-	combout => \res_img|rgb2[13]~37_combout\);
-
--- Location: LCCOMB_X24_Y18_N20
+-- Location: LCCOMB_X38_Y37_N24
 \res_img|LessThan34~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|LessThan34~0_combout\ = (!\res_img|h_count\(2) & ((!\res_img|h_count\(1)) # (!\res_img|h_count\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000001100001111",
+	lut_mask => "0000000000111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \res_img|h_count\(0),
-	datac => \res_img|h_count\(2),
-	datad => \res_img|h_count\(1),
+	datac => \res_img|h_count\(1),
+	datad => \res_img|h_count\(2),
 	combout => \res_img|LessThan34~0_combout\);
 
--- Location: LCCOMB_X24_Y18_N30
-\res_img|LessThan34~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y37_N8
+\res_img|LessThan20~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan34~1_combout\ = (\res_img|h_count\(5)) # ((\res_img|h_count\(4)) # ((\res_img|h_count\(3) & !\res_img|LessThan34~0_combout\)))
+-- \res_img|LessThan20~0_combout\ = ((!\res_img|h_count\(4) & ((\res_img|LessThan34~0_combout\) # (!\res_img|h_count\(3))))) # (!\res_img|h_count\(5))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110111011111110",
+	lut_mask => "0011111100110111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(5),
+	dataa => \res_img|h_count\(3),
+	datab => \res_img|h_count\(5),
+	datac => \res_img|h_count\(4),
+	datad => \res_img|LessThan34~0_combout\,
+	combout => \res_img|LessThan20~0_combout\);
+
+-- Location: LCCOMB_X38_Y35_N0
+\res_img|rgb2[12]~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~2_combout\ = (!\res_img|LessThan29~2_combout\ & (!\res_img|h_count\(6) & (!\res_img|h_count\(7) & !\res_img|LessThan20~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|LessThan29~2_combout\,
+	datab => \res_img|h_count\(6),
+	datac => \res_img|h_count\(7),
+	datad => \res_img|LessThan20~0_combout\,
+	combout => \res_img|rgb2[12]~2_combout\);
+
+-- Location: LCCOMB_X38_Y35_N26
+\res_img|process_1~74\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~74_combout\ = ((!\res_img|h_count\(6) & (!\res_img|h_count\(7) & !\res_img|LessThan29~2_combout\))) # (!\res_img|h_count\(8))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100110111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(6),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|h_count\(7),
+	datad => \res_img|LessThan29~2_combout\,
+	combout => \res_img|process_1~74_combout\);
+
+-- Location: LCCOMB_X38_Y36_N12
+\res_img|LessThan9~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan9~0_combout\ = ((!\res_img|h_count\(3) & ((!\res_img|h_count\(2)) # (!\res_img|h_count\(1))))) # (!\res_img|h_count\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111101111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(1),
+	datab => \res_img|h_count\(2),
+	datac => \res_img|h_count\(4),
+	datad => \res_img|h_count\(3),
+	combout => \res_img|LessThan9~0_combout\);
+
+-- Location: LCCOMB_X38_Y37_N14
+\res_img|LessThan7~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan7~0_combout\ = (!\res_img|h_count\(5) & !\res_img|h_count\(6))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \res_img|h_count\(5),
+	datad => \res_img|h_count\(6),
+	combout => \res_img|LessThan7~0_combout\);
+
+-- Location: LCCOMB_X38_Y35_N2
+\res_img|LessThan9~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan9~1_combout\ = (!\res_img|h_count\(8) & (((\res_img|LessThan9~0_combout\ & \res_img|LessThan7~0_combout\)) # (!\res_img|h_count\(7))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000100010001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(7),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|LessThan9~0_combout\,
+	datad => \res_img|LessThan7~0_combout\,
+	combout => \res_img|LessThan9~1_combout\);
+
+-- Location: LCCOMB_X38_Y35_N4
+\res_img|LessThan11~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan11~0_combout\ = ((!\res_img|h_count\(6) & (!\res_img|h_count\(7) & \res_img|LessThan20~0_combout\))) # (!\res_img|h_count\(8))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011011100110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(6),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|h_count\(7),
+	datad => \res_img|LessThan20~0_combout\,
+	combout => \res_img|LessThan11~0_combout\);
+
+-- Location: LCCOMB_X38_Y37_N18
+\res_img|LessThan34~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan34~1_combout\ = (\res_img|h_count\(4)) # ((\res_img|h_count\(5)) # ((\res_img|h_count\(3) & !\res_img|LessThan34~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110011111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(3),
 	datab => \res_img|h_count\(4),
-	datac => \res_img|h_count\(3),
+	datac => \res_img|h_count\(5),
 	datad => \res_img|LessThan34~0_combout\,
 	combout => \res_img|LessThan34~1_combout\);
 
--- Location: LCCOMB_X23_Y20_N30
-\res_img|rgb2~38\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y35_N28
+\res_img|rgb2[12]~3\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~38_combout\ = (\res_img|h_count\(7) & (\res_img|h_count\(6) & (\res_img|LessThan34~1_combout\ & \res_img|LessThan17~0_combout\)))
+-- \res_img|rgb2[12]~3_combout\ = (\res_img|h_count\(6) & (\res_img|h_count\(7) & \res_img|LessThan34~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(6),
+	datac => \res_img|h_count\(7),
+	datad => \res_img|LessThan34~1_combout\,
+	combout => \res_img|rgb2[12]~3_combout\);
+
+-- Location: LCCOMB_X38_Y35_N6
+\res_img|rgb2[12]~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~4_combout\ = (\res_img|process_1~74_combout\ & ((\res_img|LessThan9~1_combout\) # ((!\res_img|LessThan11~0_combout\)))) # (!\res_img|process_1~74_combout\ & (\res_img|rgb2[12]~3_combout\ & ((\res_img|LessThan9~1_combout\) # 
+-- (!\res_img|LessThan11~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111110001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~74_combout\,
+	datab => \res_img|LessThan9~1_combout\,
+	datac => \res_img|LessThan11~0_combout\,
+	datad => \res_img|rgb2[12]~3_combout\,
+	combout => \res_img|rgb2[12]~4_combout\);
+
+-- Location: LCCOMB_X38_Y35_N20
+\res_img|rgb2[12]~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~5_combout\ = (!\res_img|h_count\(9) & (((\res_img|rgb2[12]~2_combout\ & \res_img|h_count\(8))) # (!\res_img|rgb2[12]~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000001010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(9),
+	datab => \res_img|rgb2[12]~2_combout\,
+	datac => \res_img|h_count\(8),
+	datad => \res_img|rgb2[12]~4_combout\,
+	combout => \res_img|rgb2[12]~5_combout\);
+
+-- Location: LCCOMB_X39_Y35_N2
+\res_img|LessThan17~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan17~0_combout\ = (!\res_img|h_count\(5) & ((\res_img|LessThan29~0_combout\) # (!\res_img|h_count\(4))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|h_count\(4),
+	datac => \res_img|h_count\(5),
+	datad => \res_img|LessThan29~0_combout\,
+	combout => \res_img|LessThan17~0_combout\);
+
+-- Location: LCCOMB_X39_Y35_N24
+\res_img|rgb2~16\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2~16_combout\ = (\res_img|h_count\(7) & (\res_img|h_count\(6) & (\res_img|LessThan34~1_combout\ & \res_img|LessThan17~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2368,45 +2315,46 @@ PORT MAP (
 	datab => \res_img|h_count\(6),
 	datac => \res_img|LessThan34~1_combout\,
 	datad => \res_img|LessThan17~0_combout\,
-	combout => \res_img|rgb2~38_combout\);
+	combout => \res_img|rgb2~16_combout\);
 
--- Location: LCCOMB_X24_Y18_N24
-\res_img|LessThan20~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X42_Y36_N4
+\res_img|LessThan2~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan20~0_combout\ = ((!\res_img|h_count\(4) & ((\res_img|LessThan34~0_combout\) # (!\res_img|h_count\(3))))) # (!\res_img|h_count\(5))
+-- \res_img|LessThan2~1_combout\ = ((!\res_img|v_count\(2) & (!\res_img|v_count\(4) & !\res_img|v_count\(3)))) # (!\res_img|v_count\(5))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111011101010111",
+	lut_mask => "0000111100011111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(5),
-	datab => \res_img|h_count\(4),
-	datac => \res_img|h_count\(3),
-	datad => \res_img|LessThan34~0_combout\,
-	combout => \res_img|LessThan20~0_combout\);
+	dataa => \res_img|v_count\(2),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|v_count\(5),
+	datad => \res_img|v_count\(3),
+	combout => \res_img|LessThan2~1_combout\);
 
--- Location: LCCOMB_X24_Y19_N12
-\res_img|LessThan29~2\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X42_Y36_N16
+\res_img|LessThan2~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan29~2_combout\ = (\res_img|h_count\(5) & (\res_img|h_count\(4) & !\res_img|LessThan29~0_combout\))
+-- \res_img|LessThan2~2_combout\ = (!\res_img|v_count\(9) & (\res_img|LessThan2~1_combout\ & (!\res_img|v_count\(8) & \res_img|LessThan2~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000010100000",
+	lut_mask => "0000010000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(5),
-	datac => \res_img|h_count\(4),
-	datad => \res_img|LessThan29~0_combout\,
-	combout => \res_img|LessThan29~2_combout\);
+	dataa => \res_img|v_count\(9),
+	datab => \res_img|LessThan2~1_combout\,
+	datac => \res_img|v_count\(8),
+	datad => \res_img|LessThan2~0_combout\,
+	combout => \res_img|LessThan2~2_combout\);
 
--- Location: LCCOMB_X24_Y19_N18
-\res_img|rgb2[13]~25\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X39_Y35_N18
+\res_img|process_1~81\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2[13]~25_combout\ = (!\res_img|h_count\(7) & (!\res_img|h_count\(6) & (!\res_img|LessThan20~0_combout\ & !\res_img|LessThan29~2_combout\)))
+-- \res_img|process_1~81_combout\ = (!\res_img|h_count\(5) & (!\res_img|h_count\(6) & (!\res_img|h_count\(7) & !\res_img|h_count\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2414,98 +2362,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(7),
+	dataa => \res_img|h_count\(5),
 	datab => \res_img|h_count\(6),
-	datac => \res_img|LessThan20~0_combout\,
-	datad => \res_img|LessThan29~2_combout\,
-	combout => \res_img|rgb2[13]~25_combout\);
+	datac => \res_img|h_count\(7),
+	datad => \res_img|h_count\(4),
+	combout => \res_img|process_1~81_combout\);
 
--- Location: LCCOMB_X24_Y19_N10
-\res_img|LessThan10~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X39_Y35_N12
+\res_img|LessThan7~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan10~0_combout\ = ((!\res_img|h_count\(6) & (\res_img|LessThan20~0_combout\ & !\res_img|h_count\(7)))) # (!\res_img|h_count\(8))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010101110101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|LessThan20~0_combout\,
-	datad => \res_img|h_count\(7),
-	combout => \res_img|LessThan10~0_combout\);
-
--- Location: LCCOMB_X24_Y18_N26
-\res_img|LessThan8~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan8~0_combout\ = ((!\res_img|h_count\(3) & ((!\res_img|h_count\(1)) # (!\res_img|h_count\(2))))) # (!\res_img|h_count\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011011101110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(3),
-	datab => \res_img|h_count\(4),
-	datac => \res_img|h_count\(2),
-	datad => \res_img|h_count\(1),
-	combout => \res_img|LessThan8~0_combout\);
-
--- Location: LCCOMB_X23_Y18_N10
-\res_img|LessThan6~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan6~0_combout\ = (!\res_img|h_count\(5) & !\res_img|h_count\(6))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001100000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|h_count\(5),
-	datac => \res_img|h_count\(6),
-	combout => \res_img|LessThan6~0_combout\);
-
--- Location: LCCOMB_X24_Y19_N16
-\res_img|LessThan8~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan8~1_combout\ = (!\res_img|h_count\(8) & (((\res_img|LessThan8~0_combout\ & \res_img|LessThan6~0_combout\)) # (!\res_img|h_count\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000100010001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(7),
-	datac => \res_img|LessThan8~0_combout\,
-	datad => \res_img|LessThan6~0_combout\,
-	combout => \res_img|LessThan8~1_combout\);
-
--- Location: LCCOMB_X24_Y19_N26
-\res_img|rgb2[13]~26\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~26_combout\ = (\res_img|h_count\(7) & (\res_img|LessThan34~1_combout\ & \res_img|h_count\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|h_count\(7),
-	datac => \res_img|LessThan34~1_combout\,
-	datad => \res_img|h_count\(6),
-	combout => \res_img|rgb2[13]~26_combout\);
-
--- Location: LCCOMB_X24_Y19_N24
-\res_img|process_1~76\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~76_combout\ = ((!\res_img|h_count\(7) & (!\res_img|h_count\(6) & !\res_img|LessThan29~2_combout\))) # (!\res_img|h_count\(8))
+-- \res_img|LessThan7~1_combout\ = ((!\res_img|h_count\(6) & (!\res_img|h_count\(5) & !\res_img|h_count\(4)))) # (!\res_img|h_count\(7))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2513,407 +2379,64 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(7),
-	datac => \res_img|h_count\(6),
-	datad => \res_img|LessThan29~2_combout\,
-	combout => \res_img|process_1~76_combout\);
-
--- Location: LCCOMB_X24_Y19_N20
-\res_img|rgb2[13]~27\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~27_combout\ = (\res_img|LessThan10~0_combout\ & (\res_img|LessThan8~1_combout\ & ((\res_img|rgb2[13]~26_combout\) # (\res_img|process_1~76_combout\)))) # (!\res_img|LessThan10~0_combout\ & (((\res_img|rgb2[13]~26_combout\) # 
--- (\res_img|process_1~76_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101110111010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|LessThan10~0_combout\,
-	datab => \res_img|LessThan8~1_combout\,
-	datac => \res_img|rgb2[13]~26_combout\,
-	datad => \res_img|process_1~76_combout\,
-	combout => \res_img|rgb2[13]~27_combout\);
-
--- Location: LCCOMB_X24_Y19_N22
-\res_img|rgb2[13]~28\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~28_combout\ = (!\res_img|h_count\(9) & (((\res_img|h_count\(8) & \res_img|rgb2[13]~25_combout\)) # (!\res_img|rgb2[13]~27_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|rgb2[13]~25_combout\,
-	datac => \res_img|h_count\(9),
-	datad => \res_img|rgb2[13]~27_combout\,
-	combout => \res_img|rgb2[13]~28_combout\);
-
--- Location: LCCOMB_X23_Y20_N16
-\res_img|rgb2[13]~39\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~39_combout\ = (\res_img|rgb2[13]~36_combout\ & (((\res_img|rgb2[13]~28_combout\) # (!\res_img|rgb2~38_combout\)) # (!\res_img|rgb2[13]~37_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|rgb2[13]~36_combout\,
-	datab => \res_img|rgb2[13]~37_combout\,
-	datac => \res_img|rgb2~38_combout\,
-	datad => \res_img|rgb2[13]~28_combout\,
-	combout => \res_img|rgb2[13]~39_combout\);
-
--- Location: LCCOMB_X24_Y17_N10
-\res_img|LessThan26~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan26~2_combout\ = (\res_img|v_count\(3) & \res_img|v_count\(2))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|v_count\(3),
-	datad => \res_img|v_count\(2),
-	combout => \res_img|LessThan26~2_combout\);
-
--- Location: LCCOMB_X24_Y17_N12
-\res_img|process_1~77\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~77_combout\ = (\res_img|v_count\(5) & ((\res_img|v_count\(4)) # ((!\res_img|Equal1~0_combout\ & \res_img|LessThan26~2_combout\)))) # (!\res_img|v_count\(5) & (((!\res_img|v_count\(4)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100011111000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Equal1~0_combout\,
-	datab => \res_img|v_count\(5),
-	datac => \res_img|v_count\(4),
-	datad => \res_img|LessThan26~2_combout\,
-	combout => \res_img|process_1~77_combout\);
-
--- Location: IOIBUF_X22_Y0_N1
-\mode~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_mode,
-	o => \mode~input_o\);
-
--- Location: LCCOMB_X26_Y18_N12
-\res_img|int_res~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|int_res~0_combout\ = (\mode~input_o\ & \Res[3]~input_o\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|int_res~0_combout\);
-
--- Location: LCCOMB_X24_Y17_N28
-\res_img|process_1~24\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~24_combout\ = (\res_img|v_count\(8) & (!\res_img|v_count\(9) & !\res_img|v_count\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|v_count\(8),
-	datac => \res_img|v_count\(9),
-	datad => \res_img|v_count\(6),
-	combout => \res_img|process_1~24_combout\);
-
--- Location: LCCOMB_X23_Y20_N14
-\res_img|process_1~78\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~78_combout\ = (!\res_img|v_count\(7) & (!\res_img|process_1~77_combout\ & (\res_img|int_res~0_combout\ & \res_img|process_1~24_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|process_1~77_combout\,
-	datac => \res_img|int_res~0_combout\,
-	datad => \res_img|process_1~24_combout\,
-	combout => \res_img|process_1~78_combout\);
-
--- Location: LCCOMB_X24_Y17_N2
-\res_img|process_1~25\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~25_combout\ = (!\res_img|v_count\(3) & (((!\res_img|v_count\(2)) # (!\res_img|v_count\(1))) # (!\res_img|v_count\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000011100001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(0),
-	datab => \res_img|v_count\(1),
-	datac => \res_img|v_count\(3),
-	datad => \res_img|v_count\(2),
-	combout => \res_img|process_1~25_combout\);
-
--- Location: LCCOMB_X24_Y17_N30
-\res_img|process_1~26\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~26_combout\ = ((!\res_img|v_count\(5) & ((\res_img|process_1~25_combout\) # (!\res_img|v_count\(4))))) # (!\res_img|LessThan28~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101111100011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(5),
-	datab => \res_img|v_count\(4),
-	datac => \res_img|LessThan28~0_combout\,
-	datad => \res_img|process_1~25_combout\,
-	combout => \res_img|process_1~26_combout\);
-
--- Location: LCCOMB_X24_Y17_N22
-\res_img|process_1~79\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~79_combout\ = (\res_img|process_1~24_combout\ & ((\res_img|v_count\(7) & (!\res_img|process_1~26_combout\)) # (!\res_img|v_count\(7) & ((!\res_img|process_1~77_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100001001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|process_1~24_combout\,
-	datac => \res_img|process_1~26_combout\,
-	datad => \res_img|process_1~77_combout\,
-	combout => \res_img|process_1~79_combout\);
-
--- Location: LCCOMB_X24_Y19_N14
-\res_img|rgb2[13]~30\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~30_combout\ = (\res_img|LessThan8~1_combout\) # ((\res_img|h_count\(9)) # (!\res_img|LessThan10~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|LessThan8~1_combout\,
-	datac => \res_img|h_count\(9),
-	datad => \res_img|LessThan10~0_combout\,
-	combout => \res_img|rgb2[13]~30_combout\);
-
--- Location: LCCOMB_X24_Y19_N28
-\res_img|rgb2[13]~29\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~29_combout\ = ((\res_img|h_count\(9)) # (!\res_img|rgb2[13]~25_combout\)) # (!\res_img|h_count\(8))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datac => \res_img|h_count\(9),
-	datad => \res_img|rgb2[13]~25_combout\,
-	combout => \res_img|rgb2[13]~29_combout\);
-
--- Location: LCCOMB_X24_Y20_N8
-\res_img|rgb2[13]~31\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~31_combout\ = (\res_img|rgb2[13]~28_combout\ & ((\res_img|rgb2[13]~29_combout\) # (!\res_img|rgb2[13]~30_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|rgb2[13]~30_combout\,
-	datac => \res_img|rgb2[13]~29_combout\,
-	datad => \res_img|rgb2[13]~28_combout\,
-	combout => \res_img|rgb2[13]~31_combout\);
-
--- Location: LCCOMB_X25_Y18_N28
-\res_img|LessThan0~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan0~0_combout\ = (!\res_img|h_count\(8) & !\res_img|h_count\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|h_count\(8),
-	datad => \res_img|h_count\(7),
-	combout => \res_img|LessThan0~0_combout\);
-
--- Location: LCCOMB_X25_Y18_N24
-\res_img|process_1~80\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~80_combout\ = (\res_img|h_count\(9) & (((\res_img|h_count\(6) & !\res_img|LessThan20~0_combout\)) # (!\res_img|LessThan0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(6),
-	datab => \res_img|h_count\(9),
-	datac => \res_img|LessThan20~0_combout\,
-	datad => \res_img|LessThan0~0_combout\,
-	combout => \res_img|process_1~80_combout\);
-
--- Location: LCCOMB_X25_Y18_N20
-\res_img|process_1~62\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~62_combout\ = (\res_img|h_count\(7) & (\res_img|h_count\(6) & (\res_img|h_count\(8) & !\res_img|LessThan17~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
 	dataa => \res_img|h_count\(7),
 	datab => \res_img|h_count\(6),
-	datac => \res_img|h_count\(8),
-	datad => \res_img|LessThan17~0_combout\,
-	combout => \res_img|process_1~62_combout\);
-
--- Location: LCCOMB_X25_Y18_N18
-\res_img|process_1~81\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~81_combout\ = (\res_img|process_1~80_combout\) # ((!\res_img|h_count\(9) & !\res_img|process_1~62_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|process_1~80_combout\,
-	datac => \res_img|h_count\(9),
-	datad => \res_img|process_1~62_combout\,
-	combout => \res_img|process_1~81_combout\);
-
--- Location: LCCOMB_X24_Y20_N10
-\res_img|rgb2[13]~32\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~32_combout\ = (\res_img|rgb2[13]~28_combout\ & (\res_img|rgb2[13]~30_combout\)) # (!\res_img|rgb2[13]~28_combout\ & ((\res_img|process_1~81_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|rgb2[13]~30_combout\,
-	datac => \res_img|process_1~81_combout\,
-	datad => \res_img|rgb2[13]~28_combout\,
-	combout => \res_img|rgb2[13]~32_combout\);
-
--- Location: LCCOMB_X24_Y20_N0
-\res_img|rgb2~33\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~33_combout\ = (\res_img|rgb2[13]~31_combout\ & ((\res_img|rgb2[13]~32_combout\ & (\res_img|process_1~78_combout\)) # (!\res_img|rgb2[13]~32_combout\ & ((\res_img|process_1~79_combout\))))) # (!\res_img|rgb2[13]~31_combout\ & 
--- (((!\res_img|rgb2[13]~32_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000011001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~78_combout\,
-	datab => \res_img|process_1~79_combout\,
-	datac => \res_img|rgb2[13]~31_combout\,
-	datad => \res_img|rgb2[13]~32_combout\,
-	combout => \res_img|rgb2~33_combout\);
-
--- Location: LCCOMB_X23_Y18_N24
-\res_img|process_1~21\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~21_combout\ = (\res_img|h_count\(5) & \res_img|h_count\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
 	datac => \res_img|h_count\(5),
 	datad => \res_img|h_count\(4),
-	combout => \res_img|process_1~21_combout\);
+	combout => \res_img|LessThan7~1_combout\);
 
--- Location: LCCOMB_X23_Y18_N22
-\res_img|process_1~23\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X39_Y35_N22
+\res_img|process_1~82\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~23_combout\ = (((!\res_img|LessThan0~0_combout\) # (!\res_img|h_count\(6))) # (!\res_img|process_1~21_combout\)) # (!\res_img|LessThan29~0_combout\)
+-- \res_img|process_1~82_combout\ = (\res_img|h_count\(8) & ((\res_img|process_1~81_combout\) # ((!\res_img|h_count\(9))))) # (!\res_img|h_count\(8) & (((\res_img|h_count\(9)) # (!\res_img|LessThan7~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111111111111111",
+	lut_mask => "1101101011011111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|LessThan29~0_combout\,
-	datab => \res_img|process_1~21_combout\,
-	datac => \res_img|h_count\(6),
-	datad => \res_img|LessThan0~0_combout\,
-	combout => \res_img|process_1~23_combout\);
+	dataa => \res_img|h_count\(8),
+	datab => \res_img|process_1~81_combout\,
+	datac => \res_img|h_count\(9),
+	datad => \res_img|LessThan7~1_combout\,
+	combout => \res_img|process_1~82_combout\);
 
--- Location: LCCOMB_X23_Y18_N2
-\res_img|LessThan29~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X42_Y36_N26
+\res_img|process_1~83\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|LessThan29~1_combout\ = (!\res_img|h_count\(7) & (((\res_img|LessThan29~0_combout\) # (!\res_img|process_1~21_combout\)) # (!\res_img|h_count\(6))))
+-- \res_img|process_1~83_combout\ = (!\res_img|LessThan2~2_combout\ & (\res_img|process_1~82_combout\ & ((\res_img|LessThan28~7_combout\) # (!\res_img|v_count\(9)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010100010101",
+	lut_mask => "0011000000010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(7),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|process_1~21_combout\,
-	datad => \res_img|LessThan29~0_combout\,
-	combout => \res_img|LessThan29~1_combout\);
+	dataa => \res_img|v_count\(9),
+	datab => \res_img|LessThan2~2_combout\,
+	datac => \res_img|process_1~82_combout\,
+	datad => \res_img|LessThan28~7_combout\,
+	combout => \res_img|process_1~83_combout\);
 
--- Location: LCCOMB_X23_Y18_N6
-\res_img|process_1~20\ : fiftyfivenm_lcell_comb
+-- Location: FF_X42_Y36_N27
+\res_img|de_1\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk_25~clkctrl_outclk\,
+	d => \res_img|process_1~83_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \res_img|de_1~q\);
+
+-- Location: LCCOMB_X40_Y36_N28
+\res_img|LessThan23~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~20_combout\ = (\res_img|h_count\(8) & ((\res_img|h_count\(6)) # ((\res_img|LessThan34~1_combout\) # (\res_img|h_count\(7)))))
+-- \res_img|LessThan23~0_combout\ = (\res_img|v_count\(3) & ((\res_img|v_count\(0)) # ((\res_img|v_count\(2)) # (\res_img|v_count\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2921,681 +2444,146 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|LessThan34~1_combout\,
-	datad => \res_img|h_count\(7),
-	combout => \res_img|process_1~20_combout\);
+	dataa => \res_img|v_count\(3),
+	datab => \res_img|v_count\(0),
+	datac => \res_img|v_count\(2),
+	datad => \res_img|v_count\(1),
+	combout => \res_img|LessThan23~0_combout\);
 
--- Location: LCCOMB_X23_Y18_N0
-\res_img|process_1~22\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X41_Y36_N16
+\res_img|LessThan23~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~22_combout\ = (\res_img|process_1~20_combout\) # ((!\res_img|h_count\(8) & \res_img|LessThan29~1_combout\))
+-- \res_img|LessThan23~1_combout\ = (\res_img|v_count\(7) & ((\res_img|v_count\(6)) # ((\res_img|LessThan23~0_combout\) # (!\res_img|process_1~11_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111101010000",
+	lut_mask => "1100110010001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(8),
-	datac => \res_img|LessThan29~1_combout\,
-	datad => \res_img|process_1~20_combout\,
-	combout => \res_img|process_1~22_combout\);
+	dataa => \res_img|v_count\(6),
+	datab => \res_img|v_count\(7),
+	datac => \res_img|process_1~11_combout\,
+	datad => \res_img|LessThan23~0_combout\,
+	combout => \res_img|LessThan23~1_combout\);
 
--- Location: LCCOMB_X23_Y18_N8
-\res_img|rgb2~17\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X41_Y36_N18
+\res_img|LessThan28~5\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~17_combout\ = ((\res_img|process_1~22_combout\) # (!\res_img|process_1~23_combout\)) # (!\res_img|h_count\(9))
+-- \res_img|LessThan28~5_combout\ = (!\res_img|v_count\(6) & (((\res_img|LessThan28~4_combout\) # (!\res_img|v_count\(4))) # (!\res_img|v_count\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100111111",
+	lut_mask => "0000111100000111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|h_count\(9),
-	datac => \res_img|process_1~23_combout\,
-	datad => \res_img|process_1~22_combout\,
-	combout => \res_img|rgb2~17_combout\);
+	dataa => \res_img|v_count\(5),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|v_count\(6),
+	datad => \res_img|LessThan28~4_combout\,
+	combout => \res_img|LessThan28~5_combout\);
 
--- Location: LCCOMB_X27_Y19_N28
-\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N8
+\res_img|rgb2[12]~12\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ = (!\Res[1]~input_o\ & (!\Res[0]~input_o\ & (\mode~input_o\ & \Res[3]~input_o\)))
+-- \res_img|rgb2[12]~12_combout\ = (!\res_img|v_count\(9) & (((\res_img|LessThan28~5_combout\) # (!\res_img|v_count\(8))) # (!\res_img|v_count\(7))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000000000000",
+	lut_mask => "0011001100010011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Res[1]~input_o\,
-	datab => \Res[0]~input_o\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\);
+	dataa => \res_img|v_count\(7),
+	datab => \res_img|v_count\(9),
+	datac => \res_img|v_count\(8),
+	datad => \res_img|LessThan28~5_combout\,
+	combout => \res_img|rgb2[12]~12_combout\);
 
--- Location: LCCOMB_X27_Y19_N26
-\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N2
+\res_img|process_1~79\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\ = (\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ & (\Res[2]~input_o\ $ (((\Res[3]~input_o\))))) # (!\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ 
--- & (((!\mode~input_o\ & \Res[3]~input_o\))))
+-- \res_img|process_1~79_combout\ = (\res_img|h_count\(6)) # ((\res_img|h_count\(8)) # ((\res_img|h_count\(9)) # (!\res_img|h_count\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100011110001000",
+	lut_mask => "1111111111101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Res[2]~input_o\,
-	datab => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\);
+	dataa => \res_img|h_count\(6),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|h_count\(4),
+	datad => \res_img|h_count\(9),
+	combout => \res_img|process_1~79_combout\);
 
--- Location: LCCOMB_X27_Y19_N30
-\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N20
+\res_img|process_1~80\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\ = \Res[2]~input_o\ $ (((\res_img|int_res~0_combout\ & ((\Res[0]~input_o\) # (\Res[1]~input_o\)))))
+-- \res_img|process_1~80_combout\ = (\res_img|process_1~79_combout\) # ((!\res_img|LessThan17~0_combout\) # (!\res_img|h_count\(7)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101011010101010",
+	lut_mask => "1100111111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Res[2]~input_o\,
-	datab => \Res[0]~input_o\,
-	datac => \Res[1]~input_o\,
-	datad => \res_img|int_res~0_combout\,
-	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\);
+	datab => \res_img|process_1~79_combout\,
+	datac => \res_img|h_count\(7),
+	datad => \res_img|LessThan17~0_combout\,
+	combout => \res_img|process_1~80_combout\);
 
--- Location: LCCOMB_X27_Y19_N24
-\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N6
+\res_img|rgb2[12]~13\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\ = \Res[1]~input_o\ $ (((\Res[0]~input_o\ & (\mode~input_o\ & \Res[3]~input_o\))))
+-- \res_img|rgb2[12]~13_combout\ = (\res_img|rgb2[12]~12_combout\ & (\res_img|process_1~80_combout\ & ((\res_img|LessThan23~1_combout\) # (\res_img|v_count\(8)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110101010101010",
+	lut_mask => "1110000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Res[1]~input_o\,
-	datab => \Res[0]~input_o\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\);
+	dataa => \res_img|LessThan23~1_combout\,
+	datab => \res_img|v_count\(8),
+	datac => \res_img|rgb2[12]~12_combout\,
+	datad => \res_img|process_1~80_combout\,
+	combout => \res_img|rgb2[12]~13_combout\);
 
--- Location: LCCOMB_X27_Y19_N6
-\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N20
+\res_img|rgb2[12]~14\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\ = CARRY(\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\)
+-- \res_img|rgb2[12]~14_combout\ = (\res_img|de_1~q\ & \res_img|rgb2[12]~13_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\,
-	datad => VCC,
-	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\);
+	dataa => \res_img|de_1~q\,
+	datad => \res_img|rgb2[12]~13_combout\,
+	combout => \res_img|rgb2[12]~14_combout\);
 
--- Location: LCCOMB_X27_Y19_N8
-\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N8
+\res_img|rgb2[12]~17\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\ = CARRY((!\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\ & !\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\))
+-- \res_img|rgb2[12]~17_combout\ = (\res_img|rgb2[12]~14_combout\ & (((\res_img|rgb2[12]~5_combout\) # (!\res_img|rgb2~16_combout\)) # (!\res_img|rgb2[12]~15_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\,
-	datad => VCC,
-	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\,
-	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\);
-
--- Location: LCCOMB_X27_Y19_N10
-\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\ = CARRY((\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\ & !\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\,
-	datad => VCC,
-	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\,
-	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\);
-
--- Location: LCCOMB_X27_Y19_N12
-\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ = CARRY(!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => VCC,
-	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\,
-	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\);
-
--- Location: LCCOMB_X27_Y19_N14
-\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\,
-	combout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
-
--- Location: LCCOMB_X26_Y18_N14
-\res_img|Div0|auto_generated|divider|op_1~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|op_1~0_combout\ = \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ $ (VCC)
--- \res_img|Div0|auto_generated|divider|op_1~1\ = CARRY(\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
+	lut_mask => "1101111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datad => VCC,
-	combout => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
-	cout => \res_img|Div0|auto_generated|divider|op_1~1\);
+	dataa => \res_img|rgb2[12]~15_combout\,
+	datab => \res_img|rgb2[12]~5_combout\,
+	datac => \res_img|rgb2~16_combout\,
+	datad => \res_img|rgb2[12]~14_combout\,
+	combout => \res_img|rgb2[12]~17_combout\);
 
--- Location: LCCOMB_X26_Y18_N16
-\res_img|Div0|auto_generated|divider|op_1~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|op_1~2_combout\ = !\res_img|Div0|auto_generated|divider|op_1~1\
--- \res_img|Div0|auto_generated|divider|op_1~3\ = CARRY(!\res_img|Div0|auto_generated|divider|op_1~1\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => VCC,
-	cin => \res_img|Div0|auto_generated|divider|op_1~1\,
-	combout => \res_img|Div0|auto_generated|divider|op_1~2_combout\,
-	cout => \res_img|Div0|auto_generated|divider|op_1~3\);
-
--- Location: LCCOMB_X26_Y18_N18
-\res_img|Div0|auto_generated|divider|op_1~4\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|op_1~4_combout\ = \res_img|Div0|auto_generated|divider|op_1~3\ $ (GND)
--- \res_img|Div0|auto_generated|divider|op_1~5\ = CARRY(!\res_img|Div0|auto_generated|divider|op_1~3\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => VCC,
-	cin => \res_img|Div0|auto_generated|divider|op_1~3\,
-	combout => \res_img|Div0|auto_generated|divider|op_1~4_combout\,
-	cout => \res_img|Div0|auto_generated|divider|op_1~5\);
-
--- Location: LCCOMB_X26_Y18_N20
-\res_img|Div0|auto_generated|divider|op_1~6\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|op_1~6_combout\ = !\res_img|Div0|auto_generated|divider|op_1~5\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \res_img|Div0|auto_generated|divider|op_1~5\,
-	combout => \res_img|Div0|auto_generated|divider|op_1~6_combout\);
-
--- Location: LCCOMB_X26_Y18_N24
-\res_img|Div0|auto_generated|divider|_~4\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|_~4_combout\ = (\res_img|Div0|auto_generated|divider|op_1~6_combout\ & (\mode~input_o\ & \Res[3]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|op_1~6_combout\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|_~4_combout\);
-
--- Location: LCCOMB_X26_Y18_N28
-\res_img|Div0|auto_generated|divider|_~5\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|_~5_combout\ = (\res_img|Div0|auto_generated|divider|op_1~4_combout\ & (\mode~input_o\ & \Res[3]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|op_1~4_combout\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|_~5_combout\);
-
--- Location: LCCOMB_X26_Y18_N6
-\res_img|Div0|auto_generated|divider|quotient[1]~4\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ = (\res_img|Div0|auto_generated|divider|op_1~2_combout\ & (\mode~input_o\ & \Res[3]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|op_1~2_combout\,
-	datac => \mode~input_o\,
-	datad => \Res[3]~input_o\,
-	combout => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\);
-
--- Location: LCCOMB_X26_Y18_N22
-\res_img|Div0|auto_generated|divider|quotient[0]~5\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ = (\Res[3]~input_o\ & ((\mode~input_o\ & (\res_img|Div0|auto_generated|divider|op_1~0_combout\)) # (!\mode~input_o\ & 
--- ((!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))) # (!\Res[3]~input_o\ & (((!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000011110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[3]~input_o\,
-	datab => \mode~input_o\,
-	datac => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
-	datad => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\);
-
--- Location: LCCOMB_X29_Y20_N20
-\res_img|Add2~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add2~0_combout\ = (\res_img|Div0|auto_generated|divider|_~5_combout\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ $ (VCC))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & 
--- (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & VCC))
--- \res_img|Add2~1\ = CARRY((\res_img|Div0|auto_generated|divider|_~5_combout\ & \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datab => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
-	datad => VCC,
-	combout => \res_img|Add2~0_combout\,
-	cout => \res_img|Add2~1\);
-
--- Location: LCCOMB_X29_Y20_N22
-\res_img|Add2~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add2~2_combout\ = (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((\res_img|Div0|auto_generated|divider|_~4_combout\ & (\res_img|Add2~1\ & VCC)) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (!\res_img|Add2~1\)))) # 
--- (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((\res_img|Div0|auto_generated|divider|_~4_combout\ & (!\res_img|Add2~1\)) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Add2~1\) # (GND)))))
--- \res_img|Add2~3\ = CARRY((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (!\res_img|Div0|auto_generated|divider|_~4_combout\ & !\res_img|Add2~1\)) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((!\res_img|Add2~1\) # 
--- (!\res_img|Div0|auto_generated|divider|_~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datad => VCC,
-	cin => \res_img|Add2~1\,
-	combout => \res_img|Add2~2_combout\,
-	cout => \res_img|Add2~3\);
-
--- Location: LCCOMB_X29_Y20_N24
-\res_img|Add2~4\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add2~4_combout\ = ((\res_img|Div0|auto_generated|divider|_~5_combout\ $ (\res_img|Div0|auto_generated|divider|_~4_combout\ $ (!\res_img|Add2~3\)))) # (GND)
--- \res_img|Add2~5\ = CARRY((\res_img|Div0|auto_generated|divider|_~5_combout\ & ((\res_img|Div0|auto_generated|divider|_~4_combout\) # (!\res_img|Add2~3\))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & 
--- (\res_img|Div0|auto_generated|divider|_~4_combout\ & !\res_img|Add2~3\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datad => VCC,
-	cin => \res_img|Add2~3\,
-	combout => \res_img|Add2~4_combout\,
-	cout => \res_img|Add2~5\);
-
--- Location: LCCOMB_X29_Y20_N26
-\res_img|Add2~6\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add2~6_combout\ = (((\res_img|Add2~5\))) # (GND)
--- \res_img|Add2~7\ = CARRY(\res_img|Div0|auto_generated|divider|_~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datad => VCC,
-	cin => \res_img|Add2~5\,
-	combout => \res_img|Add2~6_combout\,
-	cout => \res_img|Add2~7\);
-
--- Location: LCCOMB_X29_Y20_N28
-\res_img|Add2~8\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add2~8_combout\ = \res_img|Add2~7\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \res_img|Add2~7\,
-	combout => \res_img|Add2~8_combout\);
-
--- Location: LCCOMB_X27_Y20_N10
-\res_img|Add3~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~0_combout\ = (\Res[1]~input_o\ & ((GND) # (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))) # (!\Res[1]~input_o\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ $ (GND)))
--- \res_img|Add3~1\ = CARRY((\Res[1]~input_o\) # (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110011010111011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[1]~input_o\,
-	datab => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
-	datad => VCC,
-	combout => \res_img|Add3~0_combout\,
-	cout => \res_img|Add3~1\);
-
--- Location: LCCOMB_X27_Y20_N12
-\res_img|Add3~2\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~2_combout\ = (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((\Res[2]~input_o\ & (!\res_img|Add3~1\)) # (!\Res[2]~input_o\ & ((\res_img|Add3~1\) # (GND))))) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & 
--- ((\Res[2]~input_o\ & (\res_img|Add3~1\ & VCC)) # (!\Res[2]~input_o\ & (!\res_img|Add3~1\))))
--- \res_img|Add3~3\ = CARRY((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((!\res_img|Add3~1\) # (!\Res[2]~input_o\))) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (!\Res[2]~input_o\ & !\res_img|Add3~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100100101011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	datab => \Res[2]~input_o\,
-	datad => VCC,
-	cin => \res_img|Add3~1\,
-	combout => \res_img|Add3~2_combout\,
-	cout => \res_img|Add3~3\);
-
--- Location: LCCOMB_X27_Y20_N14
-\res_img|Add3~4\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~4_combout\ = ((\res_img|Add2~0_combout\ $ (\Res[3]~input_o\ $ (\res_img|Add3~3\)))) # (GND)
--- \res_img|Add3~5\ = CARRY((\res_img|Add2~0_combout\ & (\Res[3]~input_o\ & !\res_img|Add3~3\)) # (!\res_img|Add2~0_combout\ & ((\Res[3]~input_o\) # (!\res_img|Add3~3\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011001001101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add2~0_combout\,
-	datab => \Res[3]~input_o\,
-	datad => VCC,
-	cin => \res_img|Add3~3\,
-	combout => \res_img|Add3~4_combout\,
-	cout => \res_img|Add3~5\);
-
--- Location: LCCOMB_X27_Y20_N16
-\res_img|Add3~6\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~6_combout\ = (\res_img|Add2~2_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add3~5\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add3~5\) # (GND))))) # (!\res_img|Add2~2_combout\ & ((\res_img|int_res~0_combout\ & (\res_img|Add3~5\ 
--- & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add3~5\))))
--- \res_img|Add3~7\ = CARRY((\res_img|Add2~2_combout\ & ((!\res_img|Add3~5\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Add2~2_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add3~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100100101011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add2~2_combout\,
-	datab => \res_img|int_res~0_combout\,
-	datad => VCC,
-	cin => \res_img|Add3~5\,
-	combout => \res_img|Add3~6_combout\,
-	cout => \res_img|Add3~7\);
-
--- Location: LCCOMB_X27_Y20_N18
-\res_img|Add3~8\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~8_combout\ = ((\res_img|int_res~0_combout\ $ (\res_img|Add2~4_combout\ $ (\res_img|Add3~7\)))) # (GND)
--- \res_img|Add3~9\ = CARRY((\res_img|int_res~0_combout\ & ((!\res_img|Add3~7\) # (!\res_img|Add2~4_combout\))) # (!\res_img|int_res~0_combout\ & (!\res_img|Add2~4_combout\ & !\res_img|Add3~7\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000101011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|int_res~0_combout\,
-	datab => \res_img|Add2~4_combout\,
-	datad => VCC,
-	cin => \res_img|Add3~7\,
-	combout => \res_img|Add3~8_combout\,
-	cout => \res_img|Add3~9\);
-
--- Location: LCCOMB_X27_Y20_N20
-\res_img|Add3~10\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~10_combout\ = (\res_img|Add2~6_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add3~9\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add3~9\) # (GND))))) # (!\res_img|Add2~6_combout\ & ((\res_img|int_res~0_combout\ & (\res_img|Add3~9\ 
--- & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add3~9\))))
--- \res_img|Add3~11\ = CARRY((\res_img|Add2~6_combout\ & ((!\res_img|Add3~9\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Add2~6_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add3~9\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100100101011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add2~6_combout\,
-	datab => \res_img|int_res~0_combout\,
-	datad => VCC,
-	cin => \res_img|Add3~9\,
-	combout => \res_img|Add3~10_combout\,
-	cout => \res_img|Add3~11\);
-
--- Location: LCCOMB_X27_Y20_N22
-\res_img|Add3~12\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~12_combout\ = ((\res_img|Add2~8_combout\ $ (\res_img|int_res~0_combout\ $ (\res_img|Add3~11\)))) # (GND)
--- \res_img|Add3~13\ = CARRY((\res_img|Add2~8_combout\ & (\res_img|int_res~0_combout\ & !\res_img|Add3~11\)) # (!\res_img|Add2~8_combout\ & ((\res_img|int_res~0_combout\) # (!\res_img|Add3~11\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011001001101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add2~8_combout\,
-	datab => \res_img|int_res~0_combout\,
-	datad => VCC,
-	cin => \res_img|Add3~11\,
-	combout => \res_img|Add3~12_combout\,
-	cout => \res_img|Add3~13\);
-
--- Location: LCCOMB_X27_Y20_N24
-\res_img|Add3~14\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~14_combout\ = (\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add3~13\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add3~13\) # (GND))))) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ 
--- & ((\res_img|int_res~0_combout\ & (\res_img|Add3~13\ & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add3~13\))))
--- \res_img|Add3~15\ = CARRY((\res_img|Div0|auto_generated|divider|_~4_combout\ & ((!\res_img|Add3~13\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add3~13\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100100101011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datab => \res_img|int_res~0_combout\,
-	datad => VCC,
-	cin => \res_img|Add3~13\,
-	combout => \res_img|Add3~14_combout\,
-	cout => \res_img|Add3~15\);
-
--- Location: LCCOMB_X26_Y20_N12
-\res_img|process_1~35\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~35_combout\ = (!\res_img|Add3~14_combout\ & ((\res_img|Add3~2_combout\ & (!\res_img|Add3~4_combout\ & !\Res[0]~input_o\)) # (!\res_img|Add3~2_combout\ & (\res_img|Add3~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000000010100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~14_combout\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~4_combout\,
-	datad => \Res[0]~input_o\,
-	combout => \res_img|process_1~35_combout\);
-
--- Location: LCCOMB_X26_Y20_N24
-\res_img|Equal12~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Equal12~0_combout\ = (!\res_img|Add3~8_combout\ & (!\res_img|Add3~12_combout\ & (!\res_img|Add3~10_combout\ & !\res_img|Add3~6_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~8_combout\,
-	datab => \res_img|Add3~12_combout\,
-	datac => \res_img|Add3~10_combout\,
-	datad => \res_img|Add3~6_combout\,
-	combout => \res_img|Equal12~0_combout\);
-
--- Location: LCCOMB_X27_Y20_N26
-\res_img|Add3~16\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Add3~16_combout\ = \res_img|int_res~0_combout\ $ (\res_img|Add3~15\ $ (\res_img|Div0|auto_generated|divider|_~4_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100111100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|int_res~0_combout\,
-	datad => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	cin => \res_img|Add3~15\,
-	combout => \res_img|Add3~16_combout\);
-
--- Location: LCCOMB_X26_Y20_N26
-\res_img|process_1~36\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~36_combout\ = (((\res_img|Add3~0_combout\) # (\res_img|Add3~16_combout\)) # (!\res_img|Equal12~0_combout\)) # (!\res_img|process_1~35_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~35_combout\,
-	datab => \res_img|Equal12~0_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|Add3~16_combout\,
-	combout => \res_img|process_1~36_combout\);
-
--- Location: LCCOMB_X26_Y20_N2
-\res_img|Equal12~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Equal12~1_combout\ = (!\res_img|Add3~14_combout\ & (\res_img|Equal12~0_combout\ & (!\res_img|Add3~4_combout\ & !\res_img|Add3~16_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~14_combout\,
-	datab => \res_img|Equal12~0_combout\,
-	datac => \res_img|Add3~4_combout\,
-	datad => \res_img|Add3~16_combout\,
-	combout => \res_img|Equal12~1_combout\);
-
--- Location: LCCOMB_X26_Y20_N14
-\res_img|process_1~49\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~49_combout\ = (\res_img|Equal12~1_combout\ & (((\Res[0]~input_o\ & \res_img|Add3~0_combout\)) # (!\res_img|Add3~2_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[0]~input_o\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|Equal12~1_combout\,
-	combout => \res_img|process_1~49_combout\);
-
--- Location: IOIBUF_X24_Y0_N29
-\eror~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_eror,
-	o => \eror~input_o\);
-
--- Location: LCCOMB_X24_Y18_N22
+-- Location: LCCOMB_X39_Y36_N30
 \res_img|LessThan32~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|LessThan32~0_combout\ = (((!\res_img|h_count\(1) & !\res_img|h_count\(0))) # (!\res_img|h_count\(2))) # (!\res_img|h_count\(3))
@@ -3612,229 +2600,52 @@ PORT MAP (
 	datad => \res_img|h_count\(0),
 	combout => \res_img|LessThan32~0_combout\);
 
--- Location: LCCOMB_X25_Y18_N2
-\res_img|process_1~44\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X36_Y36_N18
+\res_img|LessThan32~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~44_combout\ = (\res_img|h_count\(5) & (\res_img|h_count\(6) & ((\res_img|h_count\(4)) # (!\res_img|LessThan32~0_combout\))))
+-- \res_img|LessThan32~1_combout\ = (!\res_img|h_count\(4) & \res_img|LessThan32~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000010001000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(5),
-	datab => \res_img|h_count\(6),
 	datac => \res_img|h_count\(4),
 	datad => \res_img|LessThan32~0_combout\,
-	combout => \res_img|process_1~44_combout\);
+	combout => \res_img|LessThan32~1_combout\);
 
--- Location: LCCOMB_X25_Y20_N18
-\res_img|process_1~45\ : fiftyfivenm_lcell_comb
+-- Location: IOIBUF_X49_Y54_N1
+\eror~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_eror,
+	o => \eror~input_o\);
+
+-- Location: LCCOMB_X38_Y36_N28
+\res_img|LessThan0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~45_combout\ = (!\eror~input_o\ & ((\res_img|h_count\(8) & (!\res_img|h_count\(7))) # (!\res_img|h_count\(8) & ((\res_img|process_1~44_combout\)))))
+-- \res_img|LessThan0~0_combout\ = (!\res_img|h_count\(7) & !\res_img|h_count\(8))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000011100000100",
+	lut_mask => "0000000000001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|h_count\(7),
-	datab => \res_img|h_count\(8),
-	datac => \eror~input_o\,
-	datad => \res_img|process_1~44_combout\,
-	combout => \res_img|process_1~45_combout\);
+	datac => \res_img|h_count\(7),
+	datad => \res_img|h_count\(8),
+	combout => \res_img|LessThan0~0_combout\);
 
--- Location: LCCOMB_X25_Y20_N4
-\res_img|process_1~46\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N22
+\res_img|process_1~59\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~46_combout\ = (\res_img|process_1~45_combout\ & ((\res_img|h_count\(7)) # ((!\res_img|h_count\(6) & !\res_img|LessThan34~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(7),
-	datab => \res_img|h_count\(6),
-	datac => \res_img|LessThan34~1_combout\,
-	datad => \res_img|process_1~45_combout\,
-	combout => \res_img|process_1~46_combout\);
-
--- Location: LCCOMB_X25_Y17_N2
-\res_img|LessThan26~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan26~0_combout\ = (\res_img|v_count\(4)) # ((\res_img|v_count\(3) & (!\res_img|Equal1~0_combout\ & \res_img|v_count\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100111011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(3),
-	datab => \res_img|v_count\(4),
-	datac => \res_img|Equal1~0_combout\,
-	datad => \res_img|v_count\(2),
-	combout => \res_img|LessThan26~0_combout\);
-
--- Location: LCCOMB_X24_Y20_N24
-\res_img|LessThan26~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan26~1_combout\ = (!\res_img|v_count\(6) & (!\res_img|v_count\(7) & ((!\res_img|LessThan26~0_combout\) # (!\res_img|v_count\(5)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000100010001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(6),
-	datab => \res_img|v_count\(7),
-	datac => \res_img|v_count\(5),
-	datad => \res_img|LessThan26~0_combout\,
-	combout => \res_img|LessThan26~1_combout\);
-
--- Location: LCCOMB_X25_Y20_N26
-\res_img|process_1~33\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~33_combout\ = (!\res_img|v_count\(9) & (!\res_img|LessThan23~0_combout\ & ((\res_img|LessThan26~1_combout\) # (!\res_img|v_count\(8)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010100000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(9),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|LessThan23~0_combout\,
-	datad => \res_img|LessThan26~1_combout\,
-	combout => \res_img|process_1~33_combout\);
-
--- Location: LCCOMB_X25_Y20_N16
-\res_img|process_1~50\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~50_combout\ = (\res_img|process_1~46_combout\ & (\res_img|process_1~33_combout\ & ((\res_img|process_1~49_combout\) # (!\res_img|process_1~36_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~36_combout\,
-	datab => \res_img|process_1~49_combout\,
-	datac => \res_img|process_1~46_combout\,
-	datad => \res_img|process_1~33_combout\,
-	combout => \res_img|process_1~50_combout\);
-
--- Location: LCCOMB_X27_Y20_N8
-\res_img|process_1~37\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~37_combout\ = (!\res_img|Add3~16_combout\ & (\res_img|Add3~0_combout\ $ (\Res[0]~input_o\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001100001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Add3~0_combout\,
-	datac => \res_img|Add3~16_combout\,
-	datad => \Res[0]~input_o\,
-	combout => \res_img|process_1~37_combout\);
-
--- Location: LCCOMB_X26_Y20_N28
-\res_img|process_1~38\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~38_combout\ = (!\res_img|Add3~14_combout\ & (\res_img|Add3~2_combout\ & !\res_img|Add3~4_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~14_combout\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~4_combout\,
-	combout => \res_img|process_1~38_combout\);
-
--- Location: LCCOMB_X26_Y20_N6
-\res_img|process_1~39\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~39_combout\ = (\res_img|process_1~36_combout\ & (((!\res_img|process_1~38_combout\) # (!\res_img|process_1~37_combout\)) # (!\res_img|Equal12~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010101010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~36_combout\,
-	datab => \res_img|Equal12~0_combout\,
-	datac => \res_img|process_1~37_combout\,
-	datad => \res_img|process_1~38_combout\,
-	combout => \res_img|process_1~39_combout\);
-
--- Location: LCCOMB_X26_Y20_N20
-\res_img|process_1~47\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~47_combout\ = ((\res_img|Add3~0_combout\ & (!\Res[0]~input_o\)) # (!\res_img|Add3~0_combout\ & ((\res_img|Add3~2_combout\)))) # (!\res_img|Equal12~1_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101110011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[0]~input_o\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|Equal12~1_combout\,
-	combout => \res_img|process_1~47_combout\);
-
--- Location: LCCOMB_X25_Y17_N28
-\res_img|LessThan31~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan31~0_combout\ = (\res_img|v_count\(4) & ((\res_img|v_count\(3)) # ((!\res_img|Equal1~0_combout\ & \res_img|v_count\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000110010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(3),
-	datab => \res_img|v_count\(4),
-	datac => \res_img|Equal1~0_combout\,
-	datad => \res_img|v_count\(2),
-	combout => \res_img|LessThan31~0_combout\);
-
--- Location: LCCOMB_X24_Y17_N14
-\res_img|LessThan31~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan31~1_combout\ = (\res_img|v_count\(5)) # ((\res_img|v_count\(6)) # ((\res_img|v_count\(7)) # (\res_img|LessThan31~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(5),
-	datab => \res_img|v_count\(6),
-	datac => \res_img|v_count\(7),
-	datad => \res_img|LessThan31~0_combout\,
-	combout => \res_img|LessThan31~1_combout\);
-
--- Location: LCCOMB_X24_Y17_N18
-\res_img|process_1~43\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~43_combout\ = (!\res_img|v_count\(9) & (\res_img|v_count\(8) & (\res_img|LessThan31~1_combout\ & \res_img|LessThan28~1_combout\)))
+-- \res_img|process_1~59_combout\ = (!\eror~input_o\ & (\res_img|h_count\(9) & (\res_img|h_count\(6) & \res_img|LessThan0~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3842,65 +2653,1624 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(9),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|LessThan31~1_combout\,
-	datad => \res_img|LessThan28~1_combout\,
-	combout => \res_img|process_1~43_combout\);
+	dataa => \eror~input_o\,
+	datab => \res_img|h_count\(9),
+	datac => \res_img|h_count\(6),
+	datad => \res_img|LessThan0~0_combout\,
+	combout => \res_img|process_1~59_combout\);
 
--- Location: LCCOMB_X25_Y20_N22
-\res_img|process_1~48\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X36_Y36_N28
+\res_img|process_1~60\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~48_combout\ = (\res_img|process_1~46_combout\ & (\res_img|process_1~43_combout\ & ((!\res_img|process_1~47_combout\) # (!\res_img|process_1~39_combout\))))
+-- \res_img|process_1~60_combout\ = (\res_img|process_1~59_combout\ & (\res_img|LessThan20~0_combout\ & ((\res_img|h_count\(5)) # (!\res_img|LessThan32~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111000000000000",
+	lut_mask => "1011000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|process_1~39_combout\,
-	datab => \res_img|process_1~47_combout\,
-	datac => \res_img|process_1~46_combout\,
-	datad => \res_img|process_1~43_combout\,
-	combout => \res_img|process_1~48_combout\);
+	dataa => \res_img|h_count\(5),
+	datab => \res_img|LessThan32~1_combout\,
+	datac => \res_img|process_1~59_combout\,
+	datad => \res_img|LessThan20~0_combout\,
+	combout => \res_img|process_1~60_combout\);
 
--- Location: LCCOMB_X27_Y20_N30
+-- Location: IOIBUF_X54_Y54_N15
+\mode~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_mode,
+	o => \mode~input_o\);
+
+-- Location: LCCOMB_X47_Y36_N14
+\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ = (\mode~input_o\ & (!\Res[0]~input_o\ & (!\Res[1]~input_o\ & \Res[3]~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \mode~input_o\,
+	datab => \Res[0]~input_o\,
+	datac => \Res[1]~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\);
+
+-- Location: LCCOMB_X47_Y36_N2
+\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\ = (\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ & ((\Res[2]~input_o\ $ (\Res[3]~input_o\)))) # (!\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\ & 
+-- (!\mode~input_o\ & ((\Res[3]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011010111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \mode~input_o\,
+	datab => \Res[2]~input_o\,
+	datac => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~2_combout\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\);
+
+-- Location: LCCOMB_X47_Y36_N8
+\res_img|int_res~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|int_res~0_combout\ = (\mode~input_o\ & \Res[3]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \mode~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|int_res~0_combout\);
+
+-- Location: LCCOMB_X47_Y36_N0
+\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\ = \Res[2]~input_o\ $ (((\res_img|int_res~0_combout\ & ((\Res[1]~input_o\) # (\Res[0]~input_o\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011011011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Res[1]~input_o\,
+	datab => \Res[2]~input_o\,
+	datac => \Res[0]~input_o\,
+	datad => \res_img|int_res~0_combout\,
+	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\);
+
+-- Location: LCCOMB_X47_Y36_N18
+\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\ = \Res[1]~input_o\ $ (((\mode~input_o\ & (\Res[0]~input_o\ & \Res[3]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111100011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \mode~input_o\,
+	datab => \Res[0]~input_o\,
+	datac => \Res[1]~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\);
+
+-- Location: LCCOMB_X47_Y37_N12
+\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\ = CARRY(\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[1]~4_combout\,
+	datad => VCC,
+	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\);
+
+-- Location: LCCOMB_X47_Y37_N14
+\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\ = CARRY((!\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\ & !\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[2]~3_combout\,
+	datad => VCC,
+	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout\,
+	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\);
+
+-- Location: LCCOMB_X47_Y37_N16
+\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\ = CARRY((\res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\ & !\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|my_abs_num|cs1a[3]~5_combout\,
+	datad => VCC,
+	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout\,
+	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\);
+
+-- Location: LCCOMB_X47_Y37_N18
+\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ = CARRY(!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout\,
+	cout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X47_Y37_N20
+\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\,
+	combout => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X47_Y36_N22
+\res_img|Div0|auto_generated|divider|op_1~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|op_1~0_combout\ = \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ $ (VCC)
+-- \res_img|Div0|auto_generated|divider|op_1~1\ = CARRY(\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => VCC,
+	combout => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
+	cout => \res_img|Div0|auto_generated|divider|op_1~1\);
+
+-- Location: LCCOMB_X47_Y36_N24
+\res_img|Div0|auto_generated|divider|op_1~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|op_1~2_combout\ = !\res_img|Div0|auto_generated|divider|op_1~1\
+-- \res_img|Div0|auto_generated|divider|op_1~3\ = CARRY(!\res_img|Div0|auto_generated|divider|op_1~1\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \res_img|Div0|auto_generated|divider|op_1~1\,
+	combout => \res_img|Div0|auto_generated|divider|op_1~2_combout\,
+	cout => \res_img|Div0|auto_generated|divider|op_1~3\);
+
+-- Location: LCCOMB_X47_Y36_N26
+\res_img|Div0|auto_generated|divider|op_1~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|op_1~4_combout\ = \res_img|Div0|auto_generated|divider|op_1~3\ $ (GND)
+-- \res_img|Div0|auto_generated|divider|op_1~5\ = CARRY(!\res_img|Div0|auto_generated|divider|op_1~3\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \res_img|Div0|auto_generated|divider|op_1~3\,
+	combout => \res_img|Div0|auto_generated|divider|op_1~4_combout\,
+	cout => \res_img|Div0|auto_generated|divider|op_1~5\);
+
+-- Location: LCCOMB_X47_Y36_N20
+\res_img|Div0|auto_generated|divider|_~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|_~5_combout\ = (\mode~input_o\ & (\res_img|Div0|auto_generated|divider|op_1~4_combout\ & \Res[3]~input_o\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \mode~input_o\,
+	datac => \res_img|Div0|auto_generated|divider|op_1~4_combout\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|_~5_combout\);
+
+-- Location: LCCOMB_X47_Y36_N10
+\res_img|Div0|auto_generated|divider|quotient[0]~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ = (\mode~input_o\ & ((\Res[3]~input_o\ & ((\res_img|Div0|auto_generated|divider|op_1~0_combout\))) # (!\Res[3]~input_o\ & 
+-- (!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)))) # (!\mode~input_o\ & (!\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100010101010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datab => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
+	datac => \mode~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\);
+
+-- Location: LCCOMB_X47_Y36_N30
+\res_img|Div0|auto_generated|divider|quotient[1]~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ = (\res_img|Div0|auto_generated|divider|op_1~2_combout\ & (\mode~input_o\ & \Res[3]~input_o\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|op_1~2_combout\,
+	datac => \mode~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\);
+
+-- Location: LCCOMB_X45_Y36_N0
+\res_img|process_1~69\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~69_combout\ = \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ $ (((\res_img|Div0|auto_generated|divider|_~5_combout\ & \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101111110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datac => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	combout => \res_img|process_1~69_combout\);
+
+-- Location: LCCOMB_X47_Y36_N28
+\res_img|Div0|auto_generated|divider|op_1~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|op_1~6_combout\ = !\res_img|Div0|auto_generated|divider|op_1~5\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \res_img|Div0|auto_generated|divider|op_1~5\,
+	combout => \res_img|Div0|auto_generated|divider|op_1~6_combout\);
+
+-- Location: LCCOMB_X47_Y36_N16
+\res_img|Div0|auto_generated|divider|_~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Div0|auto_generated|divider|_~4_combout\ = (\res_img|Div0|auto_generated|divider|op_1~6_combout\ & (\mode~input_o\ & \Res[3]~input_o\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|op_1~6_combout\,
+	datac => \mode~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Div0|auto_generated|divider|_~4_combout\);
+
+-- Location: LCCOMB_X45_Y36_N30
+\res_img|process_1~70\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~70_combout\ = (\eror~input_o\) # ((\res_img|process_1~69_combout\ & !\res_img|Div0|auto_generated|divider|_~4_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|process_1~69_combout\,
+	datac => \eror~input_o\,
+	datad => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	combout => \res_img|process_1~70_combout\);
+
+-- Location: LCCOMB_X38_Y36_N4
+\res_img|Equal9~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal9~0_combout\ = (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (\res_img|Div0|auto_generated|divider|_~5_combout\ & 
+-- !\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	combout => \res_img|Equal9~0_combout\);
+
+-- Location: LCCOMB_X40_Y36_N26
+\res_img|LessThan26~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan26~0_combout\ = (((!\res_img|v_count\(1) & !\res_img|v_count\(0))) # (!\res_img|v_count\(3))) # (!\res_img|v_count\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(1),
+	datab => \res_img|v_count\(0),
+	datac => \res_img|v_count\(2),
+	datad => \res_img|v_count\(3),
+	combout => \res_img|LessThan26~0_combout\);
+
+-- Location: LCCOMB_X41_Y36_N20
+\res_img|process_1~32\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~32_combout\ = (\res_img|LessThan2~0_combout\ & ((\res_img|v_count\(4) & ((!\res_img|v_count\(5)))) # (!\res_img|v_count\(4) & (\res_img|LessThan26~0_combout\ & \res_img|v_count\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(4),
+	datab => \res_img|LessThan26~0_combout\,
+	datac => \res_img|LessThan2~0_combout\,
+	datad => \res_img|v_count\(5),
+	combout => \res_img|process_1~32_combout\);
+
+-- Location: LCCOMB_X40_Y36_N24
+\res_img|process_1~25\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~25_combout\ = (!\res_img|v_count\(3) & (((!\res_img|v_count\(2)) # (!\res_img|v_count\(0))) # (!\res_img|v_count\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001001100110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(1),
+	datab => \res_img|v_count\(3),
+	datac => \res_img|v_count\(0),
+	datad => \res_img|v_count\(2),
+	combout => \res_img|process_1~25_combout\);
+
+-- Location: LCCOMB_X38_Y36_N10
+\res_img|process_1~26\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~26_combout\ = (\res_img|v_count\(7) & ((\res_img|v_count\(5)) # ((\res_img|v_count\(4) & !\res_img|process_1~25_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(7),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|process_1~25_combout\,
+	datad => \res_img|v_count\(5),
+	combout => \res_img|process_1~26_combout\);
+
+-- Location: LCCOMB_X38_Y36_N24
+\res_img|process_1~27\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~27_combout\ = (\res_img|process_1~26_combout\ & \res_img|LessThan28~5_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~26_combout\,
+	datad => \res_img|LessThan28~5_combout\,
+	combout => \res_img|process_1~27_combout\);
+
+-- Location: LCCOMB_X38_Y36_N14
+\res_img|process_1~71\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~71_combout\ = (\res_img|process_1~70_combout\ & (((\res_img|process_1~32_combout\) # (\res_img|process_1~27_combout\)))) # (!\res_img|process_1~70_combout\ & (\res_img|Equal9~0_combout\ & (\res_img|process_1~32_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110101011100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~70_combout\,
+	datab => \res_img|Equal9~0_combout\,
+	datac => \res_img|process_1~32_combout\,
+	datad => \res_img|process_1~27_combout\,
+	combout => \res_img|process_1~71_combout\);
+
+-- Location: LCCOMB_X41_Y36_N12
+\res_img|LessThan28~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan28~6_combout\ = ((\res_img|LessThan28~5_combout\) # (!\res_img|v_count\(8))) # (!\res_img|v_count\(7))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|v_count\(7),
+	datac => \res_img|v_count\(8),
+	datad => \res_img|LessThan28~5_combout\,
+	combout => \res_img|LessThan28~6_combout\);
+
+-- Location: LCCOMB_X40_Y36_N0
+\res_img|LessThan31~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan31~1_combout\ = (\res_img|v_count\(3)) # ((\res_img|v_count\(2) & ((\res_img|v_count\(1)) # (\res_img|v_count\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(1),
+	datab => \res_img|v_count\(0),
+	datac => \res_img|v_count\(3),
+	datad => \res_img|v_count\(2),
+	combout => \res_img|LessThan31~1_combout\);
+
+-- Location: LCCOMB_X41_Y36_N24
+\res_img|LessThan31~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan31~0_combout\ = (\res_img|v_count\(7)) # ((\res_img|v_count\(6)) # (\res_img|v_count\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|v_count\(7),
+	datac => \res_img|v_count\(6),
+	datad => \res_img|v_count\(5),
+	combout => \res_img|LessThan31~0_combout\);
+
+-- Location: LCCOMB_X38_Y36_N16
+\res_img|LessThan31~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan31~2_combout\ = (\res_img|v_count\(8) & ((\res_img|LessThan31~0_combout\) # ((\res_img|v_count\(4) & \res_img|LessThan31~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|LessThan31~1_combout\,
+	datad => \res_img|LessThan31~0_combout\,
+	combout => \res_img|LessThan31~2_combout\);
+
+-- Location: LCCOMB_X38_Y36_N0
+\res_img|process_1~67\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~67_combout\ = (\res_img|LessThan28~6_combout\ & ((\res_img|v_count\(9)) # (\res_img|LessThan31~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|v_count\(9),
+	datac => \res_img|LessThan28~6_combout\,
+	datad => \res_img|LessThan31~2_combout\,
+	combout => \res_img|process_1~67_combout\);
+
+-- Location: LCCOMB_X38_Y36_N18
+\res_img|process_1~68\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~68_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (\res_img|process_1~67_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\) # (\res_img|Div0|auto_generated|divider|_~5_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datad => \res_img|process_1~67_combout\,
+	combout => \res_img|process_1~68_combout\);
+
+-- Location: LCCOMB_X37_Y36_N26
+\res_img|process_1~72\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~72_combout\ = (\res_img|v_count\(8) & ((\res_img|process_1~71_combout\) # ((\res_img|process_1~60_combout\ & \res_img|process_1~68_combout\)))) # (!\res_img|v_count\(8) & (\res_img|process_1~60_combout\ & 
+-- ((\res_img|process_1~68_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110110010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|process_1~60_combout\,
+	datac => \res_img|process_1~71_combout\,
+	datad => \res_img|process_1~68_combout\,
+	combout => \res_img|process_1~72_combout\);
+
+-- Location: LCCOMB_X36_Y36_N14
+\res_img|process_1~57\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~57_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & !\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datab => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	datac => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	combout => \res_img|process_1~57_combout\);
+
+-- Location: LCCOMB_X41_Y36_N6
 \res_img|process_1~9\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~9_combout\ = (\res_img|Add3~0_combout\ & ((\res_img|Add3~4_combout\))) # (!\res_img|Add3~0_combout\ & ((\res_img|Add3~2_combout\) # (!\res_img|Add3~4_combout\)))
+-- \res_img|process_1~9_combout\ = (\res_img|v_count\(8)) # (((\res_img|v_count\(6)) # (\res_img|v_count\(9))) # (!\res_img|v_count\(7)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110001111100011",
+	lut_mask => "1111111111111011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|Add3~2_combout\,
-	datab => \res_img|Add3~0_combout\,
-	datac => \res_img|Add3~4_combout\,
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(7),
+	datac => \res_img|v_count\(6),
+	datad => \res_img|v_count\(9),
 	combout => \res_img|process_1~9_combout\);
 
--- Location: LCCOMB_X27_Y20_N4
-\res_img|process_1~6\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X41_Y36_N4
+\res_img|process_1~10\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~6_combout\ = (\res_img|process_1~9_combout\) # ((\res_img|Add3~16_combout\) # (\Res[0]~input_o\))
+-- \res_img|process_1~10_combout\ = (\res_img|v_count\(3)) # ((\res_img|v_count\(4)) # ((\res_img|v_count\(1) & \res_img|v_count\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111111010",
+	lut_mask => "1111111011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(3),
+	datab => \res_img|v_count\(1),
+	datac => \res_img|v_count\(4),
+	datad => \res_img|v_count\(2),
+	combout => \res_img|process_1~10_combout\);
+
+-- Location: LCCOMB_X41_Y36_N10
+\res_img|process_1~84\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~84_combout\ = (\res_img|v_count\(5) & (((\res_img|process_1~10_combout\)))) # (!\res_img|v_count\(5) & (!\res_img|v_count\(4) & (!\res_img|LessThan23~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000010001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(4),
+	datab => \res_img|LessThan23~0_combout\,
+	datac => \res_img|process_1~10_combout\,
+	datad => \res_img|v_count\(5),
+	combout => \res_img|process_1~84_combout\);
+
+-- Location: LCCOMB_X37_Y36_N22
+\res_img|process_1~48\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~48_combout\ = (!\res_img|v_count\(9) & (\res_img|LessThan28~6_combout\ & \res_img|LessThan31~2_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(9),
+	datac => \res_img|LessThan28~6_combout\,
+	datad => \res_img|LessThan31~2_combout\,
+	combout => \res_img|process_1~48_combout\);
+
+-- Location: LCCOMB_X39_Y35_N8
+\res_img|process_1~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~4_combout\ = (\res_img|h_count\(5) & \res_img|h_count\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \res_img|h_count\(5),
+	datad => \res_img|h_count\(4),
+	combout => \res_img|process_1~4_combout\);
+
+-- Location: LCCOMB_X39_Y36_N28
+\res_img|process_1~53\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~53_combout\ = (\res_img|h_count\(2)) # ((\res_img|h_count\(3)) # ((\res_img|h_count\(1) & \res_img|h_count\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(2),
+	datab => \res_img|h_count\(1),
+	datac => \res_img|h_count\(3),
+	datad => \res_img|h_count\(0),
+	combout => \res_img|process_1~53_combout\);
+
+-- Location: LCCOMB_X39_Y35_N20
+\res_img|process_1~54\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~54_combout\ = (\res_img|h_count\(7) & (\res_img|h_count\(6) & (\res_img|h_count\(8) & !\res_img|LessThan17~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(7),
+	datab => \res_img|h_count\(6),
+	datac => \res_img|h_count\(8),
+	datad => \res_img|LessThan17~0_combout\,
+	combout => \res_img|process_1~54_combout\);
+
+-- Location: LCCOMB_X39_Y35_N30
+\res_img|process_1~55\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~55_combout\ = (\res_img|h_count\(9)) # (((\res_img|process_1~4_combout\ & \res_img|process_1~53_combout\)) # (!\res_img|process_1~54_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111100011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~4_combout\,
+	datab => \res_img|process_1~53_combout\,
+	datac => \res_img|h_count\(9),
+	datad => \res_img|process_1~54_combout\,
+	combout => \res_img|process_1~55_combout\);
+
+-- Location: LCCOMB_X36_Y36_N24
+\res_img|process_1~56\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~56_combout\ = (\res_img|process_1~9_combout\ & (((\res_img|process_1~48_combout\ & !\res_img|process_1~55_combout\)))) # (!\res_img|process_1~9_combout\ & (((\res_img|process_1~48_combout\ & !\res_img|process_1~55_combout\)) # 
+-- (!\res_img|process_1~84_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111110001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|process_1~9_combout\,
-	datac => \res_img|Add3~16_combout\,
-	datad => \Res[0]~input_o\,
-	combout => \res_img|process_1~6_combout\);
+	datab => \res_img|process_1~84_combout\,
+	datac => \res_img|process_1~48_combout\,
+	datad => \res_img|process_1~55_combout\,
+	combout => \res_img|process_1~56_combout\);
 
--- Location: LCCOMB_X26_Y20_N30
-\res_img|process_1~3\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X36_Y36_N16
+\res_img|process_1~58\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~3_combout\ = (\res_img|Add3~10_combout\) # ((\res_img|Add3~12_combout\) # ((\res_img|Add3~14_combout\) # (\res_img|process_1~6_combout\)))
+-- \res_img|process_1~58_combout\ = (\res_img|process_1~56_combout\ & ((\eror~input_o\) # (\res_img|process_1~57_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \eror~input_o\,
+	datac => \res_img|process_1~57_combout\,
+	datad => \res_img|process_1~56_combout\,
+	combout => \res_img|process_1~58_combout\);
+
+-- Location: LCCOMB_X36_Y36_N22
+\res_img|process_1~65\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~65_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & ((\res_img|Div0|auto_generated|divider|_~5_combout\) # 
+-- (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000001000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datab => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datac => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	combout => \res_img|process_1~65_combout\);
+
+-- Location: LCCOMB_X41_Y36_N8
+\res_img|LessThan26~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan26~1_combout\ = (\res_img|LessThan2~0_combout\ & (((!\res_img|v_count\(4) & \res_img|LessThan26~0_combout\)) # (!\res_img|v_count\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(5),
+	datab => \res_img|v_count\(4),
+	datac => \res_img|LessThan26~0_combout\,
+	datad => \res_img|LessThan2~0_combout\,
+	combout => \res_img|LessThan26~1_combout\);
+
+-- Location: LCCOMB_X41_Y36_N2
+\res_img|process_1~34\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~34_combout\ = (!\res_img|v_count\(9) & ((\res_img|v_count\(8) & (\res_img|LessThan26~1_combout\)) # (!\res_img|v_count\(8) & ((\res_img|LessThan23~1_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000100100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(9),
+	datac => \res_img|LessThan26~1_combout\,
+	datad => \res_img|LessThan23~1_combout\,
+	combout => \res_img|process_1~34_combout\);
+
+-- Location: LCCOMB_X36_Y36_N4
+\res_img|process_1~12\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~12_combout\ = (\res_img|process_1~84_combout\) # (\res_img|process_1~9_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|process_1~84_combout\,
+	datad => \res_img|process_1~9_combout\,
+	combout => \res_img|process_1~12_combout\);
+
+-- Location: LCCOMB_X36_Y36_N6
+\res_img|process_1~61\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~61_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Div0|auto_generated|divider|_~5_combout\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ $ 
+-- (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\) # (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000100010100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datab => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datac => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	combout => \res_img|process_1~61_combout\);
+
+-- Location: LCCOMB_X36_Y36_N8
+\res_img|process_1~62\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~62_combout\ = (\res_img|Div0|auto_generated|divider|_~5_combout\ & ((!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datac => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	combout => \res_img|process_1~62_combout\);
+
+-- Location: LCCOMB_X36_Y36_N26
+\res_img|process_1~63\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~63_combout\ = (\eror~input_o\) # ((!\res_img|Div0|auto_generated|divider|_~4_combout\ & \res_img|process_1~62_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111101010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datac => \res_img|process_1~62_combout\,
+	datad => \eror~input_o\,
+	combout => \res_img|process_1~63_combout\);
+
+-- Location: LCCOMB_X36_Y36_N0
+\res_img|process_1~64\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~64_combout\ = (\res_img|process_1~61_combout\ & ((\res_img|process_1~60_combout\) # ((\res_img|process_1~63_combout\ & !\res_img|process_1~55_combout\)))) # (!\res_img|process_1~61_combout\ & (((\res_img|process_1~63_combout\ & 
+-- !\res_img|process_1~55_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100011111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~61_combout\,
+	datab => \res_img|process_1~60_combout\,
+	datac => \res_img|process_1~63_combout\,
+	datad => \res_img|process_1~55_combout\,
+	combout => \res_img|process_1~64_combout\);
+
+-- Location: LCCOMB_X36_Y36_N20
+\res_img|process_1~66\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~66_combout\ = (\res_img|process_1~65_combout\ & (((\res_img|process_1~34_combout\ & \res_img|process_1~64_combout\)) # (!\res_img|process_1~12_combout\))) # (!\res_img|process_1~65_combout\ & (\res_img|process_1~34_combout\ & 
+-- ((\res_img|process_1~64_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~65_combout\,
+	datab => \res_img|process_1~34_combout\,
+	datac => \res_img|process_1~12_combout\,
+	datad => \res_img|process_1~64_combout\,
+	combout => \res_img|process_1~66_combout\);
+
+-- Location: LCCOMB_X37_Y36_N4
+\res_img|process_1~73\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~73_combout\ = (\res_img|process_1~58_combout\) # ((\res_img|process_1~66_combout\) # ((\res_img|process_1~72_combout\ & !\res_img|v_count\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~72_combout\,
+	datab => \res_img|v_count\(9),
+	datac => \res_img|process_1~58_combout\,
+	datad => \res_img|process_1~66_combout\,
+	combout => \res_img|process_1~73_combout\);
+
+-- Location: LCCOMB_X38_Y36_N30
+\res_img|process_1~76\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~76_combout\ = (\res_img|v_count\(8) & (!\res_img|v_count\(9) & ((\res_img|process_1~32_combout\) # (\res_img|process_1~27_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010001000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|v_count\(8),
+	datab => \res_img|v_count\(9),
+	datac => \res_img|process_1~32_combout\,
+	datad => \res_img|process_1~27_combout\,
+	combout => \res_img|process_1~76_combout\);
+
+-- Location: LCCOMB_X41_Y36_N30
+\res_img|process_1~75\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~75_combout\ = (\res_img|int_res~0_combout\ & (!\res_img|v_count\(9) & (\res_img|v_count\(8) & \res_img|process_1~32_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|v_count\(9),
+	datac => \res_img|v_count\(8),
+	datad => \res_img|process_1~32_combout\,
+	combout => \res_img|process_1~75_combout\);
+
+-- Location: LCCOMB_X38_Y35_N12
+\res_img|rgb2[12]~7\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~7_combout\ = (\res_img|h_count\(9)) # ((\res_img|LessThan9~1_combout\) # (!\res_img|LessThan11~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(9),
+	datac => \res_img|LessThan11~0_combout\,
+	datad => \res_img|LessThan9~1_combout\,
+	combout => \res_img|rgb2[12]~7_combout\);
+
+-- Location: LCCOMB_X38_Y35_N22
+\res_img|rgb2[12]~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~6_combout\ = ((\res_img|h_count\(9)) # (!\res_img|rgb2[12]~2_combout\)) # (!\res_img|h_count\(8))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|h_count\(8),
+	datac => \res_img|h_count\(9),
+	datad => \res_img|rgb2[12]~2_combout\,
+	combout => \res_img|rgb2[12]~6_combout\);
+
+-- Location: LCCOMB_X38_Y35_N30
+\res_img|rgb2[12]~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~8_combout\ = (\res_img|rgb2[12]~5_combout\ & ((\res_img|rgb2[12]~6_combout\) # (!\res_img|rgb2[12]~7_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|rgb2[12]~7_combout\,
+	datac => \res_img|rgb2[12]~6_combout\,
+	datad => \res_img|rgb2[12]~5_combout\,
+	combout => \res_img|rgb2[12]~8_combout\);
+
+-- Location: LCCOMB_X39_Y35_N16
+\res_img|process_1~77\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~77_combout\ = (\res_img|h_count\(9) & (((\res_img|h_count\(6) & !\res_img|LessThan20~0_combout\)) # (!\res_img|LessThan0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(9),
+	datab => \res_img|h_count\(6),
+	datac => \res_img|LessThan20~0_combout\,
+	datad => \res_img|LessThan0~0_combout\,
+	combout => \res_img|process_1~77_combout\);
+
+-- Location: LCCOMB_X39_Y35_N10
+\res_img|process_1~78\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~78_combout\ = (\res_img|process_1~77_combout\) # ((!\res_img|process_1~54_combout\ & !\res_img|h_count\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|process_1~54_combout\,
+	datac => \res_img|h_count\(9),
+	datad => \res_img|process_1~77_combout\,
+	combout => \res_img|process_1~78_combout\);
+
+-- Location: LCCOMB_X38_Y35_N16
+\res_img|rgb2[12]~9\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~9_combout\ = (\res_img|rgb2[12]~5_combout\ & (\res_img|rgb2[12]~7_combout\)) # (!\res_img|rgb2[12]~5_combout\ & ((\res_img|process_1~78_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|rgb2[12]~7_combout\,
+	datac => \res_img|process_1~78_combout\,
+	datad => \res_img|rgb2[12]~5_combout\,
+	combout => \res_img|rgb2[12]~9_combout\);
+
+-- Location: LCCOMB_X38_Y35_N14
+\res_img|rgb2~10\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2~10_combout\ = (\res_img|rgb2[12]~8_combout\ & ((\res_img|rgb2[12]~9_combout\ & ((\res_img|process_1~75_combout\))) # (!\res_img|rgb2[12]~9_combout\ & (\res_img|process_1~76_combout\)))) # (!\res_img|rgb2[12]~8_combout\ & 
+-- (((!\res_img|rgb2[12]~9_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000010101111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~76_combout\,
+	datab => \res_img|process_1~75_combout\,
+	datac => \res_img|rgb2[12]~8_combout\,
+	datad => \res_img|rgb2[12]~9_combout\,
+	combout => \res_img|rgb2~10_combout\);
+
+-- Location: LCCOMB_X45_Y36_N20
+\res_img|Add3~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add3~0_combout\ = (\res_img|Div0|auto_generated|divider|_~5_combout\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ $ (VCC))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & 
+-- (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & VCC))
+-- \res_img|Add3~1\ = CARRY((\res_img|Div0|auto_generated|divider|_~5_combout\ & \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datab => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => VCC,
+	combout => \res_img|Add3~0_combout\,
+	cout => \res_img|Add3~1\);
+
+-- Location: LCCOMB_X45_Y36_N2
+\res_img|Add4~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~0_combout\ = (\Res[1]~input_o\ & ((GND) # (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))) # (!\Res[1]~input_o\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ $ (GND)))
+-- \res_img|Add4~1\ = CARRY((\Res[1]~input_o\) # (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010111011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Res[1]~input_o\,
+	datab => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
+	datad => VCC,
+	combout => \res_img|Add4~0_combout\,
+	cout => \res_img|Add4~1\);
+
+-- Location: LCCOMB_X45_Y36_N4
+\res_img|Add4~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~2_combout\ = (\Res[2]~input_o\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (!\res_img|Add4~1\)) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (\res_img|Add4~1\ & VCC)))) # (!\Res[2]~input_o\ & 
+-- ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((\res_img|Add4~1\) # (GND))) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (!\res_img|Add4~1\))))
+-- \res_img|Add4~3\ = CARRY((\Res[2]~input_o\ & (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & !\res_img|Add4~1\)) # (!\Res[2]~input_o\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # (!\res_img|Add4~1\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100101001101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Res[2]~input_o\,
+	datab => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~1\,
+	combout => \res_img|Add4~2_combout\,
+	cout => \res_img|Add4~3\);
+
+-- Location: LCCOMB_X45_Y36_N6
+\res_img|Add4~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~4_combout\ = ((\res_img|Add3~0_combout\ $ (\Res[3]~input_o\ $ (\res_img|Add4~3\)))) # (GND)
+-- \res_img|Add4~5\ = CARRY((\res_img|Add3~0_combout\ & (\Res[3]~input_o\ & !\res_img|Add4~3\)) # (!\res_img|Add3~0_combout\ & ((\Res[3]~input_o\) # (!\res_img|Add4~3\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011001001101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add3~0_combout\,
+	datab => \Res[3]~input_o\,
+	datad => VCC,
+	cin => \res_img|Add4~3\,
+	combout => \res_img|Add4~4_combout\,
+	cout => \res_img|Add4~5\);
+
+-- Location: LCCOMB_X47_Y36_N12
+\res_img|Add2~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~0_combout\ = \Res[0]~input_o\ $ (((\mode~input_o\ & \Res[3]~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \mode~input_o\,
+	datac => \Res[0]~input_o\,
+	datad => \Res[3]~input_o\,
+	combout => \res_img|Add2~0_combout\);
+
+-- Location: LCCOMB_X44_Y36_N4
+\res_img|Add2~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~1_combout\ = (\res_img|int_res~0_combout\ & (\res_img|Add2~0_combout\ $ (VCC))) # (!\res_img|int_res~0_combout\ & (\res_img|Add2~0_combout\ & VCC))
+-- \res_img|Add2~2\ = CARRY((\res_img|int_res~0_combout\ & \res_img|Add2~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add2~0_combout\,
+	datad => VCC,
+	combout => \res_img|Add2~1_combout\,
+	cout => \res_img|Add2~2\);
+
+-- Location: LCCOMB_X44_Y36_N6
+\res_img|Add2~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~3_combout\ = (\res_img|Add2~2\ & (\res_img|Add4~0_combout\ $ ((!\res_img|int_res~0_combout\)))) # (!\res_img|Add2~2\ & ((\res_img|Add4~0_combout\ $ (\res_img|int_res~0_combout\)) # (GND)))
+-- \res_img|Add2~4\ = CARRY((\res_img|Add4~0_combout\ $ (!\res_img|int_res~0_combout\)) # (!\res_img|Add2~2\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add4~0_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~2\,
+	combout => \res_img|Add2~3_combout\,
+	cout => \res_img|Add2~4\);
+
+-- Location: LCCOMB_X44_Y36_N8
+\res_img|Add2~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~5_combout\ = (\res_img|Add2~4\ & ((\res_img|Add4~2_combout\ $ (\res_img|int_res~0_combout\)))) # (!\res_img|Add2~4\ & (\res_img|Add4~2_combout\ $ (\res_img|int_res~0_combout\ $ (VCC))))
+-- \res_img|Add2~6\ = CARRY((!\res_img|Add2~4\ & (\res_img|Add4~2_combout\ $ (\res_img|int_res~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100000110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add4~2_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~4\,
+	combout => \res_img|Add2~5_combout\,
+	cout => \res_img|Add2~6\);
+
+-- Location: LCCOMB_X44_Y36_N10
+\res_img|Add2~7\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~7_combout\ = (\res_img|Add2~6\ & (\res_img|int_res~0_combout\ $ ((!\res_img|Add4~4_combout\)))) # (!\res_img|Add2~6\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~4_combout\)) # (GND)))
+-- \res_img|Add2~8\ = CARRY((\res_img|int_res~0_combout\ $ (!\res_img|Add4~4_combout\)) # (!\res_img|Add2~6\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~4_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~6\,
+	combout => \res_img|Add2~7_combout\,
+	cout => \res_img|Add2~8\);
+
+-- Location: LCCOMB_X45_Y36_N22
+\res_img|Add3~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add3~2_combout\ = (\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (\res_img|Add3~1\ & VCC)) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & 
+-- (!\res_img|Add3~1\)))) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (!\res_img|Add3~1\)) # (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & ((\res_img|Add3~1\) # 
+-- (GND)))))
+-- \res_img|Add3~3\ = CARRY((\res_img|Div0|auto_generated|divider|_~4_combout\ & (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & !\res_img|Add3~1\)) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((!\res_img|Add3~1\) # 
+-- (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datab => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
+	datad => VCC,
+	cin => \res_img|Add3~1\,
+	combout => \res_img|Add3~2_combout\,
+	cout => \res_img|Add3~3\);
+
+-- Location: LCCOMB_X45_Y36_N8
+\res_img|Add4~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~6_combout\ = (\res_img|Add3~2_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add4~5\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add4~5\) # (GND))))) # (!\res_img|Add3~2_combout\ & ((\res_img|int_res~0_combout\ & (\res_img|Add4~5\ 
+-- & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add4~5\))))
+-- \res_img|Add4~7\ = CARRY((\res_img|Add3~2_combout\ & ((!\res_img|Add4~5\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Add3~2_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add4~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add3~2_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~5\,
+	combout => \res_img|Add4~6_combout\,
+	cout => \res_img|Add4~7\);
+
+-- Location: LCCOMB_X44_Y36_N12
+\res_img|Add2~9\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~9_combout\ = (\res_img|Add2~8\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~6_combout\)))) # (!\res_img|Add2~8\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~6_combout\ $ (VCC))))
+-- \res_img|Add2~10\ = CARRY((!\res_img|Add2~8\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~6_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100000110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~6_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~8\,
+	combout => \res_img|Add2~9_combout\,
+	cout => \res_img|Add2~10\);
+
+-- Location: LCCOMB_X45_Y36_N24
+\res_img|Add3~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add3~4_combout\ = ((\res_img|Div0|auto_generated|divider|_~5_combout\ $ (\res_img|Div0|auto_generated|divider|_~4_combout\ $ (!\res_img|Add3~3\)))) # (GND)
+-- \res_img|Add3~5\ = CARRY((\res_img|Div0|auto_generated|divider|_~5_combout\ & ((\res_img|Div0|auto_generated|divider|_~4_combout\) # (!\res_img|Add3~3\))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & 
+-- (\res_img|Div0|auto_generated|divider|_~4_combout\ & !\res_img|Add3~3\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
+	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datad => VCC,
+	cin => \res_img|Add3~3\,
+	combout => \res_img|Add3~4_combout\,
+	cout => \res_img|Add3~5\);
+
+-- Location: LCCOMB_X45_Y36_N26
+\res_img|Add3~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add3~6_combout\ = (((\res_img|Add3~5\))) # (GND)
+-- \res_img|Add3~7\ = CARRY(\res_img|Div0|auto_generated|divider|_~4_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datad => VCC,
+	cin => \res_img|Add3~5\,
+	combout => \res_img|Add3~6_combout\,
+	cout => \res_img|Add3~7\);
+
+-- Location: LCCOMB_X45_Y36_N28
+\res_img|Add3~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add3~8_combout\ = \res_img|Add3~7\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \res_img|Add3~7\,
+	combout => \res_img|Add3~8_combout\);
+
+-- Location: LCCOMB_X45_Y36_N10
+\res_img|Add4~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~8_combout\ = ((\res_img|Add3~4_combout\ $ (\res_img|int_res~0_combout\ $ (\res_img|Add4~7\)))) # (GND)
+-- \res_img|Add4~9\ = CARRY((\res_img|Add3~4_combout\ & (\res_img|int_res~0_combout\ & !\res_img|Add4~7\)) # (!\res_img|Add3~4_combout\ & ((\res_img|int_res~0_combout\) # (!\res_img|Add4~7\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011001001101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add3~4_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~7\,
+	combout => \res_img|Add4~8_combout\,
+	cout => \res_img|Add4~9\);
+
+-- Location: LCCOMB_X45_Y36_N12
+\res_img|Add4~10\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~10_combout\ = (\res_img|Add3~6_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add4~9\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add4~9\) # (GND))))) # (!\res_img|Add3~6_combout\ & ((\res_img|int_res~0_combout\ & (\res_img|Add4~9\ 
+-- & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add4~9\))))
+-- \res_img|Add4~11\ = CARRY((\res_img|Add3~6_combout\ & ((!\res_img|Add4~9\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Add3~6_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add4~9\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add3~6_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~9\,
+	combout => \res_img|Add4~10_combout\,
+	cout => \res_img|Add4~11\);
+
+-- Location: LCCOMB_X45_Y36_N14
+\res_img|Add4~12\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~12_combout\ = ((\res_img|Add3~8_combout\ $ (\res_img|int_res~0_combout\ $ (\res_img|Add4~11\)))) # (GND)
+-- \res_img|Add4~13\ = CARRY((\res_img|Add3~8_combout\ & (\res_img|int_res~0_combout\ & !\res_img|Add4~11\)) # (!\res_img|Add3~8_combout\ & ((\res_img|int_res~0_combout\) # (!\res_img|Add4~11\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011001001101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add3~8_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~11\,
+	combout => \res_img|Add4~12_combout\,
+	cout => \res_img|Add4~13\);
+
+-- Location: LCCOMB_X44_Y36_N14
+\res_img|Add2~11\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~11_combout\ = (\res_img|Add2~10\ & (\res_img|int_res~0_combout\ $ ((!\res_img|Add4~8_combout\)))) # (!\res_img|Add2~10\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~8_combout\)) # (GND)))
+-- \res_img|Add2~12\ = CARRY((\res_img|int_res~0_combout\ $ (!\res_img|Add4~8_combout\)) # (!\res_img|Add2~10\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~8_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~10\,
+	combout => \res_img|Add2~11_combout\,
+	cout => \res_img|Add2~12\);
+
+-- Location: LCCOMB_X44_Y36_N16
+\res_img|Add2~13\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~13_combout\ = (\res_img|Add2~12\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~10_combout\)))) # (!\res_img|Add2~12\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~10_combout\ $ (VCC))))
+-- \res_img|Add2~14\ = CARRY((!\res_img|Add2~12\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~10_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100000110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~10_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~12\,
+	combout => \res_img|Add2~13_combout\,
+	cout => \res_img|Add2~14\);
+
+-- Location: LCCOMB_X44_Y36_N18
+\res_img|Add2~15\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~15_combout\ = (\res_img|Add2~14\ & (\res_img|int_res~0_combout\ $ ((!\res_img|Add4~12_combout\)))) # (!\res_img|Add2~14\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~12_combout\)) # (GND)))
+-- \res_img|Add2~16\ = CARRY((\res_img|int_res~0_combout\ $ (!\res_img|Add4~12_combout\)) # (!\res_img|Add2~14\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~12_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~14\,
+	combout => \res_img|Add2~15_combout\,
+	cout => \res_img|Add2~16\);
+
+-- Location: LCCOMB_X44_Y36_N28
+\res_img|Equal11~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal11~0_combout\ = (!\res_img|Add2~9_combout\ & (!\res_img|Add2~15_combout\ & (!\res_img|Add2~11_combout\ & !\res_img|Add2~13_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~9_combout\,
+	datab => \res_img|Add2~15_combout\,
+	datac => \res_img|Add2~11_combout\,
+	datad => \res_img|Add2~13_combout\,
+	combout => \res_img|Equal11~0_combout\);
+
+-- Location: LCCOMB_X45_Y36_N16
+\res_img|Add4~14\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~14_combout\ = (\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|int_res~0_combout\ & (!\res_img|Add4~13\)) # (!\res_img|int_res~0_combout\ & ((\res_img|Add4~13\) # (GND))))) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ 
+-- & ((\res_img|int_res~0_combout\ & (\res_img|Add4~13\ & VCC)) # (!\res_img|int_res~0_combout\ & (!\res_img|Add4~13\))))
+-- \res_img|Add4~15\ = CARRY((\res_img|Div0|auto_generated|divider|_~4_combout\ & ((!\res_img|Add4~13\) # (!\res_img|int_res~0_combout\))) # (!\res_img|Div0|auto_generated|divider|_~4_combout\ & (!\res_img|int_res~0_combout\ & !\res_img|Add4~13\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datab => \res_img|int_res~0_combout\,
+	datad => VCC,
+	cin => \res_img|Add4~13\,
+	combout => \res_img|Add4~14_combout\,
+	cout => \res_img|Add4~15\);
+
+-- Location: LCCOMB_X45_Y36_N18
+\res_img|Add4~16\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add4~16_combout\ = \res_img|Div0|auto_generated|divider|_~4_combout\ $ (\res_img|Add4~15\ $ (\res_img|int_res~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100111100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
+	datad => \res_img|int_res~0_combout\,
+	cin => \res_img|Add4~15\,
+	combout => \res_img|Add4~16_combout\);
+
+-- Location: LCCOMB_X44_Y36_N20
+\res_img|Add2~17\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~17_combout\ = (\res_img|Add2~16\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~14_combout\)))) # (!\res_img|Add2~16\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~14_combout\ $ (VCC))))
+-- \res_img|Add2~18\ = CARRY((!\res_img|Add2~16\ & (\res_img|int_res~0_combout\ $ (\res_img|Add4~14_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100000110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~14_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~16\,
+	combout => \res_img|Add2~17_combout\,
+	cout => \res_img|Add2~18\);
+
+-- Location: LCCOMB_X44_Y36_N22
+\res_img|Add2~19\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~19_combout\ = (\res_img|Add2~18\ & (\res_img|int_res~0_combout\ $ ((!\res_img|Add4~16_combout\)))) # (!\res_img|Add2~18\ & ((\res_img|int_res~0_combout\ $ (\res_img|Add4~16_combout\)) # (GND)))
+-- \res_img|Add2~20\ = CARRY((\res_img|int_res~0_combout\ $ (!\res_img|Add4~16_combout\)) # (!\res_img|Add2~18\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datab => \res_img|Add4~16_combout\,
+	datad => VCC,
+	cin => \res_img|Add2~18\,
+	combout => \res_img|Add2~19_combout\,
+	cout => \res_img|Add2~20\);
+
+-- Location: LCCOMB_X44_Y36_N24
+\res_img|Add2~21\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Add2~21_combout\ = \res_img|int_res~0_combout\ $ (\res_img|Add2~20\ $ (!\res_img|Add4~16_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101010100101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|int_res~0_combout\,
+	datad => \res_img|Add4~16_combout\,
+	cin => \res_img|Add2~20\,
+	combout => \res_img|Add2~21_combout\);
+
+-- Location: LCCOMB_X44_Y36_N2
+\res_img|process_1~20\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~20_combout\ = (\res_img|Add2~7_combout\) # (((\res_img|Add2~19_combout\) # (\res_img|Add2~21_combout\)) # (!\res_img|Equal11~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~7_combout\,
+	datab => \res_img|Equal11~0_combout\,
+	datac => \res_img|Add2~19_combout\,
+	datad => \res_img|Add2~21_combout\,
+	combout => \res_img|process_1~20_combout\);
+
+-- Location: LCCOMB_X43_Y36_N6
+\res_img|process_1~21\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~21_combout\ = (\res_img|process_1~20_combout\) # ((\res_img|Add2~5_combout\) # ((\res_img|Add2~17_combout\) # (\res_img|Add2~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3908,64 +4278,513 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|Add3~10_combout\,
-	datab => \res_img|Add3~12_combout\,
-	datac => \res_img|Add3~14_combout\,
-	datad => \res_img|process_1~6_combout\,
-	combout => \res_img|process_1~3_combout\);
+	dataa => \res_img|process_1~20_combout\,
+	datab => \res_img|Add2~5_combout\,
+	datac => \res_img|Add2~17_combout\,
+	datad => \res_img|Add2~1_combout\,
+	combout => \res_img|process_1~21_combout\);
 
--- Location: LCCOMB_X25_Y20_N2
-\res_img|process_1~87\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X44_Y36_N30
+\res_img|process_1~22\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~87_combout\ = (!\eror~input_o\ & ((\res_img|process_1~3_combout\) # ((\res_img|Add3~8_combout\) # (\res_img|Add3~6_combout\))))
+-- \res_img|process_1~22_combout\ = (\res_img|Add2~3_combout\ & (\res_img|Add2~1_combout\ & (!\res_img|Add2~19_combout\ & !\res_img|Add2~17_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011111110",
+	lut_mask => "0000000000001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|process_1~3_combout\,
-	datab => \res_img|Add3~8_combout\,
-	datac => \res_img|Add3~6_combout\,
-	datad => \eror~input_o\,
-	combout => \res_img|process_1~87_combout\);
+	dataa => \res_img|Add2~3_combout\,
+	datab => \res_img|Add2~1_combout\,
+	datac => \res_img|Add2~19_combout\,
+	datad => \res_img|Add2~17_combout\,
+	combout => \res_img|process_1~22_combout\);
 
--- Location: LCCOMB_X26_Y20_N18
-\res_img|Equal12~2\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X44_Y36_N0
+\res_img|process_1~23\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Equal12~2_combout\ = (!\Res[0]~input_o\ & (!\res_img|Add3~2_combout\ & (!\res_img|Add3~0_combout\ & \res_img|Equal12~1_combout\)))
+-- \res_img|process_1~23_combout\ = (\res_img|process_1~22_combout\ & (!\res_img|Add2~21_combout\ & (\res_img|Add2~5_combout\ & !\res_img|Add2~7_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000100000000",
+	lut_mask => "0000000000100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Res[0]~input_o\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|Equal12~1_combout\,
-	combout => \res_img|Equal12~2_combout\);
+	dataa => \res_img|process_1~22_combout\,
+	datab => \res_img|Add2~21_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~7_combout\,
+	combout => \res_img|process_1~23_combout\);
 
--- Location: LCCOMB_X23_Y18_N12
-\res_img|process_1~40\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X43_Y36_N16
+\res_img|Equal17~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~40_combout\ = ((\res_img|h_count\(4) & ((\res_img|h_count\(3)) # (!\res_img|LessThan34~0_combout\)))) # (!\res_img|LessThan6~0_combout\)
+-- \res_img|Equal17~0_combout\ = (\res_img|Add2~3_combout\) # ((\res_img|Add2~21_combout\) # ((\res_img|Add2~5_combout\) # (\res_img|Add2~19_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000110011111111",
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~3_combout\,
+	datab => \res_img|Add2~21_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~19_combout\,
+	combout => \res_img|Equal17~0_combout\);
+
+-- Location: LCCOMB_X43_Y36_N2
+\res_img|Equal17~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal17~1_combout\ = (!\res_img|Add2~17_combout\ & (!\res_img|Equal17~0_combout\ & (\res_img|Add2~7_combout\ & \res_img|Equal11~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~17_combout\,
+	datab => \res_img|Equal17~0_combout\,
+	datac => \res_img|Add2~7_combout\,
+	datad => \res_img|Equal11~0_combout\,
+	combout => \res_img|Equal17~1_combout\);
+
+-- Location: LCCOMB_X43_Y36_N20
+\res_img|process_1~13\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~13_combout\ = (!\res_img|Add2~3_combout\ & (\res_img|Add2~5_combout\ & !\res_img|Add2~19_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Add2~3_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~19_combout\,
+	combout => \res_img|process_1~13_combout\);
+
+-- Location: LCCOMB_X43_Y36_N26
+\res_img|process_1~14\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~14_combout\ = (!\res_img|Add2~17_combout\ & (\res_img|process_1~13_combout\ & (!\res_img|Add2~7_combout\ & !\res_img|Add2~21_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~17_combout\,
+	datab => \res_img|process_1~13_combout\,
+	datac => \res_img|Add2~7_combout\,
+	datad => \res_img|Add2~21_combout\,
+	combout => \res_img|process_1~14_combout\);
+
+-- Location: LCCOMB_X43_Y36_N8
+\res_img|process_1~15\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~15_combout\ = ((!\res_img|Equal17~1_combout\ & ((!\res_img|Equal11~0_combout\) # (!\res_img|process_1~14_combout\)))) # (!\res_img|Add2~1_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101011101110111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~1_combout\,
+	datab => \res_img|Equal17~1_combout\,
+	datac => \res_img|process_1~14_combout\,
+	datad => \res_img|Equal11~0_combout\,
+	combout => \res_img|process_1~15_combout\);
+
+-- Location: LCCOMB_X43_Y36_N22
+\res_img|process_1~16\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~16_combout\ = (\res_img|Add2~3_combout\ & (!\res_img|Add2~17_combout\ & !\res_img|Add2~21_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Add2~3_combout\,
+	datac => \res_img|Add2~17_combout\,
+	datad => \res_img|Add2~21_combout\,
+	combout => \res_img|process_1~16_combout\);
+
+-- Location: LCCOMB_X43_Y36_N12
+\res_img|process_1~17\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~17_combout\ = (\res_img|process_1~16_combout\ & (!\res_img|Add2~7_combout\ & !\res_img|Add2~19_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~16_combout\,
+	datac => \res_img|Add2~7_combout\,
+	datad => \res_img|Add2~19_combout\,
+	combout => \res_img|process_1~17_combout\);
+
+-- Location: LCCOMB_X43_Y36_N14
+\res_img|process_1~18\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~18_combout\ = (\res_img|process_1~17_combout\ & (\res_img|Equal11~0_combout\ & (\res_img|Add2~5_combout\ $ (\res_img|Add2~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~17_combout\,
+	datab => \res_img|Equal11~0_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~1_combout\,
+	combout => \res_img|process_1~18_combout\);
+
+-- Location: LCCOMB_X43_Y36_N4
+\res_img|process_1~19\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~19_combout\ = (\res_img|process_1~15_combout\ & (!\res_img|process_1~18_combout\ & ((\res_img|Add2~1_combout\) # (!\res_img|Equal17~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~1_combout\,
+	datab => \res_img|process_1~15_combout\,
+	datac => \res_img|process_1~18_combout\,
+	datad => \res_img|Equal17~1_combout\,
+	combout => \res_img|process_1~19_combout\);
+
+-- Location: LCCOMB_X43_Y36_N0
+\res_img|process_1~24\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~24_combout\ = (((\res_img|process_1~23_combout\ & \res_img|Equal11~0_combout\)) # (!\res_img|process_1~19_combout\)) # (!\res_img|process_1~21_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101111101011111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~21_combout\,
+	datab => \res_img|process_1~23_combout\,
+	datac => \res_img|process_1~19_combout\,
+	datad => \res_img|Equal11~0_combout\,
+	combout => \res_img|process_1~24_combout\);
+
+-- Location: LCCOMB_X36_Y36_N30
+\res_img|process_1~28\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~28_combout\ = (!\eror~input_o\ & (!\res_img|v_count\(9) & \res_img|v_count\(8)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \eror~input_o\,
+	datac => \res_img|v_count\(9),
+	datad => \res_img|v_count\(8),
+	combout => \res_img|process_1~28_combout\);
+
+-- Location: LCCOMB_X36_Y36_N12
+\res_img|process_1~29\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~29_combout\ = (\res_img|process_1~28_combout\ & (\res_img|process_1~27_combout\ & ((!\res_img|process_1~21_combout\) # (!\res_img|process_1~19_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~19_combout\,
+	datab => \res_img|process_1~21_combout\,
+	datac => \res_img|process_1~28_combout\,
+	datad => \res_img|process_1~27_combout\,
+	combout => \res_img|process_1~29_combout\);
+
+-- Location: LCCOMB_X36_Y36_N10
+\res_img|process_1~30\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~30_combout\ = (!\res_img|process_1~29_combout\ & (((\eror~input_o\) # (\res_img|process_1~12_combout\)) # (!\res_img|process_1~24_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011111101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~24_combout\,
+	datab => \eror~input_o\,
+	datac => \res_img|process_1~12_combout\,
+	datad => \res_img|process_1~29_combout\,
+	combout => \res_img|process_1~30_combout\);
+
+-- Location: LCCOMB_X39_Y35_N26
+\res_img|LessThan29~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|LessThan29~1_combout\ = (!\res_img|h_count\(7) & (((\res_img|LessThan29~0_combout\) # (!\res_img|process_1~4_combout\)) # (!\res_img|h_count\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010100010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(7),
+	datab => \res_img|h_count\(6),
+	datac => \res_img|process_1~4_combout\,
+	datad => \res_img|LessThan29~0_combout\,
+	combout => \res_img|LessThan29~1_combout\);
+
+-- Location: LCCOMB_X38_Y37_N10
+\res_img|process_1~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~5_combout\ = (!\res_img|h_count\(5) & !\res_img|h_count\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001100000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|h_count\(5),
+	datac => \res_img|h_count\(4),
+	combout => \res_img|process_1~5_combout\);
+
+-- Location: LCCOMB_X38_Y37_N4
+\res_img|process_1~6\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~6_combout\ = (!\res_img|h_count\(6) & (\res_img|process_1~5_combout\ & ((\res_img|LessThan34~0_combout\) # (!\res_img|h_count\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|h_count\(3),
-	datab => \res_img|h_count\(4),
+	datab => \res_img|h_count\(6),
 	datac => \res_img|LessThan34~0_combout\,
-	datad => \res_img|LessThan6~0_combout\,
+	datad => \res_img|process_1~5_combout\,
+	combout => \res_img|process_1~6_combout\);
+
+-- Location: LCCOMB_X39_Y35_N4
+\res_img|process_1~7\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~7_combout\ = (\res_img|h_count\(8) & (((\res_img|h_count\(7)) # (!\res_img|process_1~6_combout\)))) # (!\res_img|h_count\(8) & (\res_img|LessThan29~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110010011101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(8),
+	datab => \res_img|LessThan29~1_combout\,
+	datac => \res_img|h_count\(7),
+	datad => \res_img|process_1~6_combout\,
+	combout => \res_img|process_1~7_combout\);
+
+-- Location: LCCOMB_X39_Y35_N6
+\res_img|process_1~8\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~8_combout\ = (((!\res_img|LessThan0~0_combout\) # (!\res_img|process_1~4_combout\)) # (!\res_img|h_count\(6))) # (!\res_img|LessThan29~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|LessThan29~0_combout\,
+	datab => \res_img|h_count\(6),
+	datac => \res_img|process_1~4_combout\,
+	datad => \res_img|LessThan0~0_combout\,
+	combout => \res_img|process_1~8_combout\);
+
+-- Location: LCCOMB_X39_Y35_N0
+\res_img|rgb2~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2~0_combout\ = ((\res_img|process_1~7_combout\) # (!\res_img|process_1~8_combout\)) # (!\res_img|h_count\(9))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|h_count\(9),
+	datac => \res_img|process_1~7_combout\,
+	datad => \res_img|process_1~8_combout\,
+	combout => \res_img|rgb2~0_combout\);
+
+-- Location: LCCOMB_X43_Y36_N30
+\res_img|Equal11~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal11~1_combout\ = (!\res_img|Add2~21_combout\ & (!\res_img|Add2~17_combout\ & !\res_img|Add2~19_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|Add2~21_combout\,
+	datac => \res_img|Add2~17_combout\,
+	datad => \res_img|Add2~19_combout\,
+	combout => \res_img|Equal11~1_combout\);
+
+-- Location: LCCOMB_X43_Y36_N24
+\res_img|Equal11~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal11~2_combout\ = (\res_img|Equal11~1_combout\ & (\res_img|Equal11~0_combout\ & (!\res_img|Add2~7_combout\ & !\res_img|Add2~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Equal11~1_combout\,
+	datab => \res_img|Equal11~0_combout\,
+	datac => \res_img|Add2~7_combout\,
+	datad => \res_img|Add2~1_combout\,
+	combout => \res_img|Equal11~2_combout\);
+
+-- Location: LCCOMB_X42_Y36_N18
+\res_img|process_1~31\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~31_combout\ = (\eror~input_o\) # ((\res_img|Equal11~2_combout\ & (\res_img|Add2~3_combout\ $ (\res_img|Add2~5_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111101001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~3_combout\,
+	datab => \res_img|Equal11~2_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \eror~input_o\,
+	combout => \res_img|process_1~31_combout\);
+
+-- Location: LCCOMB_X43_Y36_N10
+\res_img|process_1~37\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~37_combout\ = (\res_img|Add2~3_combout\ & (!\res_img|Add2~21_combout\ & (\res_img|Add2~5_combout\ & !\res_img|Add2~19_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~3_combout\,
+	datab => \res_img|Add2~21_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~19_combout\,
+	combout => \res_img|process_1~37_combout\);
+
+-- Location: LCCOMB_X43_Y36_N28
+\res_img|process_1~38\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~38_combout\ = (\res_img|process_1~37_combout\ & (!\res_img|Add2~7_combout\ & (!\res_img|Add2~17_combout\ & \res_img|Equal11~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~37_combout\,
+	datab => \res_img|Add2~7_combout\,
+	datac => \res_img|Add2~17_combout\,
+	datad => \res_img|Equal11~0_combout\,
+	combout => \res_img|process_1~38_combout\);
+
+-- Location: LCCOMB_X42_Y36_N8
+\res_img|process_1~39\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~39_combout\ = (\res_img|process_1~15_combout\ & ((\res_img|Add2~1_combout\) # ((!\res_img|Equal17~1_combout\ & !\res_img|process_1~38_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Equal17~1_combout\,
+	datab => \res_img|process_1~15_combout\,
+	datac => \res_img|Add2~1_combout\,
+	datad => \res_img|process_1~38_combout\,
+	combout => \res_img|process_1~39_combout\);
+
+-- Location: LCCOMB_X44_Y36_N26
+\res_img|process_1~36\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~36_combout\ = (!\res_img|Add2~3_combout\ & (!\res_img|process_1~20_combout\ & (!\res_img|Add2~1_combout\ & !\res_img|Add2~17_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Add2~3_combout\,
+	datab => \res_img|process_1~20_combout\,
+	datac => \res_img|Add2~1_combout\,
+	datad => \res_img|Add2~17_combout\,
+	combout => \res_img|process_1~36_combout\);
+
+-- Location: LCCOMB_X37_Y36_N20
+\res_img|process_1~35\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~35_combout\ = (!\eror~input_o\ & \res_img|process_1~34_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \eror~input_o\,
+	datad => \res_img|process_1~34_combout\,
+	combout => \res_img|process_1~35_combout\);
+
+-- Location: LCCOMB_X38_Y37_N12
+\res_img|process_1~40\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~40_combout\ = ((\res_img|h_count\(4) & ((\res_img|h_count\(3)) # (!\res_img|LessThan34~0_combout\)))) # (!\res_img|LessThan7~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111101001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|LessThan34~0_combout\,
+	datab => \res_img|h_count\(4),
+	datac => \res_img|LessThan7~0_combout\,
+	datad => \res_img|h_count\(3),
 	combout => \res_img|process_1~40_combout\);
 
--- Location: LCCOMB_X23_Y18_N14
+-- Location: LCCOMB_X38_Y37_N30
 \res_img|process_1~41\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|process_1~41_combout\ = (\res_img|h_count\(8)) # ((\res_img|LessThan29~1_combout\) # ((\res_img|process_1~40_combout\ & \res_img|h_count\(7))))
@@ -3982,292 +4801,10 @@ PORT MAP (
 	datad => \res_img|LessThan29~1_combout\,
 	combout => \res_img|process_1~41_combout\);
 
--- Location: LCCOMB_X25_Y20_N10
-\res_img|process_1~51\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~51_combout\ = (\res_img|process_1~43_combout\ & (!\res_img|process_1~41_combout\ & ((\res_img|Equal12~2_combout\) # (!\res_img|process_1~87_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~87_combout\,
-	datab => \res_img|Equal12~2_combout\,
-	datac => \res_img|process_1~43_combout\,
-	datad => \res_img|process_1~41_combout\,
-	combout => \res_img|process_1~51_combout\);
-
--- Location: LCCOMB_X25_Y20_N0
-\res_img|rgb2~23\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~23_combout\ = (!\res_img|process_1~50_combout\ & (!\res_img|process_1~48_combout\ & !\res_img|process_1~51_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|process_1~50_combout\,
-	datac => \res_img|process_1~48_combout\,
-	datad => \res_img|process_1~51_combout\,
-	combout => \res_img|rgb2~23_combout\);
-
--- Location: LCCOMB_X27_Y20_N6
-\res_img|rgb2~8\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~8_combout\ = (\res_img|Add3~2_combout\ & ((\res_img|Add3~4_combout\) # (\res_img|Add3~0_combout\ $ (!\Res[0]~input_o\)))) # (!\res_img|Add3~2_combout\ & (\res_img|Add3~0_combout\ $ ((!\res_img|Add3~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110100111100011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~2_combout\,
-	datab => \res_img|Add3~0_combout\,
-	datac => \res_img|Add3~4_combout\,
-	datad => \Res[0]~input_o\,
-	combout => \res_img|rgb2~8_combout\);
-
--- Location: LCCOMB_X27_Y20_N0
-\res_img|rgb2~6\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~6_combout\ = (\res_img|rgb2~8_combout\) # (\res_img|Add3~14_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|rgb2~8_combout\,
-	datad => \res_img|Add3~14_combout\,
-	combout => \res_img|rgb2~6_combout\);
-
--- Location: LCCOMB_X26_Y20_N0
-\res_img|rgb2~3\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~3_combout\ = (\res_img|Add3~10_combout\) # ((\res_img|Add3~12_combout\) # ((\res_img|rgb2~6_combout\) # (\res_img|Add3~16_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~10_combout\,
-	datab => \res_img|Add3~12_combout\,
-	datac => \res_img|rgb2~6_combout\,
-	datad => \res_img|Add3~16_combout\,
-	combout => \res_img|rgb2~3_combout\);
-
--- Location: LCCOMB_X25_Y20_N24
-\res_img|rgb2~52\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~52_combout\ = (!\eror~input_o\ & ((\res_img|Add3~6_combout\) # ((\res_img|rgb2~3_combout\) # (\res_img|Add3~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001100110010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~6_combout\,
-	datab => \eror~input_o\,
-	datac => \res_img|rgb2~3_combout\,
-	datad => \res_img|Add3~8_combout\,
-	combout => \res_img|rgb2~52_combout\);
-
--- Location: LCCOMB_X26_Y17_N2
-\res_img|process_1~30\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~30_combout\ = (\res_img|v_count\(3)) # ((\res_img|v_count\(4)) # ((\res_img|v_count\(2) & \res_img|v_count\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111011111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(3),
-	datab => \res_img|v_count\(2),
-	datac => \res_img|v_count\(4),
-	datad => \res_img|v_count\(1),
-	combout => \res_img|process_1~30_combout\);
-
--- Location: LCCOMB_X26_Y20_N22
-\res_img|process_1~28\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~28_combout\ = (\res_img|v_count\(6)) # ((\res_img|v_count\(8)) # ((\res_img|v_count\(9)) # (!\res_img|v_count\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(6),
-	datab => \res_img|v_count\(8),
-	datac => \res_img|v_count\(9),
-	datad => \res_img|v_count\(7),
-	combout => \res_img|process_1~28_combout\);
-
--- Location: LCCOMB_X26_Y20_N16
-\res_img|process_1~31\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~31_combout\ = (\res_img|process_1~28_combout\) # ((\res_img|process_1~29_combout\) # ((\res_img|process_1~30_combout\ & \res_img|v_count\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~30_combout\,
-	datab => \res_img|v_count\(5),
-	datac => \res_img|process_1~28_combout\,
-	datad => \res_img|process_1~29_combout\,
-	combout => \res_img|process_1~31_combout\);
-
--- Location: LCCOMB_X24_Y17_N16
-\res_img|process_1~27\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~27_combout\ = (\res_img|v_count\(7) & (!\res_img|process_1~26_combout\ & \res_img|process_1~24_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datac => \res_img|process_1~26_combout\,
-	datad => \res_img|process_1~24_combout\,
-	combout => \res_img|process_1~27_combout\);
-
--- Location: LCCOMB_X26_Y20_N10
-\res_img|rgb2~18\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~18_combout\ = (\res_img|Add3~14_combout\) # ((\res_img|Add3~4_combout\) # (\res_img|Add3~16_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Add3~14_combout\,
-	datac => \res_img|Add3~4_combout\,
-	datad => \res_img|Add3~16_combout\,
-	combout => \res_img|rgb2~18_combout\);
-
--- Location: LCCOMB_X26_Y20_N4
-\res_img|rgb2~19\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~19_combout\ = (\Res[0]~input_o\ & (((\res_img|process_1~31_combout\) # (!\res_img|Add3~0_combout\)) # (!\res_img|Add3~2_combout\))) # (!\Res[0]~input_o\ & ((\res_img|Add3~2_combout\) # ((\res_img|Add3~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111001111110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[0]~input_o\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|process_1~31_combout\,
-	combout => \res_img|rgb2~19_combout\);
-
--- Location: LCCOMB_X25_Y20_N20
-\res_img|rgb2~20\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~20_combout\ = (!\res_img|rgb2~18_combout\ & (\res_img|Equal12~0_combout\ & !\res_img|rgb2~19_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|rgb2~18_combout\,
-	datac => \res_img|Equal12~0_combout\,
-	datad => \res_img|rgb2~19_combout\,
-	combout => \res_img|rgb2~20_combout\);
-
--- Location: LCCOMB_X25_Y20_N30
-\res_img|rgb2~21\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2~21_combout\ = (\res_img|rgb2~52_combout\ & (((\res_img|process_1~31_combout\ & !\res_img|process_1~27_combout\)) # (!\res_img|rgb2~20_combout\))) # (!\res_img|rgb2~52_combout\ & (\res_img|process_1~31_combout\ & 
--- (!\res_img|process_1~27_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110010101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|rgb2~52_combout\,
-	datab => \res_img|process_1~31_combout\,
-	datac => \res_img|process_1~27_combout\,
-	datad => \res_img|rgb2~20_combout\,
-	combout => \res_img|rgb2~21_combout\);
-
--- Location: LCCOMB_X26_Y20_N8
-\res_img|Equal20~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|Equal20~0_combout\ = (!\Res[0]~input_o\ & (\res_img|Add3~2_combout\ & (!\res_img|Add3~0_combout\ & \res_img|Equal12~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Res[0]~input_o\,
-	datab => \res_img|Add3~2_combout\,
-	datac => \res_img|Add3~0_combout\,
-	datad => \res_img|Equal12~1_combout\,
-	combout => \res_img|Equal20~0_combout\);
-
--- Location: LCCOMB_X24_Y20_N26
-\res_img|process_1~32\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~32_combout\ = (\res_img|v_count\(8) & (!\res_img|v_count\(9) & (!\res_img|LessThan25~0_combout\ & \res_img|LessThan26~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(8),
-	datab => \res_img|v_count\(9),
-	datac => \res_img|LessThan25~0_combout\,
-	datad => \res_img|LessThan26~1_combout\,
-	combout => \res_img|process_1~32_combout\);
-
--- Location: LCCOMB_X25_Y20_N28
-\res_img|process_1~34\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~34_combout\ = (\eror~input_o\) # (\res_img|Equal12~2_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101011111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \eror~input_o\,
-	datac => \res_img|Equal12~2_combout\,
-	combout => \res_img|process_1~34_combout\);
-
--- Location: LCCOMB_X25_Y20_N6
+-- Location: LCCOMB_X37_Y36_N14
 \res_img|process_1~42\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~42_combout\ = (\res_img|process_1~33_combout\ & (!\res_img|process_1~41_combout\ & ((\res_img|process_1~34_combout\) # (!\res_img|process_1~39_combout\))))
+-- \res_img|process_1~42_combout\ = (\res_img|process_1~35_combout\ & (!\res_img|process_1~41_combout\ & ((\res_img|process_1~36_combout\) # (!\res_img|process_1~39_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4276,32 +4813,64 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|process_1~39_combout\,
-	datab => \res_img|process_1~34_combout\,
-	datac => \res_img|process_1~33_combout\,
+	datab => \res_img|process_1~36_combout\,
+	datac => \res_img|process_1~35_combout\,
 	datad => \res_img|process_1~41_combout\,
 	combout => \res_img|process_1~42_combout\);
 
--- Location: LCCOMB_X25_Y20_N12
-\res_img|rgb2~22\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y36_N26
+\res_img|process_1~33\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~22_combout\ = (!\res_img|process_1~42_combout\ & (((\res_img|rgb2~52_combout\ & !\res_img|Equal20~0_combout\)) # (!\res_img|process_1~32_combout\)))
+-- \res_img|process_1~33_combout\ = (!\res_img|v_count\(9) & (\res_img|process_1~32_combout\ & \res_img|v_count\(8)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000101111",
+	lut_mask => "0011000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2~52_combout\,
-	datab => \res_img|Equal20~0_combout\,
+	datab => \res_img|v_count\(9),
 	datac => \res_img|process_1~32_combout\,
-	datad => \res_img|process_1~42_combout\,
-	combout => \res_img|rgb2~22_combout\);
+	datad => \res_img|v_count\(8),
+	combout => \res_img|process_1~33_combout\);
 
--- Location: LCCOMB_X25_Y20_N14
-\res_img|rgb2~24\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N8
+\res_img|process_1~43\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~24_combout\ = (\res_img|rgb2~17_combout\) # ((\res_img|rgb2~23_combout\ & (\res_img|rgb2~21_combout\ & \res_img|rgb2~22_combout\)))
+-- \res_img|process_1~43_combout\ = (!\res_img|process_1~42_combout\ & (((!\res_img|process_1~31_combout\ & \res_img|process_1~19_combout\)) # (!\res_img|process_1~33_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~31_combout\,
+	datab => \res_img|process_1~19_combout\,
+	datac => \res_img|process_1~42_combout\,
+	datad => \res_img|process_1~33_combout\,
+	combout => \res_img|process_1~43_combout\);
+
+-- Location: LCCOMB_X43_Y36_N18
+\res_img|Equal11~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|Equal11~3_combout\ = (\res_img|Equal11~1_combout\ & (!\res_img|Add2~7_combout\ & \res_img|Equal11~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|Equal11~1_combout\,
+	datac => \res_img|Add2~7_combout\,
+	datad => \res_img|Equal11~0_combout\,
+	combout => \res_img|Equal11~3_combout\);
+
+-- Location: LCCOMB_X42_Y36_N12
+\res_img|process_1~50\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|process_1~50_combout\ = (\res_img|Equal17~1_combout\) # ((\res_img|Equal11~3_combout\ & (\res_img|Add2~5_combout\ & \res_img|Add2~3_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4309,391 +4878,85 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2~17_combout\,
-	datab => \res_img|rgb2~23_combout\,
-	datac => \res_img|rgb2~21_combout\,
-	datad => \res_img|rgb2~22_combout\,
-	combout => \res_img|rgb2~24_combout\);
+	dataa => \res_img|Equal17~1_combout\,
+	datab => \res_img|Equal11~3_combout\,
+	datac => \res_img|Add2~5_combout\,
+	datad => \res_img|Add2~3_combout\,
+	combout => \res_img|process_1~50_combout\);
 
--- Location: LCCOMB_X27_Y19_N0
-\res_img|process_1~69\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X42_Y36_N28
+\res_img|process_1~51\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~69_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Div0|auto_generated|divider|_~5_combout\ & (\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & 
--- \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\)) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\ & !\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))))
+-- \res_img|process_1~51_combout\ = ((\eror~input_o\) # ((!\res_img|Add2~1_combout\ & \res_img|process_1~50_combout\))) # (!\res_img|process_1~21_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000010000001",
+	lut_mask => "1101111111011101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datab => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
-	datac => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	datad => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	combout => \res_img|process_1~69_combout\);
+	dataa => \res_img|process_1~21_combout\,
+	datab => \eror~input_o\,
+	datac => \res_img|Add2~1_combout\,
+	datad => \res_img|process_1~50_combout\,
+	combout => \res_img|process_1~51_combout\);
 
--- Location: LCCOMB_X26_Y18_N2
-\res_img|Equal2~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y37_N28
+\res_img|process_1~44\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|Equal2~0_combout\ = (\res_img|int_res~0_combout\ & (!\res_img|Div0|auto_generated|divider|op_1~6_combout\ & (!\res_img|Div0|auto_generated|divider|op_1~0_combout\))) # (!\res_img|int_res~0_combout\ & 
--- (((\res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
+-- \res_img|process_1~44_combout\ = (((\res_img|LessThan32~0_combout\ & !\res_img|h_count\(4))) # (!\res_img|h_count\(6))) # (!\res_img|h_count\(5))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101011100000010",
+	lut_mask => "0010111111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|int_res~0_combout\,
-	datab => \res_img|Div0|auto_generated|divider|op_1~6_combout\,
-	datac => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
-	datad => \res_img|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \res_img|Equal2~0_combout\);
+	dataa => \res_img|LessThan32~0_combout\,
+	datab => \res_img|h_count\(4),
+	datac => \res_img|h_count\(5),
+	datad => \res_img|h_count\(6),
+	combout => \res_img|process_1~44_combout\);
 
--- Location: LCCOMB_X24_Y20_N30
-\res_img|process_1~68\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y37_N26
+\res_img|process_1~45\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~68_combout\ = (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\ & (\res_img|Div0|auto_generated|divider|_~5_combout\ & (\res_img|process_1~32_combout\ & \res_img|Equal2~0_combout\)))
+-- \res_img|process_1~45_combout\ = (\res_img|h_count\(7) & ((\res_img|h_count\(8)) # ((\res_img|process_1~44_combout\)))) # (!\res_img|h_count\(7) & (((!\res_img|h_count\(8) & \res_img|process_1~44_combout\)) # (!\res_img|process_1~6_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000000000000",
+	lut_mask => "1011111110001101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datac => \res_img|process_1~32_combout\,
-	datad => \res_img|Equal2~0_combout\,
-	combout => \res_img|process_1~68_combout\);
+	dataa => \res_img|h_count\(7),
+	datab => \res_img|h_count\(8),
+	datac => \res_img|process_1~6_combout\,
+	datad => \res_img|process_1~44_combout\,
+	combout => \res_img|process_1~45_combout\);
 
--- Location: LCCOMB_X25_Y19_N6
-\res_img|process_1~66\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N2
+\res_img|process_1~46\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~66_combout\ = (!\eror~input_o\ & (((!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # (!\res_img|Div0|auto_generated|divider|_~5_combout\)) # (!\res_img|Equal2~0_combout\)))
+-- \res_img|process_1~46_combout\ = (\res_img|Add2~5_combout\ & (\res_img|Add2~1_combout\ $ ((\res_img|Add2~3_combout\)))) # (!\res_img|Add2~5_combout\ & (((\res_img|Add2~3_combout\ & !\res_img|process_1~35_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001010101010101",
+	lut_mask => "0100100001111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \eror~input_o\,
-	datab => \res_img|Equal2~0_combout\,
-	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~66_combout\);
+	dataa => \res_img|Add2~1_combout\,
+	datab => \res_img|Add2~5_combout\,
+	datac => \res_img|Add2~3_combout\,
+	datad => \res_img|process_1~35_combout\,
+	combout => \res_img|process_1~46_combout\);
 
--- Location: LCCOMB_X25_Y19_N16
-\res_img|process_1~54\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N16
+\res_img|process_1~47\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~54_combout\ = (\res_img|Div0|auto_generated|divider|_~4_combout\) # ((\res_img|Div0|auto_generated|divider|_~5_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # 
--- (!\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\))) # (!\res_img|Div0|auto_generated|divider|_~5_combout\ & ((!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~54_combout\);
-
--- Location: LCCOMB_X24_Y20_N28
-\res_img|process_1~67\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~67_combout\ = (\res_img|process_1~66_combout\ & (!\res_img|process_1~54_combout\ & ((\res_img|process_1~32_combout\) # (!\res_img|process_1~31_combout\)))) # (!\res_img|process_1~66_combout\ & (((\res_img|process_1~32_combout\) # 
--- (!\res_img|process_1~31_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111000001110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~66_combout\,
-	datab => \res_img|process_1~54_combout\,
-	datac => \res_img|process_1~32_combout\,
-	datad => \res_img|process_1~31_combout\,
-	combout => \res_img|process_1~67_combout\);
-
--- Location: LCCOMB_X24_Y20_N12
-\res_img|process_1~70\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~70_combout\ = (\res_img|process_1~68_combout\) # ((\res_img|process_1~67_combout\) # ((\res_img|process_1~69_combout\ & !\res_img|process_1~31_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~69_combout\,
-	datab => \res_img|process_1~31_combout\,
-	datac => \res_img|process_1~68_combout\,
-	datad => \res_img|process_1~67_combout\,
-	combout => \res_img|process_1~70_combout\);
-
--- Location: LCCOMB_X25_Y19_N28
-\res_img|process_1~73\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~73_combout\ = (\res_img|Div0|auto_generated|divider|_~4_combout\) # ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # (!\res_img|Div0|auto_generated|divider|_~5_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~73_combout\);
-
--- Location: LCCOMB_X25_Y18_N30
-\res_img|LessThan32~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|LessThan32~1_combout\ = (!\res_img|h_count\(4) & \res_img|LessThan32~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \res_img|h_count\(4),
-	datad => \res_img|LessThan32~0_combout\,
-	combout => \res_img|LessThan32~1_combout\);
-
--- Location: LCCOMB_X25_Y18_N0
-\res_img|process_1~57\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~57_combout\ = (!\eror~input_o\ & (\res_img|h_count\(9) & (\res_img|h_count\(6) & \res_img|LessThan0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \eror~input_o\,
-	datab => \res_img|h_count\(9),
-	datac => \res_img|h_count\(6),
-	datad => \res_img|LessThan0~0_combout\,
-	combout => \res_img|process_1~57_combout\);
-
--- Location: LCCOMB_X25_Y18_N4
-\res_img|process_1~58\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~58_combout\ = (\res_img|LessThan20~0_combout\ & (\res_img|process_1~57_combout\ & ((\res_img|h_count\(5)) # (!\res_img|LessThan32~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(5),
-	datab => \res_img|LessThan20~0_combout\,
-	datac => \res_img|LessThan32~1_combout\,
-	datad => \res_img|process_1~57_combout\,
-	combout => \res_img|process_1~58_combout\);
-
--- Location: LCCOMB_X26_Y18_N26
-\res_img|process_1~71\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~71_combout\ = (\res_img|Div0|auto_generated|divider|op_1~0_combout\ $ (!\res_img|Div0|auto_generated|divider|op_1~2_combout\)) # (!\res_img|Div0|auto_generated|divider|op_1~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111001100111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|Div0|auto_generated|divider|op_1~4_combout\,
-	datac => \res_img|Div0|auto_generated|divider|op_1~0_combout\,
-	datad => \res_img|Div0|auto_generated|divider|op_1~2_combout\,
-	combout => \res_img|process_1~71_combout\);
-
--- Location: LCCOMB_X25_Y18_N16
-\res_img|process_1~72\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~72_combout\ = (\res_img|process_1~58_combout\ & (((!\res_img|Div0|auto_generated|divider|op_1~6_combout\ & \res_img|process_1~71_combout\)) # (!\res_img|int_res~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111000000110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|op_1~6_combout\,
-	datab => \res_img|int_res~0_combout\,
-	datac => \res_img|process_1~58_combout\,
-	datad => \res_img|process_1~71_combout\,
-	combout => \res_img|process_1~72_combout\);
-
--- Location: LCCOMB_X26_Y18_N8
-\res_img|process_1~53\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~53_combout\ = (!\eror~input_o\ & ((\res_img|Div0|auto_generated|divider|_~5_combout\ $ (\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\)) # (!\res_img|Equal2~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000011100001101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Equal2~0_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datac => \eror~input_o\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~53_combout\);
-
--- Location: LCCOMB_X25_Y18_N26
-\res_img|process_1~61\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~61_combout\ = (\res_img|h_count\(3)) # ((\res_img|h_count\(2)) # ((\res_img|h_count\(0) & \res_img|h_count\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111011111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|h_count\(0),
-	datab => \res_img|h_count\(3),
-	datac => \res_img|h_count\(2),
-	datad => \res_img|h_count\(1),
-	combout => \res_img|process_1~61_combout\);
-
--- Location: LCCOMB_X25_Y18_N10
-\res_img|process_1~63\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~63_combout\ = (\res_img|h_count\(9)) # (((\res_img|process_1~61_combout\ & \res_img|process_1~21_combout\)) # (!\res_img|process_1~62_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110110011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~61_combout\,
-	datab => \res_img|h_count\(9),
-	datac => \res_img|process_1~21_combout\,
-	datad => \res_img|process_1~62_combout\,
-	combout => \res_img|process_1~63_combout\);
-
--- Location: LCCOMB_X25_Y18_N22
-\res_img|process_1~74\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~74_combout\ = (\res_img|process_1~72_combout\) # ((!\res_img|process_1~63_combout\ & ((!\res_img|process_1~53_combout\) # (!\res_img|process_1~73_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~73_combout\,
-	datab => \res_img|process_1~72_combout\,
-	datac => \res_img|process_1~53_combout\,
-	datad => \res_img|process_1~63_combout\,
-	combout => \res_img|process_1~74_combout\);
-
--- Location: LCCOMB_X25_Y18_N8
-\res_img|process_1~52\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~52_combout\ = (\res_img|v_count\(7) & (\res_img|v_count\(8) & !\res_img|v_count\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(7),
-	datab => \res_img|v_count\(8),
-	datad => \res_img|v_count\(6),
-	combout => \res_img|process_1~52_combout\);
-
--- Location: LCCOMB_X25_Y18_N14
-\res_img|process_1~55\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~55_combout\ = (\res_img|process_1~52_combout\ & (!\res_img|process_1~26_combout\ & ((!\res_img|process_1~53_combout\) # (!\res_img|process_1~54_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|process_1~54_combout\,
-	datab => \res_img|process_1~53_combout\,
-	datac => \res_img|process_1~52_combout\,
-	datad => \res_img|process_1~26_combout\,
-	combout => \res_img|process_1~55_combout\);
-
--- Location: LCCOMB_X24_Y17_N0
-\res_img|process_1~56\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~56_combout\ = (\res_img|LessThan28~1_combout\ & ((\res_img|v_count\(9)) # ((\res_img|v_count\(8) & \res_img|LessThan31~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|v_count\(8),
-	datab => \res_img|v_count\(9),
-	datac => \res_img|LessThan31~1_combout\,
-	datad => \res_img|LessThan28~1_combout\,
-	combout => \res_img|process_1~56_combout\);
-
--- Location: LCCOMB_X25_Y19_N12
-\res_img|process_1~60\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~60_combout\ = (\eror~input_o\) # ((\res_img|Equal2~0_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\) # (!\res_img|Div0|auto_generated|divider|_~5_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110111010101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \eror~input_o\,
-	datab => \res_img|Equal2~0_combout\,
-	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~60_combout\);
-
--- Location: LCCOMB_X25_Y19_N2
-\res_img|process_1~59\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~59_combout\ = (!\res_img|Div0|auto_generated|divider|_~4_combout\ & ((\res_img|Div0|auto_generated|divider|quotient[0]~5_combout\) # ((\res_img|Div0|auto_generated|divider|_~5_combout\) # 
--- (!\res_img|Div0|auto_generated|divider|quotient[1]~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001000110011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \res_img|Div0|auto_generated|divider|quotient[0]~5_combout\,
-	datab => \res_img|Div0|auto_generated|divider|_~4_combout\,
-	datac => \res_img|Div0|auto_generated|divider|_~5_combout\,
-	datad => \res_img|Div0|auto_generated|divider|quotient[1]~4_combout\,
-	combout => \res_img|process_1~59_combout\);
-
--- Location: LCCOMB_X25_Y18_N12
-\res_img|process_1~64\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|process_1~64_combout\ = (\res_img|process_1~60_combout\ & (((\res_img|process_1~59_combout\ & \res_img|process_1~58_combout\)) # (!\res_img|process_1~63_combout\))) # (!\res_img|process_1~60_combout\ & (\res_img|process_1~59_combout\ & 
--- (\res_img|process_1~58_combout\)))
+-- \res_img|process_1~47_combout\ = (\res_img|Equal11~3_combout\ & (((\res_img|Equal17~1_combout\ & \res_img|process_1~35_combout\)) # (!\res_img|process_1~46_combout\))) # (!\res_img|Equal11~3_combout\ & (\res_img|Equal17~1_combout\ & 
+-- (\res_img|process_1~35_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4701,67 +4964,102 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|process_1~60_combout\,
-	datab => \res_img|process_1~59_combout\,
-	datac => \res_img|process_1~58_combout\,
-	datad => \res_img|process_1~63_combout\,
-	combout => \res_img|process_1~64_combout\);
+	dataa => \res_img|Equal11~3_combout\,
+	datab => \res_img|Equal17~1_combout\,
+	datac => \res_img|process_1~35_combout\,
+	datad => \res_img|process_1~46_combout\,
+	combout => \res_img|process_1~47_combout\);
 
--- Location: LCCOMB_X25_Y18_N6
-\res_img|process_1~65\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N6
+\res_img|process_1~85\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~65_combout\ = (!\res_img|v_count\(9) & ((\res_img|process_1~55_combout\) # ((\res_img|process_1~56_combout\ & \res_img|process_1~64_combout\))))
+-- \res_img|process_1~85_combout\ = (!\eror~input_o\ & ((\res_img|process_1~48_combout\) # ((\res_img|process_1~34_combout\ & \res_img|process_1~47_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010001000100",
+	lut_mask => "0011001000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|v_count\(9),
-	datab => \res_img|process_1~55_combout\,
-	datac => \res_img|process_1~56_combout\,
-	datad => \res_img|process_1~64_combout\,
-	combout => \res_img|process_1~65_combout\);
+	dataa => \res_img|process_1~34_combout\,
+	datab => \eror~input_o\,
+	datac => \res_img|process_1~48_combout\,
+	datad => \res_img|process_1~47_combout\,
+	combout => \res_img|process_1~85_combout\);
 
--- Location: LCCOMB_X24_Y20_N6
-\res_img|process_1~75\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N12
+\res_img|process_1~49\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|process_1~75_combout\ = (\res_img|process_1~70_combout\) # ((\res_img|process_1~65_combout\) # ((\res_img|process_1~33_combout\ & \res_img|process_1~74_combout\)))
+-- \res_img|process_1~49_combout\ = (\res_img|process_1~45_combout\) # (((!\res_img|process_1~47_combout\ & \res_img|process_1~19_combout\)) # (!\res_img|process_1~85_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111101010",
+	lut_mask => "1011101011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|process_1~70_combout\,
-	datab => \res_img|process_1~33_combout\,
-	datac => \res_img|process_1~74_combout\,
-	datad => \res_img|process_1~65_combout\,
-	combout => \res_img|process_1~75_combout\);
+	dataa => \res_img|process_1~45_combout\,
+	datab => \res_img|process_1~47_combout\,
+	datac => \res_img|process_1~19_combout\,
+	datad => \res_img|process_1~85_combout\,
+	combout => \res_img|process_1~49_combout\);
 
--- Location: LCCOMB_X24_Y20_N18
-\res_img|rgb2~34\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N18
+\res_img|process_1~52\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~34_combout\ = (\res_img|rgb2[13]~28_combout\ & (\res_img|rgb2~33_combout\)) # (!\res_img|rgb2[13]~28_combout\ & ((\res_img|rgb2~33_combout\ & ((\res_img|process_1~75_combout\))) # (!\res_img|rgb2~33_combout\ & (!\res_img|rgb2~24_combout\))))
+-- \res_img|process_1~52_combout\ = (\res_img|process_1~49_combout\ & (((\res_img|process_1~41_combout\) # (!\res_img|process_1~48_combout\)) # (!\res_img|process_1~51_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110110001001",
+	lut_mask => "1101111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2[13]~28_combout\,
-	datab => \res_img|rgb2~33_combout\,
-	datac => \res_img|rgb2~24_combout\,
-	datad => \res_img|process_1~75_combout\,
-	combout => \res_img|rgb2~34_combout\);
+	dataa => \res_img|process_1~51_combout\,
+	datab => \res_img|process_1~41_combout\,
+	datac => \res_img|process_1~48_combout\,
+	datad => \res_img|process_1~49_combout\,
+	combout => \res_img|process_1~52_combout\);
 
--- Location: LCCOMB_X24_Y20_N20
-\res_img|rgb2~40\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N24
+\res_img|rgb2~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~40_combout\ = (\res_img|rgb2[13]~39_combout\ & \res_img|rgb2~34_combout\)
+-- \res_img|rgb2~1_combout\ = (\res_img|rgb2~0_combout\) # ((\res_img|process_1~30_combout\ & (\res_img|process_1~43_combout\ & \res_img|process_1~52_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|process_1~30_combout\,
+	datab => \res_img|rgb2~0_combout\,
+	datac => \res_img|process_1~43_combout\,
+	datad => \res_img|process_1~52_combout\,
+	combout => \res_img|rgb2~1_combout\);
+
+-- Location: LCCOMB_X37_Y36_N10
+\res_img|rgb2~11\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2~11_combout\ = (\res_img|rgb2[12]~5_combout\ & (((\res_img|rgb2~10_combout\)))) # (!\res_img|rgb2[12]~5_combout\ & ((\res_img|rgb2~10_combout\ & (\res_img|process_1~73_combout\)) # (!\res_img|rgb2~10_combout\ & 
+-- ((!\res_img|rgb2~1_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000011100101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \res_img|rgb2[12]~5_combout\,
+	datab => \res_img|process_1~73_combout\,
+	datac => \res_img|rgb2~10_combout\,
+	datad => \res_img|rgb2~1_combout\,
+	combout => \res_img|rgb2~11_combout\);
+
+-- Location: LCCOMB_X37_Y36_N28
+\res_img|rgb2~18\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2~18_combout\ = (\res_img|rgb2[12]~17_combout\ & \res_img|rgb2~11_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4769,80 +5067,80 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \res_img|rgb2[13]~39_combout\,
-	datad => \res_img|rgb2~34_combout\,
-	combout => \res_img|rgb2~40_combout\);
+	datac => \res_img|rgb2[12]~17_combout\,
+	datad => \res_img|rgb2~11_combout\,
+	combout => \res_img|rgb2~18_combout\);
 
--- Location: LCCOMB_X24_Y19_N8
-\res_img|rgb2[13]~42\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y35_N24
+\res_img|rgb2[12]~20\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2[13]~42_combout\ = (\res_img|h_count\(9)) # ((\res_img|LessThan10~0_combout\ & ((\res_img|LessThan8~1_combout\))) # (!\res_img|LessThan10~0_combout\ & (\res_img|rgb2[13]~26_combout\)))
+-- \res_img|rgb2[12]~20_combout\ = (\res_img|h_count\(9)) # ((\res_img|LessThan11~0_combout\ & (\res_img|LessThan9~1_combout\)) # (!\res_img|LessThan11~0_combout\ & ((\res_img|rgb2[12]~3_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111011011100",
+	lut_mask => "1110111011111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|LessThan10~0_combout\,
-	datab => \res_img|h_count\(9),
-	datac => \res_img|rgb2[13]~26_combout\,
-	datad => \res_img|LessThan8~1_combout\,
-	combout => \res_img|rgb2[13]~42_combout\);
+	dataa => \res_img|h_count\(9),
+	datab => \res_img|LessThan9~1_combout\,
+	datac => \res_img|rgb2[12]~3_combout\,
+	datad => \res_img|LessThan11~0_combout\,
+	combout => \res_img|rgb2[12]~20_combout\);
 
--- Location: LCCOMB_X24_Y20_N16
-\res_img|rgb2[13]~41\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N14
+\res_img|rgb2[12]~19\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2[13]~41_combout\ = (\res_img|process_1~80_combout\) # ((!\res_img|h_count\(8) & !\res_img|h_count\(9)))
+-- \res_img|rgb2[12]~19_combout\ = (\res_img|process_1~77_combout\) # ((!\res_img|h_count\(9) & !\res_img|h_count\(8)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000101",
+	lut_mask => "1111111100000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \res_img|h_count\(9),
+	datac => \res_img|h_count\(8),
+	datad => \res_img|process_1~77_combout\,
+	combout => \res_img|rgb2[12]~19_combout\);
+
+-- Location: LCCOMB_X39_Y35_N28
+\res_img|rgb2[12]~21\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \res_img|rgb2[12]~21_combout\ = ((\res_img|h_count\(8) & (\res_img|process_1~81_combout\ & \res_img|LessThan34~1_combout\))) # (!\res_img|process_1~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|h_count\(8),
-	datac => \res_img|h_count\(9),
-	datad => \res_img|process_1~80_combout\,
-	combout => \res_img|rgb2[13]~41_combout\);
+	datab => \res_img|process_1~81_combout\,
+	datac => \res_img|LessThan34~1_combout\,
+	datad => \res_img|process_1~8_combout\,
+	combout => \res_img|rgb2[12]~21_combout\);
 
--- Location: LCCOMB_X23_Y18_N16
-\res_img|rgb2[13]~43\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y35_N8
+\res_img|rgb2[12]~22\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2[13]~43_combout\ = ((\res_img|LessThan34~1_combout\ & (\res_img|h_count\(8) & \res_img|process_1~84_combout\))) # (!\res_img|process_1~23_combout\)
+-- \res_img|rgb2[12]~22_combout\ = (\res_img|h_count\(9) & ((\res_img|rgb2[12]~21_combout\) # (!\res_img|process_1~7_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000111100001111",
+	lut_mask => "1000100010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|LessThan34~1_combout\,
-	datab => \res_img|h_count\(8),
-	datac => \res_img|process_1~23_combout\,
-	datad => \res_img|process_1~84_combout\,
-	combout => \res_img|rgb2[13]~43_combout\);
+	dataa => \res_img|h_count\(9),
+	datab => \res_img|rgb2[12]~21_combout\,
+	datad => \res_img|process_1~7_combout\,
+	combout => \res_img|rgb2[12]~22_combout\);
 
--- Location: LCCOMB_X23_Y20_N6
-\res_img|rgb2[13]~44\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N0
+\res_img|rgb2[12]~23\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2[13]~44_combout\ = (\res_img|h_count\(9) & ((\res_img|rgb2[13]~43_combout\) # (!\res_img|process_1~22_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \res_img|h_count\(9),
-	datac => \res_img|process_1~22_combout\,
-	datad => \res_img|rgb2[13]~43_combout\,
-	combout => \res_img|rgb2[13]~44_combout\);
-
--- Location: LCCOMB_X24_Y20_N14
-\res_img|rgb2[13]~45\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \res_img|rgb2[13]~45_combout\ = (((\res_img|rgb2[13]~44_combout\) # (!\res_img|rgb2[13]~36_combout\)) # (!\res_img|rgb2[13]~41_combout\)) # (!\res_img|rgb2[13]~42_combout\)
+-- \res_img|rgb2[12]~23_combout\ = (((\res_img|rgb2[12]~22_combout\) # (!\res_img|rgb2[12]~14_combout\)) # (!\res_img|rgb2[12]~19_combout\)) # (!\res_img|rgb2[12]~20_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4850,13 +5148,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2[13]~42_combout\,
-	datab => \res_img|rgb2[13]~41_combout\,
-	datac => \res_img|rgb2[13]~44_combout\,
-	datad => \res_img|rgb2[13]~36_combout\,
-	combout => \res_img|rgb2[13]~45_combout\);
+	dataa => \res_img|rgb2[12]~20_combout\,
+	datab => \res_img|rgb2[12]~19_combout\,
+	datac => \res_img|rgb2[12]~22_combout\,
+	datad => \res_img|rgb2[12]~14_combout\,
+	combout => \res_img|rgb2[12]~23_combout\);
 
--- Location: FF_X24_Y20_N21
+-- Location: FF_X37_Y36_N29
 \res_img|rgb2[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4865,13 +5163,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|rgb2~40_combout\,
-	ena => \res_img|rgb2[13]~45_combout\,
+	d => \res_img|rgb2~18_combout\,
+	ena => \res_img|rgb2[12]~23_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|rgb2\(13));
 
--- Location: LCCOMB_X18_Y15_N0
+-- Location: LCCOMB_X18_Y4_N4
 \res_img|r_out[4]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|r_out[4]~feeder_combout\ = \res_img|rgb2\(13)
@@ -4885,7 +5183,7 @@ PORT MAP (
 	datac => \res_img|rgb2\(13),
 	combout => \res_img|r_out[4]~feeder_combout\);
 
--- Location: FF_X18_Y15_N1
+-- Location: FF_X18_Y4_N5
 \res_img|r_out[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4899,58 +5197,59 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|r_out\(4));
 
--- Location: LCCOMB_X24_Y20_N4
-\res_img|rgb2~46\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X38_Y35_N18
+\res_img|rgb2~24\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~46_combout\ = (\res_img|rgb2[13]~31_combout\ & ((\res_img|rgb2[13]~32_combout\ & (!\res_img|process_1~78_combout\)) # (!\res_img|rgb2[13]~32_combout\ & ((!\res_img|process_1~79_combout\))))) # (!\res_img|rgb2[13]~31_combout\ & 
--- (((\res_img|rgb2[13]~32_combout\))))
+-- \res_img|rgb2~24_combout\ = (\res_img|rgb2[12]~8_combout\ & ((\res_img|rgb2[12]~9_combout\ & ((!\res_img|process_1~75_combout\))) # (!\res_img|rgb2[12]~9_combout\ & (!\res_img|process_1~76_combout\)))) # (!\res_img|rgb2[12]~8_combout\ & 
+-- (((\res_img|rgb2[12]~9_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101111100110000",
+	lut_mask => "0011111101010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|process_1~78_combout\,
-	datab => \res_img|process_1~79_combout\,
-	datac => \res_img|rgb2[13]~31_combout\,
-	datad => \res_img|rgb2[13]~32_combout\,
-	combout => \res_img|rgb2~46_combout\);
+	dataa => \res_img|process_1~76_combout\,
+	datab => \res_img|process_1~75_combout\,
+	datac => \res_img|rgb2[12]~8_combout\,
+	datad => \res_img|rgb2[12]~9_combout\,
+	combout => \res_img|rgb2~24_combout\);
 
--- Location: LCCOMB_X24_Y20_N2
-\res_img|rgb2~47\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N0
+\res_img|rgb2~25\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~47_combout\ = (\res_img|rgb2[13]~28_combout\ & (\res_img|rgb2~46_combout\)) # (!\res_img|rgb2[13]~28_combout\ & ((\res_img|rgb2~46_combout\ & (\res_img|rgb2~24_combout\)) # (!\res_img|rgb2~46_combout\ & ((!\res_img|process_1~75_combout\)))))
+-- \res_img|rgb2~25_combout\ = (\res_img|rgb2[12]~5_combout\ & (((\res_img|rgb2~24_combout\)))) # (!\res_img|rgb2[12]~5_combout\ & ((\res_img|rgb2~24_combout\ & ((\res_img|rgb2~1_combout\))) # (!\res_img|rgb2~24_combout\ & 
+-- (!\res_img|process_1~73_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100100011011001",
+	lut_mask => "1111000110100001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2[13]~28_combout\,
-	datab => \res_img|rgb2~46_combout\,
+	dataa => \res_img|rgb2[12]~5_combout\,
+	datab => \res_img|process_1~73_combout\,
 	datac => \res_img|rgb2~24_combout\,
-	datad => \res_img|process_1~75_combout\,
-	combout => \res_img|rgb2~47_combout\);
+	datad => \res_img|rgb2~1_combout\,
+	combout => \res_img|rgb2~25_combout\);
 
--- Location: LCCOMB_X24_Y20_N22
-\res_img|rgb2~48\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y36_N30
+\res_img|rgb2~26\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~48_combout\ = (\res_img|rgb2[13]~39_combout\ & ((\res_img|rgb2~47_combout\))) # (!\res_img|rgb2[13]~39_combout\ & (\res_img|de_1~q\))
+-- \res_img|rgb2~26_combout\ = (\res_img|rgb2[12]~17_combout\ & ((\res_img|rgb2~25_combout\))) # (!\res_img|rgb2[12]~17_combout\ & (\res_img|de_1~q\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111110000001100",
+	lut_mask => "1111101000001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \res_img|de_1~q\,
-	datac => \res_img|rgb2[13]~39_combout\,
-	datad => \res_img|rgb2~47_combout\,
-	combout => \res_img|rgb2~48_combout\);
+	dataa => \res_img|de_1~q\,
+	datac => \res_img|rgb2[12]~17_combout\,
+	datad => \res_img|rgb2~25_combout\,
+	combout => \res_img|rgb2~26_combout\);
 
--- Location: FF_X24_Y20_N23
+-- Location: FF_X37_Y36_N31
 \res_img|rgb2[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4959,8 +5258,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|rgb2~48_combout\,
-	ena => \res_img|rgb2[13]~45_combout\,
+	d => \res_img|rgb2~26_combout\,
+	ena => \res_img|rgb2[12]~23_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|rgb2\(12));
@@ -4972,11 +5271,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(12),
+	datac => \res_img|rgb2\(12),
 	combout => \res_img|r_out[5]~feeder_combout\);
 
 -- Location: FF_X1_Y15_N17
@@ -4993,7 +5292,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|r_out\(5));
 
--- Location: LCCOMB_X18_Y15_N26
+-- Location: LCCOMB_X18_Y4_N18
 \res_img|r_out[6]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|r_out[6]~feeder_combout\ = \res_img|rgb2\(13)
@@ -5007,7 +5306,7 @@ PORT MAP (
 	datac => \res_img|rgb2\(13),
 	combout => \res_img|r_out[6]~feeder_combout\);
 
--- Location: FF_X18_Y15_N27
+-- Location: FF_X18_Y4_N19
 \res_img|r_out[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5021,58 +5320,58 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|r_out\(6));
 
--- Location: LCCOMB_X23_Y20_N26
-\res_img|rgb2~50\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N4
+\res_img|rgb2~28\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~50_combout\ = ((\res_img|h_count\(8) & ((\res_img|rgb2~38_combout\) # (\res_img|rgb2[13]~25_combout\)))) # (!\res_img|rgb2[13]~27_combout\)
+-- \res_img|rgb2~28_combout\ = ((\res_img|h_count\(8) & ((\res_img|rgb2~16_combout\) # (\res_img|rgb2[12]~2_combout\)))) # (!\res_img|rgb2[12]~4_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110000011111111",
+	lut_mask => "1100100011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2~38_combout\,
-	datab => \res_img|rgb2[13]~25_combout\,
-	datac => \res_img|h_count\(8),
-	datad => \res_img|rgb2[13]~27_combout\,
-	combout => \res_img|rgb2~50_combout\);
+	dataa => \res_img|rgb2~16_combout\,
+	datab => \res_img|h_count\(8),
+	datac => \res_img|rgb2[12]~2_combout\,
+	datad => \res_img|rgb2[12]~4_combout\,
+	combout => \res_img|rgb2~28_combout\);
 
--- Location: LCCOMB_X23_Y20_N24
-\res_img|rgb2~49\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N18
+\res_img|rgb2~27\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~49_combout\ = (\res_img|rgb2\(6)) # (((\res_img|rgb2[13]~44_combout\) # (!\res_img|process_1~81_combout\)) # (!\res_img|rgb2[13]~35_combout\))
+-- \res_img|rgb2~27_combout\ = ((\res_img|rgb2\(6)) # ((\res_img|rgb2[12]~22_combout\) # (!\res_img|rgb2[12]~13_combout\))) # (!\res_img|process_1~78_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111110111111",
+	lut_mask => "1111110111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \res_img|rgb2\(6),
-	datab => \res_img|rgb2[13]~35_combout\,
-	datac => \res_img|process_1~81_combout\,
-	datad => \res_img|rgb2[13]~44_combout\,
-	combout => \res_img|rgb2~49_combout\);
+	dataa => \res_img|process_1~78_combout\,
+	datab => \res_img|rgb2\(6),
+	datac => \res_img|rgb2[12]~22_combout\,
+	datad => \res_img|rgb2[12]~13_combout\,
+	combout => \res_img|rgb2~27_combout\);
 
--- Location: LCCOMB_X23_Y20_N12
-\res_img|rgb2~51\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X37_Y35_N2
+\res_img|rgb2~29\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \res_img|rgb2~51_combout\ = (\res_img|de_1~q\ & ((\res_img|rgb2~49_combout\) # ((!\res_img|h_count\(9) & \res_img|rgb2~50_combout\))))
+-- \res_img|rgb2~29_combout\ = (\res_img|de_1~q\ & ((\res_img|rgb2~27_combout\) # ((\res_img|rgb2~28_combout\ & !\res_img|h_count\(9)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000100000",
+	lut_mask => "1010101000001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \res_img|de_1~q\,
-	datab => \res_img|h_count\(9),
-	datac => \res_img|rgb2~50_combout\,
-	datad => \res_img|rgb2~49_combout\,
-	combout => \res_img|rgb2~51_combout\);
+	datab => \res_img|rgb2~28_combout\,
+	datac => \res_img|h_count\(9),
+	datad => \res_img|rgb2~27_combout\,
+	combout => \res_img|rgb2~29_combout\);
 
--- Location: FF_X23_Y20_N13
+-- Location: FF_X37_Y35_N3
 \res_img|rgb2[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5081,26 +5380,26 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk_25~clkctrl_outclk\,
-	d => \res_img|rgb2~51_combout\,
+	d => \res_img|rgb2~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \res_img|rgb2\(6));
 
--- Location: LCCOMB_X16_Y15_N8
+-- Location: LCCOMB_X32_Y35_N0
 \res_img|r_out[7]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|r_out[7]~feeder_combout\ = \res_img|rgb2\(6)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(6),
+	datac => \res_img|rgb2\(6),
 	combout => \res_img|r_out[7]~feeder_combout\);
 
--- Location: FF_X16_Y15_N9
+-- Location: FF_X32_Y35_N1
 \res_img|r_out[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5121,11 +5420,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(12),
+	datac => \res_img|rgb2\(12),
 	combout => \res_img|g_out[4]~feeder_combout\);
 
 -- Location: FF_X1_Y15_N27
@@ -5142,7 +5441,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|g_out\(4));
 
--- Location: LCCOMB_X16_Y15_N6
+-- Location: LCCOMB_X8_Y15_N24
 \res_img|g_out[5]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|g_out[5]~feeder_combout\ = \res_img|rgb2\(13)
@@ -5156,7 +5455,7 @@ PORT MAP (
 	datad => \res_img|rgb2\(13),
 	combout => \res_img|g_out[5]~feeder_combout\);
 
--- Location: FF_X16_Y15_N7
+-- Location: FF_X8_Y15_N25
 \res_img|g_out[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5170,21 +5469,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|g_out\(5));
 
--- Location: LCCOMB_X3_Y15_N28
+-- Location: LCCOMB_X32_Y35_N18
 \res_img|g_out[6]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|g_out[6]~feeder_combout\ = \res_img|rgb2\(6)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(6),
+	datac => \res_img|rgb2\(6),
 	combout => \res_img|g_out[6]~feeder_combout\);
 
--- Location: FF_X3_Y15_N29
+-- Location: FF_X32_Y35_N19
 \res_img|g_out[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5205,11 +5504,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(12),
+	datac => \res_img|rgb2\(12),
 	combout => \res_img|g_out[7]~feeder_combout\);
 
 -- Location: FF_X1_Y15_N21
@@ -5226,7 +5525,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|g_out\(7));
 
--- Location: LCCOMB_X3_Y15_N2
+-- Location: LCCOMB_X29_Y35_N6
 \res_img|b_out[4]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|b_out[4]~feeder_combout\ = \res_img|rgb2\(6)
@@ -5240,7 +5539,7 @@ PORT MAP (
 	datad => \res_img|rgb2\(6),
 	combout => \res_img|b_out[4]~feeder_combout\);
 
--- Location: FF_X3_Y15_N3
+-- Location: FF_X29_Y35_N7
 \res_img|b_out[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5261,11 +5560,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(12),
+	datac => \res_img|rgb2\(12),
 	combout => \res_img|b_out[5]~feeder_combout\);
 
 -- Location: FF_X1_Y15_N15
@@ -5282,7 +5581,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \res_img|b_out\(5));
 
--- Location: LCCOMB_X3_Y15_N4
+-- Location: LCCOMB_X29_Y35_N4
 \res_img|b_out[6]~feeder\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \res_img|b_out[6]~feeder_combout\ = \res_img|rgb2\(6)
@@ -5296,7 +5595,7 @@ PORT MAP (
 	datad => \res_img|rgb2\(6),
 	combout => \res_img|b_out[6]~feeder_combout\);
 
--- Location: FF_X3_Y15_N5
+-- Location: FF_X29_Y35_N5
 \res_img|b_out[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5317,11 +5616,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \res_img|rgb2\(12),
+	datac => \res_img|rgb2\(12),
 	combout => \res_img|b_out[7]~feeder_combout\);
 
 -- Location: FF_X1_Y15_N5

@@ -19,7 +19,7 @@ end result_img;
 
 architecture behavioral of result_img is
 	--colors
-	constant rgb_font 	: std_logic_vector(23 downto 0) := x"20C040";
+	
 	constant rgb_letters	: std_logic_vector(23 downto 0) := x"A0D0F0";
 	
 	--counters for the movement into the frame
@@ -95,8 +95,11 @@ begin
 					int_Res := to_integer(signed(Res));
 			end if;
 			d_res 	:= int_Res/10;
-			u_res 	:= int_Res - d_res*10;
-			
+			if(int_Res < 0) then
+				u_res 	:= - (int_Res - d_res*10);
+			else
+				u_res 	:= int_Res - d_res*10;
+			end if;
 			-------------------------------------------------------------------------------------------------color of the font
 			if(de_1 = '0') then
 				rgb2 <= x"000000";
@@ -125,13 +128,13 @@ begin
 					elsif(h_count>=459 and h_count<469) then
 						rgb2 <= rgb_letters;
 					elsif(h_count>=469 and h_count<619) then
-						if(v_count>136 and v_count<166 and (d_res = 0 or d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 or eror='1')) or 
+						if(v_count>136 and v_count<166 and (d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 or eror='1')) or 
 						(v_count>271 and v_count<301 and (d_res = 2 or d_res = 3 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1')) or 
-						(v_count>406 and v_count<436 and (d_res = 0 or d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1')) or
-						(h_count>=469 and h_count<499 and (d_res = 0 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1') and v_count>136 and v_count<301) or 
-						(h_count>=469 and h_count<499 and (d_res = 0 or d_res = 2 or d_res = 6 or d_res = 8 or eror='1') and v_count>276 and v_count<436) or
-						(h_count>=589 and h_count<619 and (d_res = 0 or d_res = 1 or d_res = 2 or d_res = 3 or d_res = 4 or d_res = 7 or d_res = 8 or d_res = 9) and eror ='0' and v_count>136 and v_count<301) or
-						(h_count>=589 and h_count<619 and (d_res = 0 or d_res = 1 or d_res = 3 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 ) and eror='0' and v_count>276 and v_count<436)
+						(v_count>406 and v_count<436 and ( d_res = 2 or d_res = 3 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1')) or
+						(h_count>=469 and h_count<499 and (d_res = 4 or d_res = 5 or d_res = 6 or d_res = 8 or d_res = 9 or eror='1') and v_count>136 and v_count<301) or 
+						(h_count>=469 and h_count<499 and (d_res = 2 or d_res = 6 or d_res = 8 or eror='1') and v_count>276 and v_count<436) or
+						(h_count>=589 and h_count<619 and (d_res = 1 or d_res = 2 or d_res = 3 or d_res = 4 or d_res = 7 or d_res = 8 or d_res = 9) and eror ='0' and v_count>136 and v_count<301) or
+						(h_count>=589 and h_count<619 and (d_res = 1 or d_res = 3 or d_res = 4 or d_res = 5 or d_res = 6 or d_res = 7 or d_res = 8 or d_res = 9 ) and eror='0' and v_count>276 and v_count<436)
 						then
 							rgb2 <= x"DD6755";
 						else
@@ -140,13 +143,13 @@ begin
 					elsif(h_count>=624 and h_count<629) then
 						rgb2 <= rgb_letters;
 					elsif(h_count>=629 and h_count<779) then
-						if(v_count>136 and v_count<166 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 or eror='1')) or 
+						if(v_count>136 and v_count<166 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 ) and eror='0') or 
 						(v_count>271 and v_count<301 and (u_res = 2 or u_res = 3 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1')) or 
-						(v_count>406 and v_count<436 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1')) or
-						(h_count>=629 and h_count<659 and (u_res = 0 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 or eror='1') and v_count>136 and v_count<301) or 
+						(v_count>406 and v_count<436 and (u_res = 0 or u_res = 2 or u_res = 3 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9)and eror='0') or
+						(h_count>=629 and h_count<659 and (u_res = 0 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 8 or u_res = 9 )and eror='0' and v_count>136 and v_count<301) or 
 						(h_count>=629 and h_count<659 and (u_res = 0 or u_res = 2 or u_res = 6 or u_res = 8 or eror='1') and v_count>276 and v_count<436) or
-						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 2 or u_res = 3 or u_res = 4 or u_res = 7 or u_res = 8 or u_res=9) and eror ='0' and v_count>136 and v_count<301) or
-						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 3 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 ) and eror='0' and v_count>276 and v_count<436)
+						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 2 or u_res = 3 or u_res = 4 or u_res = 7 or u_res = 8 or u_res=9)and eror='0' and v_count>136 and v_count<301) or
+						(h_count>=749 and h_count<779 and (u_res = 0 or u_res = 1 or u_res = 3 or u_res = 4 or u_res = 5 or u_res = 6 or u_res = 7 or u_res = 8 or u_res = 9 )and eror='0' and v_count>276 and v_count<436)
 						then
 							rgb2 <= x"DD6755";
 						else
