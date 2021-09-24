@@ -4,71 +4,107 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "CLAOpeAOut[0]",
+					"name" : "res_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeAOut[1]",
+					"name" : "res_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeAOut[2]",
+					"name" : "res_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeAOut[3]",
+					"name" : "res_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeBOut[0]",
+					"name" : "vga_vs",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeBOut[1]",
+					"name" : "vga_hs",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeBOut[2]",
+					"name" : "vga_r[0]",
 					"strict" : false
 				},
 				{
-					"name" : "CLAOpeBOut[3]",
+					"name" : "vga_r[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeA[0]",
+					"name" : "vga_r[2]",
 					"strict" : false
 				},
 				{
-					"name" : "operation",
+					"name" : "vga_r[3]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeA[1]",
+					"name" : "vga_g[0]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeA[2]",
+					"name" : "vga_g[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeA[3]",
+					"name" : "vga_g[2]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeB[1]",
+					"name" : "vga_g[3]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeB[0]",
+					"name" : "vga_b[0]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeB[2]",
+					"name" : "vga_b[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OpeB[3]",
+					"name" : "vga_b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Res[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Res[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Res[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Res[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "eror",
+					"strict" : false
+				},
+				{
+					"name" : "mode",
 					"strict" : false
 				}
 			]
