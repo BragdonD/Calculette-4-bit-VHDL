@@ -14,7 +14,6 @@ port(
 	clk 					: in std_logic;
 	data_in 				: in std_logic;
 	reset 				: in std_logic;
-	enable				: out std_logic;
 	result				: out std_logic_vector(3 downto 0));
 end nec_receiver;
 
@@ -279,9 +278,9 @@ elsif((clock_counter < zero_clocks+trans_max) and (clock_counter > zero_clocks-t
 	-- "00" -> for the initial keypressed  
 	-- "01" -> for the repeated keypressed
 
-	enable <= dt_rdy;
+
 	
-	process(command)
+	process(data_reg)
 	begin	
 		case command is
 			when x"2D" => result <= "0000"; --0

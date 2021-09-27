@@ -23,6 +23,8 @@ begin
 			when "0111"=> leds <="1111000";  -- '7'
 			when "1000"=> leds <="0000000";  -- '8'
 			when "1001"=> leds <="0010000";  -- '9'
+			when "1010"=> leds <="0111111";  --"-"
+			when "1011"=> leds <="0001100";  -- "+/P"
 			when others => leds <= "0000000"; -- nothing
 	end case;
 end process;
