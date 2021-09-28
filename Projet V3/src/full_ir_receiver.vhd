@@ -17,7 +17,8 @@ port(
 		HEX2					: out std_logic_vector(6 downto 0);
 		HEX3					: out std_logic_vector(6 downto 0);
 		HEX4					: out std_logic_vector(6 downto 0);
-		HEX5					: out std_logic_vector(6 downto 0)
+		HEX5					: out std_logic_vector(6 downto 0);
+		eror					: out std_logic
 );
 end entity;
 
@@ -46,6 +47,7 @@ begin
 	analyse_data : process(clk, reset, new_data, enable,mode)
 		variable counter : integer range 0 to 6:= 0;
 		variable intA, intB, dizA, dizB, unitA, unitB : integer;
+		variable erorA, erorB : std_logic;
 	begin
 			if(reset = '0') then
 					old_data_1 <= (others => '0');
@@ -60,6 +62,8 @@ begin
 					dizB:=0;
 					unitA:=0;
 					unitB:=0;
+					erorA := '0';
+					erorB := '0';
 					A <= "0000";
 					B <= "0000";
 					counter := 0;
@@ -117,8 +121,10 @@ begin
 									intA := - (dizA + unitA);
 									if(intA>7 or intA<-8)then
 										A <= "0000";
+										erorA := '1';
 									else
 										A <= std_logic_vector(to_signed(intA, 4));
+										erorA := '0';
 									end if;
 								else
 									dizA := to_integer(unsigned(old_data_2)) *10 ;
@@ -126,8 +132,10 @@ begin
 									intA := (dizA + unitA);
 									if(intA>7 or intA<-8)then
 										A <= "0000";
+										erorA := '1';
 									else
 										A <= std_logic_vector(to_signed(intA, 4));
+										erorA := '0';
 									end if;
 								end if;
 								--nb B
@@ -137,8 +145,10 @@ begin
 									intB := - (dizB + unitB);
 									if(intB>7 or intB<-8)then
 										B <= "0000";
+										erorB := '1';
 									else
 										B <= std_logic_vector(to_signed(intB, 4));
+										erorB := '0';
 									end if;
 								else
 									dizB := to_integer(unsigned(old_data_5)) *10 ;
@@ -146,8 +156,10 @@ begin
 									intB := (dizB + unitB);
 									if(intB>7 or intB<-8)then
 										B <= "0000";
+										erorB := '1';
 									else
 										B <= std_logic_vector(to_signed(intB, 4));
+										erorB := '0';
 									end if;
 								end if;
 							else
@@ -156,8 +168,10 @@ begin
 								intA := (dizA + unitA);
 								if(intA>15 or intA<0)then
 									A <= "0000";
+									erorA := '1';
 								else
 									A <= std_logic_vector(to_unsigned(intA, 4));
+									erorA := '0';
 								end if;
 								
 								dizB := to_integer(unsigned(old_data_5)) *10 ;
@@ -165,11 +179,13 @@ begin
 								intB := (dizB + unitB);
 								if(intB>15 or intB<0)then
 									B <= "0000";
+									erorB := '1';
 								else
 									B <= std_logic_vector(to_unsigned(intB, 4));
+									erorB := '0';
 								end if;
 							end if;
-								
+							eror <= erorA or erorB;
 						end case;
 					end if;
 				end if;						

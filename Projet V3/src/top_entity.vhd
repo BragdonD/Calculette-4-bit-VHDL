@@ -38,6 +38,7 @@ end entity;
 
 architecture behavioral of top_entity is
 	signal tempA, tempB : std_logic_vector(3 downto 0);
+	signal enableCalcul : std_logic;
 begin
 
 	IR : entity work.full_ir_receiver
@@ -54,7 +55,8 @@ begin
 				HEX2 => HEX2,
 				HEX3 => HEX3,
 				HEX4 => HEX4,
-				HEX5 => HEX5
+				HEX5 => HEX5,
+				eror => enableCalcul 
 		);
 
 
@@ -65,6 +67,7 @@ begin
 			mode => mode,
 			reset => not(reset),
 			operation => operation,
+			enable => enableCalcul,
 			CLA => CLA,
 			opeACLA => opeACLA,
 			opeBCLA => opeBCLA,

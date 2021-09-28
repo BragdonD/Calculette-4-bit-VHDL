@@ -316,11 +316,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "resCLA[3]",
+					"name" : "coutCLA",
 					"strict" : false
 				},
 				{
-					"name" : "coutCLA",
+					"name" : "resCLA[3]",
 					"strict" : false
 				},
 				{

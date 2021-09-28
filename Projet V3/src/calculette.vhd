@@ -8,6 +8,7 @@ port( A, B		 	: in std_logic_vector(3 downto 0);
 		mode			: in std_logic;
 		reset			: in std_logic;
 		operation	: in std_logic;
+		enable 		: in std_logic;
 		----CLA
 		CLA			: in std_logic;
 		opeACLA		: out std_logic_vector(3 downto 0);
@@ -151,7 +152,7 @@ begin
 	
 	--------------------------------------------eror
 
-	eror <= (not(operation) and not(CLA) and erorAdd) or (operation and not(CLA) and erorMulti) or (CLA and erorCLA);
+	eror <= (not(operation) and not(CLA) and erorAdd) or (operation and not(CLA) and erorMulti) or (CLA and erorCLA) or enable;
 	
 	--------------------------------------------choix de l'affichage
 	choix_d0 : entity work.choix_display
