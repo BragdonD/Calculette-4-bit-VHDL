@@ -1,5 +1,5 @@
 Timing Analyzer report for calculette_v3
-Tue Sep 28 16:59:48 2021
+Tue Sep 28 23:49:30 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -88,16 +88,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.26        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.36        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.7%      ;
-;     Processors 3-4         ;   8.7%      ;
+;     Processors 2-8         ;   5.2%      ;
 +----------------------------+-------------+
 
 
@@ -108,6 +107,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 } ;
 ; clk50                                                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk50 }                                                 ;
+; mode                                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { mode }                                                  ;
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 
 
@@ -116,8 +116,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
 +------------+-----------------+-------------------------------------------------------+------+
-; 146.93 MHz ; 146.93 MHz      ; clk50                                                 ;      ;
-; 155.09 MHz ; 155.09 MHz      ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ;      ;
+; 137.04 MHz ; 137.04 MHz      ; clk50                                                 ;      ;
+; 154.25 MHz ; 154.25 MHz      ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ;      ;
 +------------+-----------------+-------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -127,8 +127,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+---------+---------------+
 ; Clock                                                 ; Slack   ; End Point TNS ;
 +-------------------------------------------------------+---------+---------------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -24.001 ; -142.149      ;
-; clk50                                                 ; -5.806  ; -603.745      ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -24.284 ; -146.693      ;
+; clk50                                                 ; -6.297  ; -589.131      ;
+; mode                                                  ; -4.260  ; -4.260        ;
 +-------------------------------------------------------+---------+---------------+
 
 
@@ -138,7 +139,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
 ; clk50                                                 ; 0.347 ; 0.000         ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.425 ; 0.000         ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.434 ; 0.000         ;
+; mode                                                  ; 2.225 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -160,6 +162,7 @@ No paths to report.
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
 ; clk50                                                 ; -3.000 ; -221.868      ;
+; mode                                                  ; -3.000 ; -3.000        ;
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -1.403 ; -58.926       ;
 +-------------------------------------------------------+--------+---------------+
 
@@ -175,8 +178,8 @@ No synchronizer chains to report.
 +------------+-----------------+-------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
 +------------+-----------------+-------------------------------------------------------+------+
-; 160.98 MHz ; 160.98 MHz      ; clk50                                                 ;      ;
-; 168.07 MHz ; 168.07 MHz      ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ;      ;
+; 149.32 MHz ; 149.32 MHz      ; clk50                                                 ;      ;
+; 165.62 MHz ; 165.62 MHz      ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ;      ;
 +------------+-----------------+-------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -186,8 +189,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+---------+---------------+
 ; Clock                                                 ; Slack   ; End Point TNS ;
 +-------------------------------------------------------+---------+---------------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -21.851 ; -126.965      ;
-; clk50                                                 ; -5.212  ; -546.319      ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -22.118 ; -131.064      ;
+; clk50                                                 ; -5.697  ; -532.546      ;
+; mode                                                  ; -3.829  ; -3.829        ;
 +-------------------------------------------------------+---------+---------------+
 
 
@@ -197,7 +201,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
 ; clk50                                                 ; 0.311 ; 0.000         ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.393 ; 0.000         ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.399 ; 0.000         ;
+; mode                                                  ; 2.091 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -219,6 +224,7 @@ No paths to report.
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
 ; clk50                                                 ; -3.000 ; -221.868      ;
+; mode                                                  ; -3.000 ; -3.000        ;
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -1.403 ; -58.926       ;
 +-------------------------------------------------------+--------+---------------+
 
@@ -234,8 +240,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -9.172 ; -39.902       ;
-; clk50                                                 ; -1.777 ; -172.352      ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -9.235 ; -44.422       ;
+; clk50                                                 ; -1.978 ; -167.355      ;
+; mode                                                  ; -1.446 ; -1.446        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -245,7 +252,8 @@ No synchronizer chains to report.
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
 ; clk50                                                 ; 0.152 ; 0.000         ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.169 ; 0.000         ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 0.164 ; 0.000         ;
+; mode                                                  ; 1.119 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -266,7 +274,8 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clk50                                                 ; -3.000 ; -164.379      ;
+; clk50                                                 ; -3.000 ; -164.429      ;
+; mode                                                  ; -3.000 ; -3.000        ;
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -1.000 ; -42.000       ;
 +-------------------------------------------------------+--------+---------------+
 
@@ -282,12 +291,14 @@ No synchronizer chains to report.
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                                  ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                       ; -24.001  ; 0.152 ; N/A      ; N/A     ; -3.000              ;
-;  calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -24.001  ; 0.169 ; N/A      ; N/A     ; -1.403              ;
-;  clk50                                                 ; -5.806   ; 0.152 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS                                        ; -745.894 ; 0.0   ; 0.0      ; 0.0     ; -280.794            ;
-;  calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -142.149 ; 0.000 ; N/A      ; N/A     ; -58.926             ;
-;  clk50                                                 ; -603.745 ; 0.000 ; N/A      ; N/A     ; -221.868            ;
+; Worst-case Slack                                       ; -24.284  ; 0.152 ; N/A      ; N/A     ; -3.000              ;
+;  calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -24.284  ; 0.164 ; N/A      ; N/A     ; -1.403              ;
+;  clk50                                                 ; -6.297   ; 0.152 ; N/A      ; N/A     ; -3.000              ;
+;  mode                                                  ; -4.260   ; 1.119 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS                                        ; -740.084 ; 0.0   ; 0.0      ; 0.0     ; -283.794            ;
+;  calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; -146.693 ; 0.000 ; N/A      ; N/A     ; -58.926             ;
+;  clk50                                                 ; -589.131 ; 0.000 ; N/A      ; N/A     ; -221.868            ;
+;  mode                                                  ; -4.260   ; 0.000 ; N/A      ; N/A     ; -3.000              ;
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -654,10 +665,13 @@ No synchronizer chains to report.
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                            ; To Clock                                              ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 2475         ; 0        ; 0        ; 0        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 2471         ; 0        ; 0        ; 0        ;
 ; clk50                                                 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; > 2147483647 ; 0        ; 0        ; 0        ;
+; mode                                                  ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 17696248     ; 20757351 ; 0        ; 0        ;
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; clk50                                                 ; 1            ; 1        ; 0        ; 0        ;
-; clk50                                                 ; clk50                                                 ; 12246        ; 0        ; 0        ; 0        ;
+; clk50                                                 ; clk50                                                 ; 12248        ; 0        ; 0        ; 0        ;
+; mode                                                  ; clk50                                                 ; 22           ; 22       ; 0        ; 0        ;
+; clk50                                                 ; mode                                                  ; 0            ; 0        ; 10       ; 0        ;
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -667,10 +681,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                            ; To Clock                                              ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 2475         ; 0        ; 0        ; 0        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 2471         ; 0        ; 0        ; 0        ;
 ; clk50                                                 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; > 2147483647 ; 0        ; 0        ; 0        ;
+; mode                                                  ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 17696248     ; 20757351 ; 0        ; 0        ;
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; clk50                                                 ; 1            ; 1        ; 0        ; 0        ;
-; clk50                                                 ; clk50                                                 ; 12246        ; 0        ; 0        ; 0        ;
+; clk50                                                 ; clk50                                                 ; 12248        ; 0        ; 0        ; 0        ;
+; mode                                                  ; clk50                                                 ; 22           ; 22       ; 0        ; 0        ;
+; clk50                                                 ; mode                                                  ; 0            ; 0        ; 10       ; 0        ;
 +-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -694,8 +711,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 10    ; 10   ;
-; Unconstrained Input Port Paths  ; 199   ; 199  ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 189   ; 189  ;
 ; Unconstrained Output Ports      ; 73    ; 73   ;
 ; Unconstrained Output Port Paths ; 200   ; 200  ;
 +---------------------------------+-------+------+
@@ -708,6 +725,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------------------------------------------------+-------------------------------------------------------+------+-------------+
 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; Base ; Constrained ;
 ; clk50                                                 ; clk50                                                 ; Base ; Constrained ;
+; mode                                                  ; mode                                                  ; Base ; Constrained ;
 +-------------------------------------------------------+-------------------------------------------------------+------+-------------+
 
 
@@ -719,7 +737,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; CLA        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; coutCLA    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; data_in    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; mode       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; operation  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resCLA[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resCLA[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -818,7 +835,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; CLA        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; coutCLA    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; data_in    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; mode       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; operation  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resCLA[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resCLA[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -915,89 +931,100 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Sep 28 16:59:41 2021
+    Info: Processing started: Tue Sep 28 23:49:28 2021
 Info: Command: quartus_sta calculette_v3 -c calculette_v3
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'calculette_v3.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk50 clk50
     Info (332105): create_clock -period 1.000 -name calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25
+    Info (332105): create_clock -period 1.000 -name mode mode
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -24.001
+Info (332146): Worst-case setup slack is -24.284
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -24.001            -142.149 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
-    Info (332119):    -5.806            -603.745 clk50 
+    Info (332119):   -24.284            -146.693 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):    -6.297            -589.131 clk50 
+    Info (332119):    -4.260              -4.260 mode 
 Info (332146): Worst-case hold slack is 0.347
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.347               0.000 clk50 
-    Info (332119):     0.425               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     0.434               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     2.225               0.000 mode 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000            -221.868 clk50 
+    Info (332119):    -3.000              -3.000 mode 
     Info (332119):    -1.403             -58.926 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -21.851
+Info (332146): Worst-case setup slack is -22.118
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -21.851            -126.965 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
-    Info (332119):    -5.212            -546.319 clk50 
+    Info (332119):   -22.118            -131.064 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):    -5.697            -532.546 clk50 
+    Info (332119):    -3.829              -3.829 mode 
 Info (332146): Worst-case hold slack is 0.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.311               0.000 clk50 
-    Info (332119):     0.393               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     0.399               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     2.091               0.000 mode 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000            -221.868 clk50 
+    Info (332119):    -3.000              -3.000 mode 
     Info (332119):    -1.403             -58.926 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -9.172
+Info (332146): Worst-case setup slack is -9.235
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.172             -39.902 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
-    Info (332119):    -1.777            -172.352 clk50 
+    Info (332119):    -9.235             -44.422 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):    -1.978            -167.355 clk50 
+    Info (332119):    -1.446              -1.446 mode 
 Info (332146): Worst-case hold slack is 0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.152               0.000 clk50 
-    Info (332119):     0.169               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     0.164               0.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
+    Info (332119):     1.119               0.000 mode 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -164.379 clk50 
+    Info (332119):    -3.000            -164.429 clk50 
+    Info (332119):    -3.000              -3.000 mode 
     Info (332119):    -1.000             -42.000 calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Tue Sep 28 16:59:48 2021
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4878 megabytes
+    Info: Processing ended: Tue Sep 28 23:49:30 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

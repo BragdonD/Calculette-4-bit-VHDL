@@ -1,5 +1,5 @@
 Flow report for calculette_v3
-Tue Sep 28 16:59:51 2021
+Tue Sep 28 23:49:31 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,14 +40,14 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 28 16:59:51 2021       ;
+; Flow Status                        ; Successful - Tue Sep 28 23:49:31 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
 ; Top-level Entity Name              ; top_entity                                  ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 815 / 49,760 ( 2 % )                        ;
+; Total logic elements               ; 813 / 49,760 ( 2 % )                        ;
 ;     Total combinational functions  ; 795 / 49,760 ( 2 % )                        ;
 ;     Dedicated logic registers      ; 198 / 49,760 ( < 1 % )                      ;
 ; Total registers                    ; 198                                         ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/28/2021 16:58:49 ;
+; Start date & time ; 09/28/2021 23:49:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; calculette_v3       ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 141623900890406.163284112814740        ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 1096660323301.163286574759784          ; --            ; --          ; --                   ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Synplify Pro                           ; <None>        ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --          ; eda_design_synthesis ;
 ; EDA_LMF_FILE                        ; synplcty.lmf                           ; --            ; --          ; eda_design_synthesis ;
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4808 MB             ; 00:00:42                           ;
-; Fitter               ; 00:00:21     ; 1.1                     ; 5651 MB             ; 00:00:33                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4682 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.3                     ; 4826 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4655 MB             ; 00:00:02                           ;
-; Total                ; 00:00:57     ; --                      ; --                  ; 00:01:29                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4837 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:08     ; 1.2                     ; 5930 MB             ; 00:00:16                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4683 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.4                     ; 4878 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4658 MB             ; 00:00:01                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,11 +115,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ThomasDUCLOS     ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ThomasDUCLOS     ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ThomasDUCLOS     ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ThomasDUCLOS     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ThomasDUCLOS     ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-9V4GODM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-9V4GODM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-9V4GODM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-9V4GODM  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-9V4GODM  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

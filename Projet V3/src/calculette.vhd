@@ -74,6 +74,7 @@ begin
 			BSigne => B(3), 
 			ResSigne => TempResAdd(3), 
 			CoutAdd => CoutAdd,
+			mode => mode,
 			erorTotale => erorAdd
 		);	
 		
