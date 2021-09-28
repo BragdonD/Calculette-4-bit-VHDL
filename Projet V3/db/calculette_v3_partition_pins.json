@@ -208,15 +208,131 @@
 					"strict" : false
 				},
 				{
+					"name" : "opeACLA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opeACLA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opeACLA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opeACLA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opeBCLA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opeBCLA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opeBCLA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opeBCLA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_vs",
+					"strict" : false
+				},
+				{
+					"name" : "vga_hs",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CLA",
+					"strict" : false
+				},
+				{
+					"name" : "operation",
+					"strict" : false
+				},
+				{
 					"name" : "mode",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "clk50",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "coutCLA",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[2]",
 					"strict" : false
 				},
 				{

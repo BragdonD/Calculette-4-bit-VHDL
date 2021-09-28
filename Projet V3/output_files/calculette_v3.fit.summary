@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Sep 27 22:55:19 2021
+Fitter Status : Successful - Tue Sep 28 16:59:33 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
-Top-level Entity Name : full_ir_receiver
+Top-level Entity Name : top_entity
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 384 / 49,760 ( < 1 % )
-    Total combinational functions : 384 / 49,760 ( < 1 % )
-    Dedicated logic registers : 150 / 49,760 ( < 1 % )
-Total registers : 150
-Total pins : 55 / 360 ( 15 % )
+Total logic elements : 815 / 49,760 ( 2 % )
+    Total combinational functions : 795 / 49,760 ( 2 % )
+    Dedicated logic registers : 198 / 49,760 ( < 1 % )
+Total registers : 198
+Total pins : 85 / 360 ( 24 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Sep 27 22:55:12 2021
+Analysis & Synthesis Status : Successful - Tue Sep 28 16:59:10 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
-Top-level Entity Name : full_ir_receiver
+Top-level Entity Name : top_entity
 Family : MAX 10
-Total logic elements : 390
-    Total combinational functions : 381
-    Dedicated logic registers : 150
-Total registers : 150
-Total pins : 55
+Total logic elements : 817
+    Total combinational functions : 792
+    Dedicated logic registers : 198
+Total registers : 198
+Total pins : 85
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

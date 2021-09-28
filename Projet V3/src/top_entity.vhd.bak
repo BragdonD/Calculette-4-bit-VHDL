@@ -1,0 +1,27 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE WORK.ALL;
+
+ENTITY TEST_BENCH IS
+PORT(
+		A,B : out std_logic_vector(3 downto 0);
+		rd_data 				: out std_logic;
+		-- clock, data input, and system reset
+		clk50					: in std_logic;
+		data_in 				: in std_logic;
+		reset 				: in std_logic;
+		mode					: in std_logic;
+		--LEDS
+		HEX0					: out std_logic_vector(6 downto 0);
+		HEX1					: out std_logic_vector(6 downto 0);
+		HEX2					: out std_logic_vector(6 downto 0);
+		HEX3					: out std_logic_vector(6 downto 0);
+		HEX4					: out std_logic_vector(6 downto 0);
+		HEX5					: out std_logic_vector(6 downto 0).
+		----CLA
+		CLA			: in std_logic;
+		opeACLA		: out std_logic_vector(3 downto 0);
+		opeBCLA		: out std_logic_vector(3 downto 0);
+		resCLA		: in 	std_logic_vector(3 downto 0);
+		coutCLA		: in	std_logic;
+		cinCLA		: out std_logic;

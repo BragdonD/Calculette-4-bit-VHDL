@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette_v3
-Mon Sep 27 22:55:12 2021
+Tue Sep 28 16:59:10 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,14 +13,27 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |full_ir_receiver|nec_receiver:irRec|state
+  8. State Machine - |top_entity|full_ir_receiver:IR|nec_receiver:irRec|state
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: nec_receiver:irRec
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: full_ir_receiver:IR|nec_receiver:irRec
+ 13. Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0
+ 14. Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1
+ 15. Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1
+ 16. Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0
+ 17. Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0
+ 18. lpm_mult Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img"
+ 20. Port Connectivity Checks: "calculator4bits:calculette|hdmi_de10:hdmi_out0"
+ 21. Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepRes"
+ 22. Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepB"
+ 23. Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepA"
+ 24. Port Connectivity Checks: "calculator4bits:calculette|CLA:CLA0"
+ 25. Port Connectivity Checks: "calculator4bits:calculette"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +59,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 27 22:55:12 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 28 16:59:10 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
-; Top-level Entity Name              ; full_ir_receiver                            ;
+; Top-level Entity Name              ; top_entity                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 390                                         ;
-;     Total combinational functions  ; 381                                         ;
-;     Dedicated logic registers      ; 150                                         ;
-; Total registers                    ; 150                                         ;
-; Total pins                         ; 55                                          ;
+; Total logic elements               ; 817                                         ;
+;     Total combinational functions  ; 792                                         ;
+;     Dedicated logic registers      ; 198                                         ;
+; Total registers                    ; 198                                         ;
+; Total pins                         ; 85                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -71,7 +84,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; full_ir_receiver   ; calculette_v3      ;
+; Top-level entity name                                            ; top_entity         ; calculette_v3      ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Type of Retiming Performed During Resynthesis                    ; Full               ;                    ;
 ; Resynthesis Optimization Effort                                  ; Normal             ;                    ;
@@ -160,95 +173,137 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; src/nec_receiver.vhd             ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd     ;         ;
-; src/hex_to_7_seg.vhd             ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd     ;         ;
-; src/full_ir_receiver.vhd         ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd ;         ;
-; src/cmplt2.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd           ;         ;
-; src/cmplt1.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd           ;         ;
-; src/Test_CLA_state.vhd           ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd   ;         ;
-; src/buzzer.vhd                   ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd           ;         ;
-; src/sep_diz_unit.vhd             ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd     ;         ;
-; src/multi_4bits.vhd              ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd      ;         ;
-; src/hdmi_de10.vhd                ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd        ;         ;
-; src/hdmi.vhd                     ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd             ;         ;
-; src/controlMulti.vhd             ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd     ;         ;
-; src/controlAdd.vhd               ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd       ;         ;
-; src/choix_afficheur.vhd          ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd  ;         ;
-; src/calculette.vhd               ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd       ;         ;
-; src/add_4bits.vhd                ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd        ;         ;
-; src/7segments.vhd                ; yes             ; User VHDL File  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; src/nec_receiver.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd     ;         ;
+; src/hex_to_7_seg.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd     ;         ;
+; src/full_ir_receiver.vhd         ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd ;         ;
+; src/cmplt2.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd           ;         ;
+; src/cmplt1.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd           ;         ;
+; src/Test_CLA_state.vhd           ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd   ;         ;
+; src/buzzer.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd           ;         ;
+; src/sep_diz_unit.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd     ;         ;
+; src/multi_4bits.vhd              ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd      ;         ;
+; src/hdmi_de10.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd        ;         ;
+; src/hdmi.vhd                     ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd             ;         ;
+; src/controlMulti.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd     ;         ;
+; src/controlAdd.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd       ;         ;
+; src/choix_afficheur.vhd          ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd  ;         ;
+; src/calculette.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd       ;         ;
+; src/add_4bits.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd        ;         ;
+; src/7segments.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd        ;         ;
+; src/top_entity.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_mult.tdf           ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/aglobal181.inc         ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_add_sub.inc        ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/multcore.inc           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/bypassff.inc           ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/altshift.inc           ;         ;
+; db/mult_9js.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf          ;         ;
+; db/mult_6cs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
+; db/lpm_divide_v9o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf    ;         ;
+; db/abs_divider_4ag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf   ;         ;
+; db/alt_u_div_see.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf     ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf       ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf       ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 390       ;
-;                                             ;           ;
-; Total combinational functions               ; 381       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 201       ;
-;     -- 3 input functions                    ; 29        ;
-;     -- <=2 input functions                  ; 151       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 269       ;
-;     -- arithmetic mode                      ; 112       ;
-;                                             ;           ;
-; Total registers                             ; 150       ;
-;     -- Dedicated logic registers            ; 150       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 55        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 150       ;
-; Total fan-out                               ; 1729      ;
-; Average fan-out                             ; 2.70      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 817         ;
+;                                             ;             ;
+; Total combinational functions               ; 792         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 387         ;
+;     -- 3 input functions                    ; 155         ;
+;     -- <=2 input functions                  ; 250         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 583         ;
+;     -- arithmetic mode                      ; 209         ;
+;                                             ;             ;
+; Total registers                             ; 198         ;
+;     -- Dedicated logic registers            ; 198         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 85          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk50~input ;
+; Maximum fan-out                             ; 156         ;
+; Total fan-out                               ; 3210        ;
+; Average fan-out                             ; 2.77        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                  ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+------------------+--------------+
-; |full_ir_receiver          ; 381 (103)           ; 150 (31)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |full_ir_receiver                    ; full_ir_receiver ; work         ;
-;    |nec_receiver:irRec|    ; 244 (244)           ; 119 (119)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|nec_receiver:irRec ; nec_receiver     ; work         ;
-;    |seg7:hex00|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex00         ; seg7             ; work         ;
-;    |seg7:hex01|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex01         ; seg7             ; work         ;
-;    |seg7:hex02|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex02         ; seg7             ; work         ;
-;    |seg7:hex03|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex03         ; seg7             ; work         ;
-;    |seg7:hex04|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex04         ; seg7             ; work         ;
-;    |seg7:hex05|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |full_ir_receiver|seg7:hex05         ; seg7             ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                        ; Entity Name      ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |top_entity                                    ; 792 (0)             ; 198 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 85   ; 0            ; 0          ; |top_entity                                                                                                                                                                ; top_entity       ; work         ;
+;    |calculator4bits:calculette|                ; 422 (10)            ; 48 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette                                                                                                                                     ; calculator4bits  ; work         ;
+;       |CLA:CLA0|                               ; 90 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0                                                                                                                            ; CLA              ; work         ;
+;          |lpm_mult:Mult0|                      ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0                                                                                                             ; lpm_mult         ; work         ;
+;             |mult_6cs:auto_generated|          ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0|mult_6cs:auto_generated                                                                                     ; mult_6cs         ; work         ;
+;          |lpm_mult:Mult1|                      ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1                                                                                                             ; lpm_mult         ; work         ;
+;             |mult_9js:auto_generated|          ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1|mult_9js:auto_generated                                                                                     ; mult_9js         ; work         ;
+;       |ErorControlAdd:controlAdd|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|ErorControlAdd:controlAdd                                                                                                           ; ErorControlAdd   ; work         ;
+;       |ErorControlMulti:controlMulti|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|ErorControlMulti:controlMulti                                                                                                       ; ErorControlMulti ; work         ;
+;       |add4bits:add0|                          ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|add4bits:add0                                                                                                                       ; add4bits         ; work         ;
+;       |choix_display:choix_d0|                 ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|choix_display:choix_d0                                                                                                              ; choix_display    ; work         ;
+;       |hdmi_de10:hdmi_out0|                    ; 239 (6)             ; 48 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0                                                                                                                 ; hdmi_de10        ; work         ;
+;          |result_img:res_img|                  ; 233 (204)           ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img                                                                                              ; result_img       ; work         ;
+;             |lpm_divide:Div0|                  ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0                                                                              ; lpm_divide       ; work         ;
+;                |lpm_divide_v9o:auto_generated| ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o   ; work         ;
+;                   |abs_divider_4ag:divider|    ; 29 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag  ; work         ;
+;                      |alt_u_div_see:divider|   ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider  ; alt_u_div_see    ; work         ;
+;                      |lpm_abs_o99:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num ; lpm_abs_o99      ; work         ;
+;       |multi4bits:multi0|                      ; 49 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0                                                                                                                   ; multi4bits       ; work         ;
+;          |lpm_mult:Mult0|                      ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0                                                                                                    ; lpm_mult         ; work         ;
+;             |mult_9js:auto_generated|          ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated                                                                            ; mult_9js         ; work         ;
+;          |lpm_mult:Mult1|                      ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1                                                                                                    ; lpm_mult         ; work         ;
+;             |mult_6cs:auto_generated|          ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated                                                                            ; mult_6cs         ; work         ;
+;    |full_ir_receiver:IR|                       ; 370 (98)            ; 150 (31)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR                                                                                                                                            ; full_ir_receiver ; work         ;
+;       |nec_receiver:irRec|                     ; 238 (238)           ; 119 (119)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec                                                                                                                         ; nec_receiver     ; work         ;
+;       |seg7:hex00|                             ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex00                                                                                                                                 ; seg7             ; work         ;
+;       |seg7:hex01|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex01                                                                                                                                 ; seg7             ; work         ;
+;       |seg7:hex02|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex02                                                                                                                                 ; seg7             ; work         ;
+;       |seg7:hex03|                             ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex03                                                                                                                                 ; seg7             ; work         ;
+;       |seg7:hex04|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex04                                                                                                                                 ; seg7             ; work         ;
+;       |seg7:hex05|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex05                                                                                                                                 ; seg7             ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |full_ir_receiver|nec_receiver:irRec|state                                                                                                             ;
+; State Machine - |top_entity|full_ir_receiver:IR|nec_receiver:irRec|state                                                                                               ;
 +--------------------------+------------------+-----------------+--------------------------+-------------------+-------------------------+------------------+------------+
 ; Name                     ; state.check_data ; state.read_data ; state.check_LC_off_count ; state.read_LC_off ; state.check_LC_on_count ; state.read_LC_on ; state.init ;
 +--------------------------+------------------+-----------------+--------------------------+-------------------+-------------------------+------------------+------------+
@@ -262,17 +317,20 @@ Encoding Type:  One-Hot
 +--------------------------+------------------+-----------------+--------------------------+-------------------+-------------------------+------------------+------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; old_data_1[2]                         ; Stuck at GND due to stuck port data_in ;
-; old_data_4[2]                         ; Stuck at GND due to stuck port data_in ;
-; old_data_1[1]                         ; Merged with old_data_1[3]              ;
-; old_data_4[1]                         ; Merged with old_data_4[3]              ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                         ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; Register name                                                                     ; Reason for Removal                                                                     ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[4,14,23]   ; Merged with calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[6]  ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[20,22]     ; Merged with calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[13] ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[5,7,15,21] ; Merged with calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[12] ;
+; full_ir_receiver:IR|old_data_1[2]                                                 ; Stuck at GND due to stuck port data_in                                                 ;
+; full_ir_receiver:IR|old_data_4[2]                                                 ; Stuck at GND due to stuck port data_in                                                 ;
+; full_ir_receiver:IR|old_data_1[1]                                                 ; Merged with full_ir_receiver:IR|old_data_1[3]                                          ;
+; full_ir_receiver:IR|old_data_4[1]                                                 ; Merged with full_ir_receiver:IR|old_data_4[3]                                          ;
+; Total Number of Removed Registers = 13                                            ;                                                                                        ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -280,46 +338,336 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 150   ;
-; Number of registers using Synchronous Clear  ; 58    ;
+; Total registers                              ; 198   ;
+; Number of registers using Synchronous Clear  ; 79    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 31    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 53    ;
+; Number of registers using Clock Enable       ; 65    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |full_ir_receiver|nec_receiver:irRec|LC_on_counter[5]  ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |full_ir_receiver|nec_receiver:irRec|LC_off_counter[5] ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |full_ir_receiver|nec_receiver:irRec|clock_counter[4]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |full_ir_receiver|nec_receiver:irRec|data_counter[27]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |full_ir_receiver|old_data_6[0]                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |full_ir_receiver|old_data_3[1]                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |full_ir_receiver|old_data_4[1]                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |full_ir_receiver|nec_receiver:irRec|data_reg[17]      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |full_ir_receiver|nec_receiver:irRec|shift_reg[19]     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |full_ir_receiver|old_data_1[0]                        ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |full_ir_receiver|old_data_5[1]                        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |full_ir_receiver|old_data_2[3]                        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |full_ir_receiver|A[3]~reg0                            ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |full_ir_receiver|B[1]~reg0                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|LC_on_counter[5]                      ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|LC_off_counter[4]                     ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|clock_counter[1]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|data_counter[12]                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_6[0]                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_3[0]                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_4[1]                                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|data_reg[21]                          ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec|shift_reg[29]                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|h_count[9] ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|v_count[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_1[2]                                            ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_5[2]                                            ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top_entity|full_ir_receiver:IR|old_data_2[1]                                            ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[12]   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|A[3]                                                     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_entity|full_ir_receiver:IR|B[0]                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_entity|calculator4bits:calculette|tempOpeA[1]                                       ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |top_entity|calculator4bits:calculette|choix_display:choix_d0|Mux1                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: nec_receiver:irRec ;
-+----------------+--------+---------------------------------------+
-; Parameter Name ; Value  ; Type                                  ;
-+----------------+--------+---------------------------------------+
-; lc_on_max      ; 450000 ; Signed Integer                        ;
-+----------------+--------+---------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: full_ir_receiver:IR|nec_receiver:irRec ;
++----------------+--------+-----------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                      ;
++----------------+--------+-----------------------------------------------------------+
+; lc_on_max      ; 450000 ; Signed Integer                                            ;
++----------------+--------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0 ;
++------------------------------------------------+----------+--------------------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                             ;
++------------------------------------------------+----------+--------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                                   ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                                          ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                          ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                          ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                          ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                          ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                          ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                          ;
+; LATENCY                                        ; 0        ; Untyped                                          ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                          ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                          ;
+; USE_EAB                                        ; OFF      ; Untyped                                          ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                          ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                          ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                          ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                              ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                          ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                          ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                          ;
+; CBXI_PARAMETER                                 ; mult_9js ; Untyped                                          ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                          ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                          ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                          ;
++------------------------------------------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1 ;
++------------------------------------------------+----------+--------------------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                             ;
++------------------------------------------------+----------+--------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                                   ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                                          ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                          ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                          ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                          ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                          ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                                          ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                          ;
+; LATENCY                                        ; 0        ; Untyped                                          ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                          ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                          ;
+; USE_EAB                                        ; OFF      ; Untyped                                          ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                          ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                          ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                          ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                              ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                          ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                          ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                          ;
+; CBXI_PARAMETER                                 ; mult_6cs ; Untyped                                          ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                          ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                          ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                          ;
++------------------------------------------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1 ;
++------------------------------------------------+----------+-----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                    ;
++------------------------------------------------+----------+-----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                          ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                                 ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                 ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                 ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                 ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                 ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                 ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                 ;
+; LATENCY                                        ; 0        ; Untyped                                 ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                 ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                 ;
+; USE_EAB                                        ; OFF      ; Untyped                                 ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                 ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                 ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                 ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                     ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                 ;
+; CBXI_PARAMETER                                 ; mult_9js ; Untyped                                 ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                 ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                 ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                 ;
++------------------------------------------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0 ;
++------------------------------------------------+----------+-----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                    ;
++------------------------------------------------+----------+-----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                          ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                                 ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                 ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                 ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                 ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                 ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                                 ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                 ;
+; LATENCY                                        ; 0        ; Untyped                                 ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                 ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                 ;
+; USE_EAB                                        ; OFF      ; Untyped                                 ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                 ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                 ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                 ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                     ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                 ;
+; CBXI_PARAMETER                                 ; mult_6cs ; Untyped                                 ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                 ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                 ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                 ;
++------------------------------------------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                                                                  ;
+; LPM_WIDTHD             ; 5              ; Untyped                                                                                  ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_v9o ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                      ;
++---------------------------------------+-------------------------------------------------------------+
+; Name                                  ; Value                                                       ;
++---------------------------------------+-------------------------------------------------------------+
+; Number of entity instances            ; 4                                                           ;
+; Entity Instance                       ; calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                                                           ;
+;     -- LPM_WIDTHB                     ; 4                                                           ;
+;     -- LPM_WIDTHP                     ; 8                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                          ;
+;     -- USE_EAB                        ; OFF                                                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                          ;
+; Entity Instance                       ; calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                                                           ;
+;     -- LPM_WIDTHB                     ; 4                                                           ;
+;     -- LPM_WIDTHP                     ; 8                                                           ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                          ;
+;     -- USE_EAB                        ; OFF                                                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                          ;
+; Entity Instance                       ; calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1          ;
+;     -- LPM_WIDTHA                     ; 4                                                           ;
+;     -- LPM_WIDTHB                     ; 4                                                           ;
+;     -- LPM_WIDTHP                     ; 8                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                          ;
+;     -- USE_EAB                        ; OFF                                                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                          ;
+; Entity Instance                       ; calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0          ;
+;     -- LPM_WIDTHA                     ; 4                                                           ;
+;     -- LPM_WIDTHB                     ; 4                                                           ;
+;     -- LPM_WIDTHP                     ; 8                                                           ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                          ;
+;     -- USE_EAB                        ; OFF                                                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                          ;
++---------------------------------------+-------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img"                         ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; de_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; r_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; g_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|hdmi_de10:hdmi_out0"                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; res_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepRes"                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dizaine ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; unite   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepB"                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dizaine ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; unite   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|separateur_diz_unit:sepA"                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dizaine ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; unite   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette|CLA:CLA0"                                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; ope_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator4bits:calculette"                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; modesout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -327,27 +675,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 55                          ;
-; cycloneiii_ff         ; 150                         ;
+; boundary_port         ; 85                          ;
+; cycloneiii_ff         ; 198                         ;
 ;     CLR               ; 1                           ;
-;     ENA               ; 23                          ;
+;     ENA               ; 25                          ;
 ;     ENA CLR           ; 30                          ;
-;     SCLR              ; 58                          ;
-;     plain             ; 38                          ;
-; cycloneiii_lcell_comb ; 389                         ;
-;     arith             ; 112                         ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 100                         ;
-;         3 data inputs ; 10                          ;
-;     normal            ; 277                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 43                          ;
-;         3 data inputs ; 19                          ;
-;         4 data inputs ; 201                         ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 69                          ;
+;     plain             ; 63                          ;
+; cycloneiii_lcell_comb ; 801                         ;
+;     arith             ; 209                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 133                         ;
+;         3 data inputs ; 72                          ;
+;     normal            ; 592                         ;
+;         0 data inputs ; 10                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 96                          ;
+;         3 data inputs ; 83                          ;
+;         4 data inputs ; 387                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.60                        ;
-; Average LUT depth     ; 4.38                        ;
+; Max LUT depth         ; 29.00                       ;
+; Average LUT depth     ; 11.45                       ;
 +-----------------------+-----------------------------+
 
 
@@ -356,7 +705,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -366,80 +715,196 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 27 22:55:05 2021
+    Info: Processing started: Tue Sep 28 16:58:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette_v3 -c calculette_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file src/nec_receiver.vhd
-    Info (12022): Found design unit 1: nec_receiver-bvh File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 21
-    Info (12023): Found entity 1: nec_receiver File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 5
+    Info (12022): Found design unit 1: nec_receiver-bvh File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 21
+    Info (12023): Found entity 1: nec_receiver File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/hex_to_7_seg.vhd
-    Info (12022): Found design unit 1: hex_to_7_seg-behavior File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 11
-    Info (12023): Found entity 1: hex_to_7_seg File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 5
+    Info (12022): Found design unit 1: hex_to_7_seg-behavior File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 11
+    Info (12023): Found entity 1: hex_to_7_seg File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/full_ir_receiver.vhd
-    Info (12022): Found design unit 1: full_ir_receiver-behav File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 24
-    Info (12023): Found entity 1: full_ir_receiver File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 6
+    Info (12022): Found design unit 1: full_ir_receiver-behav File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 24
+    Info (12023): Found entity 1: full_ir_receiver File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/cmplt2.vhd
-    Info (12022): Found design unit 1: complement_2-archi_complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 12
-    Info (12023): Found entity 1: complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 6
+    Info (12022): Found design unit 1: complement_2-archi_complement_2 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 12
+    Info (12023): Found entity 1: complement_2 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/cmplt1.vhd
-    Info (12022): Found design unit 1: complement_1-archi_complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 11
-    Info (12023): Found entity 1: complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 5
+    Info (12022): Found design unit 1: complement_1-archi_complement_1 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 11
+    Info (12023): Found entity 1: complement_1 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/test_cla_state.vhd
-    Info (12022): Found design unit 1: CLA-behaviorCLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 26
-    Info (12023): Found entity 1: CLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 6
+    Info (12022): Found design unit 1: CLA-behaviorCLA File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 26
+    Info (12023): Found entity 1: CLA File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/buzzer.vhd
-    Info (12022): Found design unit 1: buzzer-Behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 16
-    Info (12023): Found entity 1: buzzer File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 5
+    Info (12022): Found design unit 1: buzzer-Behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 16
+    Info (12023): Found entity 1: buzzer File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/sep_diz_unit.vhd
-    Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 12
-    Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 5
+    Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 12
+    Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 5
 Warning (12019): Can't analyze file -- file src/preCLA.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file src/multi_4bits.vhd
-    Info (12022): Found design unit 1: multi4bits-archi_multi4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 12
-    Info (12023): Found entity 1: multi4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 5
+    Info (12022): Found design unit 1: multi4bits-archi_multi4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 12
+    Info (12023): Found entity 1: multi4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/hdmi_de10.vhd
-    Info (12022): Found design unit 1: hdmi_de10-archi_hdmi_de10 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 20
-    Info (12023): Found entity 1: hdmi_de10 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 6
+    Info (12022): Found design unit 1: hdmi_de10-archi_hdmi_de10 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 20
+    Info (12023): Found entity 1: hdmi_de10 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/hdmi.vhd
-    Info (12022): Found design unit 1: result_img-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 20
-    Info (12023): Found entity 1: result_img File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 5
+    Info (12022): Found design unit 1: result_img-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 20
+    Info (12023): Found entity 1: result_img File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/controlmulti.vhd
-    Info (12022): Found design unit 1: ErorControlMulti-archi_errorMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 12
-    Info (12023): Found entity 1: ErorControlMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 4
+    Info (12022): Found design unit 1: ErorControlMulti-archi_errorMulti File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 12
+    Info (12023): Found entity 1: ErorControlMulti File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/controladd.vhd
-    Info (12022): Found design unit 1: ErorControlAdd-archi_errorAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 9
-    Info (12023): Found entity 1: ErorControlAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 4
+    Info (12022): Found design unit 1: ErorControlAdd-archi_errorAdd File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 9
+    Info (12023): Found entity 1: ErorControlAdd File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/choix_afficheur.vhd
-    Info (12022): Found design unit 1: choix_display-archi_choix_display File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 11
-    Info (12023): Found entity 1: choix_display File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 4
+    Info (12022): Found design unit 1: choix_display-archi_choix_display File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 11
+    Info (12023): Found entity 1: choix_display File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/calculette.vhd
-    Info (12022): Found design unit 1: calculator4bits-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 35
-    Info (12023): Found entity 1: calculator4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 6
+    Info (12022): Found design unit 1: calculator4bits-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 35
+    Info (12023): Found entity 1: calculator4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/add_4bits.vhd
-    Info (12022): Found design unit 1: add4bits-archi_add4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 12
-    Info (12023): Found entity 1: add4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 5
+    Info (12022): Found design unit 1: add4bits-archi_add4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 12
+    Info (12023): Found entity 1: add4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/7segments.vhd
-    Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 11
-    Info (12023): Found entity 1: seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 4
+    Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 11
+    Info (12023): Found entity 1: seg7 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 4
 Warning (12019): Can't analyze file -- file output_files/cmplt1.vhd is missing
 Warning (12019): Can't analyze file -- file output_files/cmplt2.vhd is missing
-Info (12127): Elaborating entity "full_ir_receiver" for the top level hierarchy
-Info (12128): Elaborating entity "nec_receiver" for hierarchy "nec_receiver:irRec" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 36
-Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(55): object "temp" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 55
-Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(66): object "LG_reg" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 66
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:hex00" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 180
+Info (12021): Found 2 design units, including 1 entities, in source file src/top_entity.vhd
+    Info (12022): Found design unit 1: top_entity-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 39
+    Info (12023): Found entity 1: top_entity File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 5
+Info (12127): Elaborating entity "top_entity" for the top level hierarchy
+Info (12128): Elaborating entity "full_ir_receiver" for hierarchy "full_ir_receiver:IR" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 43
+Info (12128): Elaborating entity "nec_receiver" for hierarchy "full_ir_receiver:IR|nec_receiver:irRec" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(55): object "temp" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(66): object "LG_reg" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 66
+Info (12128): Elaborating entity "seg7" for hierarchy "full_ir_receiver:IR|seg7:hex00" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 180
+Info (12128): Elaborating entity "calculator4bits" for hierarchy "calculator4bits:calculette" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 61
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(52): object "dizA" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(52): object "dizB" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(52): object "dizRes" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(53): object "uA" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(53): object "uB" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at calculette.vhd(53): object "uRes" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 53
+Info (12129): Elaborating entity "add4bits" using architecture "A:archi_add4bits" for hierarchy "calculator4bits:calculette|add4bits:add0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at add_4bits.vhd(32): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at add_4bits.vhd(41): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 41
+Info (12128): Elaborating entity "ErorControlAdd" for hierarchy "calculator4bits:calculette|ErorControlAdd:controlAdd" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 70
+Info (12128): Elaborating entity "multi4bits" for hierarchy "calculator4bits:calculette|multi4bits:multi0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 90
+Info (12128): Elaborating entity "ErorControlMulti" for hierarchy "calculator4bits:calculette|ErorControlMulti:controlMulti" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(23): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(31): signal "ResSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
+Warning (10631): VHDL Process Statement warning at controlMulti.vhd(18): inferring latch(es) for signal or variable "ErorSigne", which holds its previous value in one or more paths through the process File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
+Info (10041): Inferred latch for "ErorSigne" at controlMulti.vhd(18) File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
+Info (12128): Elaborating entity "complement_2" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 110
+Info (12128): Elaborating entity "complement_1" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0|complement_1:cmplt1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 15
+Info (12128): Elaborating entity "CLA" for hierarchy "calculator4bits:calculette|CLA:CLA0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 130
+Info (12128): Elaborating entity "choix_display" for hierarchy "calculator4bits:calculette|choix_display:choix_d0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 156
+Info (12128): Elaborating entity "separateur_diz_unit" for hierarchy "calculator4bits:calculette|separateur_diz_unit:sepA" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 170
+Info (12128): Elaborating entity "hdmi_de10" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 284
+Info (12129): Elaborating entity "result_img" using architecture "A:behavioral" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 45
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|CLA:CLA0|Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 115
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|CLA:CLA0|Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 102
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 97
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_9js.tdf
+    Info (12023): Found entity 1: mult_9js File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_6cs.tdf
+    Info (12023): Found entity 1: mult_6cs File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 115
+Info (12133): Instantiated megafunction "calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 115
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 102
+Info (12133): Instantiated megafunction "calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 102
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 97
+Info (12133): Instantiated megafunction "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|lpm_divide:Div0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 97
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_v9o.tdf
+    Info (12023): Found entity 1: lpm_divide_v9o File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4ag.tdf
+    Info (12023): Found entity 1: abs_divider_4ag File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_see.tdf
+    Info (12023): Found entity 1: alt_u_div_see File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
+    Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf Line: 24
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "calculator4bits:calculette|CLA:CLA0|lpm_mult:Mult1|mult_9js:auto_generated|le5a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 42
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[3]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[3]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated|le5a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 42
+Info (13014): Ignored 151 buffer(s)
+    Info (13016): Ignored 16 CARRY_SUM buffer(s)
+    Info (13019): Ignored 135 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "cinCLA" is stuck at GND File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 454 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 399 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4829 megabytes
-    Info: Processing ended: Mon Sep 27 22:55:12 2021
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+Info (21057): Implemented 911 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 826 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Tue Sep 28 16:59:10 2021
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:43
 
 

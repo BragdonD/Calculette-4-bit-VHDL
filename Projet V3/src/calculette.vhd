@@ -16,12 +16,12 @@ port( A, B		 	: in std_logic_vector(3 downto 0);
 		coutCLA		: in	std_logic;
 		cinCLA		: out std_logic;
 		----leds
-		HEX0			: out std_logic_vector(6 downto 0);
-		HEX1			: out std_logic_vector(6 downto 0);
-		HEX2			: out std_logic_vector(6 downto 0);
-		HEX3			: out std_logic_vector(6 downto 0);
-		HEX4			: out std_logic_vector(6 downto 0);
-		HEX5			: out std_logic_vector(6 downto 0);
+		--HEX0			: out std_logic_vector(6 downto 0);
+		--HEX1			: out std_logic_vector(6 downto 0);
+		--HEX2			: out std_logic_vector(6 downto 0);
+		--HEX3			: out std_logic_vector(6 downto 0);
+		--HEX4			: out std_logic_vector(6 downto 0);
+		--HEX5			: out std_logic_vector(6 downto 0);
 		modesOut		: out std_logic_vector(3 downto 0);
 		---hdmi
 		clk_50		: in std_logic;
@@ -52,7 +52,7 @@ architecture behavioral of calculator4bits is
 	signal dizA, dizB, dizRes : std_logic_vector(3 downto 0);
 	signal uA, uB, uRes : std_logic_vector(3 downto 0);
 	
-	signal tempHEX0, tempHEX1, tempHEX2, tempHEX3 , tempHEX4 , tempHEX5 : std_logic_vector(6 downto 0);
+	--signal tempHEX0, tempHEX1, tempHEX2, tempHEX3 , tempHEX4 , tempHEX5 : std_logic_vector(6 downto 0);
 	
 	signal cmplt2A, cmplt2B : std_logic_vector(3 downto 0);
 begin
@@ -194,89 +194,89 @@ begin
 			unite =>uRes
 		);
 	----------------------------------OPEA	
-	ledA0 : entity work.seg7
-		port map
-		( 
-			number => dizA,
-			leds => tempHEX5
-		);
+	--ledA0 : entity work.seg7
+		--port map
+		--( 
+		--	number => dizA,
+		--	leds => tempHEX5
+		--);
 		
-	ledA1 : entity work.seg7
-		port map
-		( 
-			number => uA,
-			leds => tempHEX4
-		);
+	--ledA1 : entity work.seg7
+		--port map
+		--( 
+		--	number => uA,
+		--	leds => tempHEX4
+		--);
 		
 		--------------------------------OPEB
 		
-	ledB0 : entity work.seg7
-		port map
-		( 
-			number => dizB,
-			leds => tempHEX3
-		);
+	--ledB0 : entity work.seg7
+		--port map
+		--( 
+		--	number => dizB,
+		--	leds => tempHEX3
+		--);
 		
-	ledB1 : entity work.seg7
-		port map
-		( 
-			number => uB,
-			leds => tempHEX2
-		);
+	--ledB1 : entity work.seg7
+		--port map
+		--( 
+		--	number => uB,
+		--	leds => tempHEX2
+		--);
 		
 		
 		
 	--------------------------------result
-	ledRes0 : entity work.seg7
-		port map
-		( 
-			number => dizRes,
-			leds => tempHEX1
-		);
+	--ledRes0 : entity work.seg7
+		--port map
+		--( 
+		--	number => dizRes,
+		--	leds => tempHEX1
+		--);
 		
-	ledRes1 : entity work.seg7
-		port map
-		( 
-			number => uRes,
-			leds => tempHEX0
-		);
+	--ledRes1 : entity work.seg7
+		--port map
+		--( 
+			--number => uRes,
+			--leds => tempHEX0
+		--);
 	
 	---gerer les signes '-'
-	process(eror, tempHEX1 , tempHEX0, mode, FinalRes)
-	begin
-		if eror = '1' then
-			HEX1 <= "0000110";
-			HEX0 <= "0101111";
-		elsif mode = '1' and to_integer(signed(FinalRes)) <0 then
-			HEX1 <= "0111111";
-			HEX0 <= tempHEX0;
-		else
-			HEX1 <=  tempHEX1;
-			HEX0 <=  tempHEX0;
-		end if;
-	end process;
+	--process(eror, tempHEX1 , tempHEX0, mode, FinalRes)
+	--begin
+		--if eror = '1' then
+		--	HEX1 <= "0000110";
+		--	HEX0 <= "0101111";
+		--elsif mode = '1' and to_integer(signed(FinalRes)) <0 then
+		--HEX1 <= "0111111";
+		--	HEX0 <= tempHEX0;
+		--else
+		--	HEX1 <=  tempHEX1;
+		--	HEX0 <=  tempHEX0;
+		--end if;
+	--end process;
 	
-	process(mode, tempHEX5 , tempHEX4, mode, A)
-	begin
-		if mode = '1' and to_integer(signed(A)) <0 then
-			HEX5 <= "0111111";
-			HEX4 <=  tempHEX4;
-		else
-			HEX5 <=  tempHEX5;
-			HEX4 <=  tempHEX4;
-		end if;
-	end process;
+	--process(mode, tempHEX5 , tempHEX4, mode, A)
+	--begin
+		--if mode = '1' and to_integer(signed(A)) <0 then
+		--	HEX5 <= "0111111";
+		--	HEX4 <=  tempHEX4;
+		--else
+		--	HEX5 <=  tempHEX5;
+		--	HEX4 <=  tempHEX4;
+		--end if;
+	--end process;
 	
-	process(mode, tempHEX3 , tempHEX2, mode, B)
-	begin
-		if mode = '1' and to_integer(signed(B)) <0  then
-			HEX3 <= "0111111";
-			HEX2 <=  tempHEX2;
-		else
-			HEX3 <=  tempHEX3;
-			HEX2 <=  tempHEX2;
-		end if;
-	end process;
+	--process(mode, tempHEX3 , tempHEX2, mode, B)
+	--begin
+		--if mode = '1' and to_integer(signed(B)) <0  then
+			--HEX3 <= "0111111";
+			--HEX2 <=  tempHEX2;
+		--else
+			--HEX3 <=  tempHEX3;
+			--HEX2 <=  tempHEX2;
+		--end if;
+	--end process;
 	
 	
 		
