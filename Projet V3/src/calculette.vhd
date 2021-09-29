@@ -137,15 +137,15 @@ begin
 			B => tempOpeB,
 			reset => reset,
 			mode => mode,
-			cinCLA => cinCLA,
-			resCLA => ResCLA,
-			coutCLA => coutCLA,
 			operation => operation,
+			--sortie CLA
+			cout => coutCLA,
+			outputCLA => ResCLA,
+			--entree CLA
 			opeACLA => opeACLA,
 			opeBCLA => opeBCLA,
-			result => tempResCLA,
-			eror => erorCLA,
-			ope_out => open
+			erorCLA => erorCLA,
+			result => tempResCLA
 		);
 	
 	

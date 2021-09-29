@@ -296,7 +296,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "operation",
+					"name" : "mode",
 					"strict" : false
 				},
 				{
@@ -308,27 +308,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "mode",
-					"strict" : false
-				},
-				{
-					"name" : "coutCLA",
-					"strict" : false
-				},
-				{
-					"name" : "resCLA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "resCLA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "resCLA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "resCLA[2]",
+					"name" : "operation",
 					"strict" : false
 				},
 				{

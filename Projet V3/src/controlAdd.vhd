@@ -10,14 +10,15 @@ end entity;
 architecture archi_errorAdd of ErorControlAdd is
 	signal ErorSigne, ErorOverFlow : std_logic;
 begin
+	ErorOverFlow <= CoutAdd;
 	process(mode, ASigne, BSigne, ResSigne, CoutAdd)
 	begin
-		ErorOverFlow <= CoutAdd;
 		if(mode = '1')then
 			ErorSigne <= ((ResSigne and not(ASigne) and not(BSigne)) or (not(ResSigne) and ASigne and BSigne));
-			erorTotale <= ErorSigne or (ErorOverFlow and not(ErorSigne));
+			
 		else
-			erorTotale <= ErorOverFlow;
+			ErorSigne <= '0';
 		end if;
 	end process;
+	erorTotale <= ErorSigne or (ErorOverFlow and not(ErorSigne));
 end archi_errorAdd;
