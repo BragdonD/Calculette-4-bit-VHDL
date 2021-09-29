@@ -39,6 +39,9 @@ end entity;
 architecture behavioral of top_entity is
 	signal tempA, tempB : std_logic_vector(3 downto 0);
 	signal enableCalcul : std_logic;
+	signal enableAffi : std_logic;
+	signal TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00 : std_logic_vector(6 downto 0);
+	signal TempHEX11, TempHEX21, TempHEX31, TempHEX41, TempHEX51, TempHEX01 : std_logic_vector(6 downto 0);
 begin
 
 	IR : entity work.full_ir_receiver
@@ -50,13 +53,14 @@ begin
 				data_in => data_in,
 				reset => reset,
 				mode => mode,
-				HEX0 => HEX0,
-				HEX1 => HEX1,
-				HEX2 => HEX2,
-				HEX3 => HEX3,
-				HEX4 => HEX4,
-				HEX5 => HEX5,
-				eror => enableCalcul 
+				HEX0 => TempHEX00,
+				HEX1 => TempHEX10,
+				HEX2 => TempHEX20,
+				HEX3 => TempHEX30,
+				HEX4 => TempHEX40,
+				HEX5 => TempHEX50,
+				eror => enableCalcul,
+				affichage => enableAffi
 		);
 
 
@@ -74,6 +78,12 @@ begin
 			resCLA => resCLA,
 			coutCLA => coutCLA,
 			cinCLA => cinCLA,
+			HEX0 => TempHEX01,
+			HEX1 => TempHEX11,
+			HEX2 => TempHEX21,
+			HEX3 => TempHEX31,
+			HEX4 => TempHEX41,
+			HEX5 => TempHEX51,
 			modesOut => open,
 			clk_50 => clk50,
 			vga_vs => vga_vs,
@@ -82,6 +92,25 @@ begin
 			vga_g	=> vga_g,
 			vga_b	=> vga_b
 		);
+		
+	process(enableAffi, TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00)
+	begin
+		if(enableAffi = '0')then
+			HEX0 <= TempHEX00;
+			HEX1 <= TempHEX10;
+			HEX2 <= TempHEX20;
+			HEX3 <= TempHEX30;
+			HEX4 <= TempHEX40;
+			HEX5 <= TempHEX50;
+		else
+			HEX0 <= TempHEX01;
+			HEX1 <= TempHEX11;
+			HEX2 <= TempHEX21;
+			HEX3 <= TempHEX31;
+			HEX4 <= TempHEX41;
+			HEX5 <= TempHEX51;
+		end if;
+	end process;
 	A <= tempA;
 	B <= tempB;
 end behavioral;

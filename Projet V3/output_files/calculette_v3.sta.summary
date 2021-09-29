@@ -3,32 +3,32 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -23.738
-TNS   : -150.138
+Slack : -24.187
+TNS   : -149.227
 
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : -7.252
-TNS   : -613.200
+Slack : -7.590
+TNS   : -644.273
 
 Type  : Slow 1200mV 85C Model Setup 'mode'
-Slack : -4.081
-TNS   : -4.081
+Slack : -4.277
+TNS   : -4.277
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
-Slack : 0.348
+Slack : 0.329
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.433
+Slack : 0.426
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'mode'
-Slack : 2.224
+Slack : 2.268
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -223.271
+TNS   : -224.674
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'mode'
 Slack : -3.000
@@ -39,32 +39,32 @@ Slack : -1.403
 TNS   : -58.926
 
 Type  : Slow 1200mV 0C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -21.596
-TNS   : -134.197
+Slack : -22.098
+TNS   : -133.762
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : -6.563
-TNS   : -556.549
+Slack : -6.834
+TNS   : -585.963
 
 Type  : Slow 1200mV 0C Model Setup 'mode'
-Slack : -3.706
-TNS   : -3.706
+Slack : -3.874
+TNS   : -3.874
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
-Slack : 0.312
+Slack : 0.294
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.399
+Slack : 0.393
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'mode'
-Slack : 2.094
+Slack : 2.135
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -223.271
+TNS   : -224.674
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'mode'
 Slack : -3.000
@@ -75,32 +75,32 @@ Slack : -1.403
 TNS   : -58.926
 
 Type  : Fast 1200mV 0C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -9.072
-TNS   : -44.082
+Slack : -9.239
+TNS   : -43.875
 
 Type  : Fast 1200mV 0C Model Setup 'clk50'
-Slack : -2.484
-TNS   : -173.345
+Slack : -2.514
+TNS   : -188.844
 
 Type  : Fast 1200mV 0C Model Setup 'mode'
-Slack : -1.337
-TNS   : -1.337
+Slack : -1.370
+TNS   : -1.370
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
-Slack : 0.152
-TNS   : 0.000
+Slack : -0.048
+TNS   : -0.048
 
 Type  : Fast 1200mV 0C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.165
+Slack : 0.161
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'mode'
-Slack : 1.100
+Slack : 1.110
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -165.484
+TNS   : -166.895
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'mode'
 Slack : -3.000

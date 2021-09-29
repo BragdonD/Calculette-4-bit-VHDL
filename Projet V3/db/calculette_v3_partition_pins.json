@@ -296,23 +296,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLA",
-					"strict" : false
-				},
-				{
 					"name" : "operation",
 					"strict" : false
 				},
 				{
-					"name" : "mode",
-					"strict" : false
-				},
-				{
-					"name" : "clk50",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "CLA",
+					"strict" : false
+				},
+				{
+					"name" : "mode",
 					"strict" : false
 				},
 				{
@@ -333,6 +329,10 @@
 				},
 				{
 					"name" : "resCLA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clk50",
 					"strict" : false
 				},
 				{

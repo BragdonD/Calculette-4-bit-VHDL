@@ -18,21 +18,17 @@ port(
 		HEX3					: out std_logic_vector(6 downto 0);
 		HEX4					: out std_logic_vector(6 downto 0);
 		HEX5					: out std_logic_vector(6 downto 0);
-		eror					: out std_logic
+		eror					: out std_logic;
+		affichage			: out std_logic
 );
 end entity;
 
 architecture behav of full_ir_receiver is
-	--old_data1 -> signe
-	--old_data2 -> 
-	--type state is (signeA, dizA, unitA, signeB, dizB, unitB,equal);
-	--signal current_state, next_state : state;
-	
-	
 	signal old_data_1, old_data_2, old_data_3, old_data_4, old_data_5, old_data_6: std_logic_vector(3 downto 0);
 	signal new_data : std_logic_vector(3 downto 0);
 	signal temp_rd_data : std_logic;
 	signal enable : std_logic;
+	signal enableAffichage : std_logic;
 begin
 	irRec : entity work.nec_receiver
 		port map
@@ -67,6 +63,7 @@ begin
 					A <= "0000";
 					B <= "0000";
 					counter := 0;
+					enableAffichage <= '0';
 			elsif(rising_edge(clk))then
 				if(enable = '1')then
 					if(new_data /= "1111")then
@@ -186,6 +183,7 @@ begin
 								end if;
 							end if;
 							eror <= erorA or erorB;
+							enableAffichage <= '1';
 						end case;
 					end if;
 				end if;						
@@ -212,5 +210,6 @@ begin
 	port map(number => old_data_6,leds => HEX0);
 	
 	rd_data <= temp_rd_data;
+	affichage <= enableAffichage;
 end architecture;		
 
