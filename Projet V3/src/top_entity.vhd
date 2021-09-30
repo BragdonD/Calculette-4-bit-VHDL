@@ -93,7 +93,7 @@ begin
 			vga_b	=> vga_b
 		);
 		
-	process(enableAffi, TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00)
+	process(enableAffi, TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00,TempHEX11, TempHEX21, TempHEX31, TempHEX41, TempHEX51, TempHEX01)
 	begin
 		if(enableAffi = '0')then
 			HEX0 <= TempHEX00;

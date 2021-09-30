@@ -296,10 +296,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "mode",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
 					"strict" : false
 				},
@@ -312,7 +308,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "mode",
+					"strict" : false
+				},
+				{
 					"name" : "clk50",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "coutCLA",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "resCLA[2]",
 					"strict" : false
 				},
 				{

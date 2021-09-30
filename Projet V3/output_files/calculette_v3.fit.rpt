@@ -1,5 +1,5 @@
 Fitter report for calculette_v3
-Wed Sep 29 17:20:52 2021
+Wed Sep 29 23:12:59 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -67,17 +67,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Sep 29 17:20:52 2021       ;
+; Fitter Status                      ; Successful - Wed Sep 29 23:12:59 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
 ; Top-level Entity Name              ; top_entity                                  ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 899 / 49,760 ( 2 % )                        ;
-;     Total combinational functions  ; 881 / 49,760 ( 2 % )                        ;
-;     Dedicated logic registers      ; 208 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 208                                         ;
+; Total logic elements               ; 995 / 49,760 ( 2 % )                        ;
+;     Total combinational functions  ; 979 / 49,760 ( 2 % )                        ;
+;     Dedicated logic registers      ; 246 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 246                                         ;
 ; Total pins                         ; 85 / 360 ( 24 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
@@ -150,16 +150,21 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.14        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.24        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.6%      ;
-;     Processors 3-4         ;   4.6%      ;
+;     Processor 2            ;   3.4%      ;
+;     Processor 3            ;   3.4%      ;
+;     Processor 4            ;   3.4%      ;
+;     Processor 5            ;   3.4%      ;
+;     Processor 6            ;   3.4%      ;
+;     Processor 7            ;   3.4%      ;
+;     Processor 8            ;   3.4%      ;
 +----------------------------+-------------+
 
 
@@ -169,8 +174,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1277 ) ; 0.00 % ( 0 / 1277 )        ; 0.00 % ( 0 / 1277 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1277 ) ; 0.00 % ( 0 / 1277 )        ; 0.00 % ( 0 / 1277 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1413 ) ; 0.00 % ( 0 / 1413 )        ; 0.00 % ( 0 / 1413 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1413 ) ; 0.00 % ( 0 / 1413 )        ; 0.00 % ( 0 / 1413 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -193,7 +198,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1261 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1397 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -201,7 +206,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.pin.
+The pin-out file can be found in C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.pin.
 
 
 +----------------------------------------------------------------------+
@@ -209,26 +214,26 @@ The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 899 / 49,760 ( 2 % )   ;
-;     -- Combinational with no register       ; 691                    ;
-;     -- Register only                        ; 18                     ;
-;     -- Combinational with a register        ; 190                    ;
+; Total logic elements                        ; 995 / 49,760 ( 2 % )   ;
+;     -- Combinational with no register       ; 749                    ;
+;     -- Register only                        ; 16                     ;
+;     -- Combinational with a register        ; 230                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 470                    ;
-;     -- 3 input functions                    ; 163                    ;
-;     -- <=2 input functions                  ; 248                    ;
-;     -- Register only                        ; 18                     ;
+;     -- 4 input functions                    ; 527                    ;
+;     -- 3 input functions                    ; 169                    ;
+;     -- <=2 input functions                  ; 283                    ;
+;     -- Register only                        ; 16                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 672                    ;
-;     -- arithmetic mode                      ; 209                    ;
+;     -- normal mode                          ; 739                    ;
+;     -- arithmetic mode                      ; 240                    ;
 ;                                             ;                        ;
-; Total registers*                            ; 208 / 51,509 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 208 / 49,760 ( < 1 % ) ;
+; Total registers*                            ; 246 / 51,509 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 246 / 49,760 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 77 / 3,110 ( 2 % )     ;
+; Total LABs:  partially or completely used   ; 84 / 3,110 ( 3 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 85 / 360 ( 24 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
@@ -248,12 +253,12 @@ The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet
 ; Remote update blocks                        ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.5%     ;
-; Peak interconnect usage (total/H/V)         ; 4.4% / 4.7% / 4.1%     ;
-; Maximum fan-out                             ; 166                    ;
-; Highest non-global fan-out                  ; 75                     ;
-; Total fan-out                               ; 3609                   ;
-; Average fan-out                             ; 2.78                   ;
+; Average interconnect usage (total/H/V)      ; 0.6% / 0.5% / 0.6%     ;
+; Peak interconnect usage (total/H/V)         ; 5.9% / 5.6% / 6.2%     ;
+; Maximum fan-out                             ; 204                    ;
+; Highest non-global fan-out                  ; 121                    ;
+; Total fan-out                               ; 4054                   ;
+; Average fan-out                             ; 2.83                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -266,26 +271,26 @@ The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 899 / 49760 ( 2 % )   ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 691                   ; 0                              ;
-;     -- Register only                        ; 18                    ; 0                              ;
-;     -- Combinational with a register        ; 190                   ; 0                              ;
+; Total logic elements                        ; 995 / 49760 ( 2 % )   ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 749                   ; 0                              ;
+;     -- Register only                        ; 16                    ; 0                              ;
+;     -- Combinational with a register        ; 230                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 470                   ; 0                              ;
-;     -- 3 input functions                    ; 163                   ; 0                              ;
-;     -- <=2 input functions                  ; 248                   ; 0                              ;
-;     -- Register only                        ; 18                    ; 0                              ;
+;     -- 4 input functions                    ; 527                   ; 0                              ;
+;     -- 3 input functions                    ; 169                   ; 0                              ;
+;     -- <=2 input functions                  ; 283                   ; 0                              ;
+;     -- Register only                        ; 16                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 672                   ; 0                              ;
-;     -- arithmetic mode                      ; 209                   ; 0                              ;
+;     -- normal mode                          ; 739                   ; 0                              ;
+;     -- arithmetic mode                      ; 240                   ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 208                   ; 0                              ;
-;     -- Dedicated logic registers            ; 208 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 246                   ; 0                              ;
+;     -- Dedicated logic registers            ; 246 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 77 / 3110 ( 2 % )     ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 84 / 3110 ( 3 % )     ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 85                    ; 0                              ;
@@ -303,8 +308,8 @@ The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 3615                  ; 8                              ;
-;     -- Registered Connections               ; 1214                  ; 0                              ;
+;     -- Total Connections                    ; 4060                  ; 8                              ;
+;     -- Registered Connections               ; 1335                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -336,17 +341,17 @@ The pin-out file can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; CLA       ; C10   ; 7        ; 51           ; 54           ; 28           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; clk50     ; P11   ; 3        ; 34           ; 0            ; 28           ; 166                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; coutCLA   ; AA20  ; 4        ; 62           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; CLA       ; C10   ; 7        ; 51           ; 54           ; 28           ; 15                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; clk50     ; P11   ; 3        ; 34           ; 0            ; 28           ; 204                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; coutCLA   ; AA20  ; 4        ; 62           ; 0            ; 21           ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 ; data_in   ; W10   ; 3        ; 24           ; 0            ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; mode      ; F15   ; 7        ; 69           ; 54           ; 0            ; 40                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; operation ; A12   ; 7        ; 54           ; 54           ; 21           ; 10                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; resCLA[0] ; AB9   ; 3        ; 34           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; resCLA[1] ; Y10   ; 3        ; 34           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; resCLA[2] ; AA11  ; 4        ; 40           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; resCLA[3] ; AA12  ; 4        ; 40           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; reset     ; B8    ; 7        ; 46           ; 54           ; 28           ; 75                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; mode      ; F15   ; 7        ; 69           ; 54           ; 0            ; 51                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; operation ; A12   ; 7        ; 54           ; 54           ; 21           ; 19                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; resCLA[0] ; AB9   ; 3        ; 34           ; 0            ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; resCLA[1] ; Y10   ; 3        ; 34           ; 0            ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; resCLA[2] ; AA11  ; 4        ; 40           ; 0            ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; resCLA[3] ; AA12  ; 4        ; 40           ; 0            ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; reset     ; B8    ; 7        ; 46           ; 54           ; 28           ; 121                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -1022,11 +1027,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; opeBCLA[1] ; Incomplete set of assignments ;
 ; opeBCLA[2] ; Incomplete set of assignments ;
 ; opeBCLA[3] ; Incomplete set of assignments ;
-; resCLA[0]  ; Incomplete set of assignments ;
-; resCLA[1]  ; Incomplete set of assignments ;
-; resCLA[2]  ; Incomplete set of assignments ;
-; resCLA[3]  ; Incomplete set of assignments ;
-; coutCLA    ; Incomplete set of assignments ;
 ; cinCLA     ; Incomplete set of assignments ;
 ; vga_vs     ; Incomplete set of assignments ;
 ; vga_hs     ; Incomplete set of assignments ;
@@ -1042,11 +1042,16 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; vga_b[1]   ; Incomplete set of assignments ;
 ; vga_b[2]   ; Incomplete set of assignments ;
 ; vga_b[3]   ; Incomplete set of assignments ;
-; mode       ; Incomplete set of assignments ;
 ; reset      ; Incomplete set of assignments ;
 ; CLA        ; Incomplete set of assignments ;
 ; operation  ; Incomplete set of assignments ;
+; mode       ; Incomplete set of assignments ;
 ; clk50      ; Incomplete set of assignments ;
+; resCLA[0]  ; Incomplete set of assignments ;
+; coutCLA    ; Incomplete set of assignments ;
+; resCLA[3]  ; Incomplete set of assignments ;
+; resCLA[1]  ; Incomplete set of assignments ;
+; resCLA[2]  ; Incomplete set of assignments ;
 ; data_in    ; Incomplete set of assignments ;
 +------------+-------------------------------+
 
@@ -1056,14 +1061,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                                                            ; Entity Name         ; Library Name ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top_entity                                 ; 899 (52)    ; 208 (0)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 85   ; 0            ; 691 (52)     ; 18 (0)            ; 190 (0)          ; 0          ; |top_entity                                                                                                                                                    ; top_entity          ; work         ;
-;    |calculator4bits:calculette|             ; 473 (4)     ; 56 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 417 (4)      ; 17 (0)            ; 39 (0)           ; 0          ; |top_entity|calculator4bits:calculette                                                                                                                         ; calculator4bits     ; work         ;
-;       |CLA:CLA0|                            ; 10 (10)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 8 (8)            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0                                                                                                                ; CLA                 ; work         ;
-;       |ErorControlMulti:controlMulti|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|ErorControlMulti:controlMulti                                                                                           ; ErorControlMulti    ; work         ;
+; |top_entity                                 ; 995 (51)    ; 246 (0)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 85   ; 0            ; 749 (50)     ; 16 (0)            ; 230 (2)          ; 0          ; |top_entity                                                                                                                                                    ; top_entity          ; work         ;
+;    |calculator4bits:calculette|             ; 569 (9)     ; 94 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 475 (9)      ; 15 (0)            ; 79 (0)           ; 0          ; |top_entity|calculator4bits:calculette                                                                                                                         ; calculator4bits     ; work         ;
+;       |CLA:CLA0|                            ; 104 (104)   ; 46 (46)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (58)      ; 0 (0)             ; 46 (46)          ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0                                                                                                                ; CLA                 ; work         ;
 ;       |add4bits:add0|                       ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|add4bits:add0                                                                                                           ; add4bits            ; work         ;
-;       |choix_display:choix_d0|              ; 17 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|choix_display:choix_d0                                                                                                  ; choix_display       ; work         ;
-;       |hdmi_de10:hdmi_out0|                 ; 225 (7)     ; 48 (6)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 177 (1)      ; 17 (1)            ; 31 (5)           ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0                                                                                                     ; hdmi_de10           ; work         ;
-;          |result_img:res_img|               ; 218 (218)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 176 (176)    ; 16 (16)           ; 26 (26)          ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img                                                                                  ; result_img          ; work         ;
+;       |choix_display:choix_d0|              ; 17 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 2 (2)            ; 0          ; |top_entity|calculator4bits:calculette|choix_display:choix_d0                                                                                                  ; choix_display       ; work         ;
+;       |hdmi_de10:hdmi_out0|                 ; 228 (7)     ; 48 (6)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 180 (1)      ; 15 (1)            ; 33 (5)           ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0                                                                                                     ; hdmi_de10           ; work         ;
+;          |result_img:res_img|               ; 221 (221)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 179 (179)    ; 14 (14)           ; 28 (28)          ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img                                                                                  ; result_img          ; work         ;
 ;       |multi4bits:multi0|                   ; 49 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 49 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0                                                                                                       ; multi4bits          ; work         ;
 ;          |lpm_mult:Mult0|                   ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0                                                                                        ; lpm_mult            ; work         ;
 ;             |mult_9js:auto_generated|       ; 29 (29)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated                                                                ; mult_9js            ; work         ;
@@ -1087,15 +1091,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                |abs_divider_4ag:divider|    ; 17 (8)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (8)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                          ; abs_divider_4ag     ; work         ;
 ;                   |alt_u_div_see:divider|   ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider    ; alt_u_div_see       ; work         ;
 ;                   |lpm_abs_o99:my_abs_num|  ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num   ; lpm_abs_o99         ; work         ;
-;       |separateur_diz_unit:sepRes|          ; 47 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 47 (18)      ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes                                                                                              ; separateur_diz_unit ; work         ;
-;          |lpm_divide:Div0|                  ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0                                                                              ; lpm_divide          ; work         ;
-;             |lpm_divide_v9o:auto_generated| ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o      ; work         ;
-;                |abs_divider_4ag:divider|    ; 29 (8)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (8)       ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag     ; work         ;
-;                   |alt_u_div_see:divider|   ; 17 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider  ; alt_u_div_see       ; work         ;
+;       |separateur_diz_unit:sepRes|          ; 46 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 45 (17)      ; 0 (0)             ; 1 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes                                                                                              ; separateur_diz_unit ; work         ;
+;          |lpm_divide:Div0|                  ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 1 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0                                                                              ; lpm_divide          ; work         ;
+;             |lpm_divide_v9o:auto_generated| ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 1 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o      ; work         ;
+;                |abs_divider_4ag:divider|    ; 29 (8)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (8)       ; 0 (0)             ; 1 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag     ; work         ;
+;                   |alt_u_div_see:divider|   ; 17 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 1 (1)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider  ; alt_u_div_see       ; work         ;
 ;                   |lpm_abs_o99:my_abs_num|  ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num ; lpm_abs_o99         ; work         ;
-;    |full_ir_receiver:IR|                    ; 374 (108)   ; 152 (33)                  ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 222 (75)     ; 1 (1)             ; 151 (32)         ; 0          ; |top_entity|full_ir_receiver:IR                                                                                                                                ; full_ir_receiver    ; work         ;
-;       |nec_receiver:irRec|                  ; 238 (238)   ; 119 (119)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 119 (119)    ; 0 (0)             ; 119 (119)        ; 0          ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec                                                                                                             ; nec_receiver        ; work         ;
-;       |seg7:hex01|                          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex01                                                                                                                     ; seg7                ; work         ;
+;    |full_ir_receiver:IR|                    ; 376 (109)   ; 152 (33)                  ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 224 (76)     ; 1 (0)             ; 151 (32)         ; 0          ; |top_entity|full_ir_receiver:IR                                                                                                                                ; full_ir_receiver    ; work         ;
+;       |nec_receiver:irRec|                  ; 240 (240)   ; 119 (119)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (121)    ; 1 (1)             ; 118 (118)        ; 0          ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec                                                                                                             ; nec_receiver        ; work         ;
+;       |seg7:hex01|                          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex01                                                                                                                     ; seg7                ; work         ;
 ;       |seg7:hex02|                          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex02                                                                                                                     ; seg7                ; work         ;
 ;       |seg7:hex04|                          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex04                                                                                                                     ; seg7                ; work         ;
 ;       |seg7:hex05|                          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex05                                                                                                                     ; seg7                ; work         ;
@@ -1167,11 +1171,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; opeBCLA[1] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; opeBCLA[2] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; opeBCLA[3] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; resCLA[0]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; resCLA[1]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; resCLA[2]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; resCLA[3]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; coutCLA    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; cinCLA     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; vga_vs     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; vga_hs     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1187,172 +1186,259 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_b[1]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; vga_b[2]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; vga_b[3]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; mode       ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; reset      ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; CLA        ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; operation  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; reset      ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; CLA        ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; operation  ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; mode       ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; clk50      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; data_in    ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; resCLA[0]  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; coutCLA    ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; resCLA[3]  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; resCLA[1]  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; resCLA[2]  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; data_in    ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 +------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                                                                                                                  ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                                                                                                                               ; Pad To Core Index ; Setting ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
-; resCLA[0]                                                                                                                                                         ;                   ;         ;
-; resCLA[1]                                                                                                                                                         ;                   ;         ;
-; resCLA[2]                                                                                                                                                         ;                   ;         ;
-; resCLA[3]                                                                                                                                                         ;                   ;         ;
-; coutCLA                                                                                                                                                           ;                   ;         ;
-; mode                                                                                                                                                              ;                   ;         ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~4                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~6                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|ResAdd[1]~0                                                                                                                     ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~4                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~1                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|ErorControlMulti:controlMulti|erorTotale~0                                                                                      ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~6                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~7                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~8                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepRes|int_input[31]~0                                                                                      ; 0                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux1~0                                                                                                   ; 0                 ; 6       ;
-;      - calculator4bits:calculette|eror~0                                                                                                                          ; 0                 ; 6       ;
-;      - calculator4bits:calculette|ErorControlMulti:controlMulti|erorTotale~1                                                                                      ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|int_input[31]~0                                                                                        ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~2 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~4 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|int_input[31]~0                                                                                        ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~2 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~4 ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|Mux30~0                                                                                                                                ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|A[1]~0                                                                                                                                 ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|Mux34~0                                                                                                                                ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|B[3]~0                                                                                                                                 ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|eror~1                                                                                                                                 ; 0                 ; 6       ;
-;      - full_ir_receiver:IR|eror~4                                                                                                                                 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~5 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[0]~4                    ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|Add5~11                                                                                                ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[1]~5                    ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|Add0~10                                                                                                ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~12                          ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~13                          ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~5 ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[0]~4                    ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add5~12                                                                                                ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[1]~5                    ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add5~13                                                                                                ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add0~10                                                                                                ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~12                          ; 0                 ; 6       ;
-;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~13                          ; 0                 ; 6       ;
-; reset                                                                                                                                                             ;                   ;         ;
-;      - full_ir_receiver:IR|B[0]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|B[1]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|B[2]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|B[3]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|A[0]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|A[1]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|A[2]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|A[3]                                                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_bit                                                                                                            ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_data                                                                                                     ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_LC_off                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_LC_on                                                                                                    ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~0                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_6[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_6[1]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_6[2]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_6[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|enableAffichage                                                                                                                        ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_5[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_5[1]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_5[2]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_5[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_4[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_4[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_3[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_3[1]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_3[2]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_3[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_2[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_2[1]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_2[2]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_2[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_1[3]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|old_data_1[0]                                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|\analyse_data:counter[2]                                                                                                               ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|\analyse_data:counter[1]                                                                                                               ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|dt_rdy                                                                                                              ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|\analyse_data:counter[0]                                                                                                               ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|eror~0                                                                                                                                 ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[0]~1                                                                                                           ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~0                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg[19]~1                                                                                                      ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~2                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~3                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~4                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~5                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~6                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~7                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~8                                                                                                          ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|clock_counter[8]~51                                                                                                 ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state~9                                                                                                             ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25~0                                                                                                    ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg[29]~0                                                                                                     ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~1                                                                                                         ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data_follow~0                                                                                                       ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data~0                                                                                                              ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~2                                                                                                         ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state~10                                                                                                            ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|LC_off_counter[8]~46                                                                                                ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_e~0                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~3                                                                                                         ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_d~0                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~4                                                                                                         ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state~11                                                                                                            ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|LC_on_counter[14]~49                                                                                                ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_c~0                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~5                                                                                                         ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_b~0                                                                                                   ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~6                                                                                                         ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|state~12                                                                                                            ; 1                 ; 6       ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~7                                                                                                         ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~8                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~9                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~9                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_a~0                                                                                                   ; 1                 ; 6       ;
-; CLA                                                                                                                                                               ;                   ;         ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~0                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|eror~2                                                                                                                          ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[0]~1                                                                                                           ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[0]~2                                                                                                           ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~3                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~4                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~5                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~0                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~1                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~2                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~3                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~8                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~9                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~9                                                                                                   ; 1                 ; 6       ;
-; operation                                                                                                                                                         ;                   ;         ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~4                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~6                                                                                                   ; 1                 ; 6       ;
-;      - calculator4bits:calculette|eror~0                                                                                                                          ; 1                 ; 6       ;
-;      - calculator4bits:calculette|eror~1                                                                                                                          ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[0]~1                                                                                                           ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~0                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~1                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~2                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~3                                                                                                              ; 1                 ; 6       ;
-;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~8                                                                                                   ; 1                 ; 6       ;
-; clk50                                                                                                                                                             ;                   ;         ;
-; data_in                                                                                                                                                           ;                   ;         ;
-;      - full_ir_receiver:IR|nec_receiver:irRec|data~0                                                                                                              ; 0                 ; 6       ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                                                                                                                 ; Pad To Core Index ; Setting ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
+; reset                                                                                                                                                               ;                   ;         ;
+;      - full_ir_receiver:IR|B[0]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|B[1]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|B[2]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|B[3]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|A[0]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|A[1]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|A[2]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|A[3]                                                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_bit                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|erorCLA                                                                                                                  ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_data                                                                                                       ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_LC_off                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state.read_LC_on                                                                                                      ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result[0]                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~5                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result[3]                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~4                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result[1]                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result[2]                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux1~2                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_6[0]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_6[1]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_6[2]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_6[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|enableAffichage                                                                                                                          ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_5[0]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_5[1]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_5[2]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_5[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_4[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_4[0]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_3[0]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_3[1]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_3[2]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_3[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_2[0]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_2[1]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_2[2]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_2[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_1[3]                                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|old_data_1[0]                                                                                                                            ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[0]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[1]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[2]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[3]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA[0]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA[1]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA[2]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA[3]                                                                                                               ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|\analyse_data:counter[2]                                                                                                                 ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|\analyse_data:counter[1]                                                                                                                 ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|dt_rdy                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|eror                                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[3]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[2]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[0]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[1]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[30]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[29]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[28]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[27]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[26]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[25]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[24]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[23]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[22]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[21]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[20]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[19]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[18]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[17]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[16]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[15]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[14]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[13]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[12]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[11]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[10]                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[9]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[8]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[7]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[6]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[5]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[4]                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[31]                                                                                                              ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|\analyse_data:counter[0]                                                                                                                 ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|eror~0                                                                                                                                   ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~0                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg[17]~1                                                                                                        ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~2                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~3                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~4                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~5                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~6                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~7                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_reg~8                                                                                                            ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|clock_counter[11]~51                                                                                                  ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state~9                                                                                                               ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25~0                                                                                                      ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg[21]~0                                                                                                       ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~1                                                                                                           ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data_follow~0                                                                                                         ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data~0                                                                                                                ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~2                                                                                                           ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state~10                                                                                                              ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|LC_off_counter[12]~52                                                                                                 ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_e~0                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~3                                                                                                           ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_d~0                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~4                                                                                                           ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state~11                                                                                                              ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|LC_on_counter[13]~49                                                                                                  ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_c~0                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~5                                                                                                           ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_b~0                                                                                                     ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~6                                                                                                           ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|state~12                                                                                                              ; 0                 ; 6       ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|shift_reg~7                                                                                                           ; 0                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|reset_a~0                                                                                                     ; 0                 ; 6       ;
+; CLA                                                                                                                                                                 ;                   ;         ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~4                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~0                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~1                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux1~1                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|eror~4                                                                                                                            ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|LessThan0~0                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|tempOpeB[1]~0                                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|LessThan0~2                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|tempOpeB[3]~1                                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~1                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~2                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~3                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|tempOpeB[2]~2                                                                                                                     ; 0                 ; 6       ;
+; operation                                                                                                                                                           ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|erorCLA                                                                                                                  ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|eror~0                                                                                                                            ; 0                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~2                                                                                                     ; 0                 ; 6       ;
+;      - calculator4bits:calculette|eror~3                                                                                                                            ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~0                                                                                                                 ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result[0]~1                                                                                                              ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~2                                                                                                                 ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~3                                                                                                                 ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~4                                                                                                                 ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~0                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~1                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA[2]~3                                                                                                             ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~1                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~3                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~4                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~5                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~6                                                                                                                ; 0                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|counter[3]~0                                                                                                             ; 0                 ; 6       ;
+; mode                                                                                                                                                                ;                   ;         ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~1                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux3~3                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|ResAdd[1]~0                                                                                                                       ; 1                 ; 6       ;
+;      - calculator4bits:calculette|eror~0                                                                                                                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|eror~1                                                                                                                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~1                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux0~3                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|int_input[31]~0                                                                                        ; 1                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux2~0                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~4 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|choix_display:choix_d0|Mux1~0                                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|eror~2                                                                                                                            ; 1                 ; 6       ;
+;      - HEX1~0                                                                                                                                                       ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|int_input[31]~0                                                                                          ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~4   ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|int_input[31]~0                                                                                          ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[1]~4   ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|Mux30~0                                                                                                                                  ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|A[3]~0                                                                                                                                   ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|Mux34~0                                                                                                                                  ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|B[3]~0                                                                                                                                   ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|eror~1                                                                                                                                   ; 1                 ; 6       ;
+;      - full_ir_receiver:IR|eror~4                                                                                                                                   ; 1                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|Add2~0                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|process_1~57                                                                               ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~6 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~7 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[0]~4                    ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|Add5~13                                                                                                ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[1]~5                    ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|Add0~10                                                                                                ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|_~4                              ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|_~5                              ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~5   ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[0]~4                      ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|Add5~12                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[1]~5                      ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|Add5~13                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|Add0~10                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~12                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~13                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num|cs1a[3]~5   ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[0]~4                      ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add2~3                                                                                                   ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|quotient[1]~5                      ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add5~10                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|Add0~10                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~12                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|separateur_diz_unit:sepA|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|op_1~13                            ; 1                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|Add3~6                                                                                     ; 1                 ; 6       ;
+;      - calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|Equal5~3                                                                                   ; 1                 ; 6       ;
+; clk50                                                                                                                                                               ;                   ;         ;
+; resCLA[0]                                                                                                                                                           ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|result~0                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~2                                                                                                                ; 1                 ; 6       ;
+; coutCLA                                                                                                                                                             ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|erorCLA                                                                                                                  ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~0                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~2                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~3                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|result~4                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~0                                                                                                                ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeBCLA~0                                                                                                                ; 1                 ; 6       ;
+; resCLA[3]                                                                                                                                                           ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|result~2                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~6                                                                                                                ; 1                 ; 6       ;
+; resCLA[1]                                                                                                                                                           ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|result~3                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~4                                                                                                                ; 1                 ; 6       ;
+; resCLA[2]                                                                                                                                                           ;                   ;         ;
+;      - calculator4bits:calculette|CLA:CLA0|result~4                                                                                                                 ; 1                 ; 6       ;
+;      - calculator4bits:calculette|CLA:CLA0|OPeACLA~5                                                                                                                ; 1                 ; 6       ;
+; data_in                                                                                                                                                             ;                   ;         ;
+;      - full_ir_receiver:IR|nec_receiver:irRec|data~0                                                                                                                ; 1                 ; 6       ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1360,38 +1446,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+--------------------+---------+-----------------------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                            ; Location           ; Fan-Out ; Usage                                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------+--------------------+---------+-----------------------------------------+--------+----------------------+------------------+---------------------------+
-; calculator4bits:calculette|CLA:CLA0|OPeACLA[0]~1                                ; LCCOMB_X59_Y42_N18 ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25                           ; FF_X77_Y39_N9      ; 42      ; Clock                                   ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|h_count[9]    ; FF_X57_Y39_N25     ; 17      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[13]~21   ; LCCOMB_X52_Y39_N20 ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|v_count[2]~16 ; LCCOMB_X51_Y39_N10 ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|v_count[2]~17 ; LCCOMB_X50_Y39_N6  ; 20      ; Clock enable, Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; clk50                                                                           ; PIN_P11            ; 166     ; Clock                                   ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; full_ir_receiver:IR|A[0]~1                                                      ; LCCOMB_X58_Y47_N16 ; 11      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|A[0]~2                                                      ; LCCOMB_X58_Y47_N2  ; 9       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|nec_receiver:irRec|LC_off_counter[8]~47                     ; LCCOMB_X49_Y50_N30 ; 18      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|nec_receiver:irRec|LC_on_counter[14]~49                     ; LCCOMB_X46_Y51_N6  ; 19      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|nec_receiver:irRec|clock_counter[8]~51                      ; LCCOMB_X51_Y50_N22 ; 17      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|nec_receiver:irRec|data_reg[19]~1                           ; LCCOMB_X56_Y49_N10 ; 40      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|nec_receiver:irRec|shift_reg[29]~0                          ; LCCOMB_X51_Y50_N24 ; 14      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_1[3]~0                                             ; LCCOMB_X58_Y47_N30 ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_2[3]~2                                             ; LCCOMB_X59_Y47_N12 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_3[3]~0                                             ; LCCOMB_X59_Y47_N6  ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_4[3]~0                                             ; LCCOMB_X59_Y47_N20 ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_5[3]~1                                             ; LCCOMB_X59_Y47_N26 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; full_ir_receiver:IR|old_data_6[3]~0                                             ; LCCOMB_X58_Y47_N22 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; reset                                                                           ; PIN_B8             ; 75      ; Async. clear, Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|CLA:CLA0|OPeACLA[2]~3                                ; LCCOMB_X57_Y43_N22 ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|CLA:CLA0|result[0]~1                                 ; LCCOMB_X56_Y43_N0  ; 37      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25                           ; FF_X58_Y40_N13     ; 42      ; Clock                                   ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|h_count[9]    ; FF_X58_Y37_N29     ; 19      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|rgb2[13]~24   ; LCCOMB_X60_Y37_N24 ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|v_count[8]~18 ; LCCOMB_X57_Y37_N30 ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img|v_count[8]~19 ; LCCOMB_X57_Y37_N28 ; 20      ; Clock enable, Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; clk50                                                                           ; PIN_P11            ; 204     ; Clock                                   ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; full_ir_receiver:IR|A[0]~1                                                      ; LCCOMB_X61_Y45_N30 ; 11      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|A[0]~2                                                      ; LCCOMB_X60_Y42_N2  ; 9       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|nec_receiver:irRec|LC_off_counter[12]~52                    ; LCCOMB_X46_Y50_N16 ; 18      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|nec_receiver:irRec|LC_on_counter[13]~49                     ; LCCOMB_X49_Y50_N0  ; 19      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|nec_receiver:irRec|clock_counter[11]~51                     ; LCCOMB_X54_Y50_N28 ; 17      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|nec_receiver:irRec|data_reg[17]~1                           ; LCCOMB_X56_Y49_N24 ; 40      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|nec_receiver:irRec|shift_reg[21]~0                          ; LCCOMB_X57_Y49_N20 ; 14      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_1[3]~0                                             ; LCCOMB_X62_Y45_N8  ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_2[3]~2                                             ; LCCOMB_X61_Y45_N10 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_3[3]~0                                             ; LCCOMB_X62_Y45_N10 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_4[3]~0                                             ; LCCOMB_X61_Y45_N0  ; 2       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_5[3]~1                                             ; LCCOMB_X61_Y45_N28 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; full_ir_receiver:IR|old_data_6[3]~0                                             ; LCCOMB_X61_Y45_N24 ; 4       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; operation                                                                       ; PIN_A12            ; 19      ; Sync. load                              ; no     ; --                   ; --               ; --                        ;
+; reset                                                                           ; PIN_B8             ; 121     ; Async. clear, Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------------------------+--------------------+---------+-----------------------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                                  ;
-+-------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                                  ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; FF_X77_Y39_N9 ; 42      ; 4                                    ; Global Clock         ; GCLK6            ; --                        ;
-; clk50                                                 ; PIN_P11       ; 166     ; 12                                   ; Global Clock         ; GCLK19           ; --                        ;
-+-------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                   ;
++-------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                  ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; FF_X58_Y40_N13 ; 42      ; 2                                    ; Global Clock         ; GCLK7            ; --                        ;
+; clk50                                                 ; PIN_P11        ; 204     ; 12                                   ; Global Clock         ; GCLK19           ; --                        ;
++-------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------+
@@ -1399,51 +1487,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 1,008 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 55 / 5,382 ( 1 % )        ;
-; C4 interconnects      ; 431 / 106,704 ( < 1 % )   ;
-; Direct links          ; 335 / 148,641 ( < 1 % )   ;
+; Block interconnects   ; 1,141 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 68 / 5,382 ( 1 % )        ;
+; C4 interconnects      ; 527 / 106,704 ( < 1 % )   ;
+; Direct links          ; 328 / 148,641 ( < 1 % )   ;
 ; Global clocks         ; 2 / 20 ( 10 % )           ;
-; Local interconnects   ; 495 / 49,760 ( < 1 % )    ;
+; Local interconnects   ; 555 / 49,760 ( 1 % )      ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )           ;
-; R24 interconnects     ; 45 / 5,406 ( < 1 % )      ;
-; R4 interconnects      ; 569 / 147,764 ( < 1 % )   ;
+; R24 interconnects     ; 56 / 5,406 ( 1 % )        ;
+; R4 interconnects      ; 644 / 147,764 ( < 1 % )   ;
 +-----------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.68) ; Number of LABs  (Total = 77) ;
+; Number of Logic Elements  (Average = 11.85) ; Number of LABs  (Total = 84) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 7                            ;
-; 2                                           ; 6                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 4                            ;
+; 1                                           ; 10                           ;
+; 2                                           ; 3                            ;
+; 3                                           ; 4                            ;
+; 4                                           ; 0                            ;
 ; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 1                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 3                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 1                            ;
+; 10                                          ; 2                            ;
+; 11                                          ; 3                            ;
 ; 12                                          ; 1                            ;
-; 13                                          ; 5                            ;
-; 14                                          ; 8                            ;
-; 15                                          ; 7                            ;
-; 16                                          ; 33                           ;
+; 13                                          ; 2                            ;
+; 14                                          ; 3                            ;
+; 15                                          ; 4                            ;
+; 16                                          ; 46                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.82) ; Number of LABs  (Total = 77) ;
+; LAB-wide Signals  (Average = 0.88) ; Number of LABs  (Total = 84) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 9                            ;
-; 1 Clock                            ; 35                           ;
-; 1 Clock enable                     ; 9                            ;
-; 1 Sync. clear                      ; 5                            ;
+; 1 Async. clear                     ; 16                           ;
+; 1 Clock                            ; 41                           ;
+; 1 Clock enable                     ; 6                            ;
+; 1 Sync. clear                      ; 6                            ;
 ; 2 Clock enables                    ; 4                            ;
 ; 2 Clocks                           ; 1                            ;
 +------------------------------------+------------------------------+
@@ -1452,103 +1540,107 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.19) ; Number of LABs  (Total = 77) ;
+; Number of Signals Sourced  (Average = 14.61) ; Number of LABs  (Total = 84) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 6                            ;
-; 2                                            ; 4                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 5                            ;
+; 1                                            ; 7                            ;
+; 2                                            ; 5                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 2                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 1                            ;
+; 6                                            ; 3                            ;
+; 7                                            ; 2                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 3                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 3                            ;
-; 13                                           ; 3                            ;
-; 14                                           ; 5                            ;
-; 15                                           ; 5                            ;
-; 16                                           ; 15                           ;
+; 10                                           ; 2                            ;
+; 11                                           ; 4                            ;
+; 12                                           ; 5                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 18                           ;
 ; 17                                           ; 2                            ;
-; 18                                           ; 4                            ;
-; 19                                           ; 1                            ;
+; 18                                           ; 5                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 4                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 3                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 3                            ;
-; 27                                           ; 3                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 3                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 4                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 2                            ;
 ; 28                                           ; 1                            ;
+; 29                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.22) ; Number of LABs  (Total = 77) ;
+; Number of Signals Sourced Out  (Average = 7.45) ; Number of LABs  (Total = 84) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 11                           ;
-; 2                                               ; 5                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 6                            ;
-; 5                                               ; 4                            ;
-; 6                                               ; 6                            ;
-; 7                                               ; 8                            ;
-; 8                                               ; 3                            ;
-; 9                                               ; 8                            ;
+; 1                                               ; 13                           ;
+; 2                                               ; 4                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 5                            ;
+; 6                                               ; 10                           ;
+; 7                                               ; 9                            ;
+; 8                                               ; 6                            ;
+; 9                                               ; 5                            ;
 ; 10                                              ; 7                            ;
-; 11                                              ; 4                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 6                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 3                            ;
-; 16                                              ; 3                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 6                            ;
+; 13                                              ; 2                            ;
+; 14                                              ; 3                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 7                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.73) ; Number of LABs  (Total = 77) ;
+; Number of Distinct Inputs  (Average = 11.46) ; Number of LABs  (Total = 84) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 10                           ;
+; 1                                            ; 0                            ;
+; 2                                            ; 8                            ;
 ; 3                                            ; 4                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 2                            ;
-; 6                                            ; 5                            ;
-; 7                                            ; 4                            ;
-; 8                                            ; 6                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 3                            ;
-; 11                                           ; 4                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 3                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 2                            ;
+; 4                                            ; 5                            ;
+; 5                                            ; 4                            ;
+; 6                                            ; 4                            ;
+; 7                                            ; 2                            ;
+; 8                                            ; 3                            ;
+; 9                                            ; 2                            ;
+; 10                                           ; 4                            ;
+; 11                                           ; 6                            ;
+; 12                                           ; 5                            ;
+; 13                                           ; 6                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 5                            ;
 ; 17                                           ; 5                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 2                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 4                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 1                            ;
-; 25                                           ; 0                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 1                            ;
+; 27                                           ; 2                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 1                            ;
+; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
-; 32                                           ; 1                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 0                            ;
+; 35                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1672,11 +1764,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; opeBCLA[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; opeBCLA[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; opeBCLA[3]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; resCLA[0]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; resCLA[1]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; resCLA[2]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; resCLA[3]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; coutCLA            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; cinCLA             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; vga_vs             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; vga_hs             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1692,11 +1779,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_b[1]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; vga_b[2]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; vga_b[3]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; mode               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; reset              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLA                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; operation          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; mode               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk50              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; resCLA[0]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; coutCLA            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; resCLA[3]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; resCLA[1]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; resCLA[2]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; data_in            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
@@ -1743,8 +1835,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk50           ; clk50                ; 1.5               ;
-; clk50,I/O       ; clk50                ; 1.5               ;
+; clk50,I/O       ; clk50                ; 2.3               ;
+; clk50           ; clk50                ; 2.3               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1755,8 +1847,8 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------------------------------+-------------------------------------------------------+-------------------+
 ; Source Register                                       ; Destination Register                                  ; Delay Added in ns ;
 +-------------------------------------------------------+-------------------------------------------------------+-------------------+
-; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 3.076             ;
-; reset                                                 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 1.538             ;
+; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 4.506             ;
+; reset                                                 ; calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25 ; 2.253             ;
 +-------------------------------------------------------+-------------------------------------------------------+-------------------+
 Note: This table only shows the top 2 path(s) that have the largest delay added for hold.
 
@@ -1765,7 +1857,7 @@ Note: This table only shows the top 2 path(s) that have the largest delay added 
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (119006): Selected device 10M50DAF484C7G for design "calculette_v3"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1802,45 +1894,45 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 10
+Info (176353): Automatically promoted node clk50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 10
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
-Info (176353): Automatically promoted node calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25  File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 21
+Info (176353): Automatically promoted node calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25  File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 21
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25~0 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 21
+        Info (176357): Destination node calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25~0 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 21
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X56_Y44 to location X66_Y54
+    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X56_Y33 to location X66_Y43
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.92 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
-Info (144001): Generated suppressed messages file C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (144001): Generated suppressed messages file C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 5655 megabytes
-    Info: Processing ended: Wed Sep 29 17:20:53 2021
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 5932 megabytes
+    Info: Processing ended: Wed Sep 29 23:13:00 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.fit.smsg.
+The suppressed messages can be found in C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/output_files/calculette_v3.fit.smsg.
 
 

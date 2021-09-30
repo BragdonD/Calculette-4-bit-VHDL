@@ -29,58 +29,71 @@ end CLA;
 architecture behaviorCLA of CLA is
 	signal eror : std_logic;
 begin
-	process(A,B,reset,mode,clk)
+
+	
+	process(clk,reset)
 		variable counter : integer:=0;
-		variable intB : integer;
+		variable old_data : std_logic_vector(3 downto 0):=(others =>'0');
+		variable intB : integer:=0;
+		variable temp : std_logic := '0';
 	begin
 		if(reset = '1') then
 			counter := 0;
+			intB := 0;
+			OPeACLA <= "0000";
+			OPeBCLA <= "0000";
+			result <= "0000";
+			eror <= '0';
+			old_data := "0000";
 		elsif(rising_edge(clk))then
-			case operation is
-			when '1' =>
-				case mode is 
-				when '0' =>
-					intB := to_integer(signed(B));
-					if(intB<0)then
-						intB := - intB;
-					end if;					
-				when '1' => 
+			--if(outputCLA /= old_data)then
+				old_data := outputCLA;
+				case operation is
+				when '1' =>
+					
 					intB := to_integer(unsigned(B));
-				end case;
-				if(counter < intB)then
-					if(counter = 0)then
-						OPeACLA <= A;
-						OPeBCLA <= "0000";
-					else
-						if(cout = '1')then
-							eror <= '1';
+					
+					if(counter <= intB )then
+						if(counter = 0)then
 							OPeACLA <= "0000";
-							OPeBCLA <= "0000";
+							OPeBCLA <= A;
+							counter := counter + 1;
 						else
-							OPeACLA <= outputCLA;
-							OpeBCLA <= A;
+							if(cout = '1')then
+								eror <= '1';
+								OPeACLA <= "0000";
+								OPeBCLA <= "0000";
+								counter := 2 + 1;
+							else
+								eror <= '0';
+								OPeACLA <= old_data;
+								OpeBCLA <= A;
+								counter := counter + 1;
+							end if;
+						end if;
+
+					else
+						if(eror ='1')then
+							result <= "0000";
+							erorCLA <= '1';
+						else
+							result <= old_data;
+							erorCLA <= '0';
 						end if;
 					end if;
-				else
-					if(eror ='1')then
+				
+				when '0' =>
+					OPeACLA <= A;
+					OpeBCLA <= B;
+					if(cout ='1')then
 						result <= "0000";
 						erorCLA <= '1';
 					else
-						result <= outputCLA;
-						erorCLA <= '1';
-					end if;
-				end if;
-			when '0' =>
-				OPeACLA <= A;
-				OpeBCLA <= B;
-				if(eror ='1')then
-					result <= "0000";
-					erorCLA <= '1';
-				else
-					result <= outputCLA;
-					erorCLA <= '1';
-				end if;		
-			end case;
+						result <= old_data ;
+						erorCLA <= '0';
+					end if;		
+				end case;
+			--end if;
 		end if;
 	end process;
 			

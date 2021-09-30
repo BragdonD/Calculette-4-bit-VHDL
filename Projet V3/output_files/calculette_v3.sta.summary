@@ -3,72 +3,72 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -21.624
-TNS   : -156.162
+Slack : -21.401
+TNS   : -145.305
 
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : -6.003
-TNS   : -642.242
+Slack : -5.876
+TNS   : -801.819
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
-Slack : 0.330
+Slack : 0.329
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.426
+Slack : 0.425
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -235.898
+TNS   : -289.212
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
 Slack : -1.403
 TNS   : -58.926
 
 Type  : Slow 1200mV 0C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -19.736
-TNS   : -140.929
+Slack : -19.564
+TNS   : -130.751
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : -5.401
-TNS   : -582.320
+Slack : -5.258
+TNS   : -726.267
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
 Slack : 0.295
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.393
+Slack : 0.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -235.898
+TNS   : -289.212
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
 Slack : -1.403
 TNS   : -58.926
 
 Type  : Fast 1200mV 0C Model Setup 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : -8.204
-TNS   : -47.830
+Slack : -8.061
+TNS   : -42.216
 
 Type  : Fast 1200mV 0C Model Setup 'clk50'
-Slack : -1.886
-TNS   : -183.626
+Slack : -1.851
+TNS   : -226.742
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
 Slack : 0.145
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
-Slack : 0.164
+Slack : 0.160
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -174.909
+TNS   : -214.271
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'calculator4bits:calculette|hdmi_de10:hdmi_out0|clk_25'
 Slack : -1.000
