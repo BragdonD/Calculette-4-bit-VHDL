@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculette_v3
-Wed Sep 29 23:12:51 2021
+Thu Sep 30 14:58:50 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -55,15 +55,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 29 23:12:51 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 30 14:58:50 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; calculette_v3                               ;
 ; Top-level Entity Name              ; top_entity                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,001                                       ;
-;     Total combinational functions  ; 975                                         ;
-;     Dedicated logic registers      ; 246                                         ;
-; Total registers                    ; 246                                         ;
+; Total logic elements               ; 1,008                                       ;
+;     Total combinational functions  ; 982                                         ;
+;     Dedicated logic registers      ; 248                                         ;
+; Total registers                    ; 248                                         ;
 ; Total pins                         ; 85                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -169,65 +169,61 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; src/nec_receiver.vhd             ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd     ;         ;
-; src/hex_to_7_seg.vhd             ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd     ;         ;
-; src/full_ir_receiver.vhd         ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd ;         ;
-; src/cmplt2.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd           ;         ;
-; src/cmplt1.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd           ;         ;
-; src/Test_CLA_state.vhd           ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd   ;         ;
-; src/buzzer.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd           ;         ;
-; src/sep_diz_unit.vhd             ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd     ;         ;
-; src/multi_4bits.vhd              ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd      ;         ;
-; src/hdmi_de10.vhd                ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd        ;         ;
-; src/hdmi.vhd                     ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd             ;         ;
-; src/controlMulti.vhd             ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd     ;         ;
-; src/controlAdd.vhd               ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd       ;         ;
-; src/choix_afficheur.vhd          ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd  ;         ;
-; src/calculette.vhd               ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd       ;         ;
-; src/add_4bits.vhd                ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd        ;         ;
-; src/7segments.vhd                ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd        ;         ;
-; src/top_entity.vhd               ; yes             ; User VHDL File               ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd       ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/lpm_mult.tdf             ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/aglobal181.inc           ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/lpm_add_sub.inc          ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/multcore.inc             ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/bypassff.inc             ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/altshift.inc             ;         ;
-; db/mult_9js.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf          ;         ;
-; db/mult_6cs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf          ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/lpm_divide.tdf           ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/abs_divider.inc          ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intel-fpga-complete/intel-fpga/quartus/libraries/megafunctions/sign_div_unsign.inc      ;         ;
-; db/lpm_divide_v9o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf    ;         ;
-; db/abs_divider_4ag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf   ;         ;
-; db/alt_u_div_see.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf     ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf       ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf       ;         ;
-; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; src/nec_receiver.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd     ;         ;
+; src/hex_to_7_seg.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd     ;         ;
+; src/full_ir_receiver.vhd         ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd ;         ;
+; src/cmplt2.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd           ;         ;
+; src/cmplt1.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd           ;         ;
+; src/Test_CLA_state.vhd           ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd   ;         ;
+; src/buzzer.vhd                   ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd           ;         ;
+; src/sep_diz_unit.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd     ;         ;
+; src/multi_4bits.vhd              ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd      ;         ;
+; src/hdmi_de10.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd        ;         ;
+; src/hdmi.vhd                     ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd             ;         ;
+; src/controlMulti.vhd             ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd     ;         ;
+; src/controlAdd.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd       ;         ;
+; src/choix_afficheur.vhd          ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd  ;         ;
+; src/calculette.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd       ;         ;
+; src/add_4bits.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd        ;         ;
+; src/7segments.vhd                ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd        ;         ;
+; src/top_entity.vhd               ; yes             ; User VHDL File               ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_mult.tdf           ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/aglobal181.inc         ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_add_sub.inc        ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/multcore.inc           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/bypassff.inc           ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/altshift.inc           ;         ;
+; db/mult_9js.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf          ;         ;
+; db/mult_6cs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intel-fpga-complet/intel-fpga/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
+; db/lpm_divide_v9o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf    ;         ;
+; db/abs_divider_4ag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf   ;         ;
+; db/alt_u_div_see.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf     ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf       ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf       ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -235,20 +231,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,001       ;
+; Estimated Total logic elements              ; 1,008       ;
 ;                                             ;             ;
-; Total combinational functions               ; 975         ;
+; Total combinational functions               ; 982         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 527         ;
-;     -- 3 input functions                    ; 169         ;
-;     -- <=2 input functions                  ; 279         ;
+;     -- 4 input functions                    ; 523         ;
+;     -- 3 input functions                    ; 175         ;
+;     -- <=2 input functions                  ; 284         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 735         ;
+;     -- normal mode                          ; 742         ;
 ;     -- arithmetic mode                      ; 240         ;
 ;                                             ;             ;
-; Total registers                             ; 246         ;
-;     -- Dedicated logic registers            ; 246         ;
+; Total registers                             ; 248         ;
+;     -- Dedicated logic registers            ; 248         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 85          ;
@@ -256,9 +252,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
-; Maximum fan-out                             ; 204         ;
-; Total fan-out                               ; 4022        ;
-; Average fan-out                             ; 2.89        ;
+; Maximum fan-out                             ; 159         ;
+; Total fan-out                               ; 4039        ;
+; Average fan-out                             ; 2.88        ;
 +---------------------------------------------+-------------+
 
 
@@ -267,13 +263,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                            ; Entity Name         ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top_entity                                 ; 975 (51)            ; 246 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 85   ; 0            ; 0          ; |top_entity                                                                                                                                                    ; top_entity          ; work         ;
-;    |calculator4bits:calculette|             ; 554 (9)             ; 94 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette                                                                                                                         ; calculator4bits     ; work         ;
-;       |CLA:CLA0|                            ; 101 (101)           ; 46 (46)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0                                                                                                                ; CLA                 ; work         ;
+; |top_entity                                 ; 982 (51)            ; 248 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 85   ; 0            ; 0          ; |top_entity                                                                                                                                                    ; top_entity          ; work         ;
+;    |calculator4bits:calculette|             ; 561 (10)            ; 96 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette                                                                                                                         ; calculator4bits     ; work         ;
+;       |CLA:CLA0|                            ; 106 (106)           ; 48 (48)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|CLA:CLA0                                                                                                                ; CLA                 ; work         ;
 ;       |add4bits:add0|                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|add4bits:add0                                                                                                           ; add4bits            ; work         ;
 ;       |choix_display:choix_d0|              ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|choix_display:choix_d0                                                                                                  ; choix_display       ; work         ;
-;       |hdmi_de10:hdmi_out0|                 ; 213 (6)             ; 48 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0                                                                                                     ; hdmi_de10           ; work         ;
-;          |result_img:res_img|               ; 207 (207)           ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img                                                                                  ; result_img          ; work         ;
+;       |hdmi_de10:hdmi_out0|                 ; 211 (6)             ; 48 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0                                                                                                     ; hdmi_de10           ; work         ;
+;          |result_img:res_img|               ; 205 (205)           ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img                                                                                  ; result_img          ; work         ;
 ;       |multi4bits:multi0|                   ; 49 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0                                                                                                       ; multi4bits          ; work         ;
 ;          |lpm_mult:Mult0|                   ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0                                                                                        ; lpm_mult            ; work         ;
 ;             |mult_9js:auto_generated|       ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated                                                                ; mult_9js            ; work         ;
@@ -297,12 +293,12 @@ refer to the applicable agreement for further details.
 ;                |abs_divider_4ag:divider|    ; 17 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                          ; abs_divider_4ag     ; work         ;
 ;                   |alt_u_div_see:divider|   ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider    ; alt_u_div_see       ; work         ;
 ;                   |lpm_abs_o99:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num   ; lpm_abs_o99         ; work         ;
-;       |separateur_diz_unit:sepRes|          ; 46 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes                                                                                              ; separateur_diz_unit ; work         ;
-;          |lpm_divide:Div0|                  ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0                                                                              ; lpm_divide          ; work         ;
-;             |lpm_divide_v9o:auto_generated| ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o      ; work         ;
-;                |abs_divider_4ag:divider|    ; 29 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag     ; work         ;
+;       |separateur_diz_unit:sepRes|          ; 49 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes                                                                                              ; separateur_diz_unit ; work         ;
+;          |lpm_divide:Div0|                  ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0                                                                              ; lpm_divide          ; work         ;
+;             |lpm_divide_v9o:auto_generated| ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated                                                ; lpm_divide_v9o      ; work         ;
+;                |abs_divider_4ag:divider|    ; 31 (8)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider                        ; abs_divider_4ag     ; work         ;
 ;                   |alt_u_div_see:divider|   ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|alt_u_div_see:divider  ; alt_u_div_see       ; work         ;
-;                   |lpm_abs_o99:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num ; lpm_abs_o99         ; work         ;
+;                   |lpm_abs_o99:my_abs_num|  ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0|lpm_divide_v9o:auto_generated|abs_divider_4ag:divider|lpm_abs_o99:my_abs_num ; lpm_abs_o99         ; work         ;
 ;    |full_ir_receiver:IR|                    ; 370 (104)           ; 152 (33)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR                                                                                                                                ; full_ir_receiver    ; work         ;
 ;       |nec_receiver:irRec|                  ; 238 (238)           ; 119 (119)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|nec_receiver:irRec                                                                                                             ; nec_receiver        ; work         ;
 ;       |seg7:hex01|                          ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_entity|full_ir_receiver:IR|seg7:hex01                                                                                                                     ; seg7                ; work         ;
@@ -350,12 +346,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 246   ;
+; Total registers                              ; 248   ;
 ; Number of registers using Synchronous Clear  ; 79    ;
-; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 77    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 82    ;
+; Number of registers using Clock Enable       ; 83    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -610,28 +606,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 85                          ;
-; cycloneiii_ff         ; 246                         ;
-;     CLR               ; 31                          ;
+; cycloneiii_ff         ; 248                         ;
+;     CLR               ; 29                          ;
+;     CLR SLD           ; 1                           ;
 ;     ENA               ; 25                          ;
-;     ENA CLR           ; 46                          ;
+;     ENA CLR           ; 47                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     ENA SLD           ; 1                           ;
 ;     SCLR              ; 69                          ;
-;     plain             ; 64                          ;
-; cycloneiii_lcell_comb ; 980                         ;
+;     plain             ; 66                          ;
+; cycloneiii_lcell_comb ; 987                         ;
 ;     arith             ; 240                         ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 166                         ;
 ;         3 data inputs ; 65                          ;
-;     normal            ; 740                         ;
+;     normal            ; 747                         ;
 ;         0 data inputs ; 11                          ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 104                         ;
-;         4 data inputs ; 527                         ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 88                          ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 523                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 29.10                       ;
-; Average LUT depth     ; 9.91                        ;
+; Max LUT depth         ; 28.60                       ;
+; Average LUT depth     ; 9.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -640,7 +637,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -650,104 +647,104 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 29 23:12:41 2021
+    Info: Processing started: Thu Sep 30 14:58:37 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculette_v3 -c calculette_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file src/nec_receiver.vhd
-    Info (12022): Found design unit 1: nec_receiver-bvh File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 21
-    Info (12023): Found entity 1: nec_receiver File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 5
+    Info (12022): Found design unit 1: nec_receiver-bvh File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 21
+    Info (12023): Found entity 1: nec_receiver File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/hex_to_7_seg.vhd
-    Info (12022): Found design unit 1: hex_to_7_seg-behavior File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 11
-    Info (12023): Found entity 1: hex_to_7_seg File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 5
+    Info (12022): Found design unit 1: hex_to_7_seg-behavior File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 11
+    Info (12023): Found entity 1: hex_to_7_seg File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hex_to_7_seg.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/full_ir_receiver.vhd
-    Info (12022): Found design unit 1: full_ir_receiver-behav File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 26
-    Info (12023): Found entity 1: full_ir_receiver File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 6
+    Info (12022): Found design unit 1: full_ir_receiver-behav File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 26
+    Info (12023): Found entity 1: full_ir_receiver File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/cmplt2.vhd
-    Info (12022): Found design unit 1: complement_2-archi_complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 12
-    Info (12023): Found entity 1: complement_2 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 6
+    Info (12022): Found design unit 1: complement_2-archi_complement_2 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 12
+    Info (12023): Found entity 1: complement_2 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/cmplt1.vhd
-    Info (12022): Found design unit 1: complement_1-archi_complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 11
-    Info (12023): Found entity 1: complement_1 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 5
+    Info (12022): Found design unit 1: complement_1-archi_complement_1 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 11
+    Info (12023): Found entity 1: complement_1 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/test_cla_state.vhd
-    Info (12022): Found design unit 1: CLA-behaviorCLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 29
-    Info (12023): Found entity 1: CLA File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 6
+    Info (12022): Found design unit 1: CLA-behaviorCLA File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 29
+    Info (12023): Found entity 1: CLA File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/Test_CLA_state.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/buzzer.vhd
-    Info (12022): Found design unit 1: buzzer-Behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 16
-    Info (12023): Found entity 1: buzzer File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 5
+    Info (12022): Found design unit 1: buzzer-Behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 16
+    Info (12023): Found entity 1: buzzer File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/buzzer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/sep_diz_unit.vhd
-    Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 12
-    Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 5
+    Info (12022): Found design unit 1: separateur_diz_unit-archi_sep_diz_unit File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 12
+    Info (12023): Found entity 1: separateur_diz_unit File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 5
 Warning (12019): Can't analyze file -- file src/preCLA.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file src/multi_4bits.vhd
-    Info (12022): Found design unit 1: multi4bits-archi_multi4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 12
-    Info (12023): Found entity 1: multi4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 5
+    Info (12022): Found design unit 1: multi4bits-archi_multi4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 12
+    Info (12023): Found entity 1: multi4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/hdmi_de10.vhd
-    Info (12022): Found design unit 1: hdmi_de10-archi_hdmi_de10 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 20
-    Info (12023): Found entity 1: hdmi_de10 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 6
+    Info (12022): Found design unit 1: hdmi_de10-archi_hdmi_de10 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 20
+    Info (12023): Found entity 1: hdmi_de10 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/hdmi.vhd
-    Info (12022): Found design unit 1: result_img-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 20
-    Info (12023): Found entity 1: result_img File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 5
+    Info (12022): Found design unit 1: result_img-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 20
+    Info (12023): Found entity 1: result_img File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/controlmulti.vhd
-    Info (12022): Found design unit 1: ErorControlMulti-archi_errorMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 12
-    Info (12023): Found entity 1: ErorControlMulti File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 4
+    Info (12022): Found design unit 1: ErorControlMulti-archi_errorMulti File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 12
+    Info (12023): Found entity 1: ErorControlMulti File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/controladd.vhd
-    Info (12022): Found design unit 1: ErorControlAdd-archi_errorAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 10
-    Info (12023): Found entity 1: ErorControlAdd File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 4
+    Info (12022): Found design unit 1: ErorControlAdd-archi_errorAdd File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 10
+    Info (12023): Found entity 1: ErorControlAdd File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlAdd.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/choix_afficheur.vhd
-    Info (12022): Found design unit 1: choix_display-archi_choix_display File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 11
-    Info (12023): Found entity 1: choix_display File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 4
+    Info (12022): Found design unit 1: choix_display-archi_choix_display File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 11
+    Info (12023): Found entity 1: choix_display File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/choix_afficheur.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file src/calculette.vhd
-    Info (12022): Found design unit 1: calculator4bits-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 36
-    Info (12023): Found entity 1: calculator4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 6
+    Info (12022): Found design unit 1: calculator4bits-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 36
+    Info (12023): Found entity 1: calculator4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/add_4bits.vhd
-    Info (12022): Found design unit 1: add4bits-archi_add4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 12
-    Info (12023): Found entity 1: add4bits File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 5
+    Info (12022): Found design unit 1: add4bits-archi_add4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 12
+    Info (12023): Found entity 1: add4bits File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/7segments.vhd
-    Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 11
-    Info (12023): Found entity 1: seg7 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 4
+    Info (12022): Found design unit 1: seg7-archi_seg7 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 11
+    Info (12023): Found entity 1: seg7 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/7segments.vhd Line: 4
 Warning (12019): Can't analyze file -- file output_files/cmplt1.vhd is missing
 Warning (12019): Can't analyze file -- file output_files/cmplt2.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file src/top_entity.vhd
-    Info (12022): Found design unit 1: top_entity-behavioral File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 39
-    Info (12023): Found entity 1: top_entity File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 5
+    Info (12022): Found design unit 1: top_entity-behavioral File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 39
+    Info (12023): Found entity 1: top_entity File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 5
 Info (12127): Elaborating entity "top_entity" for the top level hierarchy
-Info (12128): Elaborating entity "full_ir_receiver" for hierarchy "full_ir_receiver:IR" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 47
-Info (12128): Elaborating entity "nec_receiver" for hierarchy "full_ir_receiver:IR|nec_receiver:irRec" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 33
-Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(55): object "temp" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 55
-Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(66): object "LG_reg" assigned a value but never read File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 66
-Info (12128): Elaborating entity "seg7" for hierarchy "full_ir_receiver:IR|seg7:hex00" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 194
-Info (12128): Elaborating entity "calculator4bits" for hierarchy "calculator4bits:calculette" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 67
-Warning (10541): VHDL Signal Declaration warning at calculette.vhd(18): used implicit default value for signal "cinCLA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 18
-Warning (10812): VHDL warning at calculette.vhd(261): sensitivity list already contains mode File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 261
-Warning (10812): VHDL warning at calculette.vhd(272): sensitivity list already contains mode File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 272
-Info (12129): Elaborating entity "add4bits" using architecture "A:archi_add4bits" for hierarchy "calculator4bits:calculette|add4bits:add0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at add_4bits.vhd(32): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 32
-Warning (10492): VHDL Process Statement warning at add_4bits.vhd(41): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 41
-Info (12128): Elaborating entity "ErorControlAdd" for hierarchy "calculator4bits:calculette|ErorControlAdd:controlAdd" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 71
-Info (12128): Elaborating entity "multi4bits" for hierarchy "calculator4bits:calculette|multi4bits:multi0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 92
-Info (12128): Elaborating entity "ErorControlMulti" for hierarchy "calculator4bits:calculette|ErorControlMulti:controlMulti" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at controlMulti.vhd(23): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 23
-Warning (10492): VHDL Process Statement warning at controlMulti.vhd(31): signal "ResSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 31
-Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
-Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
-Warning (10631): VHDL Process Statement warning at controlMulti.vhd(18): inferring latch(es) for signal or variable "ErorSigne", which holds its previous value in one or more paths through the process File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
-Info (10041): Inferred latch for "ErorSigne" at controlMulti.vhd(18) File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
-Info (12128): Elaborating entity "complement_2" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 112
-Info (12128): Elaborating entity "complement_1" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0|complement_1:cmplt1" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 15
-Info (12128): Elaborating entity "CLA" for hierarchy "calculator4bits:calculette|CLA:CLA0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 132
-Info (12128): Elaborating entity "choix_display" for hierarchy "calculator4bits:calculette|choix_display:choix_d0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 158
-Info (12128): Elaborating entity "separateur_diz_unit" for hierarchy "calculator4bits:calculette|separateur_diz_unit:sepA" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 172
-Info (12128): Elaborating entity "hdmi_de10" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 286
-Info (12129): Elaborating entity "result_img" using architecture "A:behavioral" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 45
+Info (12128): Elaborating entity "full_ir_receiver" for hierarchy "full_ir_receiver:IR" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 47
+Info (12128): Elaborating entity "nec_receiver" for hierarchy "full_ir_receiver:IR|nec_receiver:irRec" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(55): object "temp" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at nec_receiver.vhd(66): object "LG_reg" assigned a value but never read File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/nec_receiver.vhd Line: 66
+Info (12128): Elaborating entity "seg7" for hierarchy "full_ir_receiver:IR|seg7:hex00" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/full_ir_receiver.vhd Line: 194
+Info (12128): Elaborating entity "calculator4bits" for hierarchy "calculator4bits:calculette" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 67
+Warning (10541): VHDL Signal Declaration warning at calculette.vhd(18): used implicit default value for signal "cinCLA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 18
+Warning (10812): VHDL warning at calculette.vhd(261): sensitivity list already contains mode File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 261
+Warning (10812): VHDL warning at calculette.vhd(272): sensitivity list already contains mode File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 272
+Info (12129): Elaborating entity "add4bits" using architecture "A:archi_add4bits" for hierarchy "calculator4bits:calculette|add4bits:add0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at add_4bits.vhd(32): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at add_4bits.vhd(41): signal "ResTemp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/add_4bits.vhd Line: 41
+Info (12128): Elaborating entity "ErorControlAdd" for hierarchy "calculator4bits:calculette|ErorControlAdd:controlAdd" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 71
+Info (12128): Elaborating entity "multi4bits" for hierarchy "calculator4bits:calculette|multi4bits:multi0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 92
+Info (12128): Elaborating entity "ErorControlMulti" for hierarchy "calculator4bits:calculette|ErorControlMulti:controlMulti" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(23): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(31): signal "ResSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorSigne" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at controlMulti.vhd(32): signal "ErorOverFlow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 32
+Warning (10631): VHDL Process Statement warning at controlMulti.vhd(18): inferring latch(es) for signal or variable "ErorSigne", which holds its previous value in one or more paths through the process File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
+Info (10041): Inferred latch for "ErorSigne" at controlMulti.vhd(18) File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/controlMulti.vhd Line: 18
+Info (12128): Elaborating entity "complement_2" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 112
+Info (12128): Elaborating entity "complement_1" for hierarchy "calculator4bits:calculette|complement_2:cmplt2A0|complement_1:cmplt1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/cmplt2.vhd Line: 15
+Info (12128): Elaborating entity "CLA" for hierarchy "calculator4bits:calculette|CLA:CLA0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 132
+Info (12128): Elaborating entity "choix_display" for hierarchy "calculator4bits:calculette|choix_display:choix_d0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 158
+Info (12128): Elaborating entity "separateur_diz_unit" for hierarchy "calculator4bits:calculette|separateur_diz_unit:sepA" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 172
+Info (12128): Elaborating entity "hdmi_de10" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/calculette.vhd Line: 286
+Info (12129): Elaborating entity "result_img" using architecture "A:behavioral" for hierarchy "calculator4bits:calculette|hdmi_de10:hdmi_out0|result_img:res_img" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/hdmi_de10.vhd Line: 45
 Info (278001): Inferred 5 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult1" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepRes|Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepB|Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepA|Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
-Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
-Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" with the following parameter: File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "calculator4bits:calculette|multi4bits:multi0|Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepRes|Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepB|Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator4bits:calculette|separateur_diz_unit:sepA|Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
+Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 30
     Info (12134): Parameter "LPM_WIDTHA" = "4"
     Info (12134): Parameter "LPM_WIDTHB" = "4"
     Info (12134): Parameter "LPM_WIDTHP" = "8"
@@ -758,9 +755,9 @@ Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:m
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_9js.tdf
-    Info (12023): Found entity 1: mult_9js File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
-Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" with the following parameter: File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+    Info (12023): Found entity 1: mult_9js File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
+Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/multi_4bits.vhd Line: 35
     Info (12134): Parameter "LPM_WIDTHA" = "4"
     Info (12134): Parameter "LPM_WIDTHB" = "4"
     Info (12134): Parameter "LPM_WIDTHP" = "8"
@@ -771,28 +768,28 @@ Info (12133): Instantiated megafunction "calculator4bits:calculette|multi4bits:m
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_6cs.tdf
-    Info (12023): Found entity 1: mult_6cs File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
-Info (12133): Instantiated megafunction "calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0" with the following parameter: File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+    Info (12023): Found entity 1: mult_6cs File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+Info (12133): Instantiated megafunction "calculator4bits:calculette|separateur_diz_unit:sepRes|lpm_divide:Div0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_v9o.tdf
-    Info (12023): Found entity 1: lpm_divide_v9o File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_v9o File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_divide_v9o.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4ag.tdf
-    Info (12023): Found entity 1: abs_divider_4ag File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf Line: 26
+    Info (12023): Found entity 1: abs_divider_4ag File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/abs_divider_4ag.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_see.tdf
-    Info (12023): Found entity 1: alt_u_div_see File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf Line: 26
+    Info (12023): Found entity 1: alt_u_div_see File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/alt_u_div_see.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_t3c.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/add_sub_u3c.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
-    Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf Line: 24
-Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
-Info (12133): Instantiated megafunction "calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0" with the following parameter: File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+    Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/lpm_abs_o99.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
+Info (12133): Instantiated megafunction "calculator4bits:calculette|separateur_diz_unit:sepB|lpm_divide:Div0" with the following parameter: File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/sep_diz_unit.vhd Line: 24
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -800,27 +797,27 @@ Info (12133): Instantiated megafunction "calculator4bits:calculette|separateur_d
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[4]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
-        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[3]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
-        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[4]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
-        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[3]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
-        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated|le5a[4]" File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 42
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le2a[3]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 39
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult1|mult_6cs:auto_generated|le4a[3]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_6cs.tdf Line: 40
+        Warning (14320): Synthesized away node "calculator4bits:calculette|multi4bits:multi0|lpm_mult:Mult0|mult_9js:auto_generated|le5a[4]" File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/db/mult_9js.tdf Line: 42
 Info (13014): Ignored 83 buffer(s)
     Info (13016): Ignored 18 CARRY_SUM buffer(s)
     Info (13019): Ignored 65 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "cinCLA" is stuck at GND File: C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 30
+    Warning (13410): Pin "cinCLA" is stuck at GND File: C:/Users/33610/Documents/MyProjects-FPGA/Projet-VHDL/Projet V3/src/top_entity.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1095 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1102 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 74 output pins
-    Info (21061): Implemented 1010 logic cells
+    Info (21061): Implemented 1017 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Wed Sep 29 23:12:51 2021
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4809 megabytes
+    Info: Processing ended: Thu Sep 30 14:58:50 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 

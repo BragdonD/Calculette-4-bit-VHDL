@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Sep 29 23:12:51 2021
+Analysis & Synthesis Status : Successful - Thu Sep 30 14:58:50 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
 Top-level Entity Name : top_entity
 Family : MAX 10
-Total logic elements : 1,001
-    Total combinational functions : 975
-    Dedicated logic registers : 246
-Total registers : 246
+Total logic elements : 1,008
+    Total combinational functions : 982
+    Dedicated logic registers : 248
+Total registers : 248
 Total pins : 85
 Total virtual pins : 0
 Total memory bits : 0

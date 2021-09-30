@@ -28,10 +28,23 @@ end CLA;
 
 architecture behaviorCLA of CLA is
 	signal eror : std_logic;
+	signal clk25 : std_logic;
+	signal clk12 : std_logic;
 begin
-
+	process(clk)
+	begin
+		if(rising_edge(clk))then
+			clk25 <= not(clk25);
+		end if;
+	end process;
+	process(clk25)
+	begin
+		if(rising_edge(clk25))then
+			clk12 <= not(clk12);
+		end if;
+	end process;
 	
-	process(clk,reset)
+	process(clk12,reset, outputCLA)
 		variable counter : integer:=0;
 		variable old_data : std_logic_vector(3 downto 0):=(others =>'0');
 		variable intB : integer:=0;
@@ -45,7 +58,7 @@ begin
 			result <= "0000";
 			eror <= '0';
 			old_data := "0000";
-		elsif(rising_edge(clk))then
+		elsif(rising_edge(clk12))then
 			--if(outputCLA /= old_data)then
 				old_data := outputCLA;
 				case operation is
@@ -53,7 +66,7 @@ begin
 					
 					intB := to_integer(unsigned(B));
 					
-					if(counter <= intB )then
+					if(counter < intB )then
 						if(counter = 0)then
 							OPeACLA <= "0000";
 							OPeBCLA <= A;
@@ -63,7 +76,7 @@ begin
 								eror <= '1';
 								OPeACLA <= "0000";
 								OPeBCLA <= "0000";
-								counter := 2 + 1;
+								counter := intB + 1;
 							else
 								eror <= '0';
 								OPeACLA <= old_data;
@@ -73,11 +86,11 @@ begin
 						end if;
 
 					else
-						if(eror ='1')then
+						if(eror ='1' or cout = '1')then
 							result <= "0000";
 							erorCLA <= '1';
 						else
-							result <= old_data;
+							result <= outputCLA; --std_logic_vector(to_unsigned(counter,4));
 							erorCLA <= '0';
 						end if;
 					end if;
