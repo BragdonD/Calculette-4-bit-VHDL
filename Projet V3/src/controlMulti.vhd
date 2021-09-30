@@ -10,25 +10,26 @@ port( ASigne, BSigne	: in std_logic;
 end entity;
 
 architecture archi_errorMulti of ErorControlMulti is
-	signal ErorSigne, ErorOverFlow : std_logic;
+	
 	signal ResSigne : std_logic;
 	signal TempRes : std_logic_vector(3 downto 0);
 	signal tempEror : std_logic;
 begin
-	process(mode, ResMulti, Asigne,BSigne)
+	process(mode, ResMulti, Asigne,BSigne, TempRes)
+		variable ErorSigne, ErorOverFlow : std_logic;
 	begin
 		if(mode = '0')then
 			ResSigne <= ResMulti(3);
-			ErorOverFlow <= ResMulti(7) or ResMulti(6) or ResMulti(5) or ResMulti(4);
+			ErorOverFlow := ResMulti(7) or ResMulti(6) or ResMulti(5) or ResMulti(4);
 			tempEror <= ErorOverFlow;
 		else
 			ResSigne <= ASigne and BSigne;
 			if(ResMulti(4) /= ResMulti(3)) then 
-				ErorOverFlow <= '1';
+				ErorOverFlow := '1';
 			else
-				ErorOverFlow <= '0';
+				ErorOverFlow := '0';
 			end if;
-			ErorSigne <= ((ResSigne and not(ASigne) and not(BSigne)) or (not(ResSigne) and ASigne and BSigne));
+			ErorSigne := ((ResSigne and not(ASigne) and not(BSigne)) or (not(ResSigne) and ASigne and BSigne));
 			tempEror <= ErorSigne or (ErorOverFlow and not(ErorSigne));
 		end if;
 	end process;

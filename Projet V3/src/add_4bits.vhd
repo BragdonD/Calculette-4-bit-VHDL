@@ -20,7 +20,7 @@ begin
 	UnSignedB <= unsigned(B); 
 	
 	--operation en fonction du mode signé
-	process(SignedA,SignedB,UnsignedA,UnsignedB, mode)
+	process(SignedA,SignedB,UnsignedA,UnsignedB, mode, ResTemp)
 		variable IntA, IntB, IntRes : integer;
 	begin
 		case mode is

@@ -5,6 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity buzzer is 
 	port 
 	(
+		mode 	: in std_logic;
 		clock : in std_logic;
 		var	: out std_logic;
 		reset : in std_logic;
@@ -17,6 +18,7 @@ architecture Behavioral of buzzer is
 	signal cpt 		: integer := 0;
 	signal old_var : std_logic;
 	signal clock_2 : std_logic := '0';
+	signal clock_neg : std_logic;
 begin
 	process(clock)
 	begin
@@ -25,14 +27,42 @@ begin
 		end if;
 	end process;
 	
-	process(clock_2)
+	process(clock_2, res, mode)
 		variable timer : integer := 0;
+		variable timerSign : integer := 0;
+		variable enableSign : std_logic :='0';
+		variable intRes : integer;
 	begin
 		if reset = '1' then
 			cpt <= 0;
 			old_var <= '0';
+			enableSign := '0';
+			timerSign := 0;
+			timer := 0;
+			var <= '0';
+			intRes := 0;
 		elsif rising_edge (clock_2) then
-			if cpt < to_integer(unsigned(res)) then
+			if(mode = '1')then
+				intRes := to_integer(signed(res));
+				if(intRes<0)then
+					intRes := (- intRes)+1;
+				end if;
+				if(to_integer(signed(res))<0 and timerSign<50000000)then
+					enableSign := '1';
+				else
+					enableSign := '0';
+				end if;
+			else
+				intRes := to_integer(unsigned(res));
+			end if;
+			if(timerSign < 100000000 and enableSign = '1') then
+				var <= '1';
+				timerSign := timerSign + 1;
+			elsif(timerSign >= 100000000 and timerSign < 200000000 and enableSign = '1') then
+				var <= '0';
+				timerSign := timerSign + 1;
+				old_var <= '0';
+			elsif cpt < intRes then
 				if timer < 10000000 then
 					
 					timer := timer + 1;
