@@ -1,7 +1,0 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use work.all;
-
-entity multiplicateur_4bits is
-	port( input1, inpu2 : in std_logic_vector(3 downto 0);
-			resultat : out std_logic_vector(3 downto 0);

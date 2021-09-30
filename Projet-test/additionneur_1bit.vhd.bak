@@ -1,8 +1,0 @@
-library ieee;
-use ieee.std_logic_1164.all;
-
-entity add1_bit is
-	port( entry1, entry2 : in std_logic;
-			Cin : in std_logic;
-			Res, Cout : out std_logic
-); end;

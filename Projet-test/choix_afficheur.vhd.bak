@@ -1,7 +1,0 @@
-library ieee;
-use ieee.std_logic_1164.all;
-
-entity choix_display is
-	port( ResAdd, ResCLA, ResMulti : in std_logic_vector(3 downto 0);
-			mode, CLA, Reset : in std_logic;
-			Resultat : out std_logic_vector(3 downto 0);
