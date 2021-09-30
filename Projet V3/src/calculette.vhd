@@ -30,7 +30,9 @@ port( A, B		 	: in std_logic_vector(3 downto 0);
 		vga_hs		: out std_logic;
 		vga_r			: out std_logic_vector(3 downto 0);
 		vga_g			: out std_logic_vector(3 downto 0);
-		vga_b			: out std_logic_vector(3 downto 0));
+		vga_b			: out std_logic_vector(3 downto 0);
+		Res : out std_logic_vector(3 downto 0)
+		);
 end calculator4bits;
 
 architecture behavioral of calculator4bits is
@@ -109,20 +111,13 @@ begin
 			erorTotale => erorMulti
 		);
 	--------------------------------------------CLA
-	cmplt2A0 : entity work.complement_2 
-		port map(a => A, cmplt2 => cmplt2A);
-		
-	cmplt2B0 : entity work.complement_2 
-		port map(a => B, cmplt2 => cmplt2B);	
+
 		
 	process(CLA,A,B, mode, cmplt2A, cmplt2B)
 	begin
 		if(CLA = '1') then
 			tempOpeA <= A;
 			tempOpeB <= B;
-		elsif(CLA = '1' and mode = '1') then
-			tempOpeA <= cmplt2A;
-			tempOpeB <= cmplt2B;
 		else
 			tempOpeA <= "0000";
 			tempOpeB <= "0000";
@@ -298,8 +293,8 @@ begin
 			vga_g	 => vga_g,	
 			vga_b => vga_b	
 		);
-	--------------------------------------------buzzer
 	
+	Res <= FinalRes;
 	
 end behavioral;
 

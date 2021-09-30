@@ -63,8 +63,14 @@ begin
 				old_data := outputCLA;
 				case operation is
 				when '1' =>
-					
-					intB := to_integer(unsigned(B));
+					if(mode = '0)then
+						intB := to_integer(unsigned(B));
+					else
+						intB := to_integer(signed(B));
+						if(intB <0)then
+							intB := -intB;
+						end if;
+					end if;
 					
 					if(counter < intB )then
 						if(counter = 0)then
