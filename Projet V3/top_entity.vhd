@@ -4,7 +4,7 @@ USE WORK.ALL;
 
 ENTITY top_entity IS
 PORT(
-		A,B : out std_logic_vector(3 downto 0);
+		--A,B : out std_logic_vector(3 downto 0);
 		rd_data 				: out std_logic;
 		-- clock
 		clk50					: in std_logic;
@@ -32,7 +32,9 @@ PORT(
 		vga_hs		: out std_logic;
 		vga_r			: out std_logic_vector(3 downto 0);
 		vga_g			: out std_logic_vector(3 downto 0);
-		vga_b			: out std_logic_vector(3 downto 0)
+		vga_b			: out std_logic_vector(3 downto 0);
+		buzzerout 	: out std_logic;
+		ModesOut		: out std_logic_vector(3 downto 0)
 		);
 end entity;
 
@@ -40,6 +42,7 @@ architecture behavioral of top_entity is
 	signal tempA, tempB : std_logic_vector(3 downto 0);
 	signal enableCalcul : std_logic;
 	signal enableAffi : std_logic;
+	signal tempRes : std_logic_vector(3 downto 0);
 	signal TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00 : std_logic_vector(6 downto 0);
 	signal TempHEX11, TempHEX21, TempHEX31, TempHEX41, TempHEX51, TempHEX01 : std_logic_vector(6 downto 0);
 begin
@@ -84,13 +87,14 @@ begin
 			HEX3 => TempHEX31,
 			HEX4 => TempHEX41,
 			HEX5 => TempHEX51,
-			modesOut => open,
+			modesOut => ModesOut,
 			clk_50 => clk50,
 			vga_vs => vga_vs,
 			vga_hs => vga_hs,
 			vga_r	=> vga_r,
 			vga_g	=> vga_g,
-			vga_b	=> vga_b
+			vga_b	=> vga_b,
+			res => tempRes
 		);
 		
 	process(enableAffi, TempHEX10, TempHEX20, TempHEX30, TempHEX40, TempHEX50, TempHEX00,TempHEX11, TempHEX21, TempHEX31, TempHEX41, TempHEX51, TempHEX01)
@@ -111,6 +115,18 @@ begin
 			HEX5 <= TempHEX51;
 		end if;
 	end process;
-	A <= tempA;
-	B <= tempB;
+	
+	--------------------------------------------buzzer
+	buz : entity work.buzzer
+	port map
+	(
+		mode 	=> mode,
+		clock => clk50,
+		var => buzzerout,
+		reset => not(reset),
+		res => tempRes
+	);
+
+	--A <= tempA;
+	--B <= tempB;
 end behavioral;

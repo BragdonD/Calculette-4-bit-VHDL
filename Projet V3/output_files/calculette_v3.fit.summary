@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu Sep 30 14:59:04 2021
+Fitter Status : Successful - Thu Sep 30 19:38:49 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculette_v3
 Top-level Entity Name : top_entity
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 1,004 / 49,760 ( 2 % )
-    Total combinational functions : 986 / 49,760 ( 2 % )
-    Dedicated logic registers : 248 / 49,760 ( < 1 % )
-Total registers : 248
-Total pins : 85 / 360 ( 24 % )
+Total logic elements : 1,222 / 49,760 ( 2 % )
+    Total combinational functions : 1,199 / 49,760 ( 2 % )
+    Dedicated logic registers : 348 / 49,760 ( < 1 % )
+Total registers : 348
+Total pins : 82 / 360 ( 23 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
