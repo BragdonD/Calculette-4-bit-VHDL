@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/mult_signed/simulation/modelsim
+Emulti4bits
+Z1 w1632642968
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/mult_signed/multi_4bits.vhd
+Z6 FC:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/mult_signed/multi_4bits.vhd
+l0
+L5
+VT]Tj4HoE^:3jez>EN31_J0
+!s100 CkQ=c7T[I[4@L[aQR5:OO0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1633255052
+!i10b 1
+Z9 !s108 1633255052.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/mult_signed/multi_4bits.vhd|
+Z11 !s107 C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/mult_signed/multi_4bits.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aarchi_multi4bits
+R2
+R3
+R4
+DEx4 work 10 multi4bits 0 22 T]Tj4HoE^:3jez>EN31_J0
+l16
+L12
+VzE8jnOcfC<lfZz;kHEG451
+!s100 8^5JnR]5C]HW4;W[7CABV3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

@@ -1,0 +1,114 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity CLA is
+port( 
+		--others input
+		clk			:  in 	std_logic;
+		A				:	in 	std_logic_vector(3 downto 0);
+		B				:	in 	std_logic_vector(3 downto 0);
+		reset			:	in 	std_logic;
+		Cin 			: 	in 	std_logic;
+		cinCLA		:	out 	std_logic;
+		resCLA		: 	in 	std_logic_vector(3 downto 0);
+		coutCLA		: 	in		std_logic;
+		operation	: 	in 	std_logic;
+		opeACLA		: 	out 	std_logic_vector(3 downto 0);
+		opeBCLA		: 	out 	std_logic_vector(3 downto 0);
+		result		: 	out 	std_logic_vector(3 downto 0);
+		eror			: 	out 	std_logic;
+		ope_out		: 	out	std_logic);
+
+end CLA;
+
+architecture behaviorCLA of CLA is
+	signal ErorMulti : std_logic;
+	signal ope1, ope2	: std_logic_vector(3 downto 0);
+	signal temp1,temp2,temp3,temp4 : std_logic_vector(7 downto 0);
+	
+begin
+	
+	process(A,B)
+		variable i : integer;
+	begin
+		i := 0;
+		while i<4 loop
+			temp1(i) <= A(i) and B(0);
+			i := i +1;
+		end loop; 
+		temp1(7 downto 4) <="0000";
+		
+		i := 1;
+		while i<5 loop
+			temp2(i) <= A(i-1) and B(1);
+			i := i +1;
+		end loop; 
+		temp2(7 downto 5) <="000";
+		temp2(0 downto 0) <="0";
+		
+		i := 2;
+		while i<6 loop
+			temp3(i) <= A(i-2) and B(2);
+			i := i +1;
+		end loop;
+		temp3(7 downto 6) <="00";
+		temp3(1 downto 0) <="00";
+		
+		i := 3;
+		while i<7 loop
+			temp4(i) <= A(i-3) and B(3);
+			i := i +1;
+		end loop; 
+		temp4(7 downto 7) <="0";
+		temp4(2 downto 0) <="000";
+		
+	end process;
+	
+	ErorMulti <= ((temp4(6) or temp4(5) or temp4(4)) or (temp3(4) or temp3(5)) or (temp2(4)) or CoutCLA);
+	process(temp1,temp2,temp3,temp4)
+		variable res1_2, res3_4 : integer;
+	begin
+		res1_2 := to_integer(unsigned(temp1)) + to_integer(unsigned(temp2));
+		res3_4 := to_integer(unsigned(temp3)) + to_integer(unsigned(temp4));
+		ope1 <= std_logic_vector(to_unsigned(res1_2, 4));
+		ope2 <= std_logic_vector(to_unsigned(res3_4, 4));
+	end process;
+	
+	process(operation, ope1, ope2, A, B)
+	begin
+		if(operation='1')then
+			opeACLA <= ope1;
+			opeBCLA <= ope2;
+			cinCLA <= '0';
+		else
+			opeACLA <= A;
+			opeBCLA <= B;
+			cinCLA <= '0';
+		end if;
+	end process;
+	
+	process(resCLA, coutCLA, operation, ErorMulti)
+		variable i : integer;
+	begin
+		if(operation='1')then
+			eror <= ErorMulti;
+			i := 0;
+			while i<4 loop
+				result(i) <= ResCLA(i) and not(ErorMulti);
+				i := i + 1;
+			end loop;			
+		else
+			eror <= coutCLA;
+			i := 0;
+			while i<4 loop
+				result(i) <= ResCLA(i) and not(coutCLA);
+				i := i + 1;
+			end loop;
+		end if;
+	end process;
+	ope_out <= operation;
+	
+		
+end behaviorCLA;

@@ -1,0 +1,63 @@
+# Reading D:/intel-FPGA-Complete/intel-FPGA/modelsim_ase/tcl/vsim/pref.tcl
+# do ErorAdd_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intel-FPGA-Complete/intel-FPGA/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/adder_intern/verification/controlAdd.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:07:44 on Oct 03,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/adder_intern/verification/controlAdd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ErorControlAdd
+# -- Compiling architecture archi_errorAdd of ErorControlAdd
+# End time: 11:07:44 on Oct 03,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+
+vsim work.erorcontroladd
+# vsim work.erorcontroladd 
+# Start time: 11:08:31 on Oct 03,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.erorcontroladd(archi_erroradd)
+vsim work.erorcontroladd
+# End time: 11:08:37 on Oct 03,2021, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 0
+# vsim work.erorcontroladd 
+# Start time: 11:08:37 on Oct 03,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.erorcontroladd(archi_erroradd)
+add wave sim:/erorcontroladd/*
+add wave -position insertpoint  \
+sim:/erorcontroladd/ASigne
+# Can't move the Now cursor.
+force -freeze sim:/erorcontroladd/ASigne 0 0
+force -freeze sim:/erorcontroladd/BSigne 0 0
+force -freeze sim:/erorcontroladd/BSigne 0 0
+force -freeze sim:/erorcontroladd/ResSigne 1 0
+force -freeze sim:/erorcontroladd/CoutAdd 1 0
+force -freeze sim:/erorcontroladd/mode 1 0
+run -all
+force -freeze sim:/erorcontroladd/mode 0 0
+force -freeze sim:/erorcontroladd/CoutAdd 0 0
+run -all
+force -freeze sim:/erorcontroladd/ASigne 1 0
+force -freeze sim:/erorcontroladd/BSigne 1 0
+force -freeze sim:/erorcontroladd/ResSigne 0 0
+run -all
+force -freeze sim:/erorcontroladd/mode 1 0
+run -all
+# End time: 11:47:18 on Oct 03,2021, Elapsed time: 0:38:41
+# Errors: 1, Warnings: 0
