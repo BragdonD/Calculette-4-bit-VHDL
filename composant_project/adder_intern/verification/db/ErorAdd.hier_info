@@ -1,0 +1,12 @@
+|ErorControlAdd
+ASigne => ErorSigne.IN0
+ASigne => ErorSigne.IN0
+BSigne => ErorSigne.IN1
+BSigne => ErorSigne.IN1
+ResSigne => ErorSigne.IN1
+ResSigne => ErorSigne.IN1
+CoutAdd => erorTotale.IN1
+mode => ErorSigne.OUTPUTSELECT
+erorTotale <= erorTotale.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "erorTotale",
+					"strict" : false
+				},
+				{
+					"name" : "CoutAdd",
+					"strict" : false
+				},
+				{
+					"name" : "mode",
+					"strict" : false
+				},
+				{
+					"name" : "ASigne",
+					"strict" : false
+				},
+				{
+					"name" : "BSigne",
+					"strict" : false
+				},
+				{
+					"name" : "ResSigne",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ResOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ResOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ResOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ResOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "erorTotale",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mode",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ResMulti[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

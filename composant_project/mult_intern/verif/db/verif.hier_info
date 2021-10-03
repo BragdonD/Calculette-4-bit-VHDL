@@ -1,0 +1,31 @@
+|ErorControlMulti
+ASigne => ResSigne.IN0
+ASigne => ErorSigne.IN1
+ASigne => ErorSigne.IN1
+BSigne => ResSigne.IN1
+BSigne => ErorSigne.IN1
+BSigne => ErorSigne.IN1
+mode => tempEror.OUTPUTSELECT
+ResMulti[0] => TempRes.IN1
+ResMulti[1] => TempRes.IN1
+ResMulti[2] => TempRes.IN1
+ResMulti[3] => process_0.IN0
+ResMulti[3] => process_0.IN0
+ResMulti[3] => process_0.IN0
+ResMulti[3] => process_0.IN0
+ResMulti[3] => TempRes.IN1
+ResMulti[4] => ErorOverFlow.IN1
+ResMulti[4] => process_0.IN1
+ResMulti[5] => ErorOverFlow.IN1
+ResMulti[5] => process_0.IN1
+ResMulti[6] => ErorOverFlow.IN0
+ResMulti[6] => process_0.IN1
+ResMulti[7] => ErorOverFlow.IN1
+ResMulti[7] => process_0.IN1
+ResOut[0] <= TempRes.DB_MAX_OUTPUT_PORT_TYPE
+ResOut[1] <= TempRes.DB_MAX_OUTPUT_PORT_TYPE
+ResOut[2] <= TempRes.DB_MAX_OUTPUT_PORT_TYPE
+ResOut[3] <= TempRes.DB_MAX_OUTPUT_PORT_TYPE
+erorTotale <= tempEror.DB_MAX_OUTPUT_PORT_TYPE
+
+

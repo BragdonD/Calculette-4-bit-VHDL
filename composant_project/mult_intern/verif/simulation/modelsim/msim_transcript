@@ -1,0 +1,44 @@
+# Reading D:/intel-FPGA-Complete/intel-FPGA/modelsim_ase/tcl/vsim/pref.tcl
+# do verif_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intel-FPGA-Complete/intel-FPGA/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/verif/controlMulti.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:28:46 on Oct 03,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/thoma/OneDrive/Documents/VHDL-FPGA/Projet-VHDL/composant_project/mult_intern/verif/controlMulti.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ErorControlMulti
+# -- Compiling architecture archi_errorMulti of ErorControlMulti
+# End time: 12:28:46 on Oct 03,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.erorcontrolmulti
+# vsim work.erorcontrolmulti 
+# Start time: 12:28:48 on Oct 03,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.erorcontrolmulti(archi_errormulti)
+add wave -position end  sim:/erorcontrolmulti/ASigne
+add wave -position end  sim:/erorcontrolmulti/BSigne
+add wave -position end  sim:/erorcontrolmulti/mode
+add wave -position end  sim:/erorcontrolmulti/ResMulti
+add wave -position end  sim:/erorcontrolmulti/ResOut
+add wave -position end  sim:/erorcontrolmulti/erorTotale
+force -freeze sim:/erorcontrolmulti/ASigne 1 0
+force -freeze sim:/erorcontrolmulti/BSigne 0 0
+force -freeze sim:/erorcontrolmulti/mode 1 0
+force -freeze sim:/erorcontrolmulti/ResMulti 11100111 0
+run -all
+# End time: 12:35:05 on Oct 03,2021, Elapsed time: 0:06:17
+# Errors: 0, Warnings: 0

@@ -63,7 +63,7 @@ begin
 				old_data := outputCLA;
 				case operation is
 				when '1' =>
-					if(mode = '0)then
+					if(mode = '0')then
 						intB := to_integer(unsigned(B));
 					else
 						intB := to_integer(signed(B));
