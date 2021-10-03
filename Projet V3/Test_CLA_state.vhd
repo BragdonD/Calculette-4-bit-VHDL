@@ -47,12 +47,14 @@ begin
 	process(clk12,reset, outputCLA)
 		variable counter : integer:=0;
 		variable old_data : std_logic_vector(3 downto 0):=(others =>'0');
-		variable intB : integer:=0;
+		variable intB, intA : integer:=0;
+		variable tempA: std_logic_vector(3 downto 0);
 		variable temp : std_logic := '0';
 	begin
 		if(reset = '1') then
 			counter := 0;
 			intB := 0;
+			intA := 0;
 			OPeACLA <= "0000";
 			OPeBCLA <= "0000";
 			result <= "0000";
@@ -65,20 +67,35 @@ begin
 				when '1' =>
 					if(mode = '0')then
 						intB := to_integer(unsigned(B));
+						intA := to_integer(unsigned(A));
+						tempA := std_logic_vector(to_unsigned(intA, 4));
 					else
 						intB := to_integer(signed(B));
+						intA := to_integer(signed(A));
+						if(intA<0 and intB<0)then
+							intA := -intA;
+							tempA := std_logic_vector(to_unsigned(intA, 4));
+						else
+							tempA := std_logic_vector(to_signed(intA, 4));
+						end if;
 						if(intB <0)then
 							intB := -intB;
 						end if;
+
 					end if;
 					
 					if(counter < intB )then
 						if(counter = 0)then
 							OPeACLA <= "0000";
-							OPeBCLA <= A;
+							OPeBCLA <= tempA;
 							counter := counter + 1;
 						else
-							if(cout = '1')then
+							if(cout = '1' and mode='0')then
+								eror <= '1';
+								OPeACLA <= "0000";
+								OPeBCLA <= "0000";
+								counter := intB + 1;
+							elsif(mode = '1' and (Cout = '1' and old_data(3) ='0'))then
 								eror <= '1';
 								OPeACLA <= "0000";
 								OPeBCLA <= "0000";
@@ -86,13 +103,13 @@ begin
 							else
 								eror <= '0';
 								OPeACLA <= old_data;
-								OpeBCLA <= A;
+								OpeBCLA <= tempA;
 								counter := counter + 1;
 							end if;
 						end if;
 
 					else
-						if(eror ='1' or cout = '1')then
+						if(eror ='1' or (cout = '1' and mode ='0') or (mode = '1' and (Cout = '1' and old_data(3) ='0')))then
 							result <= "0000";
 							erorCLA <= '1';
 						else

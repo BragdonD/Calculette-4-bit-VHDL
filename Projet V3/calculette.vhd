@@ -239,7 +239,7 @@ begin
 		);
 	
 	---gerer les signes '-'
-	process(eror, tempHEX1 , tempHEX0, mode, FinalRes)
+	process(eror, tempHEX1 , tempHEX0, FinalRes)
 	begin
 		if eror = '1' then
 			HEX1 <= "0000110";
@@ -253,7 +253,7 @@ begin
 		end if;
 	end process;
 	
-	process(mode, tempHEX5 , tempHEX4, mode, A)
+	process(mode, tempHEX5 , tempHEX4, A)
 	begin
 		if mode = '1' and to_integer(signed(A)) <0 then
 			HEX5 <= "0111111";

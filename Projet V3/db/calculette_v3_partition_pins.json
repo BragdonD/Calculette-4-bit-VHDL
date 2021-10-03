@@ -284,15 +284,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "CLA",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
 					"name" : "mode",
-					"strict" : false
-				},
-				{
-					"name" : "CLA",
 					"strict" : false
 				},
 				{

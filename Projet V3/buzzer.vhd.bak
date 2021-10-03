@@ -27,7 +27,7 @@ begin
 		end if;
 	end process;
 	
-	process(clock_2, res, mode, reset)
+	process(clock_2, res, mode)
 		variable timer : integer := 0;
 		variable timerSign : integer := 0;
 		variable enableSign : std_logic :='0';
