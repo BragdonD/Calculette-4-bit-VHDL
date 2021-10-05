@@ -50,6 +50,7 @@ begin
 		variable intB, intA : integer:=0;
 		variable tempA: std_logic_vector(3 downto 0);
 		variable temp : std_logic := '0';
+		variable tempRes : integer;
 	begin
 		if(reset = '1') then
 			counter := 0;
@@ -113,7 +114,20 @@ begin
 							result <= "0000";
 							erorCLA <= '1';
 						else
-							result <= outputCLA; --std_logic_vector(to_unsigned(counter,4));
+							 --std_logic_vector(to_unsigned(counter,4));
+							
+							if(mode = '0')then
+								tempRes := to_integer(unsigned(outputCLA));
+								result <= std_logic_vector(to_unsigned(tempRes,4));
+							else
+								tempRes := to_integer(signed(outputCLA));
+								if(to_integer(signed(A))< 0 xor to_integer(signed(B))< 0)then
+									if(tempRes >0)then
+										tempRes := -tempRes;
+									end if;
+								end if;
+								result <= std_logic_vector(to_signed(tempRes,4));
+							end if;
 							erorCLA <= '0';
 						end if;
 					end if;
@@ -121,13 +135,24 @@ begin
 				when '0' =>
 					OPeACLA <= A;
 					OpeBCLA <= B;
-					if(cout ='1')then
-						result <= "0000";
-						erorCLA <= '1';
+					if(mode ='0')then
+						if(cout ='1')then
+							result <= "0000";
+							erorCLA <= '1';
+						else
+							result <= old_data ;
+							erorCLA <= '0';
+						end if;		
 					else
-						result <= old_data ;
-						erorCLA <= '0';
-					end if;		
+						tempRes := to_integer(signed(cout & outputCLA));
+						if((tempRes<-8 or TempRes>7) and not(cout='1' and outputCLA(3)='0' and outputCLA(2)='0' and outputCLA(1)='0' and outputCLA(0)='0'))then
+							result <= "0000";
+							erorCLA <= '1';
+						else
+							result <= old_data ;
+							erorCLA <= '0';	
+						end if;
+					end if;
 				end case;
 			--end if;
 		end if;
